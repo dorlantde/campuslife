@@ -1,0 +1,835 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "CampusLife 本地接口调试",
+    "description" : "虚构校园学习项目。先注册、登录，再把 data.accessToken 填入 Authorize。只填写 token，不需要添加 Bearer 前缀。修改昵称保留登录；修改密码撤销本人全部会话。",
+    "version" : "v1"
+  },
+  "servers" : [ {
+    "url" : "http://127.0.0.1:8080",
+    "description" : "本机开发环境"
+  } ],
+  "tags" : [ {
+    "name" : "00 系统",
+    "description" : "匿名存活检查"
+  }, {
+    "name" : "01 账号认证",
+    "description" : "注册、登录和退出；测试账号为虚构业务账号"
+  }, {
+    "name" : "02 本人资料",
+    "description" : "先登录并填写 Authorize，再读取或修改本人资料"
+  } ],
+  "paths" : {
+    "/api/v1/me/password" : {
+      "post" : {
+        "tags" : [ "02 本人资料" ],
+        "summary" : "修改密码并退出全部设备",
+        "description" : "成功 200，data=null；当前及其他设备会话全部撤销，需要重新登录并更新 Authorize。当前密码错误：400 / CURRENT_PASSWORD_INCORRECT；新旧密码均遵守注册密码规则。",
+        "operationId" : "changePassword",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/PasswordChangeRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseVoid"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "ACCOUNT_DISABLED：账号停用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "VALIDATION_FAILED：请求格式错误；改密还可能为 CURRENT_PASSWORD_INCORRECT",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "UNSUPPORTED_MEDIA_TYPE：请使用 application/json",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "ACCOUNT_CREDENTIALS_CHANGED：校验后凭据已变化，拒绝覆盖",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/auth/register" : {
+      "post" : {
+        "tags" : [ "01 账号认证" ],
+        "summary" : "注册学生账号",
+        "description" : "创建 STUDENT / ACTIVE，version 为字符串 0；不自动登录。成功 201；用户名已占用 409 / USERNAME_EXISTS；非法参数或未知字段 400。",
+        "operationId" : "register",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/RegisterRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "201" : {
+            "description" : "注册成功",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseAccountView"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "VALIDATION_FAILED：请求格式错误；改密还可能为 CURRENT_PASSWORD_INCORRECT",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "UNSUPPORTED_MEDIA_TYPE：请使用 application/json",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "USERNAME_EXISTS：用户名已占用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/auth/logout" : {
+      "post" : {
+        "tags" : [ "01 账号认证" ],
+        "summary" : "退出当前设备",
+        "description" : "成功 200，data=null。仅撤销当前会话；未过期的同一 token 重复退出仍成功。",
+        "operationId" : "logout",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseVoid"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "ACCOUNT_DISABLED：账号停用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/auth/login" : {
+      "post" : {
+        "tags" : [ "01 账号认证" ],
+        "summary" : "登录并取得 token",
+        "description" : "成功后复制 data.accessToken，填入页面右上方 Authorize。有效期 2 小时，各次登录为独立会话。用户名不存在或密码错误：401 / LOGIN_FAILED；账号停用：403。",
+        "operationId" : "login",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/LoginRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseLoginView"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "ACCOUNT_DISABLED：账号停用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "VALIDATION_FAILED：请求格式错误；改密还可能为 CURRENT_PASSWORD_INCORRECT",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "UNSUPPORTED_MEDIA_TYPE：请使用 application/json",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/v1/me" : {
+      "get" : {
+        "tags" : [ "02 本人资料" ],
+        "summary" : "读取本人资料和版本",
+        "description" : "复制 data.version 作为修改昵称的 expectedVersion，保留字符串格式。未登录或会话失效返回 401。",
+        "operationId" : "me",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseAccountView"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "ACCOUNT_DISABLED：账号停用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      },
+      "patch" : {
+        "tags" : [ "02 本人资料" ],
+        "summary" : "修改本人昵称",
+        "description" : "先 GET /me 读取版本。成功 200，返回最新资料；实际变更时 version 加 1。遗漏昵称或归一化后相同不增加版本；版本过期返回 409 / CONFIG_VERSION_CONFLICT，重新读取后再决定是否修改。null、非字符串、未知字段或非法版本返回 400；登录保持有效。",
+        "operationId" : "update",
+        "requestBody" : {
+          "content" : {
+            "application/json" : {
+              "schema" : {
+                "$ref" : "#/components/schemas/ProfileUpdateRequest"
+              }
+            }
+          },
+          "required" : true
+        },
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseAccountView"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "403" : {
+            "description" : "ACCOUNT_DISABLED：账号停用",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "400" : {
+            "description" : "VALIDATION_FAILED：请求格式错误；改密还可能为 CURRENT_PASSWORD_INCORRECT",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "415" : {
+            "description" : "UNSUPPORTED_MEDIA_TYPE：请使用 application/json",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "409" : {
+            "description" : "CONFIG_VERSION_CONFLICT：版本过期或不能递增，请重新 GET /me",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        },
+        "security" : [ {
+          "bearerAuth" : [ ]
+        } ]
+      }
+    },
+    "/api/v1/system/health" : {
+      "get" : {
+        "tags" : [ "00 系统" ],
+        "summary" : "检查应用是否运行",
+        "description" : "匿名接口，返回 200 / OK / UP。仅表示 HTTP 存活。",
+        "operationId" : "health",
+        "responses" : {
+          "200" : {
+            "description" : "OK",
+            "content" : {
+              "*/*" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiResponseHealthView"
+                }
+              }
+            }
+          },
+          "401" : {
+            "description" : "AUTH_REQUIRED / TOKEN_INVALID / SESSION_EXPIRED / SESSION_REVOKED；登录还可能为 LOGIN_FAILED",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "406" : {
+            "description" : "NOT_ACCEPTABLE：不支持请求的响应格式",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          },
+          "500" : {
+            "description" : "INTERNAL_ERROR：内部失败，不返回敏感细节",
+            "content" : {
+              "application/json" : {
+                "schema" : {
+                  "$ref" : "#/components/schemas/ApiError"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components" : {
+    "schemas" : {
+      "PasswordChangeRequest" : {
+        "required" : [ "currentPassword", "newPassword" ],
+        "type" : "object",
+        "properties" : {
+          "currentPassword" : {
+            "type" : "string",
+            "description" : "当前密码，原样校验",
+            "format" : "password",
+            "writeOnly" : true,
+            "example" : "DemoPass_123!"
+          },
+          "newPassword" : {
+            "type" : "string",
+            "description" : "至少 8 个 Unicode 码点，UTF-8 最多 72 字节；不改变内容",
+            "format" : "password",
+            "writeOnly" : true,
+            "example" : "NewDemoPass_456!"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ApiResponseVoid" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "data" : {
+            "type" : "object",
+            "nullable" : true
+          },
+          "traceId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "RegisterRequest" : {
+        "required" : [ "nickname", "password", "username" ],
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string",
+            "description" : "去首尾空白、转小写后为 4～32 位字母、数字或下划线",
+            "example" : "demo_student_01"
+          },
+          "password" : {
+            "type" : "string",
+            "description" : "至少 8 个 Unicode 码点，UTF-8 最多 72 字节；不去空白、不改大小写",
+            "format" : "password",
+            "writeOnly" : true,
+            "example" : "DemoPass_123!"
+          },
+          "nickname" : {
+            "type" : "string",
+            "description" : "去首尾空白后为 1～40 个 Unicode 码点",
+            "example" : "星海同学"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "AccountView" : {
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "description" : "账号标识，十进制字符串",
+            "example" : "101"
+          },
+          "username" : {
+            "type" : "string",
+            "example" : "demo_student_01"
+          },
+          "nickname" : {
+            "type" : "string",
+            "example" : "星海同学"
+          },
+          "role" : {
+            "type" : "string",
+            "example" : "STUDENT",
+            "enum" : [ "STUDENT", "MERCHANT", "ADMIN" ]
+          },
+          "status" : {
+            "type" : "string",
+            "example" : "ACTIVE",
+            "enum" : [ "ACTIVE", "DISABLED" ]
+          },
+          "version" : {
+            "type" : "string",
+            "description" : "账号版本；修改昵称时原样回传，不转换为数值",
+            "example" : "0"
+          }
+        }
+      },
+      "ApiResponseAccountView" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/AccountView"
+          },
+          "traceId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "LoginRequest" : {
+        "required" : [ "password", "username" ],
+        "type" : "object",
+        "properties" : {
+          "username" : {
+            "type" : "string",
+            "description" : "注册时的用户名，去首尾空白并转小写",
+            "example" : "demo_student_01"
+          },
+          "password" : {
+            "type" : "string",
+            "description" : "原样填写密码，不去空白",
+            "format" : "password",
+            "writeOnly" : true,
+            "example" : "DemoPass_123!"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ApiResponseLoginView" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/LoginView"
+          },
+          "traceId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "LoginView" : {
+        "type" : "object",
+        "properties" : {
+          "accessToken" : {
+            "type" : "string"
+          },
+          "tokenType" : {
+            "type" : "string"
+          },
+          "expiresAt" : {
+            "type" : "string",
+            "format" : "date-time"
+          },
+          "account" : {
+            "$ref" : "#/components/schemas/AccountView"
+          }
+        }
+      },
+      "ProfileUpdateRequest" : {
+        "required" : [ "expectedVersion" ],
+        "type" : "object",
+        "properties" : {
+          "nickname" : {
+            "type" : "string",
+            "description" : "去首尾空白后 1～40 个 Unicode 码点；遗漏不改，null 拒绝",
+            "example" : "星海新昵称😀"
+          },
+          "expectedVersion" : {
+            "pattern" : "^(0|[1-9][0-9]{0,18})$",
+            "type" : "string",
+            "description" : "原样回传 GET /me 的 version 字符串，版本过期返回 409",
+            "example" : "0"
+          }
+        },
+        "additionalProperties" : false
+      },
+      "ApiResponseHealthView" : {
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string"
+          },
+          "message" : {
+            "type" : "string"
+          },
+          "data" : {
+            "$ref" : "#/components/schemas/HealthView"
+          },
+          "traceId" : {
+            "type" : "string"
+          }
+        }
+      },
+      "HealthView" : {
+        "type" : "object",
+        "properties" : {
+          "application" : {
+            "type" : "string"
+          },
+          "status" : {
+            "type" : "string"
+          },
+          "timestamp" : {
+            "type" : "string",
+            "format" : "date-time"
+          }
+        }
+      },
+      "ApiError" : {
+        "required" : [ "code", "data", "message", "traceId" ],
+        "type" : "object",
+        "properties" : {
+          "code" : {
+            "type" : "string",
+            "description" : "业务错误码，具体值见各 HTTP 状态说明"
+          },
+          "message" : {
+            "type" : "string",
+            "description" : "对外错误提示"
+          },
+          "data" : {
+            "type" : "object",
+            "nullable" : true
+          },
+          "traceId" : {
+            "type" : "string",
+            "description" : "与响应头 X-Trace-Id 相同的请求标识"
+          }
+        }
+      }
+    },
+    "securitySchemes" : {
+      "bearerAuth" : {
+        "type" : "http",
+        "description" : "登录响应中的 data.accessToken；仅填写 token 本身。",
+        "scheme" : "bearer",
+        "bearerFormat" : "JWT"
+      }
+    }
+  }
+}

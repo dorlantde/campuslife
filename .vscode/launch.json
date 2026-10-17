@@ -1,0 +1,34 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "CampusLife (MySQL)",
+            "request": "launch",
+            "mainClass": "com.campuslife.CampusLifeApplication",
+            "projectName": "campuslife",
+            "javaExec": "${workspaceFolder}/.tools/java21/zulu21.52.203-ca-jdk21.0.12.1-win_x64/bin/java.exe",
+            "cwd": "${workspaceFolder}",
+            "args": ["--spring.config.additional-location=file:./.cache/vscode/runtime.properties"],
+            "env": {
+                "SPRING_PROFILES_ACTIVE": "mysql",
+                "DB_HOST": "127.0.0.1",
+                "DB_PORT": "3306",
+                "DB_NAME": "campuslife",
+                "DB_USERNAME": "campuslife",
+                "DB_PASSWORD": "${input:campuslifeDatabasePassword}"
+            },
+            "preLaunchTask": "CampusLife: prepare local JWT",
+            "console": "integratedTerminal",
+            "encoding": "UTF-8"
+        }
+    ],
+    "inputs": [
+        {
+            "id": "campuslifeDatabasePassword",
+            "type": "promptString",
+            "description": "MySQL campuslife account password (not root; not saved)",
+            "password": true
+        }
+    ]
+}

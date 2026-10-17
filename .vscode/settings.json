@@ -1,0 +1,11 @@
+{
+    "java.jdt.ls.vmargs": "-XX:+UseParallelGC -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Dsun.zip.disableMemoryMapping=true -Xmx4G -Xms100m -Xlog:disable",
+    "java.configuration.maven.userSettings": "D:/campuslife/.mvn/vscode-settings.xml",
+    "java.configuration.runtimes": [
+        {
+            "name": "JavaSE-21",
+            "path": "D:/campuslife/.tools/java21/zulu21.52.203-ca-jdk21.0.12.1-win_x64",
+            "default": true
+        }
+    ]
+}
