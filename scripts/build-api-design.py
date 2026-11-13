@@ -16,6 +16,8 @@ LIVE = ROOT / 'docs/openapi/campuslife.openapi.json'
 CONTRACT = ROOT / 'docs/v1-api-contract.md'
 METHODS = {'get', 'post', 'put', 'patch', 'delete'}
 S = {}
+CONFIRMED = {('patch', '/admin/accounts/{accountId}/status'), ('get', '/admin/accounts'), ('post', '/admin/reviews/{reviewId}/hide'), ('get', '/shops/{shopId}/reviews'), ('post', '/orders/{orderId}/review'), ('get', '/orders/{orderId}/review'), ('post', '/orders/{orderId}/pickup'), ('post', '/merchant/orders/{orderId}/ready-for-pickup'), ('post', '/orders/prints'), ('post', '/print-quotes'), ('get', '/files/{fileId}/content'), ('post', '/files'), ('get', '/files/{fileId}'), ('get', '/orders/{orderId}/events'), ('get', '/merchant/orders/{orderId}/events'), ('get', '/merchant/orders'), ('get', '/orders'), ('get', '/admin/orders/{orderId}'), ('post', '/admin/orders/{orderId}/close-exception'), ('post', '/merchant/orders/{orderId}/start'), ('post', '/merchant/orders/{orderId}/complete'), ('post', '/merchant/orders/{orderId}/cancel'), ('get', '/merchant/orders/{orderId}'), ('post', '/merchant/orders/{orderId}/accept'), ('post', '/merchant/orders/{orderId}/reject'), ('post', '/orders/{orderId}/payments/mock'), ('post', '/orders/bookings'), ('get', '/orders/{orderId}'), ('post', '/orders/{orderId}/cancel'), ('get', '/shops/{shopId}/booking-slots'), ('get', '/shops/{shopId}/barbers'), ('get', '/shops'), ('get', '/shops/{shopId}'), ('get', '/shops/{shopId}/services'), ('get', '/merchant/barbers/{barberId}/schedule'), ('put', '/merchant/barbers/{barberId}/schedule'), ('get', '/merchant/barbers'), ('post', '/merchant/barbers'), ('patch', '/merchant/barbers/{barberId}'), ('put', '/merchant/barbers/{barberId}/services'), ('get', '/merchant/services/{serviceId}/print-prices'), ('put', '/merchant/services/{serviceId}/print-prices'), ('get', '/merchant/services'), ('post', '/merchant/services'), ('patch', '/merchant/services/{serviceId}'), ('put', '/merchant/shop/business-hours'), ('post', '/merchant/shop/resubmit'), ('patch', '/merchant/shop'), ('get', '/admin/shops'), ('get', '/admin/shops/{shopId}'),
+             ('post', '/admin/shops/{shopId}/approve'), ('post', '/admin/shops/{shopId}/reject')}
 
 
 def ref(name):
@@ -63,6 +65,8 @@ def nullable(schema):
 
 
 def obj(name, props, required=(), description='', request=False):
+    if name in BASE_SCHEMAS:
+        return ref(name)  # Runtime schemas remain authoritative when a planned endpoint ships.
     schema = {'type': 'object', 'properties': props, 'x-decision-status': 'draft-needs-review',
               'description': '设计稿，字段映射及约束待对应业务实现前复核。' + description}
     if required:
@@ -87,7 +91,7 @@ def envelope(data):
 
 def definitions():
     obj('ShopCategoryView', {'id': ID, 'code': text('HAIRCUT'), 'name': text('理发')}, ('id', 'code', 'name'))
-    obj('BusinessHour', {'weekday': integer(5, minimum=1, maximum=7), 'startTime': TIME,
+    obj('BusinessHourView', {'weekday': integer(5, minimum=1, maximum=7), 'startTime': TIME,
                          'endTime': text('18:00', pattern=TIME['pattern'])}, ('weekday', 'startTime', 'endTime'))
     shop = {'id': ID, 'name': text('星海模拟理发店'), 'category': ref('ShopCategoryView'),
             'locationText': text('虚构校区服务中心 101'), 'businessEnabled': BOOL, 'openNow': BOOL,
@@ -95,7 +99,7 @@ def definitions():
             'reviewCount': integer(0, minimum=0)}
     obj('ShopSummary', shop, shop.keys())
     obj('ShopDetail', {**shop, 'description': text('仅用于学习验收的虚构店铺'),
-                       'businessHours': array(ref('BusinessHour')), 'campusCode': text('XINGHAI_MAIN')})
+                       'businessHours': array(ref('BusinessHourView')), 'campusCode': text('XINGHAI_MAIN')})
     obj('MerchantShopView', {**S['ShopDetail']['properties'], 'approvalStatus': APPROVAL,
                             'approvalReason': nullable(text('管理员审核原因')), 'memberStatus': enum('PENDING', 'ACTIVE', 'DISABLED'),
                             'version': VERSION}, description='本人店铺可见审核信息，不提供账号摘要和会话字段。')
@@ -107,7 +111,13 @@ def definitions():
         'locationText': text('虚构校区服务中心 101', maxLength=200),
         'description': text('模拟商家申请', maxLength=1000)},
         ('username', 'password', 'nickname', 'categoryId', 'shopName', 'locationText'), request=True,
-        description='同事务创建 MERCHANT、PENDING 店铺与 PENDING OWNER 成员；规则仍待定稿，不自动登录。')
+        description='同事务创建 MERCHANT、PENDING 店铺与 PENDING OWNER 成员；已按 ADR-0010 定稿，不自动登录。')
+    obj('MerchantResubmitRequest', {'categoryId': ID, 'shopName': text('星海模拟理发店', maxLength=80),
+        'locationText': text('虚构校区服务中心 101', maxLength=200), 'description': text('修改后的申请资料', maxLength=1000),
+        'expectedVersion': VERSION}, ('categoryId', 'shopName', 'locationText', 'expectedVersion'),
+        description='ADR-0010 已确认：仅本人 REJECTED 店铺可修改重提，复用原账号及店铺，版本加一并保留审核历史。', request=True)
+    if 'MerchantResubmitRequest' not in BASE_SCHEMAS:
+        S['MerchantResubmitRequest']['x-decision-status'] = 'confirmed'
     obj('MerchantApplicationView', {'accountId': ID, 'shopId': ID, 'approvalStatus': enum('PENDING')},
         ('accountId', 'shopId', 'approvalStatus'))
     service = {'id': ID, 'serviceType': SERVICE_TYPES, 'name': text('模拟标准理发', maxLength=80),
@@ -172,6 +182,8 @@ def definitions():
     for name in ('paidAt', 'acceptedAt', 'startedAt', 'completedAt', 'closedAt'):
         detail[name] = nullable(INSTANT)
     obj('OrderDetail', detail, description='booking / printing 恰好一个非空；公共状态、支付状态和打印进度须组合一致。')
+    if 'OrderDetail' in BASE_SCHEMAS:
+        obj('PlannedOrderDetail', detail, description='后续支付/履约/打印的目标详情；当前运行 OrderDetail 支持预约、模拟支付、商家确认与允许窗口内退款，不能把此模型视为已实现。')
     obj('OrderEventView', {'id': ID, 'eventSeq': VERSION, 'action': text('CREATE'),
                            'fromStatus': nullable(ORDER_STATES), 'toStatus': ORDER_STATES,
                            'actorType': enum('STUDENT', 'MERCHANT', 'ADMIN', 'SYSTEM'),
@@ -180,28 +192,28 @@ def definitions():
                           'paymentNo': text('SIM_PAY_001'), 'amount': AMOUNT, 'paidAt': INSTANT, 'acceptanceDeadline': INSTANT})
     obj('ReviewWrite', {'rating': integer(5, minimum=1, maximum=5),
                         'content': text('模拟评价', minLength=1, maxLength=1000)}, ('rating', 'content'), request=True)
-    obj('ShopPatch', {'name': text('星海模拟店铺', maxLength=80), 'locationText': text('虚构校区 101', maxLength=200),
+    obj('ShopPatchRequest', {'name': text('星海模拟店铺', maxLength=80), 'locationText': text('虚构校区 101', maxLength=200),
                       'description': text('模拟介绍', maxLength=1000), 'businessEnabled': BOOL, 'expectedVersion': VERSION},
         ('expectedVersion',), request=True)
-    obj('BusinessHoursWrite', {'expectedVersion': VERSION, 'intervals': array(ref('BusinessHour'))},
+    obj('BusinessHoursRequest', {'expectedVersion': VERSION, 'intervals': array(ref('BusinessHourView'))},
         ('expectedVersion', 'intervals'), request=True)
     service_write = {k: v for k, v in service.items() if k not in ('id', 'version')}
     service_write['enabled'] = BOOL
-    obj('ServiceWrite', service_write, ('serviceType', 'name', 'priceAmount', 'durationMinutes', 'enabled'), request=True)
-    obj('ServicePatch', {**{k: v for k, v in service_write.items() if k != 'serviceType'}, 'expectedVersion': VERSION},
+    obj('ServiceCreateRequest', service_write, ('serviceType', 'name', 'priceAmount', 'durationMinutes'), request=True)
+    obj('ServicePatchRequest', {**{k: v for k, v in service_write.items() if k != 'serviceType'}, 'expectedVersion': VERSION},
         ('expectedVersion',), request=True, description='serviceType、shopId 不可改。')
     price = {'paperSize': enum('A4'), 'colorMode': enum('BW', 'COLOR'), 'sideMode': enum('SINGLE', 'DOUBLE'),
-             'pricePerImpression': {**AMOUNT, 'minimum': 1, 'example': 20}, 'enabled': BOOL}
+             'pricePerImpression': {**AMOUNT, 'minimum': 1, 'maximum': 100000, 'example': 20}, 'enabled': BOOL}
     obj('PrintPriceView', {'id': ID, **price, 'version': VERSION})
-    obj('PrintPriceWrite', {**price, 'expectedVersion': nullable(VERSION)}, (*price.keys(), 'expectedVersion'), request=True,
+    obj('PrintPriceRuleRequest', {**price, 'expectedVersion': nullable(VERSION)}, (*price.keys(), 'expectedVersion'), request=True,
         description='已有规格传当前版本；新规格传 null。遗漏规格保持不变；任一项失败整批回滚。')
-    obj('PrintPricesWrite', {'rules': array(ref('PrintPriceWrite'))}, ('rules',), request=True)
-    obj('BarberWrite', {'displayName': text('模拟理发师', maxLength=40), 'serviceIds': array(ID)},
+    obj('PrintPricesRequest', {'rules': array(ref('PrintPriceRuleRequest'), minItems=1, maxItems=4)}, ('rules',), request=True)
+    obj('BarberCreateRequest', {'displayName': text('模拟理发师', maxLength=40), 'serviceIds': array(ID, maxItems=50)},
         ('displayName', 'serviceIds'), request=True)
-    obj('BarberPatch', {'displayName': text('模拟理发师', maxLength=40), 'enabled': BOOL, 'expectedVersion': VERSION},
+    obj('BarberPatchRequest', {'displayName': text('模拟理发师', maxLength=40), 'enabled': BOOL, 'expectedVersion': VERSION},
         ('expectedVersion',), request=True)
-    obj('BarberServicesWrite', {'serviceIds': array(ID), 'expectedVersion': VERSION}, ('serviceIds', 'expectedVersion'), request=True)
-    obj('ScheduleInterval', {'startAt': INSTANT, 'endAt': text('2026-10-16T10:00:00.000Z', format='date-time')}, ('startAt', 'endAt'), request=True)
+    obj('BarberServicesRequest', {'serviceIds': array(ID, maxItems=50), 'expectedVersion': VERSION}, ('serviceIds', 'expectedVersion'), request=True)
+    obj('ScheduleInterval', {'startTime': text('09:00', pattern=r'^([01][0-9]|2[0-3]):(00|15|30|45)$'), 'endTime': text('12:00', pattern=r'^([01][0-9]|2[0-3]):(00|15|30|45)$')}, ('startTime', 'endTime'), request=True)
     obj('ScheduleView', {'date': DATE, 'intervals': array(ref('ScheduleInterval')), 'barberVersion': VERSION})
     obj('ScheduleWrite', {'date': DATE, 'intervals': array(ref('ScheduleInterval')), 'expectedBarberVersion': VERSION},
         ('date', 'intervals', 'expectedBarberVersion'), request=True)
@@ -259,6 +271,11 @@ def sample(schema, seen=()):
 
 def add(method, path, title, tag, permission, response, body=None, params=(), status=200, notes='', conflicts=None, idem=False):
     full_path = '/api/v1' + path
+    if method in BASE['paths'].get(full_path, {}):
+        return  # Already copied, without rewriting the implemented contract.
+    if response == 'OrderDetail' and 'PlannedOrderDetail' in S:
+        response = 'PlannedOrderDetail'  # Keep future printing/payment fields without rewriting live DTOs.
+    confirmed = (method, path) in CONFIRMED
     op = {'tags': [tag], 'summary': '[待开发·规则待确认] ' + title,
           'operationId': method + ''.join(part[:1].upper() + part[1:] for part in re.findall(r'[a-zA-Z0-9]+', path)),
           'description': '【待开发／设计讨论稿】以下为目标契约，并非当前服务行为。'
@@ -267,6 +284,10 @@ def add(method, path, title, tag, permission, response, body=None, params=(), st
           'x-implementation-status': 'planned', 'x-decision-status': 'draft-needs-review',
           'x-apifox-status': 'designing', 'x-required-permission': permission,
           'x-contract-source': 'docs/v1-api-contract.md', 'parameters': [], 'responses': {}}
+    if confirmed:
+        op['summary'] = '[待开发·规则已确认] ' + title
+        op['description'] = '【待开发／ADR-0010 规则已确认】尚未实现，当前调用不能视为已有能力。权限：' + permission + '。\n\n' + notes
+        op['x-decision-status'] = 'confirmed'
     for name in re.findall(r'\{([^}]+)\}', path):
         op['parameters'].append(parameter(name, ID, 'path', True))
     op['parameters'].extend(copy.deepcopy(params))
@@ -280,7 +301,7 @@ def add(method, path, title, tag, permission, response, body=None, params=(), st
         content = {'schema': schema}
         if media == 'application/json':
             content['example'] = sample(schema)
-            if body == 'ServiceWrite':
+            if body == 'ServiceCreateRequest':
                 content['example']['durationMinutes'] = 30
         op['requestBody'] = {'required': True, 'content': {media: content}}
     if response == 'PDF':
@@ -311,7 +332,7 @@ def add(method, path, title, tag, permission, response, body=None, params=(), st
         replay['description'] = '目标幂等重放响应，返回同一资源（待开发）'
         replay['headers'] = {'Idempotency-Replayed': {'schema': {'type': 'boolean', 'example': True}}}
         op['responses']['200'] = replay
-    if '/payments/mock' in path or any(path.endswith('/' + action) for action in ('cancel', 'reject', 'close-exception')):
+    if '/payments/mock' in path or ('/orders/' in path and any(path.endswith('/' + action) for action in ('cancel', 'reject', 'close-exception'))):
         error_codes['503'] += ' / MOCK_PAYMENT_DISABLED（产生模拟资金流水时）'
     for code, description in error_codes.items():
         op['responses'][code] = {'description': '目标失败响应：' + description,
@@ -321,18 +342,19 @@ def add(method, path, title, tag, permission, response, body=None, params=(), st
 
 
 def operations():
-    public = '03 商家申请与公开查询'
+    public = '03 商家入驻'
     add('post', '/merchant-applications', '提交商家申请', public, '匿名', 'MerchantApplicationView', 'MerchantApplicationRequest', status=201,
-        notes='商家账号、待审店铺、店主成员同事务创建；不自动登录。categoryId 来自启用分类，campusCode 服务端固定。拒绝后重提策略待讨论。', conflicts='USERNAME_EXISTS')
+        notes='商家账号、待审店铺、店主成员同事务创建；不自动登录。categoryId 来自启用分类，campusCode 服务端固定。拒绝后可重提，见 ADR-0010。', conflicts='USERNAME_EXISTS')
     add('get', '/shop-categories', '查询启用分类', public, '匿名', array(ref('ShopCategoryView')))
     add('get', '/shops', '分页查询公开商家', public, '匿名', 'ShopPage', params=[parameter('keyword', text('模拟')), parameter('categoryId', ID)] + PAGING,
-        notes='仅 APPROVED，排序 id ASC；其他列表默认 createdAt DESC,id DESC。')
-    add('get', '/shops/{shopId}', '读取公开商家详情', public, '匿名', 'ShopDetail', notes='未审核与不存在均返回 404。')
+        notes='ADR-0019：APPROVED、ACTIVE OWNER 及 ACTIVE/MERCHANT 经营账号可见，停业和分类停用不隐藏；名称字面包含搜索、分类筛选、id ASC；openNow 不等于可预约，评价为 null/0 阶段值。')
+    add('get', '/shops/{shopId}', '读取公开商家详情', public, '匿名', 'ShopDetail', notes='ADR-0019：可见资格同列表，不可见与不存在统一 404；公开独立 VO，不泄露账号、成员或审核信息。')
     add('get', '/shops/{shopId}/services', '查询上架服务', public, '匿名', array(ref('ServiceView')), params=[parameter('serviceType', SERVICE_TYPES)])
-    add('get', '/shops/{shopId}/barbers', '查询可用理发师', public, '匿名', array(ref('PublicBarberView')), params=[parameter('serviceId', ID)])
-    add('get', '/shops/{shopId}/booking-slots', '查询可预约时段', public, '匿名', 'BookingSlotsView',
+    add('get', '/shops/{shopId}/barbers', '查询可用理发师', public, '匿名', array(ref('PublicBarberView')), params=[parameter('serviceId', ID)],
+        notes='ADR-0020：仅启用且有本店上架理发服务的人员；筛选目标不可见统一 404，无匹配人员 []。返回全部公开 serviceIds，不随筛选截断；无排班仍可浏览，不等于可预约。')
+    add('get', '/shops/{shopId}/booking-slots', '查询预约候选时段（暂不扣订单占用）', public, '匿名', 'BookingSlotsView',
         params=[parameter('serviceId', ID, required=True), parameter('barberId', ID, required=True), parameter('date', DATE, required=True)],
-        notes='查询不预留资源；创建时复核。未来 7 天、提前 2 小时、15 分钟对齐；日期计算和边界仍需确认。')
+        notes='ADR-0021/0022：配置与排班候选排除 HELD/ACTIVE/CONSUMED 真实占用；上海今天至第 6 天，至少提前 2 小时（等于允许）、15 分钟起点网格，完整服务落在营业与排班交集。不预留资源；待支付预约已接入锁内占用复核与存量保护，模拟支付与待接单退款按ADR-0023实现；商家确认按ADR-0024实现；开始/完成后续开发。')
     add('get', '/shops/{shopId}/reviews', '分页查询公开评价', public, '匿名', 'PublicReviewPage', params=PAGING,
         notes='只返回 VISIBLE，不公开学生 ID、订单 ID、账号名。')
     obj('PdfUpload', {'file': {'type': 'string', 'format': 'binary', 'description': '单个 PDF，最多 20 MiB'}}, ('file',), request=True)
@@ -341,7 +363,7 @@ def operations():
     add('get', '/files/{fileId}', '读取文件元数据', '04 文件与打印报价', '本人学生或本店有效履约商家', 'FileView',
         notes='先鉴权再判过期；管理员没有默认内容权限。')
     add('get', '/files/{fileId}/content', '下载受控 PDF 附件', '04 文件与打印报价', '本人学生或本店有效履约商家', 'PDF',
-        notes='商家须有本店 ACCEPTED / IN_SERVICE 打印订单。文件以附件流返回，不暴露存储位置或永久直链。')
+        notes='商家凭本店已接单、打印中或待取件的合格已付关联授权；完成/关闭与错配状态不授权。文件以附件流返回，不暴露存储位置或永久直链。')
     add('post', '/print-quotes', '计算打印报价', '04 文件与打印报价', 'STUDENT', 'PrintQuote', 'PrintQuoteRequest',
         notes='不创建订单，不占用文件；按印刷面数计价，双面不将印刷面数减半。报价版本及 copies 上限仍待定稿。',
         conflicts='SHOP_UNAVAILABLE / SERVICE_UNAVAILABLE')
@@ -367,32 +389,35 @@ def operations():
         notes='COMPLETED + PAID，只能评价一次；隐藏评价仍阻止重发。具体内容校验细节待确认。', conflicts='REVIEW_NOT_ALLOWED / REVIEW_ALREADY_EXISTS')
     add('get', '/orders/{orderId}/review', '读取本人订单评价', student, '本人 STUDENT', 'OwnReviewView', notes='尚未评价返回 404。')
     config = '06 商家经营配置'
+    add('post', '/merchant/shop/resubmit', '修改并重新提交被拒申请', public, '本人 MERCHANT，店铺 REJECTED',
+        'MerchantShopView', 'MerchantResubmitRequest', notes='复用原账号和店铺，REJECTED → PENDING，版本加一；成员保持 PENDING，默认停业，保留审核历史。待审不能修改或撤回。',
+        conflicts='CONFIG_VERSION_CONFLICT / SHOP_STATE_CONFLICT')
     merchant = 'MERCHANT + ACTIVE 成员 + APPROVED 店铺'
     add('get', '/merchant/shop', '查看本人店铺审核信息', config, 'MERCHANT，本人申请者可未审核', 'MerchantShopView', notes='未审核可读取，不代表可经营。')
-    add('patch', '/merchant/shop', '修改本人店铺资料', config, merchant, 'MerchantShopView', 'ShopPatch',
-        notes='不接收审批状态；临时停业不影响存量履约。平台暂停后的存量处理另行确认。', conflicts='CONFIG_VERSION_CONFLICT')
-    add('put', '/merchant/shop/business-hours', '更新店铺营业时间', config, merchant, 'MerchantShopView', 'BusinessHoursWrite',
-        notes='不跨午夜，区间不得重叠；同事务更新 shop.version。涉及已有预约的边界待定稿。', conflicts='CONFIG_VERSION_CONFLICT / SCHEDULE_CONFLICT')
+    add('patch', '/merchant/shop', '修改本人店铺资料', config, merchant, 'MerchantShopView', 'ShopPatchRequest',
+        notes='ADR-0013：资料直接生效不重审，字段省略保留、null 拒绝；实际变更才增加版本。营业开关独立保存意愿，接单还需其他条件；临时停业不影响存量履约。', conflicts='CONFIG_VERSION_CONFLICT')
+    add('put', '/merchant/shop/business-hours', '更新店铺营业时间', config, merchant, 'MerchantShopView', 'BusinessHoursRequest',
+        notes='ADR-0014：完整替换整周，原始每天最多 4 段/整周 28 段；重叠拒绝、相邻合并，空数组清空且不改变手动开关；实际变化才递增店铺版本。存量预约保护随后续模块落实。', conflicts='CONFIG_VERSION_CONFLICT')
     add('get', '/merchant/services', '查询本店全部服务', config, merchant, array(ref('MerchantServiceView')),
         params=[parameter('serviceType', SERVICE_TYPES), parameter('enabled', BOOL)])
-    add('post', '/merchant/services', '创建本店服务', config, merchant, 'MerchantServiceView', 'ServiceWrite', status=201,
-        notes='理发为固定价格、15 分钟倍数时长；打印时长 null、价格只作起价。不能超出店铺支持场景。')
-    add('patch', '/merchant/services/{serviceId}', '修改本店服务', config, merchant, 'MerchantServiceView', 'ServicePatch',
-        notes='不可更改 shopId、serviceType；下架不修改存量订单快照。', conflicts='CONFIG_VERSION_CONFLICT')
+    add('post', '/merchant/services', '创建本店服务', config, merchant, 'MerchantServiceView', 'ServiceCreateRequest', status=201,
+        notes='ADR-0015：分类与类型匹配；金额 1～100000 分，理发时长 15～240 且为 15 倍数，PRINT 必须显式 null；省略 enabled 默认下架，服务版本从 0 开始。')
+    add('patch', '/merchant/services/{serviceId}', '修改本店服务', config, merchant, 'MerchantServiceView', 'ServicePatchRequest',
+        notes='ADR-0015：不可更改归属或类型，省略保持、null 拒绝（PRINT 时长除外）；使用服务版本，无变化不递增，不改变店铺版本。下架不删除。', conflicts='CONFIG_VERSION_CONFLICT')
     for method, title in [('get', '读取本店打印价目'), ('put', '批量更新打印价目')]:
         add(method, '/merchant/services/{serviceId}/print-prices', title, config, merchant, array(ref('PrintPriceView')),
-            'PrintPricesWrite' if method == 'put' else None,
-            notes='按规格 upsert；未传规格保留；已有规则携带版本、新规格为 null；单次重复规格 400，整批原子提交。',
+            'PrintPricesRequest' if method == 'put' else None,
+            notes='ADR-0016：本店 PRINT 服务 A4 四种规格，1～100000 整数分/面；一次 1～4 项按规格新增/更新，遗漏保留；已有规则传价目版本、新规则显式 null，整批回滚。不改服务/店铺版本或参考起价。',
             conflicts='CONFIG_VERSION_CONFLICT' if method == 'put' else None)
     add('get', '/merchant/barbers', '查询本店理发师', config, merchant, array(ref('MerchantBarberView')))
-    add('post', '/merchant/barbers', '创建理发师及服务关系', config, merchant, 'MerchantBarberView', 'BarberWrite', status=201)
-    add('patch', '/merchant/barbers/{barberId}', '修改本店理发师', config, merchant, 'MerchantBarberView', 'BarberPatch',
-        notes='有存量预约时停用策略需复核；不能直接关闭已有订单。', conflicts='CONFIG_VERSION_CONFLICT / SCHEDULE_CONFLICT')
-    add('put', '/merchant/barbers/{barberId}/services', '更新理发师可提供服务', config, merchant, 'MerchantBarberView', 'BarberServicesWrite',
-        notes='服务须属于本店且为 HAIRCUT；覆盖服务关系，递增理发师版本。', conflicts='CONFIG_VERSION_CONFLICT / SCHEDULE_CONFLICT')
+    add('post', '/merchant/barbers', '创建理发师及服务关系', config, merchant, 'MerchantBarberView', 'BarberCreateRequest', status=201)
+    add('patch', '/merchant/barbers/{barberId}', '修改本店理发师', config, merchant, 'MerchantBarberView', 'BarberPatchRequest',
+        notes='ADR-0017：姓名/启停部分修改，省略保持、null 拒绝；与绑定共用理发师版本，无变化不递增。预约保护在相应模块接入前落实。', conflicts='CONFIG_VERSION_CONFLICT')
+    add('put', '/merchant/barbers/{barberId}/services', '更新理发师可提供服务', config, merchant, 'MerchantBarberView', 'BarberServicesRequest',
+        notes='ADR-0017：0～50 个不同本店 HAIRCUT 服务 ID，允许下架服务；完整替换、空数组清空，实际变化才递增人员版本。', conflicts='CONFIG_VERSION_CONFLICT')
     add('get', '/merchant/barbers/{barberId}/schedule', '读取理发师当天排班', config, merchant, 'ScheduleView', params=[parameter('date', DATE, required=True)])
     add('put', '/merchant/barbers/{barberId}/schedule', '更新理发师当天排班', config, merchant, 'ScheduleView', 'ScheduleWrite',
-        notes='按理发师+日期保护行协调；不重叠、不跨午夜、不侵占有效预约；空数组清空须没有存量有效预约，细节待确认。',
+        notes='按 ADR-0018：店铺入口后取得日期保护行，校园今天至第 6 天、15 分钟对齐、最多 4 段；共用人员版本，[] 清空；有效预约保护留到订单接入前。',
         conflicts='CONFIG_VERSION_CONFLICT / SCHEDULE_CONFLICT')
     fulfillment = '07 商家订单履约'
     add('get', '/merchant/orders', '分页查询本店订单', fulfillment, merchant, 'OrderPage', params=ORDER_FILTERS)
@@ -413,9 +438,9 @@ def operations():
     add('get', '/admin/shops', '分页查询含待审店铺', admin, 'ADMIN', 'AdminShopPage', params=[parameter('approvalStatus', APPROVAL)] + PAGING)
     add('get', '/admin/shops/{shopId}', '读取商家申请详情', admin, 'ADMIN', 'MerchantShopView')
     add('post', '/admin/shops/{shopId}/approve', '批准商家申请', admin, 'ADMIN', 'MerchantShopView', 'VersionWrite',
-        notes='PENDING → APPROVED，同事务激活成员；具体审核入口仍为设计稿。', conflicts='CONFIG_VERSION_CONFLICT')
+        notes='ADR-0010：仅 PENDING → APPROVED，同事务激活 OWNER，默认仍停业，保存审核人、时间和审核历史；旧版本或状态不符冲突。', conflicts='CONFIG_VERSION_CONFLICT / SHOP_STATE_CONFLICT')
     add('post', '/admin/shops/{shopId}/reject', '拒绝商家申请', admin, 'ADMIN', 'MerchantShopView', 'ReviewDecisionWrite',
-        notes='PENDING → REJECTED，不激活成员。', conflicts='CONFIG_VERSION_CONFLICT')
+        notes='ADR-0010：仅 PENDING → REJECTED，成员保持 PENDING，reason 去首尾空白后 1～300 码点，保存审核历史，允许本人修改重提。', conflicts='CONFIG_VERSION_CONFLICT / SHOP_STATE_CONFLICT')
     add('get', '/admin/accounts', '分页查询账号摘要', admin, 'ADMIN', 'AdminAccountPage',
         params=[parameter('role', enum('STUDENT', 'MERCHANT', 'ADMIN')), parameter('status', enum('ACTIVE', 'DISABLED'))] + PAGING,
         notes='不返回摘要或会话；不提供公开创建管理员或修改任意角色。')
@@ -453,7 +478,7 @@ def validate():
             assert op.get('responses') and op['tags'], path
             if op['x-implementation-status'] == 'planned':
                 assert op['x-apifox-status'] == 'designing' and '待开发' in op['summary'], path
-                assert op['x-decision-status'] == 'draft-needs-review', path
+                assert op['x-decision-status'] == ('confirmed' if (method, path.removeprefix('/api/v1')) in CONFIRMED else 'draft-needs-review'), path
             else:
                 original = copy.deepcopy(BASE['paths'][path][method])
                 original['summary'] = '[已实现] ' + original['summary']
@@ -488,13 +513,15 @@ BASE_SCHEMAS = BASE['components']['schemas']
 S.update(copy.deepcopy(BASE_SCHEMAS))
 DESIGN = copy.deepcopy(BASE)
 DESIGN['openapi'] = '3.0.3'
-DESIGN['info'] = {'title': 'CampusLife V1 完整接口设计稿（含待开发）', 'version': 'v1-design-0.1',
-    'description': '完整规划目录，不等于已上线能力。已实现接口沿用运行快照；待开发接口均为规则待确认的讨论稿。'
+DESIGN['info'] = {'title': 'CampusLife 完整接口目录（含后续阶段已实现操作）', 'version': 'v1-design-0.3',
+    'description': '完整规划目录，不等于已上线能力。已实现接口沿用运行快照；入驻审核按 ADR-0010、经营资料与开关按 ADR-0013、每周营业时间按 ADR-0014、服务配置按 ADR-0015、打印价目按 ADR-0016、理发师与绑定按 ADR-0017、按日排班及营业时间保护按 ADR-0018、公开商家目录按 ADR-0019、公开理发师按 ADR-0020、预约候选时段按 ADR-0021、待支付预约及真实占用/释放按 ADR-0022、模拟支付与待接单退款按 ADR-0023、商家确认及已接单学生取消按 ADR-0024、商家无法履约取消按 ADR-0025、预约开始/完成按 ADR-0026、管理员预约异常按 ADR-0027、学生订单列表按 ADR-0028、商家订单列表按 ADR-0029、订单事件查询按 ADR-0030、PDF上传及本人元数据按 ADR-0031、本人PDF下载按 ADR-0032、打印报价按 ADR-0033、打印订单及引用保护按 ADR-0034、打印模拟支付按 ADR-0035、商家打印确认按 ADR-0036、商家打印取消按 ADR-0037、商家内容下载按 ADR-0038、打印开始/待取件按 ADR-0039、学生取件按 ADR-0040、管理员打印异常按 ADR-0041、学生本人评价按 ADR-0042、公开评价/真实评分按 ADR-0043、管理员隐藏评价按 ADR-0044、管理员账号列表按 ADR-0045、账号状态按 ADR-0046 确认，其余待开发接口仍为讨论稿。'
+                   '商家活动按ADR-0050、同步领取按ADR-0051、两类订单用券按ADR-0052接入；RabbitMQ发布链按ADR-0053接入，无新增HTTP；通知消费与本人接口已实现；Lua预留/恢复及受控异步受理已按ADR-0054接通，默认SYNC；性能/真进程窗口留M08.4。'
                    '不能仅因导入成功就当作业务已实现或规则已批准。所有金额均模拟、示例均虚构。'
                    '测试时替换示例 ID、版本、日期和实际登录 token。浏览器运行文档仍只有已实现接口。'}
 DESIGN['components']['schemas'] = S
-DESIGN['tags'] += [{'name': name, 'description': '待开发；业务规则与字段细节仍需实现前复核。'} for name in
-                  ('03 商家申请与公开查询', '04 文件与打印报价', '05 学生订单', '06 商家经营配置', '07 商家订单履约', '08 管理员')]
+DESIGN['tags'] += [{'name': name, 'description': '待开发；入驻审批遵循 ADR-0010，其他规则仍需实现前复核。'} for name in
+                  ('03 商家入驻', '04 文件与打印报价', '05 学生订单', '06 商家经营配置', '07 商家订单履约', '08 管理员')
+                  if name not in {tag['name'] for tag in BASE['tags']}]
 for item in DESIGN['paths'].values():
     for method, op in item.items():
         if method in METHODS:
@@ -504,7 +531,7 @@ for item in DESIGN['paths'].values():
 definitions()
 operations()
 counts = validate()
-DESIGN['x-implementation-summary'] = dict(counts)
+DESIGN['x-implementation-summary'] = {'implemented': counts['implemented'], 'planned': counts['planned']}
 rendered = json.dumps(DESIGN, ensure_ascii=False, indent=2) + '\n'
 parser = argparse.ArgumentParser(description=__doc__)
 parser.add_argument('--check', action='store_true', help='Validate coverage and check that the committed file is current')

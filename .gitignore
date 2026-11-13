@@ -1,5 +1,6 @@
 target/
 .cache/
+.local/
 .tools/
 .idea/
 *.iml
@@ -7,3 +8,9 @@ target/
 .env
 .env.*
 !.env.example
+frontend/node_modules/
+frontend/dist/
+frontend/coverage/
+*.tsbuildinfo
+__pycache__/
+*.py[cod]

@@ -1,0 +1,155 @@
+{
+  "task": "M06.2-A",
+  "date": "2026-11-06",
+  "status": "DESIGN_PREPARED_AWAITING_ADOPTION_NOT_IMPLEMENTED_OR_MEASURED",
+  "documentOnly": true,
+  "productionChanged": false,
+  "codeChanged": false,
+  "ecsContactedThisTask": false,
+  "dockerStartedThisTask": false,
+  "testsRun": false,
+  "pilotRun": false,
+  "formalMeasurementRun": false,
+  "formalBuildInputsUnchanged": 463,
+  "selectedSourceAndEvidenceUnchanged": [
+    {
+      "path": "src/test/java/com/campuslife/PublicShopQueryFixture.java",
+      "bytes": 12164,
+      "sha256": "2d212f3f8bf8798fe84ceaf33ee746fb66a4b4021ea1d4458b0d11e89d4d5225"
+    },
+    {
+      "path": "src/test/java/com/campuslife/CouponMeasurementIT.java",
+      "bytes": 23737,
+      "sha256": "1c590b162c88a2b834c2b72e42e4af44bfac6ddad220e7cc85a012ee739da70a"
+    },
+    {
+      "path": "src/test/java/com/campuslife/CouponMeasurementChild.java",
+      "bytes": 3001,
+      "sha256": "e185d55dd66d2e605a7547fb92d95af1836e7bb25d41ae970c155669794c4780"
+    },
+    {
+      "path": "scripts/benchmark-coupons.ps1",
+      "bytes": 1640,
+      "sha256": "87fb3e61094425cb76b57ff8d63a4126b39ceb813de3b15d0a6bc23d67834c29"
+    },
+    {
+      "path": "scripts/test_deploy_remaining.py",
+      "bytes": 16736,
+      "sha256": "d3d0ca18c4f5230ae9d411e0eddfcae8863cea25f80efd430f81ac8025894887"
+    },
+    {
+      "path": "scripts/deploy_base.py",
+      "bytes": 28148,
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977"
+    },
+    {
+      "path": "scripts/deploy_observability.py",
+      "bytes": 4284,
+      "sha256": "3c3f3a35b2c366af4b3fab3f4a238d5cc4a0c7513abe06c6208b01f6942d39c4"
+    },
+    {
+      "path": "deploy/base/compact4g.yaml",
+      "bytes": 1846,
+      "sha256": "d6fc1499992abafa171aa1efb4a41d7b5fdc2f98040016df661993a68d1df4e7"
+    },
+    {
+      "path": "deploy/base/components.yaml",
+      "bytes": 4444,
+      "sha256": "7bac7b22e4c3e80ddfa35333ad5c4133b83063693be305b20d22c83b00d5d848"
+    },
+    {
+      "path": "docs/reports/cloud-final-remaining-2026-11-06.json",
+      "bytes": 60787,
+      "sha256": "4f6878d5bfa2815f7ca3884dd466772b900e494064b6710198a7ef94d77149f4"
+    },
+    {
+      "path": "docs/reports/outbox-publisher-comparison-2026-11-01.md",
+      "bytes": 10014,
+      "sha256": "637b041635505b847657a15b507ab5790feceaba3db49a98d5949c4f08197417"
+    }
+  ],
+  "localJarSha256Unchanged": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+  "proposal": {
+    "path": "docs/comprehensive-load-design.md",
+    "bytes": 14905,
+    "sha256": "96da7c779348618e0f17fcd4fb0ca52a133799d63250541199c2912db01da8c0"
+  },
+  "proposedParameters": {
+    "environment": "Existing ECS with isolated test showcase/compact4g/observe and original pinned formal artifact",
+    "tool": "Java21 standalone measurement-only tool container using existing image/libs, 256 MiB/no extra swap, same CPU0/1; proposed, absent",
+    "dataset": {
+      "shops": 1000,
+      "visiblePercent": 60,
+      "historyOrdersAndReviews": 11000,
+      "activeStudentPool": 180,
+      "campaignsPerFormalBatch": 3,
+      "stockPerCampaign": 20
+    },
+    "foregroundConcurrency": [
+      1,
+      5,
+      10
+    ],
+    "batchOrders": [
+      [
+        1,
+        5,
+        10
+      ],
+      [
+        5,
+        10,
+        1
+      ],
+      [
+        10,
+        1,
+        5
+      ]
+    ],
+    "foregroundRequestsPerSegment": 600,
+    "requestCountsPerSegment": {
+      "shopDetail": 360,
+      "shopList": 120,
+      "ownOrderList": 60,
+      "newAsyncClaims": 60
+    },
+    "formalSegments": 9,
+    "maxFormalForegroundRequests": 5400,
+    "maxFirstClaimPosts": 540,
+    "warmupReadRequestsPerSegment": 100,
+    "foregroundSecondsMax": 90,
+    "observationAfterForegroundSecondsMax": 60,
+    "httpClientRequestSecondsMax": 3,
+    "metricsRequestSecondsMax": 2,
+    "metricsTargetIntervalSeconds": 5,
+    "claimPollTargetMs": 250,
+    "claimPollGlobalGetsPerSecondMax": 40,
+    "pilot": {
+      "concurrency": 5,
+      "foregroundRequests": 60,
+      "stock": 2,
+      "totalSecondsMax": 900
+    },
+    "formalBatchSecondsMax": 1200,
+    "cleanupReservedSeconds": 120,
+    "closedLoopNotArrivalRate": true,
+    "rightCensoredRetained": true
+  },
+  "knownCompatibilityBoundary": "Existing PublicShopQueryFixture requires V23 and Windows native MySQL paths; new cloud/V24 test guard required; old protection not relaxed.",
+  "nextTask": {
+    "id": "M06.2-B.1",
+    "status": "RECOMMENDED_AFTER_ADOPTION_NOT_STARTED",
+    "scope": "Case supervision/status/atomic receipt/identity/deadline/cleanup on short no-business tasks; no seven-service workload."
+  },
+  "methodReference": {
+    "url": "https://grafana.com/docs/k6/latest/using-k6/scenarios/concepts/open-vs-closed/",
+    "use": "Closed-loop interpretation only; k6 is not selected or installed"
+  },
+  "limitations": [
+    "No performance results or workload runner exists for this plan yet.",
+    "Temporary tool secret mounts and fixture boundaries require adoption before implementation.",
+    "Last cloud resource audit is historical; this task did not query live ECS state.",
+    "No maximal-capacity, HA, fixed SLA/RTO or real-operations claim."
+  ]
+}

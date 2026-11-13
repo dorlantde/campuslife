@@ -1,0 +1,374 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "task": "M06.1-D",
+  "status": "container lifecycle and guide verified; independent Linux host conditional item not executed",
+  "realLinuxHostExecuted": false,
+  "linuxHostCondition": "User explicitly reported no existing Linux host/VM; requested container verification and guide only",
+  "actualPlatform": {
+    "host": "Windows",
+    "engine": "Docker Desktop Linux",
+    "engineVersion": "29.8.0",
+    "architecture": "x86_64"
+  },
+  "lifecycleRecord": {
+    "path": ".cache/deploy-base/25cb1d0a744446eb8a8b50d63cfe5fb2/showcase-acceptance.json",
+    "sha256": "a622198debe929e8f3e69e34637582fd6c83ce6f5d4ba1d8862257cc11ec589b",
+    "task": "M06.1-D",
+    "checks": [
+      "seven-healthy-services-with-single-app",
+      "five-persistent-volumes-and-three-networks",
+      "original-schema-and-no-default-business-admin",
+      "private-management-works-in-seven-service-mode",
+      "business-openapi-remains-75",
+      "campaign-remains-default-sync-before-explicit-transition",
+      "async-admission-is-durable-202",
+      "new-print-file-uses-s3-with-complete-content",
+      "real-order-uses-claimed-coupon-and-frozen-payable",
+      "review-statistics-fill-real-rating-redis",
+      "funds-coupon-notification-and-consumption-are-unique",
+      "all-seven-stopped-with-five-volumes-retained",
+      "same-five-volumes-and-24-secret-fingerprints",
+      "new-application-process-after-whole-stack-stop",
+      "async-paused-intent-and-issued-facts-survive-new-run",
+      "s3-and-local-identities-and-old-file-survive",
+      "old-session-order-payment-and-notification-survive",
+      "claim-idempotency-replays-after-restart",
+      "rating-cache-rebuilds-from-preserved-database",
+      "private-readiness-and-jvm-metrics-survive-restart",
+      "post-restart-new-s3-write-and-full-download",
+      "new-async-request-after-controlled-resume-is-202",
+      "post-restart-new-issuance-is-not-duplicate-or-oversold",
+      "combined-logs-have-no-test-password-tokens-or-ops-password"
+    ],
+    "startedAt": "2026-11-03T08:30:18.800644+00:00",
+    "realLinuxHostExecuted": false,
+    "platform": "Windows Docker Desktop Linux engine",
+    "initialSnapshot": {
+      "observedAt": "2026-11-03T08:31:18.323424+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": []
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0"
+      ]
+    },
+    "beforeStopSnapshot": {
+      "observedAt": "2026-11-03T08:32:59.553618+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 2,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 1,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "PAUSED",
+            "section": "gates"
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0"
+      ]
+    },
+    "stopElapsedSeconds": 8.453,
+    "restartElapsedSeconds": 34.266,
+    "finalSnapshot": {
+      "observedAt": "2026-11-03T08:34:32.495771+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 3,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 2,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "OPEN",
+            "section": "gates"
+          },
+          {
+            "count": 2,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0"
+      ]
+    },
+    "passed": true,
+    "operations": 75,
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "imageId": "sha256:9760810c7a68e77e375ec0c835c8d618f975ad3313357e25f8dc9a2efd75b626",
+    "volumes": 5,
+    "services": 7,
+    "networks": 3,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-03T08:34:46.237913+00:00"
+  },
+  "distinctLifecycleGroups": 24,
+  "guideVerification": {
+    "linuxShellSnippetBlocks": 6,
+    "linuxContainerShSyntaxPassed": true,
+    "hostPythonCliHelpPassed": true,
+    "sourceGuideSha256": "ad1c038aee58a836a34b8d01758ba3944256af3d46deaaba2123776b1198da01",
+    "realLinuxHostExecuted": false
+  },
+  "guideChecks": 2,
+  "image": {
+    "image": "campuslife-base:m061a-0e08aa56c636-468b0df58bc6",
+    "imageId": "sha256:9760810c7a68e77e375ec0c835c8d618f975ad3313357e25f8dc9a2efd75b626",
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T08:16:33.087940+00:00"
+  },
+  "runtimeDependencyCount": 156,
+  "all156RuntimeDependenciesUnchanged": true,
+  "sourceGuard": {
+    "selectedExistingFiles": 542,
+    "unchanged": 542,
+    "changed": []
+  },
+  "operations": 75,
+  "migration": "V24",
+  "applicationTables": 32,
+  "productionCodeChanged": false,
+  "frontendChanged": false,
+  "ordinaryDefaultsChanged": false,
+  "failedFirstFixture": {
+    "path": ".cache/deploy-base/52087710e94f43149313e14a0617cc31/showcase-acceptance.json",
+    "sha256": "38c8ae6a2cfa8b290c5988510aff25fe023cc7d0c70760ba4ee7ced6f2ddc481",
+    "reason": "POST /merchant/coupon-campaigns: 400 VALIDATION_FAILED",
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "executed": [
+    "scripts/test-deploy-showcase.ps1 (fresh final fixture)",
+    "Linux-container sh -n on 6 guide blocks (syntax only)",
+    "Host Python deployment CLI --help"
+  ],
+  "notExecuted": [
+    "Independent Linux host acceptance",
+    "Maven/JUnit/full regression rerun",
+    "New image build",
+    "Whole stack backup/restore",
+    "Capacity/HA/performance claims",
+    "Public deployment or real data migration"
+  ],
+  "cleanup": {
+    "testLabelResources": {
+      "containers": [],
+      "volumes": [],
+      "networks": []
+    },
+    "generatedSecretsRemoved": true,
+    "dockerDesktopStopped": false,
+    "wslShutdown": false
+  },
+  "deliveredFileSha256": {
+    "scripts/test-deploy-showcase.ps1": "21e73050bddec12ccdb282a45a95ec734d81484c1afce33fcca502d2e2b63fc0",
+    "scripts/test_deploy_showcase.py": "01e6e20c08f13a0d753746a8b3fbec4fc26eda2a08ae8b53983780c3c6cd8988",
+    "docs/linux-deployment.md": "ad1c038aee58a836a34b8d01758ba3944256af3d46deaaba2123776b1198da01"
+  }
+}

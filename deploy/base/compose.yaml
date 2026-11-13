@@ -1,0 +1,110 @@
+# This is the LOCAL-only base mode. Optional backends are deliberately absent.
+x-labels: &labels
+  campuslife.base.identity: ${DEPLOY_ID:?Use the managed deployment entrypoint}
+  campuslife.base.kind: ${DEPLOY_KIND:?Missing deployment kind}
+  campuslife.base.mode: ${DEPLOY_MODE:-base}
+x-logging: &logging
+  driver: json-file
+  options: { max-size: 10m, max-file: '3' }
+services:
+  mysql:
+    image: mysql:8.4.13@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902
+    environment:
+      MYSQL_ROOT_PASSWORD_FILE: /run/secrets/MYSQL_ROOT_PASSWORD
+      DB_NAME: ${DB_NAME:?Missing project database}
+    secrets: [MYSQL_ROOT_PASSWORD, DB_PASSWORD]
+    volumes:
+      - mysql-data:/var/lib/mysql
+      - ./mysql-init.sh:/docker-entrypoint-initdb.d/01-campuslife.sh:ro
+    command: [--mysqlx=OFF, --default-time-zone=+00:00, --skip-log-bin]
+    healthcheck:
+      test: [CMD-SHELL, 'MYSQL_PWD="$$(cat /run/secrets/DB_PASSWORD)" mysql --protocol=TCP --host=127.0.0.1 --user=campuslife --database=$$DB_NAME --batch --skip-column-names --execute="SELECT 1" >/dev/null']
+      interval: 3s
+      timeout: 3s
+      retries: 40
+      start_period: 10s
+    networks: [core]
+    labels: *labels
+    logging: *logging
+    mem_limit: 1536m
+    cpus: 2
+    stop_grace_period: 30s
+    restart: 'no'
+  app:
+    container_name: campuslife-base-${DEPLOY_ID:?Missing identity}-app
+    image: ${APP_IMAGE:?Build the managed application image first}
+    pull_policy: never
+    user: '10001:10001'
+    read_only: true
+    environment:
+      SPRING_PROFILES_ACTIVE: mysql
+      SPRING_CONFIG_IMPORT: configtree:/run/secrets/
+      DB_HOST: mysql
+      DB_PORT: '3306'
+      DB_NAME: ${DB_NAME:?Missing project database}
+      DB_USERNAME: campuslife
+      SERVER_ADDRESS: 0.0.0.0
+      SERVER_PORT: '8080'
+      FILE_STORAGE_ROOT: /var/lib/campuslife/files
+      FILE_UPLOAD_TARGET: LOCAL
+      FILE_S3_ENABLED: 'false'
+      RATING_CACHE_ENABLED: 'false'
+      MESSAGING_ENABLED: 'false'
+      COUPON_REDIS_ENABLED: 'false'
+      MOCK_PAYMENT_ENABLED: 'false'
+      API_DOCS_ENABLED: ${API_DOCS_ENABLED:-false}
+    secrets: [DB_PASSWORD, JWT_SECRET_BASE64]
+    volumes: [files:/var/lib/campuslife/files]
+    tmpfs: ['/tmp:size=128m,mode=1777']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    healthcheck:
+      test: [CMD, /opt/campuslife/app-health.sh]
+      interval: 3s
+      timeout: 3s
+      retries: 40
+      start_period: 15s
+    depends_on:
+      mysql: { condition: service_healthy }
+    networks: [edge, core]
+    labels: *labels
+    logging: *logging
+    mem_limit: 1536m
+    cpus: 2
+    stop_grace_period: 30s
+    restart: 'no'
+  nginx:
+    image: nginx:1.30.6-alpine@sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949
+    user: '10001:10001'
+    entrypoint: [nginx]
+    command: [-g, 'daemon off;']
+    read_only: true
+    tmpfs: ['/tmp:size=32m,mode=1777']
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    volumes: [./nginx.conf:/etc/nginx/nginx.conf:ro]
+    ports: ['127.0.0.1:${HTTP_PORT:-18080}:8080']
+    healthcheck:
+      test: [CMD-SHELL, 'wget -q -O /dev/null http://127.0.0.1:8080/api/v1/system/health']
+      interval: 3s
+      timeout: 3s
+      retries: 10
+    depends_on:
+      app: { condition: service_healthy }
+    networks: [edge]
+    labels: *labels
+    logging: *logging
+    mem_limit: 128m
+    cpus: 1
+    stop_grace_period: 15s
+    restart: 'no'
+networks:
+  edge: { labels: *labels }
+  core: { internal: true, labels: *labels }
+volumes:
+  mysql-data: { labels: *labels }
+  files: { labels: *labels }
+secrets:
+  MYSQL_ROOT_PASSWORD: { file: '${SECRET_DIR:?Missing generated secret directory}/MYSQL_ROOT_PASSWORD' }
+  DB_PASSWORD: { file: '${SECRET_DIR:?Missing generated secret directory}/DB_PASSWORD' }
+  JWT_SECRET_BASE64: { file: '${SECRET_DIR:?Missing generated secret directory}/JWT_SECRET_BASE64' }

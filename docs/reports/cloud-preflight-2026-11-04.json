@@ -1,0 +1,92 @@
+{
+  "task": "M06.1-D.2",
+  "date": "2026-11-04",
+  "timezone": "America/New_York",
+  "status": "read-only preflight completed; installation and pinned-image retrieval required before deployment",
+  "target": "user-created ECS; address kept in local connection context",
+  "connection": {
+    "authenticated": true,
+    "username": "root",
+    "method": "SSH public key",
+    "hostKeyPolicy": "project-local first-use pin then StrictHostKeyChecking=yes; not independently checked via console",
+    "assistantInspectedOrPrintedPrivateKeyContents": false
+  },
+  "system": {
+    "os": "Ubuntu 22.04",
+    "kernel": "5.15.0-198-generic",
+    "architecture": "x86_64",
+    "vcpus": 2,
+    "cgroup": "v2",
+    "memTotalKiB": 3710116,
+    "memAvailableKiB": 3277132,
+    "swapTotalKiB": 4194300,
+    "swapFreeKiB": 4194300,
+    "rootAvailableKiB": 52094172,
+    "rootCapacityPercent": 12,
+    "inodeUsedPercent": 3,
+    "loadAverage": [
+      0.62,
+      0.27,
+      0.1
+    ]
+  },
+  "bandwidth": {
+    "reportedByUserMbps": 1,
+    "measured": false
+  },
+  "tools": {
+    "python": "3.10.12",
+    "openssl": "3.0.2",
+    "java": null,
+    "maven": null,
+    "keytool": null,
+    "docker": null,
+    "compose": null,
+    "aptCachedCandidates": "no output; package availability not established without refreshing lists"
+  },
+  "access": {
+    "listeningTcpPorts": [
+      22,
+      53
+    ],
+    "sshGlobal": {
+      "permitrootlogin": "yes",
+      "pubkeyauthentication": "yes",
+      "passwordauthentication": "no",
+      "kbdinteractiveauthentication": "no",
+      "allowtcpforwarding": "yes"
+    },
+    "testedNonRootAccountsPresent": [],
+    "ufw": "inactive",
+    "cloudSecurityGroupChecked": false
+  },
+  "downloadProbes": {
+    "dockerOfficialSigningKey": 200,
+    "mavenCentralIndex": 200,
+    "dockerHubV2": {
+      "first": "TCP connect timeout, HTTP 000",
+      "ipv4Recheck": "TCP connect timeout, HTTP 000"
+    },
+    "pinnedImagePullTested": false,
+    "dependenciesDownloaded": false,
+    "permanentBlockProven": false
+  },
+  "changes": {
+    "softwareInstalled": false,
+    "systemConfigChanged": false,
+    "businessDeployed": false,
+    "applicationCodeChanged": false,
+    "cloudFilesUploaded": false
+  },
+  "evidenceSha256": {
+    ".cache/cloud-preflight-2026-11-04.txt": "4e52a42994cf6a7208a250a0829a7d0a23ef5e603a41463109bc25665a5032c0",
+    ".cache/cloud-preflight-details-2026-11-04.txt": "498faafa307554d57f9e5e187c5851fec66b6a7c76f2d729dca3b6686d463e44",
+    ".cache/cloud-preflight-network-2026-11-04.txt": "60496a31a642af53aa454ef4774a22c9dc82eb111606331c9204029cf5bbfcd3"
+  },
+  "nextScope": [
+    "Prepare JDK21/Maven/Docker/Compose from verified sources",
+    "Verify exact pinned images before business build/start; propose any distribution change explicitly",
+    "Create and verify a dedicated deployment login before tightening initial root access",
+    "Use compact4g and controlled SSH forwarding; real workload validation remains pending"
+  ]
+}

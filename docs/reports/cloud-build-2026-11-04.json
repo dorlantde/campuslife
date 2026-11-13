@@ -1,0 +1,132 @@
+{
+  "task": "M06.1-D.5",
+  "date": "2026-11-04",
+  "timezone": "America/New_York",
+  "status": "complete: source transfer, target JAR/image build and artifact checks passed; no business started",
+  "sourcePackage": {
+    "archive": "campuslife-source.tar.gz",
+    "archiveBytes": 648759,
+    "archiveSha256": "110d141b50c26d6f5a54d3615d8f0b8791e0b88bb848978b9c991cf33b790a10",
+    "manifestSha256": "9598f0e5ef91648cd90fb30f7c48511452b6e24cdc55f3409a07b526ce72193b",
+    "fileCount": 460,
+    "sourceBytes": 2916158,
+    "passed": true,
+    "transferred": true
+  },
+  "transfer": {
+    "passed": true,
+    "release": "/home/campusdeploy/campuslife/releases/110d141b50c2",
+    "stage": "/home/campusdeploy/.cache/campuslife-build/110d141b50c2",
+    "fileCount": 460,
+    "sourceBytes": 2916158,
+    "archiveBytes": 648759,
+    "archiveSha256": "110d141b50c26d6f5a54d3615d8f0b8791e0b88bb848978b9c991cf33b790a10",
+    "manifestSha256": "9598f0e5ef91648cd90fb30f7c48511452b6e24cdc55f3409a07b526ce72193b",
+    "businessStarted": false
+  },
+  "build": {
+    "task": "M06.1-D.5",
+    "release": "/home/campusdeploy/campuslife/releases/110d141b50c2",
+    "passed": true,
+    "businessStarted": false,
+    "command": [
+      "python3",
+      "scripts/deploy_base.py",
+      "build"
+    ],
+    "mavenOpts": "-Xmx768m -XX:ActiveProcessorCount=2",
+    "testsRun": false,
+    "exitCode": 0,
+    "buildRecord": {
+      "image": "campuslife-base:m061a-2ad77758b9f8-468b0df58bc6",
+      "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+      "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+      "inputs": {
+        ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+        "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+        "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+        "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+      },
+      "builtAt": "2026-11-05T03:25:35.508870+00:00"
+    },
+    "dependencyCount": 156,
+    "image": {
+      "Id": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+      "Os": "linux",
+      "Architecture": "amd64",
+      "RootFS": {
+        "Type": "layers",
+        "Layers": [
+          "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+          "sha256:67822e3abc854af47db214f16667073b65931dc539b604b8dda6996b4084ee4a",
+          "sha256:d390ebe6119202102eaa37b1ae01308d34f2876df4fb56d94d818ca0b6f2c1ff",
+          "sha256:39598f2f194236b212de89f54438744681527522b3192a17a657707c4b1f16ff",
+          "sha256:797cce5c7d95a4b4dc04791ea1eb8f5a98a1efc2cadf1e23fc0f9940281a5c48",
+          "sha256:031598c42681c30edc475bc203197064e4aaca5075a1a80cbeee58547c521962",
+          "sha256:a7aa8a385ced274426011b924ead01bee8f7bc9a64cf915c091eacf3620aa40f",
+          "sha256:eeb397bd285888266bfeb8bff88525e8c89b6e53ad0601e55c02c6316b506230",
+          "sha256:062d5dbd23b9ce7f623374929c8cae853662adbf974c46b32139c3ec5c1c8e6d",
+          "sha256:9a47019246705411824c6db602c489e945e8376fe5035355c1534332e056fb3a"
+        ]
+      },
+      "user": "10001:10001",
+      "entrypoint": [
+        "/opt/campuslife/app-entrypoint.sh"
+      ],
+      "cmd": [
+        "app"
+      ]
+    },
+    "containersAfter": [],
+    "volumesAfter": [],
+    "sourceUnchanged": true,
+    "elapsedSeconds": 443.959
+  },
+  "fullJarComparison": {
+    "allEntries": 649,
+    "added": [],
+    "removed": [],
+    "changedUncompressedEntries": [],
+    "differentTimestamps": 394,
+    "otherEntryMetadataChanges": []
+  },
+  "mavenLogElapsed": "06:56 min",
+  "jarBytes": 72025330,
+  "businessTestsExecuted": false,
+  "mainSourcesCompiled": 285,
+  "testSourcesCompiled": 116,
+  "runtimeDependenciesUnchanged": 156,
+  "runtimeClassesAndResourcesUnchanged": 388,
+  "singleBuildNoRetry": true,
+  "boundaries": {
+    "localDockerStarted": false,
+    "javaDdlFrontendChanged": false,
+    "instanceInitialized": false,
+    "dbMigrated": false,
+    "businessStarted": false,
+    "publicPortsOpened": false,
+    "privateKeyContentInspected": false,
+    "newCloudServices": false
+  },
+  "evidenceSha256": {
+    ".cache/cloud-build/preflight-2026-11-04.json": "2252175a5201b67c12c03027082441851c8b06fee68538f6eefd1918a53c6ad8",
+    ".cache/cloud-build/maven-probe-2026-11-04.json": "fe29525e9d6d32520795644d42afcd7f6d6703d565f982e2ff7dd8ad5cf2adca",
+    ".cache/cloud-build/source-2026-11-04/source-manifest.json": "9598f0e5ef91648cd90fb30f7c48511452b6e24cdc55f3409a07b526ce72193b",
+    ".cache/cloud-build/source-2026-11-04/receipt.json": "221f406d6f065775e65d9e5d5abd4f803898d7b3e986d8bb7bac21240d150002",
+    ".cache/cloud-build/source-transfer-2026-11-04.json": "dbb3de14080363171a809a4f27072b2cc2e2f154c9deb6ced14747189192c9c5",
+    ".cache/cloud-build/local-jar-baseline-2026-11-04.json": "fc1d4f589bd3f084ce88bf37ce47438de262eba4ac170b9b1238bff6578e2b19",
+    ".cache/cloud-build/build-result-2026-11-04.json": "fe2151abbe71ca4210d5f25045dade73b9a8ddd42c0a9774badeffcb9059cf88",
+    ".cache/cloud-build/artifact-comparison-2026-11-04.json": "084f8775add974376647c62733af1e512c120af21aee977b4c887b9b478c7c9e",
+    ".cache/cloud-build/full-jar-comparison-2026-11-04.json": "6ffa3faac0c5b7a9b8bf30da8b5b5420c9f3c41dc69701e7397cd1c75c3002b2",
+    ".cache/cloud-build/jar-details-2026-11-04.json": "0f703c1cceec2a3555e44c6bdf014a3c941f36ac898ebe3683c0f49cb639750a",
+    ".cache/cloud-build/maven.log": "36d709712f4d78aafbaf3f049a423da603b0375d1cd454ebbc3a5992d483ac9d",
+    ".cache/cloud-build/image.log": "76aa9bd1818a2988775f9b2b3016d2d5e7a734a6b0dd1a9ecdf8ac5764beea86",
+    ".cache/cloud-build/build.log": "8d5d34d92635098e569af35d8614f07040f0cf63fa5c780458b586b8deb39435",
+    ".cache/cloud-build/transfer-source.py": "5a82c6f6a32004c7470188091ed2af96d68edc86d4892f6e30ba515378affe42",
+    ".cache/cloud-build/build-release.py": "c7983e86ab9f31476b6499f0e45adec76a7c5472edb07c4a4ffa4b171cc3f79c"
+  },
+  "deliveredScriptSha256": {
+    "scripts/prepare-cloud-source.py": "4333bf49a312d2472eac21b77c16e7dd6d5bee06cb7dcb7cfc93f94557ba96f5"
+  },
+  "nextTask": "M06.1-D.6: scoped compact4g real-host transaction/resource/restart acceptance; not started"
+}

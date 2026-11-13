@@ -1,0 +1,34 @@
+.page-heading { margin: 24px 0 28px; }
+.page-heading h1 small { font-size: .55em; color: var(--muted); overflow-wrap: anywhere; }
+.print-grid { display: grid; grid-template-columns: 1fr 1.15fr; gap: 24px; align-items: start; }
+.print-grid fieldset { border: 0; padding: 0; margin: 0; min-inline-size: 0; }
+.print-grid label, .confirm-box label, .orders-table + form label, .panel form label { display: grid; gap: 8px; margin-bottom: 16px; }
+.print-grid input, .print-grid select, .print-grid textarea, .confirm-box textarea, .panel form textarea, .panel form select, .action-row select { width: 100%; box-sizing: border-box; border: 1px solid #dbe4df; border-radius: 7px; padding: 10px 12px; font: inherit; color: inherit; background: #fff; }
+.print-grid input[type=file] { padding: 12px 0; border: 0; }
+.form-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 0 16px; }
+.or-divider { margin: 24px 0; color: #6d7d75; border-top: 1px solid #e8eee9; padding-top: 18px; font-size: 13px; }
+.file-card, .quote-card, .confirm-box { background: #f2f7f3; border: 1px solid #e4ece5; border-radius: 10px; padding: 20px; margin-top: 22px; overflow-wrap: anywhere; }
+.file-card p, .quote-card p, .detail-facts p, .fund-facts p { line-height: 1.7; font-size: 14px; color: #52665b; }
+.quote-total { font-size: 22px; color: #1d645b; margin: 18px 0; font-weight: 600; }
+.quote-total strong { font-size: 32px; }
+.quote-total small { display: block; color: #718077; font-size: 13px; text-align: right; margin-top: 8px; }
+.comparison { color: #8a5a16 !important; background: #fff6e6; padding: 12px; border-radius: 6px; }
+.pending-submission { border: 1px solid #c8dbcf; overflow-wrap: anywhere; }
+.pending-submission code { font-size: 13px; }
+.action-row { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; margin: 18px 0; }
+.action-row .el-button + .el-button { margin-left: 0; }
+.action-row label { display: flex; gap: 12px; align-items: center; }
+.action-row select { width: auto; min-width: 140px; }
+.primary-link { background: #21665c; color: white; padding: 9px 15px; border-radius: 6px; }
+.order-top { display: flex; gap: 24px; justify-content: space-between; }
+.orders-table td { vertical-align: top; }
+.orders-table td p { margin: 8px 0; }
+.orders-table small { color: #718077; overflow-wrap: anywhere; }
+.order-timeline { list-style: none; padding: 0 0 0 9px; }
+.order-timeline li { display: grid; gap: 7px; border-left: 2px solid #d4e2d8; padding: 0 0 26px 24px; position: relative; }
+.order-timeline li::before { content: ''; width: 10px; height: 10px; border-radius: 50%; background: #287568; position: absolute; left: -6px; top: 3px; }
+.order-timeline span, .order-timeline time, .order-timeline small { color: #687b70; font-size: 13px; }
+@media (max-width: 760px) { .print-grid { grid-template-columns: 1fr; } .order-top { flex-direction: column; gap: 0; } .quote-total small { text-align: left; } .action-row { align-items: stretch; } .order-top h2 { overflow-wrap: anywhere; } }
+.header-inner nav { flex-wrap: wrap; row-gap: 10px; }
+.header-inner .account-nav { flex-shrink: 0; }
+.service-price .primary-link { display: inline-block; font-size: 12px; font-weight: 400; margin-top: 12px; }

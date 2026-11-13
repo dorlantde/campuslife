@@ -1,0 +1,12 @@
+.admin-form fieldset, .booking-fields { padding: 0; border: 0; min-inline-size: 0; margin: 18px 0; }
+.admin-form label, .booking-fields>label, .booking-fields .form-pair>label { display: grid; gap: 8px; margin-bottom: 16px; }
+.admin-form input:not([type=checkbox]), .admin-form select, .admin-form textarea, .booking-fields select, .booking-fields textarea { box-sizing: border-box; width: 100%; font: inherit; color: inherit; padding: 10px 12px; border: 1px solid #dae5dc; border-radius: 7px; background: white; }
+.admin-form .action-row input { width: 240px; max-width: 100%; }
+.admin-form label.acknowledgement { display: flex; align-items: flex-start; gap: 10px; line-height: 1.8; margin: 22px 0; font-size: 13px; }
+.acknowledgement input { margin-top: 6px; flex-shrink: 0; }
+.slot-grid { display: grid; grid-template-columns: repeat(auto-fill,minmax(240px,1fr)); gap: 12px; margin: 22px 0; }
+.slot-choice { display: flex; gap: 8px; align-items: center; padding: 14px; border: 1px solid #dce7df; border-radius: 8px; font-size: 13px; }
+.slot-choice:has(input:checked) { background: #edf5ee; border-color: #4f8976; }
+.header-inner nav { min-width: 0; flex: 1; }
+@media(max-width:640px) { .header-inner nav { column-gap: 16px; } .admin-form .action-row label { flex-wrap: wrap; } .admin-form .action-row input { width: 100%; } .slot-grid { grid-template-columns: 1fr; } .order-top p, .detail-facts, .fund-facts { overflow-wrap: anywhere; } }
+@media(max-width:640px) { .header-inner nav { flex: 0 0 100%; order: 3; width: 100%; } }

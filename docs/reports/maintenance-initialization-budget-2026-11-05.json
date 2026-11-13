@@ -1,0 +1,378 @@
+{
+  "task": "M06.1-D.6g",
+  "date": "2026-11-05",
+  "status": "ADOPTED_IMPLEMENTED_ISOLATED_MECHANISM_AND_RELATED_REGRESSION_PASSED_CLOUD_FORMAL_ARTIFACT_NOT_UPDATED",
+  "parentD6Passed": false,
+  "originalD6eFinalRefusalReproduced": false,
+  "fixScope": "Coupon-maintenance profile initialization/URI/sync wait 5000ms; fixed command expiry 500ms; ordinary app unchanged",
+  "productionSourceFilesChanged": 1,
+  "tests": {
+    "isolatedRealRedisMechanismCases": 5,
+    "unit": 14,
+    "realMysql": 12,
+    "jarSmoke": true,
+    "distinctRelevantChecks": 31
+  },
+  "unchanged": {
+    "tcpMs": 300,
+    "connectedCommandExpiryMs": 500,
+    "maxPreflightAttempts": 2,
+    "rebuildLeaseSeconds": 30,
+    "cliSeconds": 90,
+    "httpAndBackgroundInitializationMs": 500
+  },
+  "runs": [
+    {
+      "case": "case-ea4f33f273f9",
+      "manifest": {
+        "task": "M06.1-D.6g",
+        "id": "case-ea4f33f273f9",
+        "files": [
+          {
+            "path": "scripts/diagnostics/CouponRedisBudgetProbe.java",
+            "name": "CouponRedisBudgetProbe.java",
+            "bytes": 7011,
+            "sha256": "1f9ccae97cf05aaa9e72b95d8a85c6e63e483baf5ba0102dc4a7570fa927b715"
+          },
+          {
+            "path": "scripts/diagnostics/coupon_redis_budget_case.py",
+            "name": "coupon_redis_budget_case.py",
+            "bytes": 5774,
+            "sha256": "ca42aaaec6303dbcff6e64c44fe3cef536ba428b5c6110aff6c4869efebf1efd"
+          }
+        ],
+        "totalBytes": 12785
+      },
+      "exitCode": 1,
+      "elapsedSeconds": 31.069,
+      "result": {
+        "task": "M06.1-D.6g",
+        "scope": "isolated-mechanism-only",
+        "productionModified": false,
+        "checks": [
+          {
+            "mode": "default-delay",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=default-delay passed=true elapsedMs=1955 configuredInitializationMs=500 commandExpiryMs=500 tcpMs=300 handshakeFailure=true commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException"
+            ]
+          },
+          {
+            "mode": "candidate-delay",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=candidate-delay passed=true elapsedMs=3047 configuredInitializationMs=5000 commandExpiryMs=500 tcpMs=300 handshakeFailure=false commandExpiryFailure=false causes=NONE"
+            ]
+          },
+          {
+            "mode": "candidate-command",
+            "exitCode": 1,
+            "trace": []
+          }
+        ],
+        "identity": "budget-71cce5a0464c",
+        "elapsedSeconds": 25.627,
+        "jarUnchanged": true,
+        "containers": [],
+        "volumes": [],
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "case": "case-12300b82bf1b",
+      "manifest": {
+        "task": "M06.1-D.6g",
+        "id": "case-12300b82bf1b",
+        "files": [
+          {
+            "path": "scripts/diagnostics/CouponRedisBudgetProbe.java",
+            "name": "CouponRedisBudgetProbe.java",
+            "bytes": 7243,
+            "sha256": "c08eddf878d15b0d0baf199d2ce7c15be81196af1f2628a1e408eac4f8369dff"
+          },
+          {
+            "path": "scripts/diagnostics/coupon_redis_budget_case.py",
+            "name": "coupon_redis_budget_case.py",
+            "bytes": 6064,
+            "sha256": "7164f25ecc02074a0e5baac12dfbbb3046d240cb45ee44a01f1cd8b67ead9eb4"
+          }
+        ],
+        "totalBytes": 13307
+      },
+      "exitCode": 1,
+      "elapsedSeconds": 14.845,
+      "result": {
+        "task": "M06.1-D.6g",
+        "scope": "isolated-mechanism-only",
+        "productionModified": false,
+        "checks": [
+          {
+            "mode": "candidate-command",
+            "exitCode": 1,
+            "trace": [],
+            "observations": [
+              "OBS mode=candidate-command commandSucceeded=false elapsedMs=528 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.dao.QueryTimeoutException->io.lettuce.core.RedisCommandTimeoutException"
+            ]
+          }
+        ],
+        "identity": "budget-8c63cb8ca429",
+        "elapsedSeconds": 9.139,
+        "jarUnchanged": true,
+        "containers": [],
+        "volumes": [],
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "case": "case-c5aa58f50dd0",
+      "manifest": {
+        "task": "M06.1-D.6g",
+        "id": "case-c5aa58f50dd0",
+        "files": [
+          {
+            "path": "scripts/diagnostics/CouponRedisBudgetProbe.java",
+            "name": "CouponRedisBudgetProbe.java",
+            "bytes": 7897,
+            "sha256": "51de6f3a650c7f4607b6783cdce0bbbbb9475c716db55e37ad727b59944db5cd"
+          },
+          {
+            "path": "scripts/diagnostics/coupon_redis_budget_case.py",
+            "name": "coupon_redis_budget_case.py",
+            "bytes": 6064,
+            "sha256": "7164f25ecc02074a0e5baac12dfbbb3046d240cb45ee44a01f1cd8b67ead9eb4"
+          }
+        ],
+        "totalBytes": 13961
+      },
+      "exitCode": 0,
+      "elapsedSeconds": 47.428,
+      "result": {
+        "task": "M06.1-D.6g",
+        "scope": "isolated-mechanism-only",
+        "productionModified": false,
+        "checks": [
+          {
+            "mode": "default-delay",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=default-delay passed=true elapsedMs=1814 configuredInitializationMs=500 commandExpiryMs=500 tcpMs=300 handshakeFailure=true commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException"
+            ],
+            "observations": [
+              "OBS mode=default-delay commandSucceeded=false elapsedMs=1814 handshakeFailure=true commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException"
+            ]
+          },
+          {
+            "mode": "candidate-delay",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=candidate-delay passed=true elapsedMs=2885 configuredInitializationMs=5000 commandExpiryMs=500 tcpMs=300 handshakeFailure=false commandExpiryFailure=false causes=NONE"
+            ],
+            "observations": [
+              "OBS mode=candidate-delay commandSucceeded=true elapsedMs=2885 handshakeFailure=false commandExpiryFailure=false causes=NONE"
+            ]
+          },
+          {
+            "mode": "candidate-command",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=candidate-command passed=true elapsedMs=541 configuredInitializationMs=5000 commandExpiryMs=500 tcpMs=300 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.dao.QueryTimeoutException->io.lettuce.core.RedisCommandTimeoutException"
+            ],
+            "observations": [
+              "OBS mode=candidate-command commandSucceeded=false elapsedMs=541 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.dao.QueryTimeoutException->io.lettuce.core.RedisCommandTimeoutException"
+            ]
+          },
+          {
+            "mode": "wrong-auth",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=wrong-auth passed=true elapsedMs=1861 configuredInitializationMs=5000 commandExpiryMs=500 tcpMs=300 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandExecutionException"
+            ],
+            "observations": [
+              "OBS mode=wrong-auth commandSucceeded=false elapsedMs=1861 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandExecutionException"
+            ]
+          },
+          {
+            "mode": "unavailable",
+            "exitCode": 0,
+            "trace": [
+              "PROBE mode=unavailable passed=true elapsedMs=1538 configuredInitializationMs=5000 commandExpiryMs=500 tcpMs=300 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.netty.channel.AbstractChannel$AnnotatedConnectException->java.net.ConnectException"
+            ],
+            "observations": [
+              "OBS mode=unavailable commandSucceeded=false elapsedMs=1538 handshakeFailure=false commandExpiryFailure=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.netty.channel.AbstractChannel$AnnotatedConnectException->java.net.ConnectException"
+            ]
+          }
+        ],
+        "identity": "budget-8d5baa7ac2f6",
+        "passed": true,
+        "elapsedSeconds": 41.303,
+        "jarUnchanged": true,
+        "containers": [],
+        "volumes": [],
+        "generatedSecretsRemoved": true
+      }
+    }
+  ],
+  "localVerification": {
+    "unitTests": 14,
+    "mysqlTests": 12,
+    "suites": [
+      {
+        "name": "com.campuslife.coupon.config.CouponRedisConfigurationTest",
+        "tests": 3,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "path": "target/surefire-reports/TEST-com.campuslife.coupon.config.CouponRedisConfigurationTest.xml"
+      },
+      {
+        "name": "com.campuslife.coupon.service.CouponMaintenancePreflightTest",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "path": "target/surefire-reports/TEST-com.campuslife.coupon.service.CouponMaintenancePreflightTest.xml"
+      },
+      {
+        "name": "com.campuslife.CouponMaintenanceBootstrapCheck",
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "path": "target/failsafe-reports/TEST-com.campuslife.CouponMaintenanceBootstrapCheck.xml"
+      },
+      {
+        "name": "com.campuslife.CouponMaintenancePreflightMysqlIT",
+        "tests": 11,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "path": "target/failsafe-reports/TEST-com.campuslife.CouponMaintenancePreflightMysqlIT.xml"
+      }
+    ],
+    "jarStartupPassed": true,
+    "jar": {
+      "sha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+      "bytes": 72026099,
+      "entryCount": 649,
+      "changedContentEntries": [
+        "BOOT-INF/classes/com/campuslife/coupon/config/CouponRedisConfiguration.class",
+        "BOOT-INF/classes/com/campuslife/coupon/config/CouponRedisConfiguration$Enabled.class"
+      ],
+      "unchangedDependencies": 156
+    },
+    "sourceChangesAgainstD6dManifest": [
+      "scripts/deploy_base.py",
+      "src/main/java/com/campuslife/coupon/config/CouponRedisConfiguration.java"
+    ]
+  },
+  "cloudFinalAudit": {
+    "newEffectiveSourceFilesVerified": 462,
+    "newOriginalInputsUnchanged": 461,
+    "newRecordedDeploymentPatch": {
+      "path": "scripts/deploy_base.py",
+      "oldSha256": "0b196cab5e3bf863269f897e7ebae455544272f892355f5831d91c146b44eb7e",
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+      "bytes": 28148,
+      "reason": "Explicit directory mode for the UID 10001 admin input bind under umask 0077"
+    },
+    "diagnosticSourcesVerified": 2,
+    "existingHelpersVerified": 7,
+    "newJarAndImageUnchanged": true,
+    "oldSourcePatchesJarAndImagePreserved": true,
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "budgetNetworks": [],
+    "probeSecretsRemaining": [],
+    "generatedSecretsRemaining": [],
+    "newFixtureFolders": 9,
+    "oldFixtureFolders": 17
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/diagnostics/CouponRedisBudgetProbe.java",
+      "bytes": 7897,
+      "sha256": "51de6f3a650c7f4607b6783cdce0bbbbb9475c716db55e37ad727b59944db5cd"
+    },
+    {
+      "path": "scripts/diagnostics/coupon_redis_budget_case.py",
+      "bytes": 6064,
+      "sha256": "7164f25ecc02074a0e5baac12dfbbb3046d240cb45ee44a01f1cd8b67ead9eb4"
+    },
+    {
+      "path": "src/main/java/com/campuslife/coupon/config/CouponRedisConfiguration.java",
+      "bytes": 3297,
+      "sha256": "1cdbd232d2f5b8a650ff84de79fc722ea85242eb5e522cd037ded98e97e99c49"
+    },
+    {
+      "path": "src/test/java/com/campuslife/coupon/config/CouponRedisConfigurationTest.java",
+      "bytes": 2911,
+      "sha256": "4c48d7e22d9473b8ea98eaaf60ea1ac5319cd11be97040358cdf5a82838b4b04"
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".cache/redis-budget/case-ea4f33f273f9/manifest.json",
+      "bytes": 567,
+      "sha256": "04db8f857a84c999f2da18fbc131b321b1b17927ebddb80857ae60ab71401354"
+    },
+    {
+      "path": ".cache/redis-budget/case-ea4f33f273f9/runner-result.json",
+      "bytes": 1613,
+      "sha256": "a4054d5862a3c5b978864abfa2f1c58640739e28a3d264afd5c14040e8639873"
+    },
+    {
+      "path": ".cache/redis-budget/case-12300b82bf1b/manifest.json",
+      "bytes": 567,
+      "sha256": "fb5aa96a884328592bed63825e8af3c7da35033b9b8c76ac224d73172fc89c55"
+    },
+    {
+      "path": ".cache/redis-budget/case-12300b82bf1b/runner-result.json",
+      "bytes": 1234,
+      "sha256": "32c45a1696d58ca50f3e525c7608c73c6eec4c2ca8353ae1b852051d41ab3dc0"
+    },
+    {
+      "path": ".cache/redis-budget/case-c5aa58f50dd0/manifest.json",
+      "bytes": 567,
+      "sha256": "6a2a843317b4c5063e10af2d21499695ebfb317f811e1ee86f25988773c40903"
+    },
+    {
+      "path": ".cache/redis-budget/case-c5aa58f50dd0/runner-result.json",
+      "bytes": 3971,
+      "sha256": "ccdf21afc5ac366ff2a020025aa4005abf327c645b8fe6a007d33e7a50e444d4"
+    },
+    {
+      "path": ".cache/redis-budget/case-c5aa58f50dd0/final-audit.json",
+      "bytes": 812,
+      "sha256": "bfd6bc2f6a4bb65064e4d5abd8fa51d3c9ecce595f6945d6a91bf3611b06852c"
+    },
+    {
+      "path": ".cache/redis-budget/local-verification.json",
+      "bytes": 1748,
+      "sha256": "5022e9ee6c9874fdd9ff44dda44884bc417029675c3d8cd260976787b5227054"
+    },
+    {
+      "path": ".cache/redis-budget/unit-test.log",
+      "bytes": 6284,
+      "sha256": "930eed9aa8a8b2c5241b48f5999f25a469b57dce9120c75e82d6248e76740295"
+    },
+    {
+      "path": ".cache/redis-budget/related-mysql.log",
+      "bytes": 19250,
+      "sha256": "b8f18c7effc633ef1793f244eb7aa7a432f861bd321a4908f0a1bddaf893a29c"
+    }
+  ],
+  "limitations": [
+    "Standalone candidate configuration probe uses original packaged libraries, not a patched formal application runtime.",
+    "Spring configuration tests cover actual production profile wiring; real MySQL tests inject Redis and do not replace the independent Redis probe.",
+    "First two isolated cases failed an overly specific internal-stack-frame assertion; their failures are retained and not added to final passing case count.",
+    "No formal cloud JAR/image rebuild or normal-main Resume/restart/new-claim acceptance this task; no server capacity/HA/RTO conclusion."
+  ],
+  "nextTask": {
+    "id": "M06.1-D.6h",
+    "scope": "Independent new-release whitelist build and static artifact verification; then explicitly scoped remaining real-host acceptance, no fourth full chain"
+  },
+  "observationFieldSemantics": {
+    "commandExpiryFailure": "Whether a CommandExpiryWriter internal stack frame was observed; false does not mean the command did not time out. See actual exception types and elapsed time."
+  }
+}

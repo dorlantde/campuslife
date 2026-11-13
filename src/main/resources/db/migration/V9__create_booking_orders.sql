@@ -1,0 +1,100 @@
+CREATE TABLE service_order (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    order_no VARCHAR(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    student_id BIGINT NOT NULL,
+    shop_id BIGINT NOT NULL,
+    order_type VARCHAR(16) NOT NULL,
+    status VARCHAR(24) NOT NULL,
+    payment_status VARCHAR(16) NOT NULL,
+    original_amount BIGINT NOT NULL,
+    discount_amount BIGINT NOT NULL,
+    payable_amount BIGINT NOT NULL,
+    currency CHAR(3) NOT NULL,
+    shop_name_snapshot VARCHAR(80) NOT NULL,
+    student_note VARCHAR(300) NULL,
+    created_at DATETIME(3) NOT NULL,
+    payment_deadline DATETIME(3) NOT NULL,
+    acceptance_deadline DATETIME(3) NULL,
+    paid_at DATETIME(3) NULL,
+    accepted_at DATETIME(3) NULL,
+    started_at DATETIME(3) NULL,
+    completed_at DATETIME(3) NULL,
+    closed_at DATETIME(3) NULL,
+    close_reason VARCHAR(32) NULL,
+    close_note VARCHAR(300) NULL,
+    version BIGINT NOT NULL DEFAULT 0,
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_order_no (order_no),
+    KEY ix_order_student (student_id, created_at, id),
+    KEY ix_order_shop_status (shop_id, status, created_at, id),
+    KEY ix_order_payment_due (status, payment_deadline, id),
+    KEY ix_order_acceptance_due (status, acceptance_deadline, id),
+    CONSTRAINT fk_order_student FOREIGN KEY (student_id) REFERENCES account(id),
+    CONSTRAINT fk_order_shop FOREIGN KEY (shop_id) REFERENCES shop(id),
+    CONSTRAINT ck_order_type CHECK (order_type IN ('BOOKING','PRINT')),
+    CONSTRAINT ck_order_status CHECK (status IN ('PENDING_PAYMENT','PENDING_ACCEPTANCE','ACCEPTED','IN_SERVICE','COMPLETED','CLOSED')),
+    CONSTRAINT ck_order_payment CHECK (payment_status IN ('NOT_PAID','PAID','REFUNDED')),
+    CONSTRAINT ck_order_amount CHECK (original_amount > 0 AND discount_amount >= 0 AND payable_amount > 0
+        AND payable_amount = original_amount - discount_amount AND currency = 'CNY'),
+    CONSTRAINT ck_order_version CHECK (version >= 0),
+    CONSTRAINT ck_order_deadline CHECK (payment_deadline > created_at)
+) ENGINE=InnoDB;
+
+CREATE TABLE booking_detail (
+    order_id BIGINT NOT NULL,
+    service_id BIGINT NOT NULL,
+    barber_id BIGINT NOT NULL,
+    service_date DATE NOT NULL,
+    start_at DATETIME(3) NOT NULL COMMENT 'UTC; inclusive',
+    end_at DATETIME(3) NOT NULL COMMENT 'UTC; exclusive',
+    occupancy_status VARCHAR(16) NOT NULL,
+    service_name_snapshot VARCHAR(80) NOT NULL,
+    barber_name_snapshot VARCHAR(40) NOT NULL,
+    duration_minutes_snapshot INT NOT NULL,
+    service_price_snapshot BIGINT NOT NULL,
+    source_service_version BIGINT NOT NULL,
+    PRIMARY KEY (order_id),
+    KEY ix_booking_interval (barber_id, service_date, start_at),
+    CONSTRAINT fk_booking_order FOREIGN KEY (order_id) REFERENCES service_order(id),
+    CONSTRAINT fk_booking_service FOREIGN KEY (service_id) REFERENCES service_item(id),
+    CONSTRAINT fk_booking_day FOREIGN KEY (barber_id, service_date) REFERENCES barber_day_guard(barber_id, service_date),
+    CONSTRAINT ck_booking_time CHECK (start_at < end_at AND TIMESTAMPDIFF(MICROSECOND,start_at,end_at) = duration_minutes_snapshot * 60000000
+        AND SECOND(start_at) = 0 AND MICROSECOND(start_at) = 0 AND MOD(MINUTE(start_at),15) = 0),
+    CONSTRAINT ck_booking_snapshot CHECK (duration_minutes_snapshot BETWEEN 15 AND 240 AND MOD(duration_minutes_snapshot,15) = 0
+        AND service_price_snapshot BETWEEN 1 AND 100000 AND source_service_version >= 0),
+    CONSTRAINT ck_booking_occupancy CHECK (occupancy_status IN ('HELD','ACTIVE','CONSUMED','RELEASED'))
+) ENGINE=InnoDB;
+
+CREATE TABLE order_event (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    order_id BIGINT NOT NULL,
+    event_seq BIGINT NOT NULL,
+    action VARCHAR(32) NOT NULL,
+    from_status VARCHAR(24) NULL,
+    to_status VARCHAR(24) NOT NULL,
+    actor_type VARCHAR(16) NOT NULL,
+    actor_id BIGINT NULL,
+    reason VARCHAR(300) NULL,
+    occurred_at DATETIME(3) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_order_event_seq (order_id,event_seq),
+    CONSTRAINT fk_event_order FOREIGN KEY (order_id) REFERENCES service_order(id),
+    CONSTRAINT fk_event_actor FOREIGN KEY (actor_id) REFERENCES account(id),
+    CONSTRAINT ck_event_seq CHECK (event_seq >= 0),
+    CONSTRAINT ck_event_actor CHECK ((actor_type = 'SYSTEM' AND actor_id IS NULL)
+        OR (actor_type IN ('STUDENT','MERCHANT','ADMIN') AND actor_id IS NOT NULL))
+) ENGINE=InnoDB;
+
+CREATE TABLE idempotency_record (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    account_id BIGINT NOT NULL,
+    operation VARCHAR(32) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    request_key VARCHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    request_hash CHAR(64) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    order_id BIGINT NOT NULL,
+    completed_at DATETIME(3) NOT NULL,
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_idempotency (account_id,operation,request_key),
+    CONSTRAINT fk_idempotency_account FOREIGN KEY (account_id) REFERENCES account(id),
+    CONSTRAINT fk_idempotency_order FOREIGN KEY (order_id) REFERENCES service_order(id)
+) ENGINE=InnoDB;

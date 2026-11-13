@@ -1,0 +1,129 @@
+{
+  "reportDate": "2026-10-27",
+  "mode": "isolated automated real-HTTP booking journey, not live-browser completion",
+  "freshReportsSinceUtc": "2026-10-27T09:01:14.517967+00:00",
+  "reportSelection": "Only reports generated after this run started; older unrelated XML reports excluded.",
+  "totals": {
+    "tests": 190,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "suite": "com.campuslife.file.FilePolicyTest",
+      "kind": "ordinary",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+      "kind": "ordinary",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.order.service.BookingOrderPolicyTest",
+      "kind": "ordinary",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.order.service.PrintOrderPolicyTest",
+      "kind": "ordinary",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.order.service.PrintQuotePolicyTest",
+      "kind": "ordinary",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.RegistrationPolicyTest",
+      "kind": "ordinary",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.TokenServiceTest",
+      "kind": "ordinary",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.WebFoundationTest",
+      "kind": "ordinary",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.BookingJourneyMysqlIT",
+      "kind": "integration",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.MysqlIntegrationIT",
+      "kind": "integration",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "suite": "com.campuslife.OpenApiMysqlIT",
+      "kind": "integration",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "journeys": [
+    {
+      "name": "completeJourneyCreatesBusinessThroughHttpAndPublishesARealReview",
+      "seconds": 3.073
+    },
+    {
+      "name": "adminClosesStartedServiceWithOneRefundAndKeepsConsumedInterval",
+      "seconds": 2.461
+    },
+    {
+      "name": "unpaidCancelReleasesWithoutMoneyAndCreationKeyKeepsTheOriginalOrder",
+      "seconds": 1.427
+    },
+    {
+      "name": "merchantRejectRefundsExactlyOnceAndOffersTheSlotAgain",
+      "seconds": 1.56
+    }
+  ],
+  "initialTestClock": "2026-10-26T01:00:00Z",
+  "testSourceSha256": "48a865e7491516ed463c20e16093bc229317d11dbc8d1c6ea17a09abc8cdbb47",
+  "runtimeOperations": 62,
+  "migrations": 15,
+  "businessTables": 23,
+  "mavenVerifyDuration": "47.050 s",
+  "mysqlJarSmokePassed": true,
+  "temporaryFixtureCleaned": true,
+  "productionBehaviorChanged": false
+}

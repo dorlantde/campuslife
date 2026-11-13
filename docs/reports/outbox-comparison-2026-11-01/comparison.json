@@ -1,0 +1,283 @@
+{
+  "date": "2026-11-01",
+  "task": "M08.5-C",
+  "complete": true,
+  "order": [
+    "OLD",
+    "NEW"
+  ],
+  "identity": {
+    "oldFiles": 376,
+    "newPublisherSha256": "057EE7EE6F14D5B2B0FA4FC01421B227138D1ECA48B68567659F562F6804DB55",
+    "newJarSha256": "7D2494E5BF3B9E9F6AE42410534C54DB5FB07A862065A97EDC56EE72D7B0FEB3",
+    "oldPublisherSha256": "713954C9C450623F08480AFEC0FFEAE36ACABCA903E0EB11E157FA2B230D5CE9",
+    "oldJarSha256": "6F406141A158C54B158403FF63A5F85686BF255B3D7EB2AD610079162FE73246",
+    "productionDependencies": 115
+  },
+  "versions": {
+    "new": {
+      "environment": {
+        "mysql": "8.0.45",
+        "performanceSchema": true,
+        "startupMs": 6190,
+        "profile": "Measure",
+        "pollIntervalMs": 250,
+        "sampleIntervalMs": 1000,
+        "seed": 20261101,
+        "observerSchema": "performance_schema",
+        "child": {
+          "pid": 33860,
+          "processors": 32,
+          "maxHeap": 536870912,
+          "production": {
+            "publisherSha256": "057EE7EE6F14D5B2B0FA4FC01421B227138D1ECA48B68567659F562F6804DB55",
+            "binary": "NEW",
+            "productionRoot": "D:\\campuslife\\target\\classes"
+          },
+          "java": "21.0.12.1",
+          "port": 58923,
+          "databasePoolMax": 5
+        }
+      },
+      "posts": 2052.0,
+      "runs": 24,
+      "rawSha256": "308FCF5234172F77ACC435ACAA36F14C776730E9AD0AE4F523B6185D40AD7737"
+    },
+    "old": {
+      "environment": {
+        "mysql": "8.0.45",
+        "performanceSchema": true,
+        "child": {
+          "pid": 36772,
+          "processors": 32,
+          "maxHeap": 536870912,
+          "production": {
+            "binary": "OLD",
+            "productionRoot": "D:\\campuslife\\.cache\\m085-baseline-2026-11-01\\classes",
+            "publisherSha256": "713954C9C450623F08480AFEC0FFEAE36ACABCA903E0EB11E157FA2B230D5CE9"
+          },
+          "java": "21.0.12.1",
+          "port": 57592,
+          "databasePoolMax": 5
+        },
+        "startupMs": 6715,
+        "profile": "Measure",
+        "pollIntervalMs": 250,
+        "sampleIntervalMs": 1000,
+        "seed": 20261101,
+        "observerSchema": "performance_schema"
+      },
+      "posts": 2052.0,
+      "runs": 24,
+      "rawSha256": "F7E95E876D372A82EB400204825CEB2B0F6E472F51E2D9445DAE14ACB919EB96"
+    }
+  },
+  "goal": "each concurrency median of three ASYNC per-run complete p95 <=5000ms and >=70% reduction vs OLD",
+  "goalPassed": true,
+  "groups": [
+    {
+      "concurrency": 1,
+      "oldAsync": {
+        "concurrency": 1,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 10.6134,
+        "allPostP95Ms": 10.5727,
+        "completionP95Ms": 18751.8111,
+        "batchSuccessfulPerSecond": 0.99906343298007,
+        "sqlCount": 10615.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 2140.625,
+        "redisCommandDelta": 2232.0
+      },
+      "newAsync": {
+        "concurrency": 1,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 10.7639,
+        "allPostP95Ms": 9.6345,
+        "completionP95Ms": 1147.4916,
+        "batchSuccessfulPerSecond": 16.946568908689258,
+        "sqlCount": 4912.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 1234.375,
+        "redisCommandDelta": 2210.0
+      },
+      "oldSync": {
+        "concurrency": 1,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 8.1089,
+        "allPostP95Ms": 7.3806,
+        "completionP95Ms": 10.6694,
+        "batchSuccessfulPerSecond": 35.22859660192003,
+        "sqlCount": 3167.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 687.5,
+        "redisCommandDelta": 26.0
+      },
+      "newSync": {
+        "concurrency": 1,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 7.4381,
+        "allPostP95Ms": 6.6971,
+        "completionP95Ms": 10.5547,
+        "batchSuccessfulPerSecond": 35.25557915133122,
+        "sqlCount": 3170.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 656.25,
+        "redisCommandDelta": 26.0
+      },
+      "completeP95ReductionPercent": 93.88063588161893,
+      "goalPassed": true,
+      "syncReferenceRatio": 0.9892496297823683
+    },
+    {
+      "concurrency": 5,
+      "oldAsync": {
+        "concurrency": 5,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 10.9699,
+        "allPostP95Ms": 10.2513,
+        "completionP95Ms": 18959.0827,
+        "batchSuccessfulPerSecond": 0.9986052630082353,
+        "sqlCount": 10789.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 2687.5,
+        "redisCommandDelta": 2210.0
+      },
+      "newAsync": {
+        "concurrency": 5,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 11.002,
+        "allPostP95Ms": 10.0403,
+        "completionP95Ms": 578.3318,
+        "batchSuccessfulPerSecond": 33.78947434221608,
+        "sqlCount": 4557.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 1187.5,
+        "redisCommandDelta": 2232.0
+      },
+      "oldSync": {
+        "concurrency": 5,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 15.4729,
+        "allPostP95Ms": 10.2997,
+        "completionP95Ms": 17.649,
+        "batchSuccessfulPerSecond": 140.491763319146,
+        "sqlCount": 3170.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 56.0,
+        "rowLockWaitMs": 45.0,
+        "appCpuMs": 546.875,
+        "redisCommandDelta": 26.0
+      },
+      "newSync": {
+        "concurrency": 5,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 13.8458,
+        "allPostP95Ms": 8.3587,
+        "completionP95Ms": 15.9596,
+        "batchSuccessfulPerSecond": 146.84762209645538,
+        "sqlCount": 3170.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 59.0,
+        "rowLockWaitMs": 36.0,
+        "appCpuMs": 625.0,
+        "redisCommandDelta": 26.0
+      },
+      "completeP95ReductionPercent": 96.94957921144571,
+      "goalPassed": true,
+      "syncReferenceRatio": 0.9042778627684288
+    },
+    {
+      "concurrency": 10,
+      "oldAsync": {
+        "concurrency": 10,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 16.1105,
+        "allPostP95Ms": 15.0259,
+        "completionP95Ms": 18990.7942,
+        "batchSuccessfulPerSecond": 0.9982296048577485,
+        "sqlCount": 10821.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 1359.375,
+        "redisCommandDelta": 2232.0
+      },
+      "newAsync": {
+        "concurrency": 10,
+        "mode": "ASYNC",
+        "trials": 3,
+        "acceptedP95Ms": 15.0108,
+        "allPostP95Ms": 14.5316,
+        "completionP95Ms": 1149.3781,
+        "batchSuccessfulPerSecond": 17.131904960757232,
+        "sqlCount": 4831.0,
+        "dmlCount": 180.0,
+        "rowLockWaits": 0.0,
+        "rowLockWaitMs": 0.0,
+        "appCpuMs": 1437.5,
+        "redisCommandDelta": 2210.0
+      },
+      "oldSync": {
+        "concurrency": 10,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 23.1614,
+        "allPostP95Ms": 16.8994,
+        "completionP95Ms": 27.583,
+        "batchSuccessfulPerSecond": 162.5315920782102,
+        "sqlCount": 3170.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 72.0,
+        "rowLockWaitMs": 96.0,
+        "appCpuMs": 546.875,
+        "redisCommandDelta": 26.0
+      },
+      "newSync": {
+        "concurrency": 10,
+        "mode": "SYNC",
+        "trials": 3,
+        "acceptedP95Ms": 24.2878,
+        "allPostP95Ms": 18.1214,
+        "completionP95Ms": 30.2271,
+        "batchSuccessfulPerSecond": 154.61972824036565,
+        "sqlCount": 3170.0,
+        "dmlCount": 60.0,
+        "rowLockWaits": 70.0,
+        "rowLockWaitMs": 99.0,
+        "appCpuMs": 578.125,
+        "redisCommandDelta": 26.0
+      },
+      "completeP95ReductionPercent": 93.94770914846731,
+      "goalPassed": true,
+      "syncReferenceRatio": 1.0958597686981113
+    }
+  ],
+  "limitations": [
+    "OLD then NEW sequentially on the same isolated dependencies; time drift remains, inspect SYNC references",
+    "No production capacity or multi-node HA inference",
+    "one fixed configuration comparison, no parameter search",
+    "all 48 runs retained including warmup and supplementary scenarios; costs include polling and background work"
+  ]
+}

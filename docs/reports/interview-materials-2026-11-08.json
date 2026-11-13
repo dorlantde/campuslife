@@ -1,0 +1,124 @@
+{
+  "date": "2026-11-08",
+  "task": "M07.1-A",
+  "status": "INITIAL_MATERIALS_DELIVERED_HUMAN_REVIEW_PENDING",
+  "routeSelection": {
+    "A": "user explicitly selected interview preparation first",
+    "serverWork": "deferred, not completed",
+    "comprehensiveMeasurement": "deferred, not completed",
+    "frontend": "remains paused",
+    "curlDerivativeAdopted": false,
+    "selectedProposalSha256": "a4c9f3e99c7bebd39410a81aae0e636d981e98432a59fa0e5db3ad1d6c06a018"
+  },
+  "deliverables": {
+    "docs/interview/project-evidence.md": "9742c121ce2f8526c9f94e50cfa9e077a523fcf406552c4bbb50e6bf877cd119",
+    "docs/interview/source-review.md": "bde01a982a40465ce00b47174b67eaee8b11f9b53541139cf9a5c5d38e877d81",
+    "docs/interview/resume-draft.md": "98bc968c4ae93c1aacb8ba1915f76148875d3e910d6ac248079b80cc796a6bd9"
+  },
+  "sourceReferences": {
+    "src/main/java/com/campuslife/admin/service/AdminAccountStatusService.java": "ceb2d20d06e7a83e2e6ac556d6ef8464bbdf46761351f82a0925a0334f63b830",
+    "src/main/java/com/campuslife/auth/security/SessionAuthenticationFilter.java": "2a48bf86022e23e270a2680f170312880d0d6e6c300a62805e6c612e035176f3",
+    "src/main/java/com/campuslife/auth/security/TokenService.java": "fb4914d9b86edc456691387771566c264387f35846fc466adf40ca07d94f24cc",
+    "src/main/java/com/campuslife/auth/service/SessionService.java": "672342a3e8202afc139550de495dc5851ac0446758fcf688e8239f2410ffb6ab",
+    "src/main/java/com/campuslife/coupon/service/CouponAdmissionService.java": "ea87f44b17fa151e84d42ab7dc3548fdcd2c8238d30874844cf383749cbe0211",
+    "src/main/java/com/campuslife/coupon/service/CouponAdmissionTransactions.java": "a5cbd0c4305bcf965b6adc12f13e85903359a273eb6504d8d25bc2d82cc03b11",
+    "src/main/java/com/campuslife/coupon/service/CouponIssuance.java": "68e225e8587b1f2575d3c0fcf551d4dfa1c917cb642ca94f611ac929d06f3b99",
+    "src/main/java/com/campuslife/coupon/service/CouponIssueListener.java": "f73b4f429c278b349bfc215ba7caa858063cbe160c43f3615ef8d706fb657bac",
+    "src/main/java/com/campuslife/coupon/service/CouponRecoveryTransactions.java": "9f05807bc910c0f6c0ff06ca2232305ff24bd5eaa01dc71379deeda6fef79cb6",
+    "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java": "942203dad66826f8c617c3cdd617924b0dbc18bb3f8bae01bb0f2b42dbedfde0",
+    "src/main/java/com/campuslife/file/service/FileCleanup.java": "9e01761f10c977bda6689c102973979b6da67a3e9a0431d1f5c01ba63a5d2319",
+    "src/main/java/com/campuslife/file/service/FileDownloadService.java": "4c2ed8d778028c8ba6a70292845677657b7c7b7190f9b2b063734c6395c1a4dd",
+    "src/main/java/com/campuslife/file/service/FileReferenceProtection.java": "d7bf6d8a8e921dffd0aa0464dfe36ae9692cf6d95ca7deddc7b44071b8c81118",
+    "src/main/java/com/campuslife/file/service/FileTransactions.java": "e47085015e1ab87e9f68f1d63ef08ba0454c0fd6620c3e55e2f55588fdcc8dd1",
+    "src/main/java/com/campuslife/file/service/FileUploadService.java": "e5d8fc7382a941230ac5024b64e1a0bc92421c05f5a0b20470d102a9cb839f95",
+    "src/main/java/com/campuslife/file/storage/S3FileStorage.java": "9577f80552a5ffa3ee150b17ff727fe817a54423d7350694870915faac497bfb",
+    "src/main/java/com/campuslife/merchant/cache/RatingCache.java": "3cb6eb5562030f65b992bf000c63cb3a0b240dbb20e4f344f95f62b18f81bd65",
+    "src/main/java/com/campuslife/merchant/cache/RedisRatingStore.java": "0547aa898bcbb8e99674d6538efdba115837d2e3d91ceac13bb0f79e14ca2e07",
+    "src/main/java/com/campuslife/merchant/mapper/PublicShopMapper.java": "3c0a854f4f8e1b6935e6e4762e84b705d2d24c62491225ec968aedc1116f8c79",
+    "src/main/java/com/campuslife/merchant/mapper/RatingRevisionMapper.java": "58b49a5b6d55fe592e7543a4d835d0bfe1ea5d7660f9f52ffd56445800e1d18e",
+    "src/main/java/com/campuslife/merchant/service/PublicShopCatalogService.java": "d1d944e070c9699073b36be71ea623368c630e4b9c97f0573d1714bde93a682c",
+    "src/main/java/com/campuslife/merchant/service/PublicShopDetailTransactions.java": "01c5f84cbc0e0a183aa225ea3d431cedb4802c0e6ea57a5596244ac9928b0666",
+    "src/main/java/com/campuslife/messaging/service/OutboxPublisher.java": "d5f13de2b80658337aa595e81d6f0d4e73155ac84cdec4e683b045d7ed79d083",
+    "src/main/java/com/campuslife/messaging/service/OutboxTransactions.java": "304627ed4b775e138d576d30ac92a3fd5c16b75ea34bc0378141dd779de6f5e1",
+    "src/main/java/com/campuslife/messaging/service/RabbitOutboxTransport.java": "4ba5f99aeca35d2b7c4f43efef79d7f21740ec58273908d0cb452d6f9fd9023a",
+    "src/main/java/com/campuslife/order/controller/PrintOrderController.java": "32b56fd8fa899501ab2be031e1083916700208f7219b8b5dc6c2639805ca3c2a",
+    "src/main/java/com/campuslife/order/dto/PrintCreate.java": "7869ebe6f7a751cb4d8d5cf8c6b808859fb4fbf7c212916c11e1486b01f71cc1",
+    "src/main/java/com/campuslife/order/entity/BookingDetailEntity.java": "30d21cc223e3724c2ab2f0484361ba61fc11764f37ba19b324b5a572a7f5ad4c",
+    "src/main/java/com/campuslife/order/entity/PrintDetailEntity.java": "a88974d1a9a868f6aaa614ef7cbe9ecac877d46974fee5ac769a1e00848854a8",
+    "src/main/java/com/campuslife/order/entity/ServiceOrderEntity.java": "8d05e787f65eeeb772a71c5f1a6249768efe6af8f418a49e2ebf1662cdbba212",
+    "src/main/java/com/campuslife/order/mapper/BookingMapper.java": "a21828bdc70c15453f67b91bf258a468d31ee5e104da5b1d89818fc9c8d68bd4",
+    "src/main/java/com/campuslife/order/mapper/IdempotencyMapper.java": "682bed5601858e56859c4f0a90af7b96a33564777e353369b0b2fcc8a3e8c24e",
+    "src/main/java/com/campuslife/order/mapper/MoneyMapper.java": "23d439a22a3c0eb497c88b335e450e0776b018961fb032f85884cd6b00e3f238",
+    "src/main/java/com/campuslife/order/mapper/PrintOrderMapper.java": "34df5f0422418cb7d79b052c154158783c8814cfa3333d7e663286096711661f",
+    "src/main/java/com/campuslife/order/service/BookingOrderTransactions.java": "a70615377a4bd42baca533e133f54b4fd94dccc318abfd1cd4f9dafd6e3bc6f0",
+    "src/main/java/com/campuslife/order/service/OrderReviewTransactions.java": "8db18350086b64b47d5cfba208bae8a0d9d2c73a2f8a7c10d0baff58f2062c72",
+    "src/main/java/com/campuslife/order/service/PrintOrderService.java": "ea50afb674dd4b83b77e5a46d00364bf250745011e11b136374ef806b9f8f886",
+    "src/main/java/com/campuslife/order/service/PrintOrderTransactions.java": "cb28feb530dff0657e501388209595c0c11081bd350a7fb6b3bec70059f456ad",
+    "src/main/java/com/campuslife/order/service/PrintQuotePolicy.java": "7ccefbcfbc9612f78544765bc3289f481388e06f990e8b4c19459bebfac9c28b",
+    "src/main/java/com/campuslife/order/vo/OrderDetail.java": "5e9779e0cbfa97a514dcaa0c94b514b3382ca11247686bdec0e60eacf600e4e3",
+    "src/main/resources/db/migration/V10__booking_mock_payments.sql": "bf71d0cf92e906c44c7ebd7afb35e4066bab26cb7091afaec5b3620df81ccc55",
+    "src/main/resources/db/migration/V18__create_coupon_claims.sql": "4dc6b751fdb82adf442205d17adf7a6915046bc7d73bb090e08b4953b8b88098",
+    "src/main/resources/db/migration/V22__async_coupon_foundation.sql": "172b8c0243b3ff45dac8da5f8e396e8f5652df5992a6a22f49d50468c4eb7d15",
+    "src/main/resources/db/migration/V9__create_booking_orders.sql": "b4ced9514eb379e082fea0fbe1ad59604481fe98c5ff7299657c013a84cb0e88",
+    "src/main/resources/redis/coupon/common.lua": "bc6f2c1614bf16099924d6b821e1090d7654514032e0bd6ac703bbeca42024b6",
+    "src/main/resources/redis/coupon/reserve.lua": "d284d82a6fc59fe7c868d8576c2f798819bd7016ebe57a29dc003e9be6a43114",
+    "src/test/java/com/campuslife/BookingOrdersMysqlIT.java": "6cbace973cd9e28f99e3e3c5f160bb2b77aee850771111bf00bdbe872179fa61",
+    "src/test/java/com/campuslife/MerchantPrintDownloadMysqlIT.java": "0082051a67280a05a273cfaf16be8d4a36a785961377f85304733d19bbe11b7d",
+    "src/test/java/com/campuslife/PrintOrdersMysqlIT.java": "dcc16aa97570c627319a6469e61226a3b1d6cb97be558dff3be1f83cd4bd0ea1",
+    "src/test/java/com/campuslife/PrintQuoteMysqlIT.java": "0aa7603c7dab2b33a7be075f8b06ac6012807afc1b30b822e8735eaaefede582"
+  },
+  "metricChecks": {
+    "source": "docs/reports/outbox-publisher-comparison-2026-11-01.md",
+    "definition": "POST initiation until GET observes SUCCEEDED; per-concurrency median of three complete-success p95 values",
+    "rows": [
+      {
+        "concurrency": 1,
+        "oldMillis": "18751.81",
+        "newMillis": "1147.49",
+        "reductionPercent": "93.88"
+      },
+      {
+        "concurrency": 5,
+        "oldMillis": "18959.08",
+        "newMillis": "578.33",
+        "reductionPercent": "96.95"
+      },
+      {
+        "concurrency": 10,
+        "oldMillis": "18990.79",
+        "newMillis": "1149.38",
+        "reductionPercent": "93.95"
+      }
+    ],
+    "historicalNumbersReconciled": true,
+    "newPerformanceMeasurement": false
+  },
+  "documentChecks": {
+    "localLinksChecked": 622,
+    "missingLinks": 0,
+    "bookingTestMethodsLocated": 2,
+    "v1GuideStaleCurrentStateCorrected": true
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "existingHelpersVerified": 29,
+    "historicalEvidenceFilesVerified": 132,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "productionChanges": 0
+  },
+  "executed": {
+    "cloudConnected": false,
+    "dockerStarted": false,
+    "buildRun": false,
+    "testsRun": false,
+    "newRuntimeMeasurements": false
+  },
+  "notYetAccepted": [
+    "user understanding and explanation",
+    "final resume wording and personal contribution confirmation",
+    "final interview or demonstration package",
+    "comprehensive cloud measurement"
+  ],
+  "next": "M07.1-B personal explanation and revision; first three asynchronous-coupon questions, no server operations",
+  "cloudState": "Only historical C.1 cleanup evidence referenced; no live audit"
+}

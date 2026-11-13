@@ -1,0 +1,15 @@
+{
+  "completedAt": "2026-10-28T07:50:56.7576802Z",
+  "runs": [
+    {
+      "run": 1,
+      "log": ".cache/public-shop-sql-20261028-074626-de93cf9b-run1.log",
+      "evidence": "run1.json"
+    },
+    {
+      "run": 2,
+      "log": ".cache/public-shop-sql-20261028-074626-de93cf9b-run2.log",
+      "evidence": "run2.json"
+    }
+  ]
+}

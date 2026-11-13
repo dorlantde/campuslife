@@ -1,0 +1,195 @@
+{
+  "task": "M06.2-B.1",
+  "taskDate": "2026-11-06",
+  "documentationFinalizedDate": "2026-11-07",
+  "status": "PASSED_WITH_DOCUMENTED_SCOPE",
+  "adoption": "User instructed next task after M06.2-A; only B.1 implemented",
+  "environment": {
+    "python": "Python 3.10.12",
+    "kernel": "5.15.0-198-generic",
+    "stage": "/home/campusdeploy/.cache/campuslife-case-runner/0fd79c147981693c"
+  },
+  "sourceFiles": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/test_case_runner.py",
+      "sha256": "4c99bff91bd69af42155288cf6a712c29152b2a2f046aa5278a65eca7e86363a"
+    },
+    {
+      "path": "scripts/diagnostics/case_runner_fixture.py",
+      "sha256": "80bbea0bda3006fdea72d2a2a639f8123e627c844e4710c0d2dbf07217b3e0b3"
+    }
+  ],
+  "linuxIntegration": {
+    "testsRun": 16,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0,
+    "passed": true,
+    "evidenceRoot": "/home/campusdeploy/.cache/campuslife-case-runner/0fd79c147981693c/.cache/case-runner-tests/65502fe3939447fdbe110be17faa94cc",
+    "workDirectoriesRemaining": [],
+    "elapsedSeconds": 26.739,
+    "exitCode": 0
+  },
+  "realSshClientDisconnect": {
+    "transport": {
+      "clientIntentionallyTerminated": true,
+      "clientExitCode": 1,
+      "ready": {
+        "case": "case-1394d6bf129741bd",
+        "stateBeforeDisconnect": "RUNNING",
+        "supervisor": {
+          "boot": "6db1faa4-4948-4354-949e-4ddc1a6b6df1",
+          "group": 407560,
+          "parent": 407559,
+          "pid": 407560,
+          "session": 407560,
+          "start_ticks": 24905400,
+          "state": "R",
+          "uid": 1000
+        }
+      }
+    },
+    "sameCaseFetch": {
+      "case": "case-1394d6bf129741bd",
+      "receipt": {
+        "case_id": "case-1394d6bf129741bd",
+        "cleanup": {
+          "exit_code": 0,
+          "orphaned": false,
+          "processes_clean": true
+        },
+        "cleanup_proof_valid": true,
+        "cleanup_verified": true,
+        "deadline_unix": 1794027468.7949479,
+        "failure_type": null,
+        "finished_unix": 1794027456.4406595,
+        "job": {
+          "exit_code": 0,
+          "orphaned": false,
+          "processes_clean": true
+        },
+        "launch_id": "772bb2b510a442c0a0583c0d946a6443",
+        "manifest_sha256": "c82aa3528227276abd06e4fe861b6e1307bb578dbfc1e6978d068db5bb0793f3",
+        "schema": 1,
+        "started_unix": 1794027443.7949476,
+        "state": "SUCCEEDED",
+        "task": "M06.2-B.1-SSH",
+        "task_outcome": "SUCCEEDED"
+      },
+      "receiptSha256": "19c83a1744ebaf9d66341dad41df89b37f2011706721e28de065ba355b6cfb51",
+      "executions": 1,
+      "repeatedQueries": 3,
+      "workAbsent": true
+    },
+    "elapsedSeconds": 12.646,
+    "notOriginalConnectionResetReproduction": true
+  },
+  "finalAudit": {
+    "sourceFilesVerified": 3,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 4
+      }
+    ],
+    "generatedSecretsRemaining": [],
+    "activeOwnedProcesses": [],
+    "workDirectoriesRemaining": [],
+    "caseDirectories": 16,
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    }
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "localJarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "existingRunnerSha256": "194e476c6dbc82fb1fc22f70a8c0128e85713930e086c9c06896b4107e7aec21",
+    "deploymentSha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977"
+  },
+  "evidence": [
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/ssh-stdout.json",
+      "bytes": 1015,
+      "sha256": "7bd1c99e5cc54fddf51b76b99657b032065726931e433271ab21d6b18dbb2ecb"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/ssh-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/tests.log",
+      "bytes": 1648,
+      "sha256": "27279354f104cb8eda107f23949b041556b49587162c8c70b8b72a536e860b7e"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/disconnect-transport.json",
+      "bytes": 420,
+      "sha256": "1ae605a0dc2f7875f325d3176f1101ff0ff60e424234c9b594872897807b2534"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/disconnect-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/disconnect-fetch.json",
+      "bytes": 781,
+      "sha256": "901502b64455f7bde9eb54536e2b9cec301f8e612cc2403cad862048ab0015ab"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/disconnect-fetch-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/final-audit.json",
+      "bytes": 4881,
+      "sha256": "b253c8fc69d79f654a75c01c50abaf6f51167d022f8f644e7b43b6d2f43d99e7"
+    },
+    {
+      "path": ".cache/case-runner-b1/0fd79c147981693c/local-audit.json",
+      "bytes": 312,
+      "sha256": "a52a9ffad6125988b881fc1489180c6d9f61a04b838ce864cbb3849af1031679"
+    }
+  ],
+  "notImplementedOrExecuted": [
+    "Docker and database cleanup adapters",
+    "measurement tool and V24 seed",
+    "Pilot",
+    "formal load",
+    "business code changes",
+    "automatic takeover",
+    "SIGKILL/host restart cleanup guarantee",
+    "Rabbit probe or original SSH root-cause fix"
+  ],
+  "nextTask": "M06.2-B.2 measurement tool and V24 fixture",
+  "negativeCaseNote": "Cleanup-failure receipts remain failed; harness removed only their work after assertions. Deliberately substituted receipt was rejected; raw receipt fields are not validation."
+}

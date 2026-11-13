@@ -1,0 +1,1311 @@
+{
+  "date": "2026-10-30",
+  "task": "M08.3-B",
+  "operations": 75,
+  "migration": "V22",
+  "applicationTables": 32,
+  "distinctChecks": 212,
+  "allLatestOutcomes": "passed",
+  "oldMigrationsUnchanged": 21,
+  "countsByClass": {
+    "com.campuslife.CouponAsyncMysqlIT": 37,
+    "com.campuslife.CouponAsyncRabbitIT": 4,
+    "com.campuslife.CouponAsyncUpgradeCheck": 1,
+    "com.campuslife.CouponCampaignMysqlIT": 74,
+    "com.campuslife.CouponClaimsMysqlIT": 8,
+    "com.campuslife.CouponOrdersMysqlIT": 19,
+    "com.campuslife.MysqlIntegrationIT": 12,
+    "com.campuslife.NotificationMysqlIT": 9,
+    "com.campuslife.NotificationRabbitIT": 4,
+    "com.campuslife.OpenApiMysqlIT": 3,
+    "com.campuslife.OutboxMysqlIT": 10,
+    "com.campuslife.OutboxRabbitIT": 8,
+    "com.campuslife.coupon.service.CouponIssueListenerTest": 5,
+    "com.campuslife.messaging.service.NotificationListenerTest": 4,
+    "com.campuslife.messaging.service.OutboxPublisherTest": 10,
+    "com.campuslife.messaging.service.RabbitOutboxTransportTest": 4
+  },
+  "cases": [
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "admittedBeforeStopCanIssueAfterStopAndOriginalSessionEnds",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "asyncModeAndMissingGateCannotFallThroughToSynchronousIssuer",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "backwardClockDoesNotInventCompletion",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "claimWindowEndingDoesNotRevokeDurableAdmission",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "concurrentIssuanceAndDuplicateDeliveriesCannotOversell",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "currentQualificationFailureIsTerminal(String)[1]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "currentQualificationFailureIsTerminal(String)[2]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "currentQualificationFailureIsTerminal(String)[3]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "currentQualificationFailureIsTerminal(String)[4]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "currentQualificationFailureIsTerminal(String)[5]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[1]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[2]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[3]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[4]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[5]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "databaseRejectsInconsistentRequestShapes(String)[6]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "deadlineUsesStrictMillisecondBoundary(long)[1]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "deadlineUsesStrictMillisecondBoundary(long)[2]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "deadlineUsesStrictMillisecondBoundary(long)[3]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "failedOriginalKeyRemainsBoundAcrossCampaignAndAllowsNewKey",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "httpReplayAndReadExposeOnlyPersistedPendingOrFailedWithoutAdmission",
+      "round": "round7",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "lockWaitUsesClockAfterCampaignAndRequestAcquisition",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "pausedAdmissionDoesNotStopPreviouslyAcceptedIssuance",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "pendingAndOutboxRollbackTogetherIfAdmissionWriterFails",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "pendingAndSuccessUniqueGuardAllowsFailedNewKeyOnly",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "rebuildingPausesWithoutExtendingDeadlineAndOldGenerationPendingSurvives",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "receiptFailureRollsBackInventoryCouponAndResultTogether",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "receiptHashMismatchCannotCommitIssuance",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "scannerSkipsRebuildAndProcessesEligibleBatch",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "sharedGateAllowsConcurrentAdmissionFencesAndBlocksExclusiveStop",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "successAndDuplicatesCommitOnlyOneCouponReceiptAndOriginalVersion",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "timeoutAndConsumerCompeteForOneTerminal",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "timeoutAndLateMessagesNeverReopenResult",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "untrustedOrMismatchedCommandsWriteNothing(String)[1]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "untrustedOrMismatchedCommandsWriteNothing(String)[2]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "untrustedOrMismatchedCommandsWriteNothing(String)[3]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncMysqlIT",
+      "name": "useEndClampsDeadlineAndEqualityFails",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncRabbitIT",
+      "name": "lateExpiredCommandIsAcknowledgedWithoutIssuance",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncRabbitIT",
+      "name": "notificationConsumerRejectsCouponCommandRatherThanCreatingNotice",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncRabbitIT",
+      "name": "realRouteDuplicatesAndRestartProduceOneCouponWithoutNotification",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncRabbitIT",
+      "name": "tamperedMessageGoesOnlyToCouponDeadLetterQueue",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponAsyncUpgradeCheck",
+      "name": "actualV21SuccessFactsUpgradeWithoutChangingTheirIdentityOrCoupon",
+      "round": "round3",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "authenticationAndStalePrincipalCannotBypassCurrentAccount",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "bothCategoriesAmountAndOffsetBoundariesAreExact",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "campaignLockWaitUsesFinalTimeAndCannotPublishAtDeadline",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "concurrentDifferentDraftChangesHaveOneWinner",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "databaseEnforcesAmountsWindowStockStatesAndForeignKeys",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "failureAfterStateWriteRollsBackAllTransitionFields",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "finalSessionExpiryRollsBackAlreadyExecutedPublish",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "firstPublishChecksRightOpenWindowButRetryKeepsOriginalFact",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "historicalDraftCanBeSavedButNotPublishedAndTimeRollbackCannotWrite",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "invalidVersionsPaginationIdsAndTransitionBodiesDoNotWrite",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "lifecycleFreezesRulesAndReplaysOnlyOriginalTransitions",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "listIsScopedSortedAndLongOffsetDoesNotOverflow",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "maxVersionAllowsNoopButRejectsActualMutation",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "ownerChangeCannotReplayAnotherActorsTransition",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "readSnapshotKeepsQualificationTotalAndPageTogether",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "shopLockWaitRechecksApprovalBeforePublishing",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "stopAndReadRemainAllowedAfterSuspensionButOtherWritesDoNot",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[10]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[11]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[12]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[13]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[14]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[15]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[16]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[17]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[18]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[19]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[1]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[20]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[21]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[22]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[23]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[24]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[25]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[26]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[27]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[28]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[29]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[2]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[30]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[31]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[32]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[33]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[34]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[35]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[36]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[37]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[38]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[39]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[3]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[40]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[41]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[42]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[43]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[44]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[45]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[46]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[47]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[48]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[49]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[4]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[50]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[51]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[52]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[53]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[54]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[55]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[56]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[57]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[5]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[6]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[7]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[8]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponCampaignMysqlIT",
+      "name": "strictFieldsCannotCreateOrModify(String, Object, boolean)[9]",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "claimReplayCatalogAndHistoryKeepOneIssuance",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "distinctStudentsCompeteForExactStockWithoutOverselling",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "failuresAndFinalSessionExpiryRollbackAllThreeFacts",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "inactiveShopAndCampaignCannotIssueButHistoryRemainsReadable",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "invalidFieldsRolesAndPaginationCannotIssue",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "lockWaitUsesDeadlineAfterAcquisition",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "ownCountAndPageShareSnapshotWhileAnotherClaimCommits",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponClaimsMysqlIT",
+      "name": "sameStudentDifferentKeysAndSameKeyHaveOneEffect",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "bookingOpportunisticExpiryReleasesThenReusesSameCoupon",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "invalidCouponAndWrongPayableRollbackOrderResources(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "invalidCouponAndWrongPayableRollbackOrderResources(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "oneFenPayableAndThresholdEqualityAreAcceptedButBelowThresholdRejected",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "paidExpiryRefundsPayableAndRetainsUsedCoupon(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "paidExpiryRefundsPayableAndRetainsUsedCoupon(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "quoteCreateReleaseReusePaymentAndRefund(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "quoteCreateReleaseReusePaymentAndRefund(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "quoteEnforcesIdentityCouponWindowShopAndReadOnlySemantics",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "realCouponRowWaitRechecksTimeBeforeReserving(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "realCouponRowWaitRechecksTimeBeforeReserving(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "releaseFailureRollsBackClosureAndCanRetry(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "releaseFailureRollsBackClosureAndCanRetry(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "sameCouponTwoCreatesHaveExactlyOneWinner(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "sameCouponTwoCreatesHaveExactlyOneWinner(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "snapshotAndConsumeFailureRollbackAllFacts(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "snapshotAndConsumeFailureRollbackAllFacts(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "timeoutReleasesExpiredCouponAndNeverGeneratesMoney(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.CouponOrdersMysqlIT",
+      "name": "timeoutReleasesExpiredCouponAndNeverGeneratesMoney(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "accountWithSessionCannotBePhysicallyDeleted",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "invalidRoleIsRejectedByDatabase",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "invalidUsernameIsRejectedByDatabase",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "migrationCreatesExpectedTablesAndTracksVersion",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "nicknamePreservesChineseAndEmoji",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "outboxPublishingStateRequiresANonNullLeaseDeadline",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "repeatedMigrationDoesNotRecreateTables",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "sessionCannotExpireBeforeCreation",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "sessionJtiCannotBeRepeated",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "sessionMustReferenceAnExistingAccount",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "sessionUsesMillisecondUtcValuesAndAllowsRevocation",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.MysqlIntegrationIT",
+      "name": "usernameCannotBeRepeated",
+      "round": "round5",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "changedPayloadIsPermanentlyRejected",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "concurrentRedeliveryCreatesOneEffect",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "deliveryAndReadAreIdempotentAndIsolated(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "deliveryAndReadAreIdempotentAndIsolated(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "failedNotificationRollsBackReceiptAndAllowsRetry",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "maintenanceInspectAndReplayUseOriginalIdentity",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "maintenanceRefusesAnActiveUtcLease",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "ninetyDayBoundaryAndHistoricalDelivery",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationMysqlIT",
+      "name": "readWriteSessionExpiryRollsBackReadTimestamp",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationRabbitIT",
+      "name": "committedConsumptionBeforeRedeliveryIsAcknowledgedWithoutAnotherEffect",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationRabbitIT",
+      "name": "realDeliveryAndDuplicateAfterCommitMakeOneNotification(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationRabbitIT",
+      "name": "realDeliveryAndDuplicateAfterCommitMakeOneNotification(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.NotificationRabbitIT",
+      "name": "tamperedPayloadIsDeadLetteredWithoutReceipt",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OpenApiMysqlIT",
+      "name": "documentedExamplesSupportLoginProfileUpdateAndConflictAgainstRealMysql",
+      "round": "round9",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OpenApiMysqlIT",
+      "name": "generatedSpecificationDescribesOnlyImplementedOperationsAndExportsAnImportableSnapshot",
+      "round": "round9",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OpenApiMysqlIT",
+      "name": "swaggerPageConfigurationAndJavascriptAreReachableWithoutLoggingIn",
+      "round": "round9",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "businessFirstSuccessWritesOneImmutableEnvelopeAndReplayDoesNotAppend(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "businessFirstSuccessWritesOneImmutableEnvelopeAndReplayDoesNotAppend(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "crashedTwentiethLeaseEndsDeadWithoutTwentyFirstSend",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "finalSessionExpiryRollsBackNewOutboxAndOrder(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "finalSessionExpiryRollsBackNewOutboxAndOrder(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "leaseExpiryReclaimsSameIdentityAndRejectsLateCallback",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "outboxSqlFailureRollsBackOrderStageAndAuditEvent(String)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "outboxSqlFailureRollsBackOrderStageAndAuditEvent(String)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "persistedRetryBudgetEndsInDeadAndRestartDoesNotResetIt",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxMysqlIT",
+      "name": "skipLockedAllowsAnotherWorkerToClaimDifferentRow",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "brokerDownDoesNotRollBackBusinessAndRecoveryPublishesOriginalIdentity",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "brokerIoCannotBeCalledFromDatabaseTransaction",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "brokerNackForOverflowRemainsRecoverable",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "brokerRestartKeepsConfirmedMessageAndLeaseRecoveryResendsSameIdentity",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "confirmsRouteAndPersistentUtf8EnvelopeWithSameIdentity",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "missingExchangeIsNotMarkedSent",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "noBindingReturnIsNotMarkedSent",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.OutboxRabbitIT",
+      "name": "quorumDeadLetterArgumentsAreActuallyApplied",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.coupon.service.CouponIssueListenerTest",
+      "name": "ackFailureIsNotConvertedToRejectAfterCommit",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.coupon.service.CouponIssueListenerTest",
+      "name": "ackHappensAfterTransactionalDeliveryReturns",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.coupon.service.CouponIssueListenerTest",
+      "name": "invalidCommandRejectsWithoutAck",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.coupon.service.CouponIssueListenerTest",
+      "name": "invalidContentTypeIsRejectedBeforeDatabaseWork",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.coupon.service.CouponIssueListenerTest",
+      "name": "technicalFailuresHaveBoundedRetriesThenDeadLetter",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.NotificationListenerTest",
+      "name": "ackOnlyAfterTransactionalServiceReturns",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.NotificationListenerTest",
+      "name": "permanentFailureRejectsWithoutRetryOrAck",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.NotificationListenerTest",
+      "name": "transactionCreationFailureIsRetriedBeforeDeadLetter",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.NotificationListenerTest",
+      "name": "transientFailuresHaveThreeBoundedFreshCalls",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "concurrentTicksDoNotCreateAnUnboundedPublishQueue",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "disabledTransportDoesNotTouchTheDatabaseOrBroker",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[1]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[2]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[3]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[4]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[5]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[6]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "retryBackoffIsBoundedAcrossPersistedAttempts(int, long)[7]",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "name": "shutdownStopsClaimsAndWaitsAtMostItsBudgetWhenTransportStalls",
+      "round": "round2",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.RabbitOutboxTransportTest",
+      "name": "confirmTimeoutIsBoundedAndNeverClassifiedAsSuccess",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.RabbitOutboxTransportTest",
+      "name": "couponCommandUsesSeparateExplicitRoute",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.RabbitOutboxTransportTest",
+      "name": "returnedMessageOverridesPositiveConfirm",
+      "round": "round6",
+      "outcome": "passed"
+    },
+    {
+      "class": "com.campuslife.messaging.service.RabbitOutboxTransportTest",
+      "name": "unsupportedTypeOrAggregateNeverReachesBroker",
+      "round": "round6",
+      "outcome": "passed"
+    }
+  ],
+  "notImplemented": [
+    "Redis reservations/Lua",
+    "Redis settlement/orphan arbitration/rebuild",
+    "public async admission/mode activation"
+  ],
+  "rabbitFixturesCleaned": [
+    "960bdd5e86784affaf4f657f1dadebbc",
+    "d0cda748dd5944a5bf010abcbe883ecf"
+  ]
+}

@@ -1,0 +1,268 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-C.1",
+  "status": "COMPATIBILITY_GATE_STOPPED_NO_HTTP_CLIENT",
+  "case": "case-8f1d9d3fc764426e",
+  "adoptedPlanSha256": "15b4918e8adbf6a132df6d5837b15bf9b87c748dba52865ad42efc0b84f77d90",
+  "manifestSha256": "bed2b38087f271c93bacc17a313eca3c38a743a1780512714d4cc735b0fb4d59",
+  "receiptSha256": "ce3707170c4d4366e7e3c78d4885eabda9c97c7f6e30dbe483b6fc57d6dd7fbd",
+  "elapsedSeconds": 2.368,
+  "receipt": {
+    "case_id": "case-8f1d9d3fc764426e",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794107025.2613704,
+    "failure_type": null,
+    "finished_unix": 1794106727.6292582,
+    "job": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "666c1704d6114cd3aae245dcaaebb957",
+    "manifest_sha256": "bed2b38087f271c93bacc17a313eca3c38a743a1780512714d4cc735b0fb4d59",
+    "schema": 1,
+    "started_unix": 1794106725.2613702,
+    "state": "SUCCEEDED",
+    "task": "D.7.1-C.1",
+    "task_outcome": "SUCCEEDED"
+  },
+  "compatibility": {
+    "authSamples": [],
+    "brokerStarted": false,
+    "businessRequests": 0,
+    "deploymentInitialized": false,
+    "elapsedSeconds": 1.475776298029814,
+    "inventory": {
+      "anonymousVolumes": 0,
+      "brokerStarted": false,
+      "compatibleTools": false,
+      "containerId": "dade6474150f894eca5c2c7d4e4670a97b5f76779ab6188ce4e216e9197731ac",
+      "elapsedSeconds": 1.0375035930192098,
+      "imageId": "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+      "network": "none",
+      "paths": {
+        "bash": "/usr/bin/bash",
+        "curl": "absent",
+        "sh": "/usr/bin/sh",
+        "timeout": "/usr/bin/timeout",
+        "wget": "absent"
+      },
+      "reason": "NO_HTTP_CLIENT",
+      "repoDigest": "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+      "secretMounts": 0,
+      "selectedClient": null,
+      "version": "4.3.6",
+      "versions": {
+        "curl": null,
+        "timeout": "9.4",
+        "wget": null
+      }
+    },
+    "originalProbeUnchanged": true,
+    "status": "INCOMPATIBLE_TOOLS",
+    "stopReason": "NO_HTTP_CLIENT",
+    "task": "D.7.1-C.1"
+  },
+  "inventory": {
+    "anonymousVolumes": 0,
+    "brokerStarted": false,
+    "compatibleTools": false,
+    "containerId": "dade6474150f894eca5c2c7d4e4670a97b5f76779ab6188ce4e216e9197731ac",
+    "elapsedSeconds": 1.0375035930192098,
+    "imageId": "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+    "network": "none",
+    "paths": {
+      "bash": "/usr/bin/bash",
+      "curl": "absent",
+      "sh": "/usr/bin/sh",
+      "timeout": "/usr/bin/timeout",
+      "wget": "absent"
+    },
+    "reason": "NO_HTTP_CLIENT",
+    "repoDigest": "sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+    "secretMounts": 0,
+    "selectedClient": null,
+    "version": "4.3.6",
+    "versions": {
+      "curl": null,
+      "timeout": "9.4",
+      "wget": null
+    }
+  },
+  "remoteAudit": {
+    "case": "case-8f1d9d3fc764426e",
+    "receiptSha256": "ce3707170c4d4366e7e3c78d4885eabda9c97c7f6e30dbe483b6fc57d6dd7fbd",
+    "sourceFilesVerified": 5,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "diagnosisSha256": "f4ecb9d31b769d2aff97d4ced8ee311ad8eed2b3b3cfea617f81a966c4cdeb23",
+    "diagnosisStatus": "INCOMPATIBLE_TOOLS",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-b9b27f8f0da94279",
+        "state": "FAILED",
+        "receiptSha256": "a82245222d051ad041b5fec32e48afcc0a8267516a9578c3adcf6b47aed7ff4f",
+        "elapsedSeconds": 101.072,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-27a0f54b72b346da",
+        "state": "FAILED",
+        "receiptSha256": "82cc0568464bdff5a702634fc50aea8eb8f8c937a8c033844c00281fc51d7793",
+        "elapsedSeconds": 101.298,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-4fa17982960d4cb6",
+        "state": "SUCCEEDED",
+        "receiptSha256": "669cd557a6eeeed5dcf6d3c9d7acfc78c932baf082a498338e6063a8e34df333",
+        "elapsedSeconds": 100.607,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-8f1d9d3fc764426e",
+        "state": "SUCCEEDED",
+        "receiptSha256": "ce3707170c4d4366e7e3c78d4885eabda9c97c7f6e30dbe483b6fc57d6dd7fbd",
+        "elapsedSeconds": 2.368,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ],
+    "inventoryOnly": {
+      "brokerStarted": false,
+      "deploymentInitialized": false,
+      "secretMounts": 0,
+      "anonymousVolumes": 0,
+      "knownContainerIdAbsent": true,
+      "journalInstanceIsNone": true,
+      "onlyOneTool": true
+    },
+    "fixedHelperControlledChecks": {
+      "checks": 16,
+      "passed": true,
+      "brokerStarted": false,
+      "originalCaseRepeated": false,
+      "sourceHashesVerified": 3
+    },
+    "controlEndpointShortChecks": {
+      "checks": 18,
+      "passed": true,
+      "brokerStarted": false,
+      "sourceHashesVerified": 3
+    }
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 27,
+    "historicalReportsVerified": 8,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "diagnosticSourcesUnchanged": true,
+    "fixedSourcesMatchControlledChecks": true
+  },
+  "dispatchedSources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/rabbit_probe_diagnostics.py",
+      "sha256": "f70d7b9f8e859b52a96a62e03d5510d2c8eb05c9d9c12fc118b2d93b7bbe4a46"
+    },
+    {
+      "path": "scripts/run_rabbit_health_compatibility.py",
+      "sha256": "1ed6463a4def590a1a95dc7dc407620984f5d6fab9c2c1b094a63278212fc0e7"
+    },
+    {
+      "path": "scripts/test_rabbit_health_compatibility.py",
+      "sha256": "25e407847bcc4fd11153e12939340014ab3b9491279936856b03aaea701fb929"
+    }
+  ],
+  "relatedChecks": {
+    "distinctChecks": 5,
+    "localPassed": 5,
+    "targetPassed": 5,
+    "targetElapsedSeconds": 0.002,
+    "targetSkipped": 0,
+    "scope": "inventory result parsing and fail-closed selection, not Broker/HTTP"
+  },
+  "limitations": [
+    "Broker/HTTP/auth matrix branch not executed",
+    "No candidate script or deployment change implemented",
+    "C.2/C.3 cannot proceed under existing no-new-tools plan",
+    "Old C.3 root cause and Rabbit probe remain unresolved"
+  ],
+  "next": "C.1-R dependency-change proposal only; preserve original probe and do not repeat the same compatibility check",
+  "evidenceSha256": {
+    "audit-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cleanup.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compatibility.json": "f4ecb9d31b769d2aff97d4ced8ee311ad8eed2b3b3cfea617f81a966c4cdeb23",
+    "fetch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fetch.json": "3556e9c4be0d2d79135f41959e336f7cc0411209afc92eb1b4fe8c07623df849",
+    "final-audit.json": "4ac86867b9e87b7d1f6fb14997d7c1547f9ceb3e5dfbe2b7227e35b0cfa1dab8",
+    "image-inventory.json": "87c3b834b0ee2caffccef5eb15668f2b1bbc1156edef6d390064d34f72a5f802",
+    "job.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-audit.json": "09e554d7d0951d29a188e55c64f397551a3ef4032e7b6fd9d814dec55ff182c3",
+    "resources-http-tools.json": "1ac8272c7418448e474d00545491b6b1525141eda28232ebf572e7e821b27df3",
+    "supervisor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-checks.log": "b088f5f85f9d62ba4be3fad9731a8bb5539cc3a00255e1647db6f1959ffae84b"
+  }
+}

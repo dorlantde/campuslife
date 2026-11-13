@@ -1,0 +1,1052 @@
+{
+  "task": "M06.1-D.6e",
+  "date": "2026-11-05",
+  "status": "EXECUTED_NOT_PASSED_PREFLIGHT_REFUSED",
+  "originalFullLifecycleRunsPassed": false,
+  "newFullLifecycleRun": false,
+  "parentD6RemediationClosed": false,
+  "firstAttempt": {
+    "case": "case-d6d5e784c59a",
+    "elapsedSeconds": 209.255,
+    "passed": false,
+    "checksBeforeFailure": 12,
+    "cause": "Admin input directory 0755 was reduced to 0700 by umask 0077; UID 10001 could not read /run/admin."
+  },
+  "effectiveDeploymentPatch": {
+    "path": "scripts/deploy_base.py",
+    "oldSha256": "0b196cab5e3bf863269f897e7ebae455544272f892355f5831d91c146b44eb7e",
+    "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+    "bytes": 28148,
+    "reason": "Explicit directory mode for the UID 10001 admin input bind under umask 0077"
+  },
+  "permissionProbe": {
+    "deniedPaths": [
+      "/run/admin"
+    ],
+    "umask": "0077",
+    "privateParentMode": "0o700",
+    "inputModeBeforeExplicitChmod": "0o700",
+    "inputModeAfter": "0o755",
+    "nonRootReadBeforeExit": 1,
+    "nonRootReadAfterExit": 0,
+    "probeUsedCredentials": false
+  },
+  "finalAttempt": {
+    "case": "case-e50cd28a2f4a",
+    "elapsedSeconds": 455.159,
+    "passed": false,
+    "checks": [
+      "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+      "mysql-resource-parameters-effective-before-business",
+      "seven-healthy-formal-artifact-services",
+      "five-volumes-and-three-networks",
+      "new-jar-image-used-without-business-overlay",
+      "original-v24-32-tables-and-no-default-admin",
+      "mock-funds-remain-off",
+      "openapi-75-operations",
+      "private-observation-ready",
+      "management-denies-anonymous",
+      "app-does-not-mount-eight-ops-or-root-secrets",
+      "student-jwt-cannot-authorize-management",
+      "new-campaign-default-sync"
+    ],
+    "checkCount": 13,
+    "configChecks": [
+      "base-default-config-unchanged",
+      "components-default-config-unchanged",
+      "showcase-default-config-unchanged",
+      "base-compact-profile-rejected-before-init",
+      "components-compact-profile-rejected-before-init"
+    ],
+    "result": {
+      "task": "M06.1-D.6e",
+      "checks": [
+        "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+        "mysql-resource-parameters-effective-before-business",
+        "seven-healthy-formal-artifact-services",
+        "five-volumes-and-three-networks",
+        "new-jar-image-used-without-business-overlay",
+        "original-v24-32-tables-and-no-default-admin",
+        "mock-funds-remain-off",
+        "openapi-75-operations",
+        "private-observation-ready",
+        "management-denies-anonymous",
+        "app-does-not-mount-eight-ops-or-root-secrets",
+        "student-jwt-cannot-authorize-management",
+        "new-campaign-default-sync"
+      ],
+      "passed": false,
+      "businessClassOverlay": false,
+      "fullPrintLifecycleRun": false,
+      "configChecks": [
+        "base-default-config-unchanged",
+        "components-default-config-unchanged",
+        "showcase-default-config-unchanged",
+        "base-compact-profile-rejected-before-init",
+        "components-compact-profile-rejected-before-init"
+      ],
+      "instance": "/home/campusdeploy/campuslife/releases/5382d9dd9ca2/.cache/deploy-base/013496a7ad7c4bb5a4b7480a0ba64d08",
+      "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+      "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+      "startedAt": "2026-11-06T03:24:11.294382+00:00",
+      "resourceProfile": "compact4g",
+      "hostEngine": {
+        "cpus": 2,
+        "memoryBytes": 3799158784,
+        "cgroupVersion": "2"
+      },
+      "validationScope": "Formal packaged artifact, targeted restart/claim/resource closure; not a fourth print lifecycle or capacity test.",
+      "nativeHost": {
+        "system": "Linux",
+        "machine": "x86_64",
+        "release": "5.15.0-198-generic",
+        "cpus": 2,
+        "engineVersion": "29.9.3",
+        "engineMemoryBytes": 3799158784,
+        "cgroupVersion": "2",
+        "memoryBefore": {
+          "MemTotal": 3799158784,
+          "MemAvailable": 3161735168,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        }
+      },
+      "maintenance": [
+        {
+          "action": "Pause",
+          "state": {
+            "id": "1",
+            "mode": "SYNC",
+            "phase": "PAUSED",
+            "generation": "1",
+            "version": "1",
+            "pending": "0",
+            "issued": "0",
+            "actual": "0"
+          },
+          "elapsedSeconds": 54.581
+        },
+        {
+          "action": "Async",
+          "state": {
+            "id": "1",
+            "mode": "ASYNC",
+            "phase": "PAUSED",
+            "generation": "1",
+            "version": "2",
+            "pending": "0",
+            "issued": "0",
+            "actual": "0"
+          },
+          "elapsedSeconds": 55.842
+        }
+      ],
+      "readinessWaitSeconds": [
+        33.466
+      ],
+      "failureType": "RuntimeError",
+      "resourceObservation": {
+        "containerRecords": [
+          {
+            "service": "seaweed",
+            "oneOff": false,
+            "memoryLimitBytes": 402653184,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 60575744,
+            "successfulSamples": 39,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": true,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 3112960,
+            "successfulSamples": 1,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "rabbitmq",
+            "oneOff": false,
+            "memoryLimitBytes": 671088640,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 211656704,
+            "successfulSamples": 36,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "rating-redis",
+            "oneOff": false,
+            "memoryLimitBytes": 134217728,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 11546624,
+            "successfulSamples": 36,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "coupon-redis",
+            "oneOff": false,
+            "memoryLimitBytes": 201326592,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 17272832,
+            "successfulSamples": 36,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "mysql",
+            "oneOff": false,
+            "memoryLimitBytes": 805306368,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 401797120,
+            "successfulSamples": 36,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": false,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 387190784,
+            "successfulSamples": 33,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "nginx",
+            "oneOff": false,
+            "memoryLimitBytes": 67108864,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 6193152,
+            "successfulSamples": 26,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": true,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 206204928,
+            "successfulSamples": 4,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": true,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 243236864,
+            "successfulSamples": 4,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": true,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 230002688,
+            "successfulSamples": 4,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          },
+          {
+            "service": "app",
+            "oneOff": true,
+            "memoryLimitBytes": 939524096,
+            "peakBytes": null,
+            "kernelPeakAvailable": false,
+            "sampledPeakBytes": 235642880,
+            "successfulSamples": 5,
+            "oom": 0,
+            "oomKill": 0,
+            "swapBytes": 0,
+            "restartCount": 0
+          }
+        ],
+        "samples": [
+          {
+            "at": "2026-11-06T03:24:11.445338+00:00",
+            "residentCurrentBytes": 0,
+            "allOwnedCurrentBytes": 0,
+            "runningOwnedContainers": 0
+          },
+          {
+            "at": "2026-11-06T03:24:19.881016+00:00",
+            "residentCurrentBytes": 32894976,
+            "allOwnedCurrentBytes": 32894976,
+            "runningOwnedContainers": 1
+          },
+          {
+            "at": "2026-11-06T03:24:28.258235+00:00",
+            "residentCurrentBytes": 34537472,
+            "allOwnedCurrentBytes": 37650432,
+            "runningOwnedContainers": 2
+          },
+          {
+            "at": "2026-11-06T03:24:36.747324+00:00",
+            "residentCurrentBytes": 35438592,
+            "allOwnedCurrentBytes": 35438592,
+            "runningOwnedContainers": 1
+          },
+          {
+            "at": "2026-11-06T03:24:46.775320+00:00",
+            "residentCurrentBytes": 470278144,
+            "allOwnedCurrentBytes": 470278144,
+            "runningOwnedContainers": 5
+          },
+          {
+            "at": "2026-11-06T03:24:56.898851+00:00",
+            "residentCurrentBytes": 650448896,
+            "allOwnedCurrentBytes": 650448896,
+            "runningOwnedContainers": 5
+          },
+          {
+            "at": "2026-11-06T03:25:06.631032+00:00",
+            "residentCurrentBytes": 547278848,
+            "allOwnedCurrentBytes": 547278848,
+            "runningOwnedContainers": 5
+          },
+          {
+            "at": "2026-11-06T03:25:17.445726+00:00",
+            "residentCurrentBytes": 729845760,
+            "allOwnedCurrentBytes": 729845760,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:25:28.405918+00:00",
+            "residentCurrentBytes": 776241152,
+            "allOwnedCurrentBytes": 776241152,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:25:39.124936+00:00",
+            "residentCurrentBytes": 732311552,
+            "allOwnedCurrentBytes": 732311552,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:25:50.818598+00:00",
+            "residentCurrentBytes": 866648064,
+            "allOwnedCurrentBytes": 866648064,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:26:01.676440+00:00",
+            "residentCurrentBytes": 898465792,
+            "allOwnedCurrentBytes": 898465792,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:26:12.711807+00:00",
+            "residentCurrentBytes": 932610048,
+            "allOwnedCurrentBytes": 932610048,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:26:23.746788+00:00",
+            "residentCurrentBytes": 958660608,
+            "allOwnedCurrentBytes": 958660608,
+            "runningOwnedContainers": 6
+          },
+          {
+            "at": "2026-11-06T03:26:34.727725+00:00",
+            "residentCurrentBytes": 903540736,
+            "allOwnedCurrentBytes": 903540736,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:26:46.061258+00:00",
+            "residentCurrentBytes": 913846272,
+            "allOwnedCurrentBytes": 913846272,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:26:57.832838+00:00",
+            "residentCurrentBytes": 971685888,
+            "allOwnedCurrentBytes": 971685888,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:27:09.136086+00:00",
+            "residentCurrentBytes": 1014087680,
+            "allOwnedCurrentBytes": 1014087680,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:27:21.095205+00:00",
+            "residentCurrentBytes": 1024860160,
+            "allOwnedCurrentBytes": 1109569536,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:27:33.312493+00:00",
+            "residentCurrentBytes": 956997632,
+            "allOwnedCurrentBytes": 1101250560,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:27:45.524801+00:00",
+            "residentCurrentBytes": 1032847360,
+            "allOwnedCurrentBytes": 1208979456,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:27:56.886109+00:00",
+            "residentCurrentBytes": 966270976,
+            "allOwnedCurrentBytes": 1172475904,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:28:08.111816+00:00",
+            "residentCurrentBytes": 970489856,
+            "allOwnedCurrentBytes": 970489856,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:28:20.401789+00:00",
+            "residentCurrentBytes": 1019445248,
+            "allOwnedCurrentBytes": 1131397120,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:28:32.434785+00:00",
+            "residentCurrentBytes": 1040232448,
+            "allOwnedCurrentBytes": 1206951936,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:28:44.250719+00:00",
+            "residentCurrentBytes": 1050198016,
+            "allOwnedCurrentBytes": 1262182400,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:28:56.974156+00:00",
+            "residentCurrentBytes": 1046192128,
+            "allOwnedCurrentBytes": 1289428992,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:29:09.306167+00:00",
+            "residentCurrentBytes": 1051336704,
+            "allOwnedCurrentBytes": 1126051840,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:29:21.660743+00:00",
+            "residentCurrentBytes": 1020665856,
+            "allOwnedCurrentBytes": 1151307776,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:29:33.513071+00:00",
+            "residentCurrentBytes": 1055272960,
+            "allOwnedCurrentBytes": 1224658944,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:29:45.318282+00:00",
+            "residentCurrentBytes": 1064341504,
+            "allOwnedCurrentBytes": 1294344192,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:29:57.574596+00:00",
+            "residentCurrentBytes": 1085571072,
+            "allOwnedCurrentBytes": 1085571072,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:30:07.928495+00:00",
+            "residentCurrentBytes": 1006956544,
+            "allOwnedCurrentBytes": 1006956544,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:30:19.132734+00:00",
+            "residentCurrentBytes": 1081901056,
+            "allOwnedCurrentBytes": 1081901056,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:30:31.082884+00:00",
+            "residentCurrentBytes": 1081171968,
+            "allOwnedCurrentBytes": 1081171968,
+            "runningOwnedContainers": 7
+          },
+          {
+            "at": "2026-11-06T03:30:43.184019+00:00",
+            "residentCurrentBytes": 1081344000,
+            "allOwnedCurrentBytes": 1172905984,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:30:54.841930+00:00",
+            "residentCurrentBytes": 1011740672,
+            "allOwnedCurrentBytes": 1153384448,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:31:06.689710+00:00",
+            "residentCurrentBytes": 1012068352,
+            "allOwnedCurrentBytes": 1175756800,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:31:19.148284+00:00",
+            "residentCurrentBytes": 1057161216,
+            "allOwnedCurrentBytes": 1272311808,
+            "runningOwnedContainers": 8
+          },
+          {
+            "at": "2026-11-06T03:31:30.746284+00:00",
+            "residentCurrentBytes": 1084878848,
+            "allOwnedCurrentBytes": 1320521728,
+            "runningOwnedContainers": 8
+          }
+        ],
+        "errors": [],
+        "transientContainerListRetries": 0,
+        "residentLimitSumBytes": 3221225472,
+        "maxSampledResidentCurrentBytes": 1085571072,
+        "maxSampledIncludingOneOffCurrentBytes": 1320521728,
+        "note": "Sequential cgroup samples include cache. Missing memory.peak is reported as null, not zero; sampledPeakBytes is sampled current usage only. Sampling may miss short-lived CLI containers; per-container peaks are not a simultaneous total."
+      },
+      "hostObservation": {
+        "before": {
+          "MemTotal": 3799158784,
+          "MemAvailable": 3161735168,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        "after": {
+          "MemTotal": 3799158784,
+          "MemAvailable": 2188509184,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        "samples": [
+          {
+            "at": "2026-11-06T03:24:11.445338+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 3156762624,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:24:19.881016+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 3087962112,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:24:28.258235+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 3073290240,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:24:36.747324+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 3080896512,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:24:46.775320+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2691145728,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:24:56.898851+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2550067200,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:25:06.631032+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2579898368,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:25:17.445726+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2407350272,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:25:28.405918+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2438782976,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:25:39.124936+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2401017856,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:25:50.818598+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2277658624,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:01.676440+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2253066240,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:12.711807+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2211979264,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:23.746788+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2185732096,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:34.727725+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2242215936,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:46.061258+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2237394944,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:26:57.832838+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2162327552,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:27:09.136086+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2162294784,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:27:21.095205+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2048208896,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:27:33.312493+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2061225984,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:27:45.524801+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1955504128,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:27:56.886109+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2213511168,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:28:08.111816+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2113228800,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:28:20.401789+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2005106688,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:28:32.434785+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1941086208,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:28:44.250719+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1982459904,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:28:56.974156+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2125729792,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:29:09.306167+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2079805440,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:29:21.660743+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1955889152,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:29:33.513071+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1928724480,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:29:45.318282+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1862848512,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:29:57.574596+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2171502592,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:30:07.928495+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2171183104,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:30:19.132734+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2161901568,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:30:31.082884+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2082627584,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:30:43.184019+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1979174912,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:30:54.841930+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 2001600512,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:31:06.689710+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1961099264,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:31:19.148284+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1873100800,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          },
+          {
+            "at": "2026-11-06T03:31:30.746284+00:00",
+            "MemTotal": 3799158784,
+            "MemAvailable": 1829138432,
+            "SwapTotal": 4294963200,
+            "SwapFree": 4292055040,
+            "oomKillCount": 0
+          }
+        ],
+        "minSampledAvailableBytes": 1829138432,
+        "maxSampledHostSwapUsedBytes": 2908160,
+        "note": "Host observations include unrelated host processes and caches. No fixed capacity/RTO claim."
+      },
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      },
+      "finishedAt": "2026-11-06T03:31:40.452685+00:00",
+      "jarUnchanged": true
+    }
+  },
+  "resourceSummary": {
+    "sampleCount": 40,
+    "maxSampledResidentCurrentBytes": 1085571072,
+    "maxSampledIncludingOneOffCurrentBytes": 1320521728,
+    "residentMemoryLimitSumBytes": 3221225472,
+    "hostMinSampledAvailableBytes": 1829138432,
+    "hostMaxSampledSwapUsedBytes": 2908160,
+    "hostOomBefore": 0,
+    "hostOomAfter": 0,
+    "allResidentKernelPeaksAvailable": false,
+    "residentServicesObserved": [
+      "app",
+      "coupon-redis",
+      "mysql",
+      "nginx",
+      "rabbitmq",
+      "rating-redis",
+      "seaweed"
+    ],
+    "transientContainerListRetries": 0,
+    "notes": "Sequential samples may miss short-lived CLI and instantaneous peaks. Not capacity/HA/RTO evidence."
+  },
+  "finalIndependentAudit": {
+    "newEffectiveSourceFilesVerified": 462,
+    "newOriginalInputsUnchanged": 461,
+    "newRecordedDeploymentPatch": {
+      "path": "scripts/deploy_base.py",
+      "oldSha256": "0b196cab5e3bf863269f897e7ebae455544272f892355f5831d91c146b44eb7e",
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+      "bytes": 28148,
+      "reason": "Explicit directory mode for the UID 10001 admin input bind under umask 0077"
+    },
+    "testSourcesVerified": 8,
+    "installedAuxiliaryToolsVerified": 7,
+    "newJarAndImageUnchanged": true,
+    "oldSourcePatchesJarAndImagePreserved": true,
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "newFixtureFolders": 8,
+    "oldFixtureFolders": 17
+  },
+  "failureClassification": {
+    "admin.log": {
+      "bytes": 3320,
+      "types": [],
+      "fixedCodes": [],
+      "timeoutPresent": false,
+      "oomPresent": false,
+      "errorClasses": []
+    },
+    "coupon-maintenance.log": {
+      "bytes": 3333,
+      "types": [],
+      "fixedCodes": [
+        "COUPON_REDIS_PREFLIGHT_FAILED"
+      ],
+      "timeoutPresent": false,
+      "oomPresent": false,
+      "errorClasses": []
+    },
+    "start.log": {
+      "bytes": 4053,
+      "types": [],
+      "fixedCodes": [],
+      "timeoutPresent": false,
+      "oomPresent": false,
+      "errorClasses": []
+    },
+    "runner": {
+      "lastExceptionTypes": [
+        "PASS",
+        "RuntimeError"
+      ],
+      "safePaths": [
+        "/home/campusdeploy/campuslife/releases/5382d9dd9ca2/.cache/deploy-base/013496a7ad7c4bb5a4b7480a0ba64d08/coupon-maintenance.log"
+      ],
+      "cliTimeout": []
+    }
+  },
+  "restartReached": false,
+  "postRestartNewClaimVerified": false,
+  "finalResourceAndCredentialHooksExecuted": false,
+  "numberOfPreflightAttemptsKnown": false,
+  "underlyingPreflightExceptionTypesKnown": false,
+  "postFailureSqlSnapshotAvailable": false,
+  "nextTask": {
+    "id": "M06.1-D.6f",
+    "status": "PROPOSED_NOT_STARTED",
+    "scope": "Targeted packaged maintenance preflight diagnosis: safe per-attempt exception type, elapsed stages and startup context; preserve retry/timeout/lease budgets, no full lifecycle rerun."
+  },
+  "localEvidence": [
+    {
+      "path": ".cache/cloud-remaining/case-e50cd28a2f4a/manifest.json",
+      "bytes": 1780,
+      "sha256": "de5731d4ffd1541dd098f78d5246005bf180c61ce7ee4420f85012c20a00a161"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-e50cd28a2f4a/runner-result.json",
+      "bytes": 21551,
+      "sha256": "7e7159a61e6cc7dcfc116639c348bdf5264954d1a2ca760028d6cf1f9ea4a814"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-e50cd28a2f4a/failure-classification.json",
+      "bytes": 649,
+      "sha256": "bbac6615a0431bf2e5cac73723c07399014a9ecd956bbcbfd94408d91cd5b7cc"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-e50cd28a2f4a/final-audit.json",
+      "bytes": 757,
+      "sha256": "08e4995e31ff40b0595a54732bbc5229836ff6e4f5b0e423002ad43deca0651f"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-d6d5e784c59a/manifest.json",
+      "bytes": 1584,
+      "sha256": "049be2ce8d4e233c15703eebb4f1d39b6d9f7f062ff66f070beb7ad073233e2a"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-d6d5e784c59a/runner-result.json",
+      "bytes": 13280,
+      "sha256": "c25e5ec326106a38f7729f09ae9b0897c27dfef6d79dc430193740306750222c"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-d6d5e784c59a/failure-classification.json",
+      "bytes": 667,
+      "sha256": "1b7762229674ec792263d1ee956864565c4f1fce210b99d81c6547d0625f8506"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-d6d5e784c59a/admin-directory-probe.json",
+      "bytes": 233,
+      "sha256": "73495d5788bf2539e17a38666aa5d4ad6d8e67dfedee20faa32e48793534a6f6"
+    },
+    {
+      "path": ".cache/cloud-remaining/case-d6d5e784c59a/admin-directory-patch.json",
+      "bytes": 428,
+      "sha256": "4506a6ce2f6187eccf11b3f57747beff638ab4e58c48879944bb8752414856c7"
+    },
+    {
+      "path": ".cache/cloud-remaining/effective-deployment-patch.json",
+      "bytes": 318,
+      "sha256": "74418a9b64032f3c0b29e1102a1a5818c7cb7ff815977a4f69d4c0723bb48c25"
+    }
+  ]
+}

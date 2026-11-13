@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-08",
+  "task": "D.7.1-C.1-R",
+  "status": "DESIGN_PENDING_ROUTE_SELECTION",
+  "plan": "docs/rabbit-client-image-design.md",
+  "planSha256": "a4c9f3e99c7bebd39410a81aae0e636d981e98432a59fa0e5db3ad1d6c06a018",
+  "executed": {
+    "cloudConnected": false,
+    "dockerStarted": false,
+    "buildRun": false,
+    "testsRun": false,
+    "dockerfileCreated": false,
+    "packagesDownloaded": false,
+    "imageChanged": false,
+    "businessCodeChanged": false
+  },
+  "recommendation": {
+    "preferred": "A: preserve original deployment and advance existing-evidence M07.1 before unfinished comprehensive measurement",
+    "routeAAdopted": false,
+    "alternative": "B: one pinned-base curl derivative build and compatibility case only after explicit selection",
+    "routeBAdopted": false,
+    "alternativeTotalSeconds": 600,
+    "alternativeCleanupSeconds": 120,
+    "originalProbeTimeoutSeconds": 5,
+    "originalHealthGateUnchanged": true,
+    "curlVersion": null,
+    "packageHashes": null,
+    "packageLockSource": "matching signed official index, captured before build; not generated this turn",
+    "failurePolicy": "end cloud branch for this attempt; recommend materials next, no automatic retry or new diagnosis"
+  },
+  "sourceFindings": [
+    {
+      "url": "https://docs.docker.com/build/building/best-practices/#pin-base-image-versions",
+      "finding": "digest pinning and limited packages support auditable derivative"
+    },
+    {
+      "url": "https://manpages.ubuntu.com/manpages/noble/man8/apt-secure.8.html",
+      "finding": "APT archive/index authenticity must precede package hash trust"
+    },
+    {
+      "url": "https://packages.ubuntu.com/noble-updates/curl",
+      "observedVersion": "8.5.0-2ubuntu10.16"
+    },
+    {
+      "url": "https://packages.ubuntu.com/noble-updates/amd64/curl/download",
+      "observedCachedVersion": "8.5.0-2ubuntu10.13",
+      "limitation": "older cached download page; not evidence of repository inconsistency"
+    }
+  ],
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "existingHelpersVerified": 29,
+    "historicalReportsVerified": 10,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "sourceAndJarUnchanged": true,
+    "documentLinksVerified": true
+  },
+  "historicalReportSha256": {
+    "docs/reports/rabbit-health-compatibility-2026-11-07.json": "5d39050c11ce0d4acd7c977858dfd6cebf6901bae7cc4289a34df1d7ca0fab52",
+    "docs/reports/rabbit-health-compatibility-2026-11-07.md": "1d0f5479c079df25cacbe5e13187827cd494411f6f5f488f8e75cc885b5c997c",
+    "docs/reports/rabbit-health-treatment-design-2026-11-07.json": "5d34e2edd3ae574daeb7de0697ae8f3755c0b3700e14fa85cca137d9851e646f",
+    "docs/reports/rabbit-probe-design-2026-11-07.json": "9fe9d65b52d225d64eae6673f29bc711a9c49589a04ee3bc60b344c05481d75a",
+    "docs/reports/rabbit-probe-diagnosis-2026-11-07.json": "aac2da3377d432bb9e02a9c8e29e9f35c1b534fc86bb16af50af3a920b2d1b2d",
+    "docs/reports/rabbit-probe-diagnosis-2026-11-07.md": "fd21d12eff9c925ede11c9ed2454ee3028a7c93184e045d8807b160a9e71d6e6",
+    "docs/reports/rabbit-probe-observation-2026-11-07.json": "60bdb93f942fd70d104d3a82a8a2e0818ac76d096924e9ab09fc0684fc04c50e",
+    "docs/reports/rabbit-probe-observation-2026-11-07.md": "6b8d97b2b5a5b3f81cc8fa918b7c534ea1c4d312a791566e6dd45af5709b95c6",
+    "docs/reports/rabbit-probe-rediagnosis-2026-11-07.json": "8a44bfae9676811f65f68af88ceec2204e534f50096eeed58caffbf7ad395cb3",
+    "docs/reports/rabbit-probe-rediagnosis-2026-11-07.md": "32a8ddd4026d4c52fd0dcd75c233c8017a276dc17c6c30c2c47eda3243828d99"
+  },
+  "limitations": [
+    "Actual base distro and package closure not verified",
+    "No derivative artifact or curl package lock exists",
+    "No new HTTP permission or fault behavior verification",
+    "Old C.3 and comprehensive measurement remain incomplete",
+    "M07 not started; early material preparation is pending user selection"
+  ],
+  "cloudState": "No live connection; only C.1 previous cleanup evidence referenced"
+}

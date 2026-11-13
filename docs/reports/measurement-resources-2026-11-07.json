@@ -1,0 +1,285 @@
+{
+  "task": "M06.2-B.2-C.1",
+  "date": "2026-11-07",
+  "status": "PASSED_WITH_DOCUMENTED_SCOPE",
+  "parentCComplete": false,
+  "parentB2Complete": false,
+  "case": "case-bf78851ad4a74b07",
+  "stage": "/home/campusdeploy/.cache/campuslife-measurement-resources/case-bf78851ad4a74b07",
+  "budget": {
+    "totalSeconds": 480,
+    "cleanupReserveSeconds": 120
+  },
+  "elapsedSeconds": 37.116,
+  "sourceFiles": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/test_measurement_resources.py",
+      "sha256": "9b5925fb44d05a29348567cd2469c91103f04c58fa124db3b90e3f74f030a35d"
+    }
+  ],
+  "newSourceFiles": 2,
+  "checks": {
+    "businessServicesStarted": false,
+    "checks": [
+      "registered-seven-service-config-with-partial-real-resources",
+      "running-owned-probe-before-cleanup",
+      "normal-containers-volumes-networks-removed",
+      "cleanup-idempotent-and-no-recreation",
+      "partial-durable-preparing-before-kill",
+      "partial-real-private-files-present",
+      "partial-private-root-recovered-after-sigkill",
+      "generated-durable-preparing-before-kill",
+      "generated-real-private-files-present",
+      "generated-private-root-recovered-after-sigkill",
+      "tool-intent-durable-before-unknown-result",
+      "unknown-created-tool-adopted-by-name-label-image",
+      "adoption-did-not-create-second-container",
+      "unknown-created-tool-cleaned",
+      "absent-dispatched-tool-is-not-proof-of-no-create",
+      "unknown-absence-preserves-private-state",
+      "no-create-fixture-repaired-only-with-controlled-proof",
+      "uncommitted-compose-result-refuses-cleanup",
+      "unknown-compose-preserves-resource-identities",
+      "compose-fixture-repair-is-explicit",
+      "mismatched-tool-label-refuses-cleanup",
+      "negative-preflight-preserves-all-valid-resources",
+      "test-repair-separate-from-normal-cleanup",
+      "manifest-drift-refuses-cleanup",
+      "manifest-refusal-preserves-resource-identities",
+      "symlink-refuses-private-tree-delete",
+      "outside-sentinel-unchanged",
+      "cleanup-does-not-prune-other-container-or-volume",
+      "test-owned-docker-resources-fully-gone",
+      "all-ten-scope-journals-cleaned"
+    ],
+    "databaseConnected": false,
+    "httpRequests": 0,
+    "passed": true,
+    "realSigkillWindows": 4,
+    "scopeJournals": 10,
+    "sourceConfigurationChanged": false,
+    "task": "M06.2-B.2-C.1"
+  },
+  "receipt": {
+    "case_id": "case-bf78851ad4a74b07",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794032864.5588262,
+    "failure_type": null,
+    "finished_unix": 1794032421.6744256,
+    "job": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "7b044cf77db243abbae1fb57e483fb84",
+    "manifest_sha256": "3ad3fd9009504ee0491a30e18700e16a0fd454bb1800e18f54fffb2bdf569b40",
+    "schema": 1,
+    "started_unix": 1794032384.558826,
+    "state": "SUCCEEDED",
+    "task": "M06.2-B.2-C.1",
+    "task_outcome": "SUCCEEDED"
+  },
+  "receiptSha256": "b3f24909a294a11285640ac783937b0d5f85805d6e4063d38d22d3b41876a195",
+  "remoteAudit": {
+    "case": "case-bf78851ad4a74b07",
+    "receiptSha256": "b3f24909a294a11285640ac783937b0d5f85805d6e4063d38d22d3b41876a195",
+    "sourceFilesVerified": 3,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "checksSha256": "4b06ac10f438a41f2a839d65cddb43b8990c04026945f925eb7f65d3aaad5ac2",
+    "scopeJournals": 10,
+    "scopeStates": [
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED",
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-141e53651dab4457",
+        "state": "FAILED",
+        "receiptSha256": "52f16ab22b0829a592f316b48175526636a09c2110667f6b4a28e547be904dd1",
+        "elapsedSeconds": 3.884,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-ac5bd6c8c81e4ad0",
+        "state": "CLEANUP_FAILED",
+        "receiptSha256": "884c705da7052fdc3cd1962ed476a1f974673eb0178dafe3639339021329887a",
+        "elapsedSeconds": 26.118,
+        "scopeJournals": 7,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": true
+      },
+      {
+        "case": "case-bf78851ad4a74b07",
+        "state": "SUCCEEDED",
+        "receiptSha256": "b3f24909a294a11285640ac783937b0d5f85805d6e4063d38d22d3b41876a195",
+        "elapsedSeconds": 37.116,
+        "scopeJournals": 10,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ]
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 9,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "newTestedSourcesMatch": true
+  },
+  "previousFailuresNotRewritten": [
+    {
+      "case": "case-141e53651dab4457",
+      "state": "FAILED",
+      "receiptSha256": "52f16ab22b0829a592f316b48175526636a09c2110667f6b4a28e547be904dd1",
+      "elapsedSeconds": 3.884,
+      "scopeJournals": 1,
+      "allJournalsCleaned": true,
+      "workAbsent": true,
+      "postFailureCleanup": false,
+      "localReceiptEvidence": {
+        "path": ".cache/measurement-resources-c1/case-141e53651dab4457/fetch.json",
+        "sha256": "28fa1b1f7a8d8a9dd86f53b6d5cb7ab7ddbf429ada1083a643ce9862509f0e8f"
+      }
+    },
+    {
+      "case": "case-ac5bd6c8c81e4ad0",
+      "state": "CLEANUP_FAILED",
+      "receiptSha256": "884c705da7052fdc3cd1962ed476a1f974673eb0178dafe3639339021329887a",
+      "elapsedSeconds": 26.118,
+      "scopeJournals": 7,
+      "allJournalsCleaned": true,
+      "workAbsent": true,
+      "postFailureCleanup": true,
+      "localReceiptEvidence": {
+        "path": ".cache/measurement-resources-c1/case-ac5bd6c8c81e4ad0/fetch.json",
+        "sha256": "33ce546a72cadb56ab8c44ac9199f61574d9382d607101e4d1106fcb7f9e0a6b"
+      },
+      "postFailureCleanupEvidence": {
+        "path": ".cache/measurement-resources-c1/case-ac5bd6c8c81e4ad0/post-failure-cleanup.json",
+        "sha256": "e90990fae77b440e14c1ffcaa9b2797e93c5364b0c28b14d4f4deb4f7ad4dd43"
+      }
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/launch.json",
+      "bytes": 699,
+      "sha256": "8dea61c30257dd2a34b30e0e0a573a79032dc6d268044da918eebfecbf2d6e81"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/fetch.json",
+      "bytes": 1147,
+      "sha256": "5bdc9d823374a5da8e88c05b988022fb0476bef035bef438dc352024d9d359d3"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/checks.json",
+      "bytes": 1541,
+      "sha256": "4b06ac10f438a41f2a839d65cddb43b8990c04026945f925eb7f65d3aaad5ac2"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/progress.json",
+      "bytes": 1336,
+      "sha256": "1a44cdce7635b45359d72fd972108feb227c9a3727cd8bab963f4aacdc451ab2"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/job.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/cleanup.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/supervisor.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/final-audit.json",
+      "bytes": 2613,
+      "sha256": "1b0a75ec6a648e5cce9cc99f7970ffff45f2e2d55b56ec456517e09050e3f9a6"
+    },
+    {
+      "path": ".cache/measurement-resources-c1/case-bf78851ad4a74b07/local-audit.json",
+      "bytes": 181,
+      "sha256": "52a58b760e776b71d87630d28b53cb4990dd78fe4ce4972475b6bbcf95d2d9b3"
+    }
+  ],
+  "limits": [
+    "single trusted operator, not isolation from host/Docker admins",
+    "absent DISPATCHED tool or pending Compose refuses success; no automatic arbitrary late-create recovery",
+    "test harness repairs only injected states with held immutable IDs/checkpoints, not production takeover",
+    "supervisor SIGKILL and host restart remain UNKNOWN/manual-audit boundaries",
+    "fixed seven-service configuration only, no database/app service startup or transactions"
+  ],
+  "notImplementedOrExecuted": [
+    "component metrics and actual issuance/drain SQL/Redis truth",
+    "real login and health stop integration",
+    "seven-service combined entry",
+    "Pilot",
+    "formal load"
+  ],
+  "nextTask": "M06.2-B.2-C.2 read-only component metrics and real outcome/drain verification"
+}

@@ -36,13 +36,21 @@ class MysqlIntegrationIT {
 
     @Test
     void migrationCreatesExpectedTablesAndTracksVersion() {
-        assertThat(flyway.info().current().getVersion().getVersion()).isEqualTo("1");
+        assertThat(flyway.info().current().getVersion().getVersion()).isEqualTo("24");
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE() AND table_name='print_detail'",Integer.class)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE() AND table_name='order_review'",Integer.class)).isEqualTo(1);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE() AND table_name<>'flyway_schema_history'",Integer.class)).isEqualTo(32);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables "
                 + "WHERE table_schema = DATABASE() AND table_name IN ('account', 'auth_session')", Integer.class))
                 .isEqualTo(2);
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM flyway_schema_history WHERE version = '1' AND success = 1",
                 Integer.class)).isEqualTo(1);
         assertThat(jdbc.queryForObject("SELECT @@session.time_zone", String.class)).isEqualTo("+00:00");
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() "
+                + "AND table_name IN ('shop_category', 'shop', 'shop_member')", Integer.class)).isEqualTo(3);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema = DATABASE() "
+                + "AND table_name IN ('payment_record','refund_record')", Integer.class)).isEqualTo(2);
+        assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.tables WHERE table_schema=DATABASE() AND table_name='file_asset'",Integer.class)).isEqualTo(1);
     }
 
     @Test
@@ -156,5 +164,16 @@ class MysqlIntegrationIT {
         });
         assertThat(jdbc.queryForObject("SELECT COUNT(*) FROM information_schema.table_constraints "
                 + "WHERE constraint_schema = DATABASE() AND constraint_name = ?", Integer.class, constraint)).isEqualTo(1);
+    }
+
+    @org.junit.jupiter.api.Test
+    void outboxPublishingStateRequiresANonNullLeaseDeadline() {
+        String id=java.util.UUID.randomUUID().toString().replace("-","");
+        try {
+            jdbc.update("INSERT INTO message_outbox(message_id,event_type,schema_version,aggregate_type,aggregate_id,event_seq,recipient_id,payload,payload_hash,occurred_at,created_at,status,next_attempt_at) VALUES (?,'BOOKING_ACCEPTED',1,'BOOKING',991,0,999,'{}',?,UTC_TIMESTAMP(3),UTC_TIMESTAMP(3),'READY',UTC_TIMESTAMP(3))",id,"a".repeat(64));
+            org.assertj.core.api.Assertions.assertThatThrownBy(()->jdbc.update("UPDATE message_outbox SET status='PUBLISHING',attempts=1,last_attempt_at=created_at,next_attempt_at=NULL,lease_token=?,lease_until=NULL WHERE message_id=?","b".repeat(32),id))
+                .isInstanceOf(org.springframework.dao.DataAccessException.class).hasMessageContaining("ck_outbox_state");
+            org.assertj.core.api.Assertions.assertThat(jdbc.queryForObject("SELECT status FROM message_outbox WHERE message_id=?",String.class,id)).isEqualTo("READY");
+        } finally { jdbc.update("DELETE FROM message_outbox WHERE message_id=?",id); }
     }
 }

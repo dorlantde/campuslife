@@ -1,0 +1,30 @@
+CREATE TABLE print_detail (
+    order_id BIGINT NOT NULL,
+    service_id BIGINT NOT NULL,
+    file_id BIGINT NOT NULL,
+    price_rule_id BIGINT NOT NULL,
+    service_name_snapshot VARCHAR(80) NOT NULL,
+    file_name_snapshot VARCHAR(200) NOT NULL,
+    page_count INT NOT NULL,
+    copies INT NOT NULL,
+    paper_size VARCHAR(8) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    color_mode VARCHAR(8) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    side_mode VARCHAR(8) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    sheet_count BIGINT NOT NULL,
+    unit_price_amount BIGINT NOT NULL,
+    source_price_version BIGINT NOT NULL,
+    progress VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    ready_at DATETIME(3) NULL,
+    picked_up_at DATETIME(3) NULL,
+    PRIMARY KEY (order_id),
+    KEY ix_print_file (file_id, order_id),
+    CONSTRAINT fk_print_order FOREIGN KEY (order_id) REFERENCES service_order(id),
+    CONSTRAINT fk_print_service FOREIGN KEY (service_id) REFERENCES service_item(id),
+    CONSTRAINT fk_print_file FOREIGN KEY (file_id) REFERENCES file_asset(id),
+    CONSTRAINT fk_print_price FOREIGN KEY (price_rule_id) REFERENCES print_price_rule(id),
+    CONSTRAINT ck_print_spec CHECK (paper_size='A4' AND color_mode IN ('BW','COLOR') AND side_mode IN ('SINGLE','DOUBLE')),
+    CONSTRAINT ck_print_quantities CHECK (page_count BETWEEN 1 AND 500 AND copies BETWEEN 1 AND 100
+        AND unit_price_amount BETWEEN 1 AND 100000 AND source_price_version>=0
+        AND sheet_count=IF(side_mode='DOUBLE',CEIL(page_count/2),page_count)*copies),
+    CONSTRAINT ck_print_progress CHECK (progress IN ('QUEUED','PRINTING','READY_FOR_PICKUP','PICKED_UP','ABORTED'))
+) ENGINE=InnoDB;

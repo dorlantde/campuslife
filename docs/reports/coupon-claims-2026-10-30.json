@@ -1,0 +1,157 @@
+{
+  "milestone": "M08.2-B",
+  "date": "2026-10-30",
+  "status": "verified-synchronous-claims-only",
+  "operations": 72,
+  "tables": 27,
+  "migration": 18,
+  "relatedTests": 286,
+  "newClaimTests": 8,
+  "suites": [
+    {
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.file.FilePolicyTest",
+      "sha256": "2c07826e95851e3e287279afa641c206325737f5531dc16d03e85b5ceed27b52"
+    },
+    {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.merchant.cache.RatingCacheTest",
+      "sha256": "c2c4d4bf5921efb0553a4e849663cdeaa1d5c04f8257fde0b44c29525b64c05b"
+    },
+    {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+      "sha256": "2a55589d149ffea2fe3a1181507a6c7e552fe66b2ca1325b701d6af3851dee2c"
+    },
+    {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.BookingOrderPolicyTest",
+      "sha256": "609fe62d8605a46a070cac5f57940b3130133e8091da1cc7c5619b71c78d868e"
+    },
+    {
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.PrintOrderPolicyTest",
+      "sha256": "552536fb1467d44ca6fa6195427382b97654bf512a9ee93f714b0397fd44a847"
+    },
+    {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.PrintQuotePolicyTest",
+      "sha256": "b051fef437d94a0f7b19ce4934078bc554f96a4864a8b6e85a3a6c572d750d21"
+    },
+    {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.RegistrationPolicyTest",
+      "sha256": "32415816040d544b352aa5eaaa1e6f6f67d9b5a049a6c654e42601c5f2afdd76"
+    },
+    {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.TokenServiceTest",
+      "sha256": "b32e9894e7bab03ebbe7a519697eec8e76f7d08c9a0f0ce06863c1722e9f606e"
+    },
+    {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.WebFoundationTest",
+      "sha256": "41250690cf79aa19d7e91ef9e247d4f6d70ab62380e8316ff3b5eb0862a565e3"
+    },
+    {
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponCampaignMysqlIT",
+      "sha256": "ec80c21143ba520f99b2e1f68f37a0412373ff9cfbe0ed7aae5d0471aeba7a13"
+    },
+    {
+      "tests": 8,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponClaimsMysqlIT",
+      "sha256": "3cfebd4fbb6a4ec12e0bc5a9bca99b22d16a0b6f41101ca40b01e9316a2868ac"
+    },
+    {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.OpenApiMysqlIT",
+      "sha256": "223881ceba4229ced07c2d10df5e69af0c7a8d68c180deeb258c0e41079e52d8"
+    },
+    {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.MysqlIntegrationIT",
+      "sha256": "d3439f93dabbfca86207b1ddaba6865e2c8832c75c5576b7f6507cabdf0d5844"
+    }
+  ],
+  "cleanup": {
+    "ownedMysqlProcesses": 0,
+    "listeners": 0,
+    "fixtureDirectoryPresent": false
+  },
+  "lastDocumentationRun": {
+    "startedAt": "2026-10-30T04:12:39.4520632Z",
+    "finishedAt": "2026-10-30T04:13:25.4664159Z",
+    "cases": "OpenApiMysqlIT",
+    "exitCode": 0
+  },
+  "sourceSha256": {
+    "src/main/java/com/campuslife/coupon/config/CouponConfiguration.java": "858ff779f04e80418b9ea8469f94cc8208194d97b82102d9a92526c5a523318c",
+    "src/main/java/com/campuslife/coupon/controller/CouponClaimController.java": "622529bb6991fd28c709f97edbea25428724dd44312569dab74da0cc897ae27d",
+    "src/main/java/com/campuslife/coupon/controller/MerchantCampaignController.java": "92bf0d2e30de88c8daa05faf24976d64682331fe63012a065db4d8d3529dc130",
+    "src/main/java/com/campuslife/coupon/dto/CampaignCreate.java": "41e689de51119906516780dc279041ed79f2a1b602ccf6596318b6595395d5ba",
+    "src/main/java/com/campuslife/coupon/dto/CampaignVersion.java": "76615b1d5320e183c7212bca256c5fd1ee52d39a9c6e35b4749c6f9298418b49",
+    "src/main/java/com/campuslife/coupon/dto/CampaignWrite.java": "8c7c33b3bc501c3bf956d37b34c9c29c49e167a45f80a281e4710caa600a12b3",
+    "src/main/java/com/campuslife/coupon/dto/CouponClaim.java": "5d18a1273eca62accc45a91f7980a85b97d5e38decbff5fe779091e1bb61ca69",
+    "src/main/java/com/campuslife/coupon/entity/ClaimRequestEntity.java": "11c6385c79747fbc07517b5fa2a7fa41ecbc8567baed4deb332f33730ae98619",
+    "src/main/java/com/campuslife/coupon/entity/CouponCampaignEntity.java": "ba08223a1bbb01c3fb514cfb638813f61339b4614a512deb0654796bb967c533",
+    "src/main/java/com/campuslife/coupon/entity/OwnedCouponEntity.java": "b25aba0597544c3ec83c7aaacbc6eee72929e3fc16355fa71fd4b7a021cace6d",
+    "src/main/java/com/campuslife/coupon/mapper/CampaignMapper.java": "649338dd1df1e37a4e9294187b7b9146058cc7c877f6aa4c16da7ff129161d60",
+    "src/main/java/com/campuslife/coupon/mapper/ClaimRequestMapper.java": "2051bdf5a8d4a43d728f6bf0bb11d337de749d5890de84c6f5007d154736eced",
+    "src/main/java/com/campuslife/coupon/mapper/OwnedCouponMapper.java": "7b72d2f538d40c0451eb1874477aea4bdb03dceab513f1b7dd837070527fb7f0",
+    "src/main/java/com/campuslife/coupon/service/CampaignPolicy.java": "12415adad7d45fea5635c989a4e72b549ff2cefd9524e4e2d160651dbea12ca0",
+    "src/main/java/com/campuslife/coupon/service/CouponClaimService.java": "44b67aadd98a625ef169819f795d98ba590bd3d9130d89c779a6f72f89e783dc",
+    "src/main/java/com/campuslife/coupon/service/MerchantCampaignService.java": "d423726886c92ff48857d6a31033988b108df8a93f81076e7ca52be511616408",
+    "src/main/java/com/campuslife/coupon/vo/CampaignPage.java": "7ced475ed861507506612971fd9455b5e96f3fee581323db61d616266c6047bb",
+    "src/main/java/com/campuslife/coupon/vo/CampaignView.java": "799f4ff18f69ed6b74826797eac972927d93f372fb3bbe3017430212b33a62cd",
+    "src/main/java/com/campuslife/coupon/vo/ClaimResult.java": "f491baff9c2f0f30e65c0d5081f1a8a3e0ade03f86ac77e91776df6c1ce94e94",
+    "src/main/java/com/campuslife/coupon/vo/OwnedCouponPage.java": "83f2b63c540d6c0983a7de0fc14eba2ba1e522756c513506f365eaa2a3fcc9e7",
+    "src/main/java/com/campuslife/coupon/vo/OwnedCouponView.java": "c13597f2fe1410a117f59922470d7912cb965ea322665ea57278dbf2e63efce0",
+    "src/main/java/com/campuslife/coupon/vo/PublicCampaignPage.java": "b03fcb37c33e4ffc78823aa538e5580bf9768edf5860f343694b1067ffdd3959",
+    "src/main/java/com/campuslife/coupon/vo/PublicCampaignView.java": "1abd6c076920859756189eb401d59df9cd68d4dc23a7fa0aa9b0ec91d55dd66c",
+    "src/main/resources/db/migration/V18__create_coupon_claims.sql": "4dc6b751fdb82adf442205d17adf7a6915046bc7d73bb090e08b4953b8b88098",
+    "src/test/java/com/campuslife/CouponClaimsMysqlIT.java": "e3354134790d1a79af9e7a8df74d2b315eddfebc14b50ef08e9f52b8df71476c"
+  },
+  "frontendOrderCacheCoreAndPomUnchanged": true,
+  "manualBrowserAcceptance": false,
+  "nextTask": "M08.2-C order coupon use"
+}

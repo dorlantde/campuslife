@@ -1,0 +1,795 @@
+{
+  "date": "2026-11-02",
+  "task": "M04.2-C",
+  "status": "verified within isolated single-instance scope",
+  "distinctChecks": 110,
+  "failures": 0,
+  "errors": 0,
+  "skipped": 0,
+  "suites": [
+    {
+      "name": "com.campuslife.S3RecoveryMysqlIT",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "sameLengthCorruptedReadbackCannotPublishEvenWithoutChecksumHeader",
+          "seconds": 7.069
+        },
+        {
+          "case": "timedOutRealPutsArriveAfterTombstoneDeleteAndFreshProcessReclaimsThem",
+          "seconds": 27.592
+        },
+        {
+          "case": "realProcessCrashAndFreshProcessRecovery(String)[1]",
+          "seconds": 11.89
+        },
+        {
+          "case": "realProcessCrashAndFreshProcessRecovery(String)[2]",
+          "seconds": 11.963
+        },
+        {
+          "case": "realProcessCrashAndFreshProcessRecovery(String)[3]",
+          "seconds": 11.595
+        },
+        {
+          "case": "realProcessCrashAndFreshProcessRecovery(String)[4]",
+          "seconds": 11.677
+        },
+        {
+          "case": "storageFaultsKeepMetadataAndDocumentTransferBoundary(String)[1]",
+          "seconds": 0.347
+        },
+        {
+          "case": "storageFaultsKeepMetadataAndDocumentTransferBoundary(String)[2]",
+          "seconds": 0.265
+        },
+        {
+          "case": "storageFaultsKeepMetadataAndDocumentTransferBoundary(String)[3]",
+          "seconds": 6.685
+        },
+        {
+          "case": "storageFaultsKeepMetadataAndDocumentTransferBoundary(String)[4]",
+          "seconds": 6.171
+        },
+        {
+          "case": "storageFaultsKeepMetadataAndDocumentTransferBoundary(String)[5]",
+          "seconds": 18.474
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.S3BackupRestoreCheck",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "offlineFullBackupRestoreAndLocalToS3RehearsalPreserveOldOrders",
+          "seconds": 46.802
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.MysqlIntegrationIT",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "invalidRoleIsRejectedByDatabase",
+          "seconds": 0.887
+        },
+        {
+          "case": "accountWithSessionCannotBePhysicallyDeleted",
+          "seconds": 0.038
+        },
+        {
+          "case": "usernameCannotBeRepeated",
+          "seconds": 0.005
+        },
+        {
+          "case": "outboxPublishingStateRequiresANonNullLeaseDeadline",
+          "seconds": 0.025
+        },
+        {
+          "case": "sessionJtiCannotBeRepeated",
+          "seconds": 0.005
+        },
+        {
+          "case": "nicknamePreservesChineseAndEmoji",
+          "seconds": 0.017
+        },
+        {
+          "case": "sessionCannotExpireBeforeCreation",
+          "seconds": 0.009
+        },
+        {
+          "case": "sessionMustReferenceAnExistingAccount",
+          "seconds": 0.0
+        },
+        {
+          "case": "repeatedMigrationDoesNotRecreateTables",
+          "seconds": 0.223
+        },
+        {
+          "case": "sessionUsesMillisecondUtcValuesAndAllowsRevocation",
+          "seconds": 0.033
+        },
+        {
+          "case": "migrationCreatesExpectedTablesAndTracksVersion",
+          "seconds": 0.091
+        },
+        {
+          "case": "invalidUsernameIsRejectedByDatabase",
+          "seconds": 0.008
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.OpenApiMysqlIT",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "documentedExamplesSupportLoginProfileUpdateAndConflictAgainstRealMysql",
+          "seconds": 5.715
+        },
+        {
+          "case": "generatedSpecificationDescribesOnlyImplementedOperationsAndExportsAnImportableSnapshot",
+          "seconds": 0.368
+        },
+        {
+          "case": "swaggerPageConfigurationAndJavascriptAreReachableWithoutLoggingIn",
+          "seconds": 0.233
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.S3FileChainMysqlIT",
+      "tests": 28,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "configuredButUnreachableS3DoesNotPreventMysqlJarStartup",
+          "seconds": 13.975
+        },
+        {
+          "case": "firstCreateFailsWithoutStorageButQuoteAndReplayStayMetadataOnly",
+          "seconds": 2.379
+        },
+        {
+          "case": "completedPrintKeepsSevenDaysAndRemovesMerchantGrantWhileStudentCanDownload",
+          "seconds": 2.115
+        },
+        {
+          "case": "authorizationFailsBeforeRemoteIo(String)[1]",
+          "seconds": 0.629
+        },
+        {
+          "case": "authorizationFailsBeforeRemoteIo(String)[2]",
+          "seconds": 0.668
+        },
+        {
+          "case": "authorizationFailsBeforeRemoteIo(String)[3]",
+          "seconds": 0.688
+        },
+        {
+          "case": "authorizationFailsBeforeRemoteIo(String)[4]",
+          "seconds": 0.746
+        },
+        {
+          "case": "failedUploadsNeverPublishAndRecoverByPersistentLocation(String)[1]",
+          "seconds": 0.522
+        },
+        {
+          "case": "failedUploadsNeverPublishAndRecoverByPersistentLocation(String)[2]",
+          "seconds": 0.546
+        },
+        {
+          "case": "failedUploadsNeverPublishAndRecoverByPersistentLocation(String)[3]",
+          "seconds": 0.557
+        },
+        {
+          "case": "failedUploadsNeverPublishAndRecoverByPersistentLocation(String)[4]",
+          "seconds": 0.425
+        },
+        {
+          "case": "sameFileConcurrentCreatesKeepOneIdempotentOrderAndProtectedContent",
+          "seconds": 0.639
+        },
+        {
+          "case": "merchantCancellationDoesNotWaitForAuthorizedDownloadAndNextDownloadIsDenied",
+          "seconds": 1.106
+        },
+        {
+          "case": "realPdfUploadAndStudentDownloadRetainBytesHeadersAndMetadata",
+          "seconds": 0.628
+        },
+        {
+          "case": "allReferencesProtectSharedS3FileAndReplaysNeedNoStorage",
+          "seconds": 0.805
+        },
+        {
+          "case": "twentyMiBActualPdfPassesLocalParsingAndFullRemotePublicationVerification",
+          "seconds": 1.294
+        },
+        {
+          "case": "s3IoDoesNotHoldMysqlFileRowOrSharedScheduler",
+          "seconds": 0.583
+        },
+        {
+          "case": "markerMismatchFailsClosedWhileHistoricalLocalFilesRemainAvailable",
+          "seconds": 0.616
+        },
+        {
+          "case": "lostPublishCommitResponseCannotCompensateAnAvailableObject",
+          "seconds": 0.628
+        },
+        {
+          "case": "switchingNewUploadTargetToLocalDoesNotRelocateExistingS3File",
+          "seconds": 0.721
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[1]",
+          "seconds": 1.002
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[2]",
+          "seconds": 1.072
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[3]",
+          "seconds": 0.992
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[4]",
+          "seconds": 1.177
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[5]",
+          "seconds": 1.096
+        },
+        {
+          "case": "terminalPathsKeepOriginalCouponMoneyAndFileReferenceRules(String)[6]",
+          "seconds": 0.741
+        },
+        {
+          "case": "durableTombstoneReclaimsSyntheticLateWriteButNeverAvailable",
+          "seconds": 0.41
+        },
+        {
+          "case": "downloadWaitsOutsideTransactionAndRechecksSessionAfterSharedGuard",
+          "seconds": 0.504
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.file.FileCleanupWorkerTest",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "scheduledCallbacksDoNotWaitOrQueueWhileStorageIsBlocked",
+          "seconds": 1.429
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.file.FilePolicyTest",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "downloadRejectsRealLinkedObjectDirectory",
+          "seconds": 0.122
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[1]",
+          "seconds": 0.016
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[2]",
+          "seconds": 0.005
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[3]",
+          "seconds": 0.004
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[4]",
+          "seconds": 0.004
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[5]",
+          "seconds": 0.004
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[6]",
+          "seconds": 0.006
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[7]",
+          "seconds": 0.004
+        },
+        {
+          "case": "fileIdsRemainCanonical(String)[8]",
+          "seconds": 0.006
+        },
+        {
+          "case": "unsupportedMimeIsRejected(String)[1]",
+          "seconds": 0.026
+        },
+        {
+          "case": "unsupportedMimeIsRejected(String)[2]",
+          "seconds": 0.005
+        },
+        {
+          "case": "unsupportedMimeIsRejected(String)[3]",
+          "seconds": 0.004
+        },
+        {
+          "case": "unsupportedMimeIsRejected(String)[4]",
+          "seconds": 0.008
+        },
+        {
+          "case": "encryptedIncludesEmptyPassword(String)[1]",
+          "seconds": 0.197
+        },
+        {
+          "case": "encryptedIncludesEmptyPassword(String)[2]",
+          "seconds": 0.028
+        },
+        {
+          "case": "streamingLimitDoesNotTrustDeclaredFileLength",
+          "seconds": 0.071
+        },
+        {
+          "case": "actualPdfBoundariesParse(int)[1]",
+          "seconds": 0.015
+        },
+        {
+          "case": "actualPdfBoundariesParse(int)[2]",
+          "seconds": 0.067
+        },
+        {
+          "case": "nameLengthCountsCodePoints",
+          "seconds": 0.008
+        },
+        {
+          "case": "invalidNamesAreRejected(String)[1]",
+          "seconds": 0.005
+        },
+        {
+          "case": "invalidNamesAreRejected(String)[2]",
+          "seconds": 0.004
+        },
+        {
+          "case": "invalidNamesAreRejected(String)[3]",
+          "seconds": 0.003
+        },
+        {
+          "case": "invalidNamesAreRejected(String)[4]",
+          "seconds": 0.005
+        },
+        {
+          "case": "invalidNamesAreRejected(String)[5]",
+          "seconds": 0.003
+        },
+        {
+          "case": "supportedMimeStillRequiresParsing(String)[1]",
+          "seconds": 0.003
+        },
+        {
+          "case": "supportedMimeStillRequiresParsing(String)[2]",
+          "seconds": 0.005
+        },
+        {
+          "case": "supportedMimeStillRequiresParsing(String)[3]",
+          "seconds": 0.004
+        },
+        {
+          "case": "supportedMimeStillRequiresParsing(String)[4]",
+          "seconds": 0.004
+        },
+        {
+          "case": "magicAloneIsNotEnough(String)[1]",
+          "seconds": 0.006
+        },
+        {
+          "case": "magicAloneIsNotEnough(String)[2]",
+          "seconds": 0.008
+        },
+        {
+          "case": "realFilesystemLinkCannotEscapeRoot",
+          "seconds": 0.043
+        },
+        {
+          "case": "namespaceAndActiveTemporaryRecoveryAreBounded",
+          "seconds": 0.032
+        },
+        {
+          "case": "actualPageLimitsReject(int, String)[1]",
+          "seconds": 0.035
+        },
+        {
+          "case": "actualPageLimitsReject(int, String)[2]",
+          "seconds": 0.047
+        },
+        {
+          "case": "namesAreDisplayBasenamesOnly(String)[1]",
+          "seconds": 0.008
+        },
+        {
+          "case": "namesAreDisplayBasenamesOnly(String)[2]",
+          "seconds": 0.009
+        },
+        {
+          "case": "namesAreDisplayBasenamesOnly(String)[3]",
+          "seconds": 0.014
+        },
+        {
+          "case": "namesAreDisplayBasenamesOnly(String)[4]",
+          "seconds": 0.008
+        }
+      ]
+    },
+    {
+      "name": "com.campuslife.file.S3StoragePolicyTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "cases": [
+        {
+          "case": "remoteClientConstructionDoesNotContactEndpointAndRejectsSqlIo",
+          "seconds": 0.954
+        },
+        {
+          "case": "secretsAreRedactedAndDisabledSettingsNeedNoCredentials",
+          "seconds": 0.02
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[1]",
+          "seconds": 0.035
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[2]",
+          "seconds": 0.017
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[3]",
+          "seconds": 0.009
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[4]",
+          "seconds": 0.008
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[5]",
+          "seconds": 0.015
+        },
+        {
+          "case": "rejectsNonExactKeysBeforeAnyNetwork(String)[6]",
+          "seconds": 0.018
+        },
+        {
+          "case": "disabledS3RejectsPersistedS3WithoutFallbackAndLocalStillWorks",
+          "seconds": 0.114
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[1]",
+          "seconds": 0.013
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[2]",
+          "seconds": 0.018
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[3]",
+          "seconds": 0.014
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[4]",
+          "seconds": 0.008
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[5]",
+          "seconds": 0.016
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[6]",
+          "seconds": 0.01
+        },
+        {
+          "case": "invalidEndpointCannotTurnConfigurationIntoArbitraryTarget(String)[7]",
+          "seconds": 0.005
+        }
+      ]
+    }
+  ],
+  "forceKillWindows": 4,
+  "faultEvidence": [
+    {
+      "outcome": "passed",
+      "case": "sameLengthCorruptedReadbackCannotPublishEvenWithoutChecksumHeader()"
+    },
+    {
+      "heldRealRequests": 2,
+      "successfulDeletes": 9,
+      "events": [
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:24.692838100Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:34.860733500Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:34.869826Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:39.494019400Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:39.533189100Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:39.549534800Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:39.553912600Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:39.566099200Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:39.571001800Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:39.586445100Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:39.591197200Z"
+        },
+        {
+          "status": 200,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "PUT",
+          "at": "2026-11-02T10:02:39.654783Z"
+        },
+        {
+          "status": 200,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "PUT",
+          "at": "2026-11-02T10:02:39.654783Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:45.526729800Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:45.577483200Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:45.595886400Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:45.602143100Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:45.616073500Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:45.621923300Z"
+        },
+        {
+          "status": 200,
+          "fault": "NONE",
+          "object": false,
+          "method": "GET",
+          "at": "2026-11-02T10:02:45.639024500Z"
+        },
+        {
+          "status": 204,
+          "fault": "HOLD_PUT",
+          "object": true,
+          "method": "DELETE",
+          "at": "2026-11-02T10:02:45.644820800Z"
+        }
+      ],
+      "latePut": true
+    },
+    {
+      "outcome": "passed",
+      "case": "timedOutRealPutsArriveAfterTombstoneDeleteAndFreshProcessReclaimsThem()"
+    },
+    {
+      "window": "AFTER_RESERVE",
+      "freshRecoveryProcess": true,
+      "actualForceKill": true
+    },
+    {
+      "outcome": "passed",
+      "case": "[1] mode = \"AFTER_RESERVE\""
+    },
+    {
+      "window": "AFTER_PUT",
+      "freshRecoveryProcess": true,
+      "actualForceKill": true
+    },
+    {
+      "outcome": "passed",
+      "case": "[2] mode = \"AFTER_PUT\""
+    },
+    {
+      "window": "AFTER_AVAILABLE",
+      "freshRecoveryProcess": true,
+      "actualForceKill": true
+    },
+    {
+      "outcome": "passed",
+      "case": "[3] mode = \"AFTER_AVAILABLE\""
+    },
+    {
+      "window": "AFTER_DELETE",
+      "freshRecoveryProcess": true,
+      "actualForceKill": true
+    },
+    {
+      "outcome": "passed",
+      "case": "[4] mode = \"AFTER_DELETE\""
+    },
+    {
+      "outcome": "passed",
+      "case": "[1] fault = \"MISSING\""
+    },
+    {
+      "outcome": "passed",
+      "case": "[2] fault = \"SAME_LENGTH_WRONG_CONTENT\""
+    },
+    {
+      "outcome": "passed",
+      "case": "[3] fault = \"AUTH_FAILURE\""
+    },
+    {
+      "outcome": "passed",
+      "case": "[4] fault = \"TRUNCATED\""
+    },
+    {
+      "outcome": "passed",
+      "case": "[5] fault = \"RESTART\""
+    }
+  ],
+  "restoration": {
+    "sourceApplicationsClosed": true,
+    "offlineRehearsal": true,
+    "localFiles": 2,
+    "newSqlPort": 52208,
+    "newS3Port": 52209,
+    "originalLocalBytesRetained": true,
+    "restoredTablesIncludingFlyway": 33,
+    "wholeVolumeRestored": true,
+    "planSha256": "1db67ea06b5b2a7e9fddffc06363fc4a2b628e3d71387b869493fa740804be1b",
+    "storageArchiveSha256": "89c635417d12d99dfd8100dbad1f49dff8b29448e0f702ed0a827f558dde75ac",
+    "databaseDumpSha256": "f5fcbe2e3aa63d2e3487966c8aaf1ce967276fccdef833d9bcf94078d53d03c1"
+  },
+  "migrationCopy": {
+    "lostRealPutReply": true,
+    "fullReadbackVerified": true,
+    "forwardedPuts": 2
+  },
+  "cleanup": {
+    "checkedAt": "2026-11-02T10:16:41.3195124Z",
+    "containers": 0,
+    "volumes": 0,
+    "networks": 0,
+    "mysql": 0,
+    "jvms": 0
+  },
+  "productionJarSha256": "5B16A6B6DE985ACF258547FDD447CCC515DA3F171E3177B79332019CBEF3BA05",
+  "sameBusinessJarAsB": true,
+  "same148RuntimeDependencies": true,
+  "sourceGuard": {
+    "baselineFiles": 415,
+    "changedExisting": [
+      "scripts\\test-s3-business.ps1"
+    ],
+    "productionAndFrontendPreserved": true
+  },
+  "operations": 75,
+  "migration": "V24",
+  "applicationTables": 32,
+  "defaults": {
+    "upload": "LOCAL",
+    "s3Enabled": false,
+    "frontendPaused": true
+  },
+  "boundaries": [
+    "external same-length overwrite can download 200; no business SHA rehash on download",
+    "one cold restore new PUT failed; exact cause not determined; original evidence retained",
+    "no developer database/root access or real file Apply/deletion",
+    "no human browser acceptance claimed; 2-second Swagger window automatically checked",
+    "offline only; no capacity/HA or fixed RTO claim"
+  ]
+}

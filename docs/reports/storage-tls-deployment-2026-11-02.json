@@ -1,0 +1,208 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "task": "M06.1-B2",
+  "status": "verified",
+  "unitSuites": [
+    {
+      "name": "com.campuslife.file.S3StoragePolicyTest",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "verification": {
+    "storageGroups": 28,
+    "nativeGroupsIncluded": 12,
+    "defaultBaseGroups": 7,
+    "componentsConfigGroups": 1,
+    "nativeNotAddedTwice": true
+  },
+  "native": {
+    "record": ".cache/deploy-base/d4e55beb33f04f3189ac828a4ef501db/storage-acceptance.json",
+    "sha256": "8a67453d5e712bb9ef2d6321ce78b99f15485e1ce014b3d27cf0ff1e0c84db41",
+    "task": "M06.1-B2",
+    "phase": "Native",
+    "checks": [
+      "native-correct-ca-and-marker",
+      "native-wrong-hostname-is-rejected",
+      "main-port-rejects-plaintext-http",
+      "anonymous-and-wrong-signature-denied",
+      "app-exact-prefix-put-get-head",
+      "app-exact-delete-is-idempotent",
+      "foreign-prefix-read-write-delete-denied",
+      "marker-exact-read-only-and-shadow-denied",
+      "namespace-directory-delete-is-denied",
+      "app-has-no-bucket-policy-authority",
+      "bucket-list-keeps-original-empty-semantics",
+      "initializer-refuses-marker-mismatch"
+    ],
+    "instance": ".cache\\deploy-base\\d4e55beb33f04f3189ac828a4ef501db",
+    "passed": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "business": {
+    "record": ".cache/deploy-base/8426fd9d3b7c41f596eabe6bd5525e4f/storage-acceptance.json",
+    "sha256": "174955382f4cf4a80c241dc969ed7781c3ddf1da03da080d6477915e473853ef",
+    "task": "M06.1-B2",
+    "phase": "Business",
+    "checks": [
+      "native-correct-ca-and-marker",
+      "native-wrong-hostname-is-rejected",
+      "main-port-rejects-plaintext-http",
+      "anonymous-and-wrong-signature-denied",
+      "app-exact-prefix-put-get-head",
+      "app-exact-delete-is-idempotent",
+      "foreign-prefix-read-write-delete-denied",
+      "marker-exact-read-only-and-shadow-denied",
+      "namespace-directory-delete-is-denied",
+      "app-has-no-bucket-policy-authority",
+      "bucket-list-keeps-original-empty-semantics",
+      "initializer-refuses-marker-mismatch",
+      "seven-services-storage-isolated-and-unpublished",
+      "application-has-no-server-ca-private-or-init-secrets",
+      "java-sdk-private-ca-upload-and-full-readback",
+      "database-locator-is-s3-with-owned-namespace",
+      "anonymous-cannot-bypass-proxy-download-auth",
+      "openapi-still-75-business-operations",
+      "actual-java-sdk-rejects-wrong-ca-without-local-fallback",
+      "actual-java-sdk-rejects-wrong-hostname",
+      "original-s3-content-works-after-trust-restored",
+      "fixture-local-locator-is-preserved",
+      "20mib-through-nginx-and-java-s3-checksum-chain",
+      "old-local-and-new-s3-coexist-without-relocation",
+      "stop-retains-five-owned-persistent-volumes",
+      "actual-java-cleaner-deletes-exact-s3-object",
+      "restart-keeps-local-marker-and-both-backends",
+      "cold-restart-new-write-full-readback-succeeds"
+    ],
+    "instance": ".cache\\deploy-base\\8426fd9d3b7c41f596eabe6bd5525e4f",
+    "storage": {
+      "bucket": "campuslife-8426fd9d3b7c41f596eabe6bd5525e4f",
+      "namespace": "762268b9-63b6-4f72-adeb-e5902a9d3cb0",
+      "pkiSha256": {
+        "S3_CA_CERT": "792f68e7a46a2f481ae98555b7936dc57f6e671f211fdc1566faca1484d2276e",
+        "S3_SERVER_CERT": "edfbcda2b320055921ae8f983f4cd4ad9a7ee7d18514cbce268e6571b644f496",
+        "S3_JAVA_TRUSTSTORE": "bb7273431bb12f7e7d83bfccf778b06a28ca51a21fbb397cbed24b4f93276ed8"
+      }
+    },
+    "jarSha256": "041fd9a692f133ee53cd540c10de9a593ac1336b3a8a7c3091d8573c79c411ea",
+    "passed": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "baseRegression": {
+    "record": ".cache/deploy-base/6229f05c54a7455199e315d0adba574e/base-regression.json",
+    "sha256": "f395e607f16a1ff73ca172c5c7f6ddc062af657e7b92e7a25061da213765eb40",
+    "task": "M06.1-B1 base regression",
+    "checks": [
+      "base-stays-three-services",
+      "base-keeps-all-optional-components-and-money-off",
+      "base-generates-only-original-three-secrets",
+      "base-rejects-demo-money-combination",
+      "base-new-jar-starts-without-redis-or-broker",
+      "old-base-manifest-fields-remain-compatible",
+      "base-stop-still-retains-two-volumes"
+    ],
+    "passed": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "componentsConfig": {
+    "record": ".cache/deploy-base/f397557b44f748ad8ae3f243dc36ffd8/storage-config-regression.json",
+    "sha256": "7bd96338c1a61460511a065aafbee835bc8c03e584350ca9f42079b8fc4c9c3a",
+    "task": "M06.1-B2 components config regression",
+    "passed": true,
+    "checks": [
+      "six-service-mode-remains-local-without-storage-secrets"
+    ],
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "image": {
+    "image": "campuslife-base:m061a-041fd9a692f1-468b0df58bc6",
+    "imageId": "sha256:0d1910309e418d08f25caff3ca782888b1eadb7f70a979a80f88db8021574fc2",
+    "jarSha256": "041fd9a692f133ee53cd540c10de9a593ac1336b3a8a7c3091d8573c79c411ea",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T04:35:59.634364+00:00"
+  },
+  "runtimeDependencies": 148,
+  "all148RuntimeDependenciesUnchanged": true,
+  "sourceGuard": {
+    "baseline": ".cache/m061b2-before.json",
+    "existingFiles": 549,
+    "changed": [
+      "scripts/deploy-base.ps1",
+      "scripts/deploy_base.py",
+      "deploy/base/app-entrypoint.sh",
+      "deploy/base/components.yaml"
+    ],
+    "unchanged": 545
+  },
+  "seaweedImage": "chrislusf/seaweedfs:4.51@sha256:f7a49e3f3972ebed5be2ed4befa4a0c68eb7bdddba6e692d42729ceb545134b8",
+  "operations": 75,
+  "migration": "V24",
+  "applicationTables": 32,
+  "defaultMode": "base",
+  "defaultMoney": false,
+  "defaultUploadTarget": "LOCAL",
+  "defaultS3Enabled": false,
+  "failureRetained": {
+    "record": ".cache/deploy-base/1c6bc91be26b465a8f352f21810a2365/initialization-failure.json",
+    "identity": "1c6bc91be26b465a8f352f21810a2365",
+    "stage": "OpenSSL default config absent",
+    "generatedSecretsRemoved": true,
+    "dockerResourcesCreated": false
+  },
+  "deliveredFileSha256": {
+    "scripts/deploy-base.ps1": "154e148a086b90b11e10e401ef84ebab879eb0c5df179ab7129e394a44fdef34",
+    "scripts/deploy_base.py": "d7ed749d612f027c34fab842c5b207e0033d9129958eb1b88b9d7fd1dc7c751a",
+    "scripts/deploy_storage.py": "3f16c82aae094fec3a31918d33896ef122476cc27c04e97f53305dbd6c5d2e7a",
+    "scripts/test-deploy-storage.ps1": "b5f56b2ecfe077cb8eeb1a94acd671e49bbfc3d64544d2d80484d560d9c040b6",
+    "scripts/test_deploy_storage.py": "2a9917e84eb0f0454d454101d5eab5c54646d3e98f55f9705569134ea20c84eb",
+    "deploy/base/components.yaml": "5f7e887f2fb8042e8a1fc16f524688369fcc8a92b791ed40dbaaff5bb3f8a28e",
+    "deploy/base/storage.yaml": "1719f64bd30d3e0c8d5e57f6e8c4362acc54e5f50461ef423c63c3d401f40f41",
+    "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee"
+  },
+  "cleanup": {
+    "testLabelContainers": 0,
+    "testLabelVolumes": 0,
+    "testLabelNetworks": 0,
+    "allFixtureSecretDirectoriesRemoved": true,
+    "dockerDesktopStopped": false,
+    "wslShutdown": false
+  },
+  "notExecuted": [
+    "Actuator/Micrometer private management plane",
+    "Linux real host acceptance",
+    "Full stack backup/restore",
+    "Capacity/HA/performance claims",
+    "Certificate auto renewal",
+    "Real user database/file migration",
+    "Frontend work"
+  ],
+  "knownLimit": "M04-C cold-restored new-write timeout cause remains unknown; normal restart success does not establish its repair."
+}

@@ -1,0 +1,196 @@
+{
+  "task": "M06.1-D.6h",
+  "date": "2026-11-06",
+  "status": "CLOUD_BUILD_AND_STATIC_ARTIFACT_VERIFICATION_PASSED_RUNTIME_NOT_EXECUTED",
+  "passed": true,
+  "parentD6Passed": false,
+  "businessStarted": false,
+  "testsRun": false,
+  "release": "/home/campusdeploy/campuslife/releases/1cf0cb53a24a",
+  "stage": "/home/campusdeploy/.cache/campuslife-build/1cf0cb53a24a",
+  "sourceArchive": {
+    "sha256": "1cf0cb53a24acaa99d684222d99db544d8a979a84ae2b394668834e586e0b001",
+    "archiveBytes": 653227,
+    "files": 463,
+    "sourceBytes": 2933607,
+    "manifestSha256": "06bdf116fcbb4c36241fb6816b38258fd0f1924e5cc77719908c9a13971ae2c6",
+    "transferVerified": true
+  },
+  "sourceDelta": {
+    "baseline": "D.6d manifest",
+    "unchanged": 460,
+    "changed": [
+      "scripts/deploy_base.py",
+      "src/main/java/com/campuslife/coupon/config/CouponRedisConfiguration.java"
+    ],
+    "added": [
+      "src/test/java/com/campuslife/coupon/config/CouponRedisConfigurationTest.java"
+    ],
+    "removed": [],
+    "relativeToEffectiveD6e": {
+      "unchanged": 461,
+      "changed": [
+        "src/main/java/com/campuslife/coupon/config/CouponRedisConfiguration.java"
+      ],
+      "added": [
+        "src/test/java/com/campuslife/coupon/config/CouponRedisConfigurationTest.java"
+      ]
+    }
+  },
+  "elapsedSeconds": 88.58,
+  "mavenSummary": [
+    "[INFO] Compiling 285 source files with javac [debug parameters release 21] to target/classes",
+    "[INFO] Compiling 119 source files with javac [debug parameters release 21] to target/test-classes",
+    "[INFO] Tests are skipped.",
+    "[INFO] BUILD SUCCESS",
+    "[INFO] Total time:  01:06 min",
+    "[INFO] Finished at: 2026-11-06T13:01:09+08:00"
+  ],
+  "buildRecord": {
+    "image": "campuslife-base:m061a-6311c16a12b2-468b0df58bc6",
+    "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-06T05:01:25.435883+00:00"
+  },
+  "image": {
+    "Id": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "Os": "linux",
+    "Architecture": "amd64",
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+        "sha256:67822e3abc854af47db214f16667073b65931dc539b604b8dda6996b4084ee4a",
+        "sha256:d390ebe6119202102eaa37b1ae01308d34f2876df4fb56d94d818ca0b6f2c1ff",
+        "sha256:39598f2f194236b212de89f54438744681527522b3192a17a657707c4b1f16ff",
+        "sha256:797cce5c7d95a4b4dc04791ea1eb8f5a98a1efc2cadf1e23fc0f9940281a5c48",
+        "sha256:031598c42681c30edc475bc203197064e4aaca5075a1a80cbeee58547c521962",
+        "sha256:2584c0a6ba56acc12c6c862f8b50a251a16c7a2818942261f05f9162ff5f6be4",
+        "sha256:88471d313a169b93cce0c5a25da97a9e2539ba9a6318c3cd497c791f72f343e3",
+        "sha256:75f885ce5f39fcf35ee51c10a82911358bcb6eb178ed58c04250f9cca61bbf25",
+        "sha256:ee06f0e10bfbc3c91d0a9e5f9a40060d9013de0de671683c87959c7d08061a1f"
+      ]
+    },
+    "user": "10001:10001",
+    "entrypoint": [
+      "/opt/campuslife/app-entrypoint.sh"
+    ],
+    "cmd": [
+      "app"
+    ]
+  },
+  "localJarComparison": {
+    "baselineJarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "sameJarSha256": false,
+    "allEntries": 649,
+    "addedEntries": [],
+    "removedEntries": [],
+    "changedEntryContent": [],
+    "differentTimestamps": 394,
+    "otherEntryMetadataChanges": []
+  },
+  "deltaFromPriorFormalJar": {
+    "changedContentEntries": [
+      "BOOT-INF/classes/com/campuslife/coupon/config/CouponRedisConfiguration$Enabled.class",
+      "BOOT-INF/classes/com/campuslife/coupon/config/CouponRedisConfiguration.class"
+    ],
+    "unchangedDependencies": 156
+  },
+  "finalIndependentAudit": {
+    "newSourceMatches": true,
+    "newSourceFiles": 463,
+    "oldSourceMatchesRecordedPatch": true,
+    "oldChangedFromD5": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "oldRecordedTestPatchesMatch": true,
+    "priorFormalReleaseEffectiveInputsVerified": 462,
+    "priorFormalReleaseHelperFilesVerified": 7,
+    "priorFormalJarAndImagePreserved": true,
+    "oldJarAndImagePreserved": true,
+    "newJarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+    "newJarBytes": 72026099,
+    "newImageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "cacheTarget": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/maven-repository",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "oldFixtureFolders": 17,
+    "newFixtureFolders": 0,
+    "priorFormalFixtureFolders": 9,
+    "budgetNetworks": [],
+    "probeSecretsRemaining": [],
+    "mavenSummary": [
+      "[INFO] Compiling 285 source files with javac [debug parameters release 21] to target/classes",
+      "[INFO] Compiling 119 source files with javac [debug parameters release 21] to target/test-classes",
+      "[INFO] Tests are skipped.",
+      "[INFO] BUILD SUCCESS",
+      "[INFO] Total time:  01:06 min",
+      "[INFO] Finished at: 2026-11-06T13:01:09+08:00"
+    ]
+  },
+  "nextTask": {
+    "id": "M06.1-D.6i",
+    "status": "SUGGESTED_NOT_STARTED",
+    "scope": "First audit/update test artifact pins and own fictional fixture scope, then one scoped original-main maintenance/restart/new-claim and remaining resource/security acceptance; no fourth full print lifecycle."
+  },
+  "evidence": [
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/receipt.json",
+      "bytes": 343,
+      "sha256": "77f01d87036720edae677ec3d81cdb73751383eac68e4288ba896fec316deca8"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/source-manifest.json",
+      "bytes": 91354,
+      "sha256": "06bdf116fcbb4c36241fb6816b38258fd0f1924e5cc77719908c9a13971ae2c6"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/source-transfer.json",
+      "bytes": 414,
+      "sha256": "493c889131dda3914f49be2f9c906eb0ce81784ececf9e1cb53d98aa03fb20c9"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/local-jar-baseline.json",
+      "bytes": 230609,
+      "sha256": "d0037dacf2cb181c43c8c4289c582598e12177b0fe168f20a8c720e39b943271"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/source-delta.json",
+      "bytes": 590,
+      "sha256": "52a610f0006672311e3382e205369f3a213d3023ee0c581eadeae6066ab84b1e"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/build-result.json",
+      "bytes": 233743,
+      "sha256": "35e36e9c74cd2e741de11c074ff614f8aa439bd7aa7765c3f00f77a0a4471ca4"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/artifact-comparison.json",
+      "bytes": 199,
+      "sha256": "134bd555b69d46ffc11859da25be3252a6a449cc1a0026e30022d44ad35118c6"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/final-audit.json",
+      "bytes": 1323,
+      "sha256": "e539b2168960260cda491ce4e131c9fd30069dee50f1fc687cb9a8ed2009eb80"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/maven.log",
+      "bytes": 2911,
+      "sha256": "6e3fefc8bc0fb56cb6dc0fe06b3fb0598f798b1e31083be7dfdd2630463e652a"
+    },
+    {
+      "path": ".cache/cloud-build/source-initialization-2026-11-05/image.log",
+      "bytes": 2224,
+      "sha256": "d66850703c5f0337e8135c1286e65137b5a248194877222612b0d08e97668c9a"
+    }
+  ]
+}

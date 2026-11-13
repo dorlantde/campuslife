@@ -1,0 +1,171 @@
+{
+  "task": "M06.1-D.6a",
+  "date": "2026-11-05",
+  "status": "DIAGNOSIS_COMPLETED_NOT_FIXED",
+  "parentD6Passed": false,
+  "priorGenericFailuresSameCauseEstablished": false,
+  "directSqlTechnicalSeedNotBusinessAcceptance": true,
+  "newFiles": [
+    {
+      "path": "scripts/diagnostics/coupon_resume_case.py",
+      "name": "coupon_resume_case.py",
+      "bytes": 13038,
+      "sha256": "17f9ecec283c1a94cf18f047955fa7d1ed8bcd446c2c4ebaacb935d964bd8633"
+    },
+    {
+      "path": "scripts/diagnostics/CouponResumeTrace.java",
+      "name": "CouponResumeTrace.java",
+      "bytes": 5436,
+      "sha256": "6e05df61ecf26464c19b9078bde5df03b1a38cefea5066b7209a28d0eef23185"
+    }
+  ],
+  "totalTransferredBytes": 18474,
+  "elapsedSeconds": 371.011,
+  "diagnosticOutcome": {
+    "task": "M06.1-D.6a",
+    "diagnosticOnly": true,
+    "directSqlTechnicalSeed": true,
+    "instance": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/0359014ee20544d3a36eb2f40619333f",
+    "host": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3191873536,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4294164480,
+        "oomKillCount": 0
+      }
+    },
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "phase": "captured",
+    "diagnosisCaptured": true,
+    "operationSucceeded": false,
+    "snapshots": [
+      {
+        "label": "before-stop",
+        "at": "2026-11-05T08:03:23.961032+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t3\t5\tNULL\tNULL\t76d2bb42df87477b2eb164541bba56ed31ebe086\t0\t2026-11-05 08:03:24.402",
+        "counts": "1\n1\n0",
+        "redisRunId": "76d2bb42df87477b2eb164541bba56ed31ebe086",
+        "redisControl": [
+          "3",
+          "76d2bb42df87477b2eb164541bba56ed31ebe086",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-restart",
+        "at": "2026-11-05T08:05:26.000620+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t4\t7\tNULL\tNULL\t2b2e4022281fc3537ac0226bc38948209c9c5562\t0\t2026-11-05 08:05:26.219",
+        "counts": "1\n1\n0",
+        "redisRunId": "2b2e4022281fc3537ac0226bc38948209c9c5562",
+        "redisControl": [
+          "4",
+          "2b2e4022281fc3537ac0226bc38948209c9c5562",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-resume",
+        "at": "2026-11-05T08:06:28.938208+00:00",
+        "sqlGate": "ASYNC\tREBUILDING\t5\t8\tOPEN\t2026-11-05T08:06:52.906000\t2b2e4022281fc3537ac0226bc38948209c9c5562\t1\t2026-11-05 08:06:29.678",
+        "counts": "1\n1\n0",
+        "redisRunId": "2b2e4022281fc3537ac0226bc38948209c9c5562",
+        "redisControl": [
+          "4",
+          "2b2e4022281fc3537ac0226bc38948209c9c5562",
+          "PAUSED"
+        ],
+        "redisCounters": []
+      }
+    ],
+    "startedAt": "2026-11-05T08:00:36.152718+00:00",
+    "sameFiveVolumes": true,
+    "redisRunIdChanged": true,
+    "trace": [
+      "DIAG snapshot=before mode=ASYNC phase=PAUSED generation=4 controlVersion=7 resume=null leaseUntilUtc=null nowUtc=2026-11-05T08:06:22.540180328 tokenPresent=false runId=2b2e4022281fc3537ac0226bc38948209c9c5562",
+      "DIAG step=redis.runId outcome=FAILED elapsedMs=4013 causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException",
+      "DIAG outcome=FAILED causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException elapsedMs=53892",
+      "DIAG snapshot=after mode=ASYNC phase=REBUILDING generation=5 controlVersion=8 resume=OPEN leaseUntilUtc=2026-11-05T08:06:52.906 nowUtc=2026-11-05T08:06:27.180900727 tokenPresent=true runId=2b2e4022281fc3537ac0226bc38948209c9c5562"
+    ],
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-05T08:06:40.031900+00:00",
+    "jarUnchanged": true
+  },
+  "finalIndependentAudit": {
+    "sourceMatchesD5PlusRecordedPatch": true,
+    "sourceMismatches": [],
+    "unchangedD5Inputs": 459,
+    "changedD5Inputs": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "generatedFixtureFolders": 15,
+    "recordedPatchMatches": true,
+    "diagnosticTransferMatches": true
+  },
+  "originalMaintenanceCliBudgetSeconds": 90,
+  "diagnosticCliWrapperBudgetSeconds": 110,
+  "diagnosticWrapperBudgetSeconds": 780,
+  "observedContextStartToOutcomeMs": 53892,
+  "observedFirstRedisCallMs": 4013,
+  "connectionBudgetMs": 300,
+  "commandBudgetMs": 500,
+  "rebuildLeaseSeconds": 30,
+  "productionBudgetsChanged": false,
+  "leaseRemainingAtFailureSnapshotSeconds": 25.725,
+  "nextTask": {
+    "id": "M06.1-D.6b",
+    "status": "PROPOSED_NOT_STARTED",
+    "scope": "Same-context cold/warm read-only connection comparison before obtaining SQL rebuild ticket; at most two INFO calls; no blind Resume retry."
+  },
+  "localEvidence": [
+    {
+      "path": ".cache/cloud-resume/case-53000cbe2b9c/runner-result.json",
+      "bytes": 3722,
+      "sha256": "856500de230b44a54f52900031f76462e9c3b0c4d3f601f286e35cd79848ca8e"
+    },
+    {
+      "path": ".cache/cloud-resume/case-53000cbe2b9c/final-audit.json",
+      "bytes": 545,
+      "sha256": "d029c401e6a91fd709c1aa8bf48e72e2cf093dbfffd38194b2592f48b24be1d6"
+    },
+    {
+      "path": ".cache/cloud-resume/case-53000cbe2b9c/manifest.json",
+      "bytes": 548,
+      "sha256": "30ed322e5613ccd4165c14586819faa1dd5698064d35693a3b381baa7c101e32"
+    }
+  ]
+}

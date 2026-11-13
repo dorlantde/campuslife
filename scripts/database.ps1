@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Check', 'Run')]
+    [ValidateSet('Check', 'Run', 'AdminInit')]
     [string]$Action = 'Check',
     [ValidateSet('127.0.0.1', 'localhost')]
     [string]$DatabaseHost = '127.0.0.1',
@@ -24,14 +24,14 @@ try {
     $env:DB_PORT = [string]$DatabasePort
     $env:DB_NAME = $DatabaseName
     $env:DB_USERNAME = $DatabaseUser
-    $env:SPRING_PROFILES_ACTIVE = 'mysql'
+    $env:SPRING_PROFILES_ACTIVE = if ($Action -eq 'AdminInit') { 'mysql,admin-bootstrap' } else { 'mysql' }
     if ([string]::IsNullOrEmpty($env:DB_PASSWORD)) {
         $taskSecurePassword = Read-Host 'Enter the campuslife account password (not the root password)' -AsSecureString
         $taskPointer = [Runtime.InteropServices.Marshal]::SecureStringToBSTR($taskSecurePassword)
         $env:DB_PASSWORD = [Runtime.InteropServices.Marshal]::PtrToStringBSTR($taskPointer)
     }
     if ([string]::IsNullOrEmpty($env:DB_PASSWORD)) { throw 'Database password cannot be empty.' }
-    $taskDevAction = if ($Action -eq 'Check') { 'DatabaseCheck' } else { 'Run' }
+    $taskDevAction = if ($Action -eq 'Check') { 'DatabaseCheck' } elseif ($Action -eq 'AdminInit') { 'AdminInit' } else { 'Run' }
     & (Join-Path $PSScriptRoot 'dev.ps1') -Action $taskDevAction
     $taskExitCode = $LASTEXITCODE
 } finally {

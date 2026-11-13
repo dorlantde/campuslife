@@ -1,0 +1,144 @@
+{
+  "date": "2026-10-31",
+  "task": "M08.4-A",
+  "operations": 75,
+  "migration": "V23",
+  "applicationTables": 32,
+  "distinctChecks": 110,
+  "allLatestOutcomes": "passed",
+  "countsByClass": {
+    "com.campuslife.MysqlIntegrationIT": 12,
+    "com.campuslife.OpenApiMysqlIT": 3,
+    "com.campuslife.OutboxRabbitIT": 9,
+    "com.campuslife.CouponRedisMessagingIT": 3,
+    "com.campuslife.messaging.service.OutboxPublisherTest": 10,
+    "com.campuslife.messaging.service.NotificationListenerTest": 4,
+    "com.campuslife.coupon.service.CouponRedisRepairJobTest": 3,
+    "com.campuslife.coupon.service.CouponIssueListenerTest": 5,
+    "com.campuslife.CouponFaultsIT": 8,
+    "com.campuslife.CouponAdmissionIT": 41,
+    "com.campuslife.NotificationRabbitIT": 4,
+    "com.campuslife.CouponAsyncRabbitIT": 4,
+    "com.campuslife.messaging.service.RabbitOutboxTransportTest": 4
+  },
+  "rounds": [
+    {
+      "round": "round1",
+      "executed": 16,
+      "failed": 3,
+      "skipped": 0
+    },
+    {
+      "round": "round2",
+      "executed": 110,
+      "failed": 3,
+      "skipped": 0
+    },
+    {
+      "round": "round3",
+      "executed": 110,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "faultClock": "real system clock; no advancement",
+  "faultCases": [
+    {
+      "restartPid": 36460,
+      "campaignId": 48,
+      "killToVerifiedMs": 31211,
+      "case": "AFTER_SEED",
+      "killedPid": 30920,
+      "generation": 4,
+      "issued": 1
+    },
+    {
+      "restartPid": 15936,
+      "campaignId": 49,
+      "killToVerifiedMs": 33069,
+      "case": "AFTER_ACTIVATE",
+      "killedPid": 2172,
+      "generation": 4,
+      "issued": 1
+    },
+    {
+      "restartPid": 32908,
+      "campaignId": 50,
+      "killToVerifiedMs": 32066,
+      "case": "AFTER_RESERVE",
+      "killedPid": 30336,
+      "generation": 2,
+      "issued": 1
+    },
+    {
+      "restartPid": 17452,
+      "campaignId": 51,
+      "killToVerifiedMs": 32196,
+      "case": "BEFORE_COMMIT",
+      "killedPid": 32480,
+      "generation": 2,
+      "issued": 1
+    },
+    {
+      "restartPid": 4828,
+      "campaignId": 52,
+      "killToVerifiedMs": 6230,
+      "case": "BEFORE_CHECKPOINT",
+      "killedPid": 4152,
+      "generation": 2,
+      "issued": 1
+    },
+    {
+      "restartPid": 29220,
+      "campaignId": 53,
+      "killToVerifiedMs": 6380,
+      "case": "AFTER_ADMISSION",
+      "killedPid": 36452,
+      "generation": 2,
+      "issued": 1
+    },
+    {
+      "restartPid": 34260,
+      "campaignId": 54,
+      "killToVerifiedMs": 10168,
+      "case": "BEFORE_ISSUE_COMMIT",
+      "killedPid": 34744,
+      "generation": 2,
+      "issued": 1
+    },
+    {
+      "restartPid": 29380,
+      "campaignId": 55,
+      "killToVerifiedMs": 10090,
+      "case": "BEFORE_ACK",
+      "killedPid": 33268,
+      "generation": 2,
+      "issued": 1
+    }
+  ],
+  "productionChanges": [
+    "src\\main\\java\\com\\campuslife\\messaging\\config\\RabbitMessagingConfiguration.java"
+  ],
+  "unchanged": {
+    "migrations": 23,
+    "frontendSourceFiles": 45,
+    "scripts": 32,
+    "pom": true
+  },
+  "testSeamsAbsentFromExecutableJar": true,
+  "measurement": {
+    "task": "M08.4-B",
+    "status": "not executed",
+    "performanceBenefit": "not established",
+    "highAvailability": "not established"
+  },
+  "cleanup": {
+    "childJvms": 0,
+    "isolatedMysqlProcesses": 0,
+    "testContainers": 0,
+    "testVolumes": 0,
+    "failedRoundDirectoriesRemoved": true,
+    "jarSmoke": "passed",
+    "verifiedAt": "2026-10-31T09:44:06.0425448Z"
+  }
+}

@@ -1,0 +1,216 @@
+{
+  "task": "M06.1-D.6d",
+  "date": "2026-11-05",
+  "status": "CLOUD_BUILD_AND_STATIC_ARTIFACT_VERIFICATION_PASSED",
+  "parentD6Passed": false,
+  "businessStarted": false,
+  "testsExecuted": false,
+  "productionJavaChangedThisTask": false,
+  "sourceTransfer": {
+    "passed": true,
+    "release": "/home/campusdeploy/campuslife/releases/5382d9dd9ca2",
+    "stage": "/home/campusdeploy/.cache/campuslife-build/5382d9dd9ca2",
+    "fileCount": 462,
+    "sourceBytes": 2930019,
+    "archiveBytes": 652140,
+    "archiveSha256": "5382d9dd9ca2a9162a4a5ca33e01c8b981d2821417e987e3dfef2150ef53343a",
+    "manifestSha256": "94659b79bf21f725e55f0905acc1ffaddb7057ccef754c215385fae9c0168d20",
+    "businessStarted": false
+  },
+  "sourceDeltaFromD5": {
+    "added": [
+      "src/test/java/com/campuslife/CouponMaintenancePreflightMysqlIT.java",
+      "src/test/java/com/campuslife/coupon/service/CouponMaintenancePreflightTest.java"
+    ],
+    "removed": [],
+    "changed": [
+      "deploy/base/mysql-init.sh",
+      "src/main/java/com/campuslife/coupon/service/CouponMaintenance.java",
+      "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java"
+    ],
+    "unchanged": 457
+  },
+  "elapsedSeconds": 91.229,
+  "mavenOpts": "-Xmx768m -XX:ActiveProcessorCount=2",
+  "mavenSummary": [
+    "[INFO] Compiling 285 source files with javac [debug parameters release 21] to target/classes",
+    "[INFO] Compiling 118 source files with javac [debug parameters release 21] to target/test-classes",
+    "[INFO] Tests are skipped.",
+    "[INFO] BUILD SUCCESS",
+    "[INFO] Total time:  01:09 min",
+    "[INFO] Finished at: 2026-11-05T17:41:18+08:00"
+  ],
+  "buildRecord": {
+    "image": "campuslife-base:m061a-4dfd3a9f1efd-468b0df58bc6",
+    "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+    "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-05T09:41:34.922909+00:00"
+  },
+  "image": {
+    "Id": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+    "Os": "linux",
+    "Architecture": "amd64",
+    "RootFS": {
+      "Type": "layers",
+      "Layers": [
+        "sha256:bec87777bc2fb2edcdf9af11df1531469e7df911309c1413082b18fcb8610278",
+        "sha256:67822e3abc854af47db214f16667073b65931dc539b604b8dda6996b4084ee4a",
+        "sha256:d390ebe6119202102eaa37b1ae01308d34f2876df4fb56d94d818ca0b6f2c1ff",
+        "sha256:39598f2f194236b212de89f54438744681527522b3192a17a657707c4b1f16ff",
+        "sha256:797cce5c7d95a4b4dc04791ea1eb8f5a98a1efc2cadf1e23fc0f9940281a5c48",
+        "sha256:031598c42681c30edc475bc203197064e4aaca5075a1a80cbeee58547c521962",
+        "sha256:3e9699e7116eaa3b9da64d19ca0552b9572bfe6ad1fda79539d94de0764bf8c4",
+        "sha256:42e35e18834acac30d4cecf8e3de1393b6bf785b161e8a200af05220ef4f1160",
+        "sha256:d42d9c1eada3aadc01ade8e9a9f9a35c8a47cc5d648a9845da50c4185314be3a",
+        "sha256:2733563e6dcfb3f7d754388cf5bd7915b47757b71d865ed4d9f65253677bf190"
+      ]
+    },
+    "user": "10001:10001",
+    "entrypoint": [
+      "/opt/campuslife/app-entrypoint.sh"
+    ],
+    "cmd": [
+      "app"
+    ]
+  },
+  "cacheReuse": {
+    "kind": "explicit directory symlink",
+    "target": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/maven-repository",
+    "copiedFromWindows": false
+  },
+  "memoryBefore": {
+    "MemTotal": 3799158784,
+    "MemAvailable": 3189092352
+  },
+  "newJarBytes": 72025890,
+  "comparisonToValidatedLocalJar": {
+    "sameJarSha256": false,
+    "allEntries": 649,
+    "addedEntries": [],
+    "removedEntries": [],
+    "changedEntryContent": [],
+    "differentTimestamps": 394,
+    "otherEntryMetadataChanges": []
+  },
+  "runtimeDeltaFromD5": {
+    "added": [],
+    "removed": [],
+    "changed": [
+      "BOOT-INF/classes/com/campuslife/coupon/service/CouponMaintenance.class",
+      "BOOT-INF/classes/com/campuslife/coupon/service/CouponRedisRecovery.class"
+    ],
+    "runtimeEntries": 544,
+    "dependencyEntries": 156
+  },
+  "finalIndependentAudit": {
+    "newSourceMatches": true,
+    "newSourceFiles": 462,
+    "oldSourceMatchesRecordedPatch": true,
+    "oldChangedFromD5": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "oldRecordedTestPatchesMatch": true,
+    "oldJarAndImagePreserved": true,
+    "newJarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+    "newJarBytes": 72025890,
+    "newImageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+    "cacheTarget": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/maven-repository",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "oldFixtureFolders": 17,
+    "newFixtureFolders": 0,
+    "mavenSummary": [
+      "[INFO] Compiling 285 source files with javac [debug parameters release 21] to target/classes",
+      "[INFO] Compiling 118 source files with javac [debug parameters release 21] to target/test-classes",
+      "[INFO] Tests are skipped.",
+      "[INFO] BUILD SUCCESS",
+      "[INFO] Total time:  01:09 min",
+      "[INFO] Finished at: 2026-11-05T17:41:18+08:00"
+    ]
+  },
+  "localToolChange": {
+    "path": "scripts/prepare-cloud-source.py",
+    "sha256": "7b3667760cfabf12363d6eb299ac2e563a9a99e0de8c978258e9f94c3f8c2443",
+    "effect": "Optional task metadata label; source allowlist unchanged"
+  },
+  "nextTask": {
+    "id": "M06.1-D.6e",
+    "status": "PROPOSED_NOT_STARTED",
+    "scope": "New artifact targeted original-volume restart, Resume/new claim and outstanding resource/safety hooks; no fourth full print/payment/pickup/review lifecycle."
+  },
+  "localEvidence": [
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/receipt.json",
+      "bytes": 343,
+      "sha256": "6c7a14effd93ddca43e22860ae23c1df52ea14e63b3a61c01d0847ab05d3dced"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/source-manifest.json",
+      "bytes": 91143,
+      "sha256": "94659b79bf21f725e55f0905acc1ffaddb7057ccef754c215385fae9c0168d20"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/source-transfer.json",
+      "bytes": 414,
+      "sha256": "3cf26c51b77481b020f7be5229cfc7ac5f120003ce4daab8c1235679c91ec169"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/source-delta.json",
+      "bytes": 434,
+      "sha256": "7e523fb6e65951055ef5cf0f199d7abc7189921d45e5bab57234eebcbb41cb38"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/local-jar-baseline.json",
+      "bytes": 230337,
+      "sha256": "e184f5c86ffe0e3c26f5e7ff8ee3320ba01884caa471bb5d5f75df3bf4cb6879"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/build-result.json",
+      "bytes": 234139,
+      "sha256": "cd44fc4c5fd9327e8cfca945abeddb99ce774a7ac09ec6103f64505d266dbcde"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/artifact-comparison.json",
+      "bytes": 199,
+      "sha256": "134bd555b69d46ffc11859da25be3252a6a449cc1a0026e30022d44ad35118c6"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/delta-from-d5.json",
+      "bytes": 275,
+      "sha256": "0f796138a3e6478e88f72cca9fccc3ef99a6db1e9c0d781da024feddf000a51a"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/final-audit.json",
+      "bytes": 1087,
+      "sha256": "c08ae9e2feaecb0bdc13d9fd83578a4fd74c82fa86707ea4258b93550d943b9e"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/maven.log",
+      "bytes": 2911,
+      "sha256": "5784d0e32eafde8041c958dbb3cdf1856686f1e1f3e44de791b7bee4301e03b2"
+    },
+    {
+      "path": ".cache/cloud-build/source-preflight-2026-11-05/image.log",
+      "bytes": 2344,
+      "sha256": "b3edc2a9b687f346a41a3e08b697e7ca87063419aebebe66b1d3980f1a688c85"
+    }
+  ],
+  "packagingReceiptBeforeTransfer": {
+    "archive": "campuslife-source.tar.gz",
+    "archiveBytes": 652140,
+    "archiveSha256": "5382d9dd9ca2a9162a4a5ca33e01c8b981d2821417e987e3dfef2150ef53343a",
+    "manifestSha256": "94659b79bf21f725e55f0905acc1ffaddb7057ccef754c215385fae9c0168d20",
+    "fileCount": 462,
+    "sourceBytes": 2930019,
+    "passed": true,
+    "transferred": false
+  }
+}

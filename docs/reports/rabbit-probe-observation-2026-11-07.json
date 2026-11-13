@@ -1,0 +1,1218 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-B.2",
+  "status": "BOUNDED_DIAGNOSIS_TRUNCATED_WITH_EVIDENCE",
+  "case": "case-4fa17982960d4cb6",
+  "manifestSha256": "c5a385efbdbdf985d46c8ed88b357a8036fb084dfc40e80c862d06c8629d6808",
+  "receiptSha256": "669cd557a6eeeed5dcf6d3c9d7acfc78c932baf082a498338e6063a8e34df333",
+  "receipt": {
+    "case_id": "case-4fa17982960d4cb6",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794054028.199957,
+    "failure_type": null,
+    "finished_unix": 1794053648.8065314,
+    "job": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "c285025079d24c0ebbdc7e4f93ce1a09",
+    "manifest_sha256": "c5a385efbdbdf985d46c8ed88b357a8036fb084dfc40e80c862d06c8629d6808",
+    "schema": 1,
+    "started_unix": 1794053548.1999564,
+    "state": "SUCCEEDED",
+    "task": "D.7.1-B.2",
+    "task_outcome": "SUCCEEDED"
+  },
+  "summary": {
+    "case": "case-4fa17982960d4cb6",
+    "receiptState": "SUCCEEDED",
+    "cleanupVerified": true,
+    "elapsedSeconds": 100.607,
+    "diagnosisStatus": "TRUNCATED_ON_MANUAL_TIMEOUT",
+    "stopCode": "MANUAL_OUTER_TIMEOUT",
+    "protocolAttempts": 6,
+    "protocolReady": {
+      "elapsedSeconds": 9.490221363026649,
+      "healthyRequired": false
+    },
+    "protocolHttpCounts": {
+      "overview": {
+        "HTTP_UNAVAILABLE": 5,
+        "200": 1
+      },
+      "vhost": {
+        "HTTP_UNAVAILABLE": 5,
+        "200": 1
+      }
+    },
+    "native": {
+      "completed": 10,
+      "exitCounts": {
+        "-1": 2,
+        "0": 8
+      },
+      "successMinSeconds": 2.7610130310058594,
+      "successMaxSeconds": 4.255168914794922,
+      "outputCategories": {
+        "UNKNOWN": 10
+      }
+    },
+    "windows": [
+      {
+        "completedFixedWindow": true,
+        "elapsedSeconds": 60.0080438790028,
+        "endUnix": 1794053626.6341546,
+        "firstFiveComplete": true,
+        "label": "A",
+        "nativeCompleted": 8,
+        "predefinedFirstFiveKeys": [
+          "2026-11-07T20:12:43.296607469+08:00|2026-11-07T20:12:48.401585681+08:00",
+          "2026-11-07T20:12:53.017879074+08:00|2026-11-07T20:12:55.968161372+08:00",
+          "2026-11-07T20:13:00.969248861+08:00|2026-11-07T20:13:03.867855002+08:00",
+          "2026-11-07T20:13:08.869154192+08:00|2026-11-07T20:13:12.052096419+08:00",
+          "2026-11-07T20:13:17.05410227+08:00|2026-11-07T20:13:21.110304834+08:00"
+        ],
+        "startUnix": 1794053566.6261117,
+        "stopCode": "",
+        "probeSummary": {
+          "completed": 8,
+          "exitCounts": {
+            "-1": 1,
+            "0": 7
+          },
+          "successMinSeconds": 2.7610130310058594,
+          "successMaxSeconds": 4.056202173233032,
+          "outputCategories": {
+            "UNKNOWN": 8
+          }
+        },
+        "crossBoundaryCompleted": 1
+      },
+      {
+        "completedFixedWindow": false,
+        "elapsedSeconds": 20.011226484028157,
+        "endUnix": 1794053646.645429,
+        "firstFiveComplete": false,
+        "label": "B",
+        "nativeCompleted": 2,
+        "predefinedFirstFiveKeys": [
+          "2026-11-07T20:13:50.759416405+08:00|2026-11-07T20:13:55.014585671+08:00",
+          "2026-11-07T20:14:00.016575008+08:00|2026-11-07T20:14:05.183502295+08:00"
+        ],
+        "startUnix": 1794053626.6342046,
+        "stopCode": "MANUAL_OUTER_TIMEOUT",
+        "probeSummary": {
+          "completed": 2,
+          "exitCounts": {
+            "0": 1,
+            "-1": 1
+          },
+          "successMinSeconds": 4.255168914794922,
+          "successMaxSeconds": 4.255168914794922,
+          "outputCategories": {
+            "UNKNOWN": 2
+          }
+        },
+        "crossBoundaryCompleted": 0
+      }
+    ],
+    "hostSamples": 89,
+    "resourceSummary": {
+      "rabbitmq": {
+        "samples": 18,
+        "maxMemoryBytes": 266067968,
+        "allObservedOomSwapZero": true
+      },
+      "worker": {
+        "samples": 4,
+        "maxMemoryBytes": 20410368,
+        "allObservedOomSwapZero": true
+      }
+    },
+    "workerEverRunning": true,
+    "hostOomKillFirstLast": [
+      0,
+      0
+    ],
+    "observerErrors": [],
+    "slotStates": {
+      "EXECUTED": 8,
+      "NOT_EXECUTED": 4
+    },
+    "notExecutedReasons": {
+      "MANUAL_OUTER_TIMEOUT": 4
+    },
+    "manual": [
+      {
+        "window": "A",
+        "atSecond": 10,
+        "kind": "combined",
+        "hostElapsedSeconds": 2.739740182994865,
+        "clientExitCode": 0,
+        "outerTimedOut": false,
+        "clientExited": true,
+        "outputReaderExited": true,
+        "containerChildrenExitProven": false,
+        "output": {
+          "categories": [
+            "UNKNOWN"
+          ],
+          "markers": [
+            {
+              "stage": "WRAPPER",
+              "value": 241
+            },
+            {
+              "stage": "RUNNING_BEGIN",
+              "value": null
+            },
+            {
+              "stage": "RUNNING_END",
+              "value": 0
+            },
+            {
+              "stage": "PORTS_BEGIN",
+              "value": null
+            },
+            {
+              "stage": "PORTS_END",
+              "value": 0
+            },
+            {
+              "stage": "END",
+              "value": 0
+            }
+          ],
+          "mayBeTruncated": false,
+          "observedBytes": 627,
+          "outputSha256": "b16a7728895be9a8460110a9f697f6631641d60e7ef756307149096f857f2822",
+          "sensitiveSuppressed": false
+        }
+      },
+      {
+        "window": "A",
+        "atSecond": 30,
+        "kind": "running",
+        "hostElapsedSeconds": 2.7302993520279415,
+        "clientExitCode": 0,
+        "outerTimedOut": false,
+        "clientExited": true,
+        "outputReaderExited": true,
+        "containerChildrenExitProven": false,
+        "output": {
+          "categories": [
+            "UNKNOWN"
+          ],
+          "markers": [
+            {
+              "stage": "WRAPPER",
+              "value": 467
+            },
+            {
+              "stage": "RUNNING_BEGIN",
+              "value": null
+            },
+            {
+              "stage": "RUNNING_END",
+              "value": 0
+            },
+            {
+              "stage": "END",
+              "value": 0
+            }
+          ],
+          "mayBeTruncated": false,
+          "observedBytes": 174,
+          "outputSha256": "f9876155deae2710ed073b76a9cead5db645efe6bedd6d7729d20a99372a0d94",
+          "sensitiveSuppressed": false
+        }
+      },
+      {
+        "window": "A",
+        "atSecond": 45,
+        "kind": "ports",
+        "hostElapsedSeconds": 1.473983247007709,
+        "clientExitCode": 0,
+        "outerTimedOut": false,
+        "clientExited": true,
+        "outputReaderExited": true,
+        "containerChildrenExitProven": false,
+        "output": {
+          "categories": [
+            "UNKNOWN"
+          ],
+          "markers": [
+            {
+              "stage": "WRAPPER",
+              "value": 657
+            },
+            {
+              "stage": "PORTS_BEGIN",
+              "value": null
+            },
+            {
+              "stage": "PORTS_END",
+              "value": 0
+            },
+            {
+              "stage": "END",
+              "value": 0
+            }
+          ],
+          "mayBeTruncated": false,
+          "observedBytes": 487,
+          "outputSha256": "af0cf8ae8dc69419cf029559f918dc2541ce29ef9736feb19c130b24e939fbdc",
+          "sensitiveSuppressed": false
+        }
+      },
+      {
+        "window": "B",
+        "atSecond": 10,
+        "kind": "combined",
+        "hostElapsedSeconds": 5.005897918017581,
+        "clientExitCode": -9,
+        "outerTimedOut": true,
+        "clientExited": true,
+        "outputReaderExited": true,
+        "containerChildrenExitProven": false,
+        "output": {
+          "categories": [
+            "UNKNOWN"
+          ],
+          "markers": [
+            {
+              "stage": "WRAPPER",
+              "value": 923
+            },
+            {
+              "stage": "RUNNING_BEGIN",
+              "value": null
+            },
+            {
+              "stage": "RUNNING_END",
+              "value": 0
+            },
+            {
+              "stage": "PORTS_BEGIN",
+              "value": null
+            }
+          ],
+          "mayBeTruncated": false,
+          "observedBytes": 180,
+          "outputSha256": "10e2db0343284e0fa0cc2b7fd23bac40925e76b3aff445bbcfec13f5fbb92eda",
+          "sensitiveSuppressed": false
+        }
+      }
+    ],
+    "httpSamples": [
+      {
+        "window": "A",
+        "atSecond": 0,
+        "ready": {
+          "available": false,
+          "hostElapsedSeconds": 0.2620741929858923,
+          "httpStatus": 503
+        },
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.29055831203004345,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.003885407990310341
+        }
+      },
+      {
+        "window": "A",
+        "atSecond": 20,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.13243535498622805,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.1262804440339096,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.00022154097678139806
+        }
+      },
+      {
+        "window": "A",
+        "atSecond": 40,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.2255761839915067,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.22942011995473877,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.0004148940206505358
+        }
+      },
+      {
+        "window": "B",
+        "atSecond": 0,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.21148679201724008,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.15851933101657778,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.0002274680300615728
+        }
+      }
+    ],
+    "authSamples": [],
+    "clientInventory": null,
+    "workerResult": null
+  },
+  "diagnosis": {
+    "authSamples": [],
+    "businessRequests": 0,
+    "candidateInstalled": false,
+    "diagnosisStatus": "TRUNCATED_ON_MANUAL_TIMEOUT",
+    "elapsedSeconds": 98.04410081199603,
+    "originalConfig": {
+      "cpuset": "0,1",
+      "credentialMountsUnchanged": true,
+      "healthcheck": {
+        "interval": "5s",
+        "retries": 30,
+        "start_period": "15s",
+        "test": [
+          "CMD-SHELL",
+          "gosu rabbitmq rabbitmq-diagnostics -q check_running && gosu rabbitmq rabbitmq-diagnostics -q check_port_connectivity"
+        ],
+        "timeout": "5s"
+      },
+      "memoryMiB": 640
+    },
+    "schema": 1,
+    "slots": [
+      {
+        "actualUnix": 1794053566.6261392,
+        "atSecond": 0,
+        "latenessSeconds": 2.8100039344280958e-05,
+        "ready": {
+          "available": false,
+          "hostElapsedSeconds": 0.2620741929858923,
+          "httpStatus": 503
+        },
+        "reason": "",
+        "state": "EXECUTED",
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.003885407990310341
+        },
+        "type": "http",
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.29055831203004345,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053586.6262236,
+        "atSecond": 20,
+        "latenessSeconds": 0.00011288805399090052,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.13243535498622805,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "reason": "",
+        "state": "EXECUTED",
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.00022154097678139806
+        },
+        "type": "http",
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.1262804440339096,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053606.62648,
+        "atSecond": 40,
+        "latenessSeconds": 0.00037014600820839405,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.2255761839915067,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "reason": "",
+        "state": "EXECUTED",
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.0004148940206505358
+        },
+        "type": "http",
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.22942011995473877,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053576.626218,
+        "atSecond": 10,
+        "latenessSeconds": 0.00010740605648607016,
+        "reason": "",
+        "result": {
+          "clientExitCode": 0,
+          "clientExited": true,
+          "containerChildrenExitProven": false,
+          "hostElapsedSeconds": 2.739740182994865,
+          "kind": "combined",
+          "outerLimitSeconds": 5,
+          "outerTimedOut": false,
+          "output": {
+            "categories": [
+              "UNKNOWN"
+            ],
+            "markers": [
+              {
+                "stage": "WRAPPER",
+                "value": 241
+              },
+              {
+                "stage": "RUNNING_BEGIN",
+                "value": null
+              },
+              {
+                "stage": "RUNNING_END",
+                "value": 0
+              },
+              {
+                "stage": "PORTS_BEGIN",
+                "value": null
+              },
+              {
+                "stage": "PORTS_END",
+                "value": 0
+              },
+              {
+                "stage": "END",
+                "value": 0
+              }
+            ],
+            "mayBeTruncated": false,
+            "observedBytes": 627,
+            "outputSha256": "b16a7728895be9a8460110a9f697f6631641d60e7ef756307149096f857f2822",
+            "sensitiveSuppressed": false
+          },
+          "outputArrivals": [
+            {
+              "bytes": 42,
+              "receivedNanos": 275186936160979
+            },
+            {
+              "bytes": 96,
+              "receivedNanos": 275188256625038
+            },
+            {
+              "bytes": 42,
+              "receivedNanos": 275188270768442
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275189528532137
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275189530381258
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275189531868702
+            },
+            {
+              "bytes": 65,
+              "receivedNanos": 275189533797127
+            },
+            {
+              "bytes": 150,
+              "receivedNanos": 275189543600817
+            },
+            {
+              "bytes": 34,
+              "receivedNanos": 275189559728723
+            }
+          ],
+          "outputReaderExited": true,
+          "totalOutputBytes": 627
+        },
+        "state": "EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053596.626213,
+        "atSecond": 30,
+        "latenessSeconds": 0.00010258302791044116,
+        "reason": "",
+        "result": {
+          "clientExitCode": 0,
+          "clientExited": true,
+          "containerChildrenExitProven": false,
+          "hostElapsedSeconds": 2.7302993520279415,
+          "kind": "running",
+          "outerLimitSeconds": 5,
+          "outerTimedOut": false,
+          "output": {
+            "categories": [
+              "UNKNOWN"
+            ],
+            "markers": [
+              {
+                "stage": "WRAPPER",
+                "value": 467
+              },
+              {
+                "stage": "RUNNING_BEGIN",
+                "value": null
+              },
+              {
+                "stage": "RUNNING_END",
+                "value": 0
+              },
+              {
+                "stage": "END",
+                "value": 0
+              }
+            ],
+            "mayBeTruncated": false,
+            "observedBytes": 174,
+            "outputSha256": "f9876155deae2710ed073b76a9cead5db645efe6bedd6d7729d20a99372a0d94",
+            "sensitiveSuppressed": false
+          },
+          "outputArrivals": [
+            {
+              "bytes": 42,
+              "receivedNanos": 275206933067631
+            },
+            {
+              "bytes": 96,
+              "receivedNanos": 275209492485077
+            },
+            {
+              "bytes": 36,
+              "receivedNanos": 275209526882067
+            }
+          ],
+          "outputReaderExited": true,
+          "totalOutputBytes": 174
+        },
+        "state": "EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053611.626233,
+        "atSecond": 45,
+        "latenessSeconds": 0.000122601049952209,
+        "reason": "",
+        "result": {
+          "clientExitCode": 0,
+          "clientExited": true,
+          "containerChildrenExitProven": false,
+          "hostElapsedSeconds": 1.473983247007709,
+          "kind": "ports",
+          "outerLimitSeconds": 5,
+          "outerTimedOut": false,
+          "output": {
+            "categories": [
+              "UNKNOWN"
+            ],
+            "markers": [
+              {
+                "stage": "WRAPPER",
+                "value": 657
+              },
+              {
+                "stage": "PORTS_BEGIN",
+                "value": null
+              },
+              {
+                "stage": "PORTS_END",
+                "value": 0
+              },
+              {
+                "stage": "END",
+                "value": 0
+              }
+            ],
+            "mayBeTruncated": false,
+            "observedBytes": 487,
+            "outputSha256": "af0cf8ae8dc69419cf029559f918dc2541ce29ef9736feb19c130b24e939fbdc",
+            "sensitiveSuppressed": false
+          },
+          "outputArrivals": [
+            {
+              "bytes": 40,
+              "receivedNanos": 275221926851266
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275223269984598
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275223271946170
+            },
+            {
+              "bytes": 66,
+              "receivedNanos": 275223273919522
+            },
+            {
+              "bytes": 65,
+              "receivedNanos": 275223275949048
+            },
+            {
+              "bytes": 150,
+              "receivedNanos": 275223286758054
+            },
+            {
+              "bytes": 34,
+              "receivedNanos": 275223300275883
+            }
+          ],
+          "outputReaderExited": true,
+          "totalOutputBytes": 487
+        },
+        "state": "EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "actualUnix": 1794053626.847855,
+        "atSecond": 0,
+        "latenessSeconds": 0.21365116199012846,
+        "ready": {
+          "available": true,
+          "hostElapsedSeconds": 0.21148679201724008,
+          "httpStatus": 200,
+          "statusOk": true
+        },
+        "reason": "",
+        "state": "EXECUTED",
+        "tcp": {
+          "available": true,
+          "elapsedSeconds": 0.0002274680300615728
+        },
+        "type": "http",
+        "vhost": {
+          "available": true,
+          "hostElapsedSeconds": 0.15851933101657778,
+          "httpStatus": 200,
+          "nameMatches": true
+        },
+        "window": "B"
+      },
+      {
+        "atSecond": 20,
+        "reason": "MANUAL_OUTER_TIMEOUT",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 40,
+        "reason": "MANUAL_OUTER_TIMEOUT",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "actualUnix": 1794053636.6343756,
+        "atSecond": 10,
+        "latenessSeconds": 0.00017204799223691225,
+        "reason": "",
+        "result": {
+          "clientExitCode": -9,
+          "clientExited": true,
+          "containerChildrenExitProven": false,
+          "hostElapsedSeconds": 5.005897918017581,
+          "kind": "combined",
+          "outerLimitSeconds": 5,
+          "outerTimedOut": true,
+          "output": {
+            "categories": [
+              "UNKNOWN"
+            ],
+            "markers": [
+              {
+                "stage": "WRAPPER",
+                "value": 923
+              },
+              {
+                "stage": "RUNNING_BEGIN",
+                "value": null
+              },
+              {
+                "stage": "RUNNING_END",
+                "value": 0
+              },
+              {
+                "stage": "PORTS_BEGIN",
+                "value": null
+              }
+            ],
+            "mayBeTruncated": false,
+            "observedBytes": 180,
+            "outputSha256": "10e2db0343284e0fa0cc2b7fd23bac40925e76b3aff445bbcfec13f5fbb92eda",
+            "sensitiveSuppressed": false
+          },
+          "outputArrivals": [
+            {
+              "bytes": 20,
+              "receivedNanos": 275246954903924
+            },
+            {
+              "bytes": 22,
+              "receivedNanos": 275246955118601
+            },
+            {
+              "bytes": 96,
+              "receivedNanos": 275249061656312
+            },
+            {
+              "bytes": 42,
+              "receivedNanos": 275249085683817
+            }
+          ],
+          "outputReaderExited": true,
+          "totalOutputBytes": 180
+        },
+        "state": "EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 30,
+        "reason": "MANUAL_OUTER_TIMEOUT",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 45,
+        "reason": "MANUAL_OUTER_TIMEOUT",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      }
+    ],
+    "stopCode": "MANUAL_OUTER_TIMEOUT",
+    "task": "D.7.1-B",
+    "windows": [
+      {
+        "completedFixedWindow": true,
+        "elapsedSeconds": 60.0080438790028,
+        "endUnix": 1794053626.6341546,
+        "firstFiveComplete": true,
+        "label": "A",
+        "nativeCompleted": 8,
+        "predefinedFirstFiveKeys": [
+          "2026-11-07T20:12:43.296607469+08:00|2026-11-07T20:12:48.401585681+08:00",
+          "2026-11-07T20:12:53.017879074+08:00|2026-11-07T20:12:55.968161372+08:00",
+          "2026-11-07T20:13:00.969248861+08:00|2026-11-07T20:13:03.867855002+08:00",
+          "2026-11-07T20:13:08.869154192+08:00|2026-11-07T20:13:12.052096419+08:00",
+          "2026-11-07T20:13:17.05410227+08:00|2026-11-07T20:13:21.110304834+08:00"
+        ],
+        "startUnix": 1794053566.6261117,
+        "stopCode": ""
+      },
+      {
+        "completedFixedWindow": false,
+        "elapsedSeconds": 20.011226484028157,
+        "endUnix": 1794053646.645429,
+        "firstFiveComplete": false,
+        "label": "B",
+        "nativeCompleted": 2,
+        "predefinedFirstFiveKeys": [
+          "2026-11-07T20:13:50.759416405+08:00|2026-11-07T20:13:55.014585671+08:00",
+          "2026-11-07T20:14:00.016575008+08:00|2026-11-07T20:14:05.183502295+08:00"
+        ],
+        "startUnix": 1794053626.6342046,
+        "stopCode": "MANUAL_OUTER_TIMEOUT"
+      }
+    ]
+  },
+  "nativeProbes": [
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:12:48.401585681+08:00",
+      "exitCode": -1,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 132,
+        "outputSha256": "e52d7bf854d6641f441c65ae954b338ec653ff7142c251d70f501467c4a48cc2",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:12:43.296607469+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:12:55.968161372+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:12:53.017879074+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:03.867855002+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:00.969248861+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:12.052096419+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:08.869154192+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:21.110304834+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:17.05410227+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:30.07805256+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:26.11143838+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:37.840132664+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:35.079119811+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:45.757797513+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:42.841410657+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:13:55.014585671+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "a6514a8fb38ebfe942f3d0517f1d760622b744e714ac9ec4bafe211c259d5c25",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:13:50.759416405+08:00"
+    },
+    {
+      "containerId": "2edf5951e16daa039f7a83a348287369edb77d53950449207a94de95ad78a4d5",
+      "end": "2026-11-07T20:14:05.183502295+08:00",
+      "exitCode": -1,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 132,
+        "outputSha256": "e52d7bf854d6641f441c65ae954b338ec653ff7142c251d70f501467c4a48cc2",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T20:14:00.016575008+08:00"
+    }
+  ],
+  "secretChecks": {
+    "generatedValuesChecked": 13,
+    "jwtShapeAbsent": true,
+    "rawProbeOrHttpSaved": false
+  },
+  "dispatchedSources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/measurement_runtime.py",
+      "sha256": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d"
+    },
+    {
+      "path": "scripts/rabbit_probe_diagnostics.py",
+      "sha256": "f70d7b9f8e859b52a96a62e03d5510d2c8eb05c9d9c12fc118b2d93b7bbe4a46"
+    },
+    {
+      "path": "scripts/test_rabbit_probe_diagnostics.py",
+      "sha256": "714b064d154d4c96ea90ca456f51c04c43ddd6ddc84394845ceb773c16794176"
+    },
+    {
+      "path": "scripts/run_rabbit_probe_diagnosis.py",
+      "sha256": "af872ddeacba6cdd874bde217fb441c24f82e1e803d9e85771297b779d3702d3"
+    },
+    {
+      "path": "src/diagnostics/java/campuslife/diagnostics/CpuWindow.java",
+      "sha256": "e0141b0aa8fdd6e43f5637697d6f891114d2a0c26c259ecf99eef9189c3587c0"
+    }
+  ],
+  "remoteAudit": {
+    "case": "case-4fa17982960d4cb6",
+    "receiptSha256": "669cd557a6eeeed5dcf6d3c9d7acfc78c932baf082a498338e6063a8e34df333",
+    "sourceFilesVerified": 7,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "diagnosisSha256": "ae28667ea1391b6bf3b909b6b35eeec7833ce84eee736842d977b868c0ffee88",
+    "diagnosisStatus": "TRUNCATED_ON_MANUAL_TIMEOUT",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-b9b27f8f0da94279",
+        "state": "FAILED",
+        "receiptSha256": "a82245222d051ad041b5fec32e48afcc0a8267516a9578c3adcf6b47aed7ff4f",
+        "elapsedSeconds": 101.072,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-27a0f54b72b346da",
+        "state": "FAILED",
+        "receiptSha256": "82cc0568464bdff5a702634fc50aea8eb8f8c937a8c033844c00281fc51d7793",
+        "elapsedSeconds": 101.298,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-4fa17982960d4cb6",
+        "state": "SUCCEEDED",
+        "receiptSha256": "669cd557a6eeeed5dcf6d3c9d7acfc78c932baf082a498338e6063a8e34df333",
+        "elapsedSeconds": 100.607,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ],
+    "observedContainerProcessAnchorsNotRunning": 54,
+    "fixedHelperControlledChecks": {
+      "checks": 16,
+      "passed": true,
+      "brokerStarted": false,
+      "originalCaseRepeated": false,
+      "sourceHashesVerified": 3
+    },
+    "controlEndpointShortChecks": {
+      "checks": 18,
+      "passed": true,
+      "brokerStarted": false,
+      "sourceHashesVerified": 3
+    }
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 27,
+    "historicalReportsVerified": 5,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "diagnosticSourcesUnchanged": true,
+    "fixedSourcesMatchControlledChecks": true
+  },
+  "relatedChecks": {
+    "targetChecks": 18,
+    "targetElapsedSeconds": 1.275,
+    "skipped": 0,
+    "workerShortSelfDeadlinePassed": true,
+    "workerSixtySecondNaturalExitVerified": false
+  },
+  "limitations": [
+    "Window B truncated at manual total deadline; 4 fixed slots not executed",
+    "Authentication matrix and in-image HTTP client inventory not reached",
+    "No individual inner CLI times or old C.3 root-cause proof",
+    "No 60-second worker natural exit proof; cleaned with owned container",
+    "Single Broker and observer overlap, not performance/capacity or seven-service acceptance"
+  ],
+  "recommendation": "D.7.1-C minimal treatment design only; compare preserving original probe versus lightweight signal semantics/permissions/client and bounded validation; no automatic fourth diagnosis or C.3",
+  "evidenceSha256": {
+    "audit-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cleanup.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnosis.json": "ae28667ea1391b6bf3b909b6b35eeec7833ce84eee736842d977b868c0ffee88",
+    "fetch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fetch.json": "a50bf44be2567db58911b4928820cae5f3d8085cf1b3c1322bbb97be8eb60908",
+    "final-audit.json": "58163982898fb438238e0bcc60176404abf150d0123ce442ae7ffccb47367e3c",
+    "host-samples.json": "ef439588324894e49f830a3f88af8f1de9f4ab3635a26d8d1a983b9868d68b64",
+    "job.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "launch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-audit.json": "768bfcd415fe8a13fcd2775bd94954e6d9e4fa03e8448b534431ea4c8b927658",
+    "native-probes.json": "a7f5b4eb1778dc42e99939e7e786a7305f43c3aec466d3bc49ff96dae863c18b",
+    "observer-errors.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "protocol-attempts.json": "3b0c46343b179d1399363087a37f17a896ec3f092c01c87b7b335d9e97e36040",
+    "protocol-ready.json": "d90f8b17821184b7e559bf6893adf3de20d4d5481a0b6365ed480b577ca06946",
+    "secret-checks.json": "8809024f06e1326142bbd03e0503dfaa83d632362e9ab179b669d425cede4b9e",
+    "slots.json": "56669e5ec936da106e104b76f7c8b2ed4f8aacec8267bbf6740210f57bc625b5",
+    "summary.json": "8297499e0de901ed8aa99d77195d8c542d8b5b61d3dacbbf7536599200cd3bff",
+    "supervisor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-checks.log": "ad44f123df6ef4ff54d31b393074b2ee96989826d864e21faef46e28ab195245",
+    "worker-config.json": "1a7d949cf799bf6fca489d89dfec2d61364edc5c150134e6dc9a6359c7b15b06",
+    "worker-short-check.json": "2e0757c1114df13fcaecbeb5f5fb8c2221edfd48af06c0f7d6d184bb4187d7d2"
+  }
+}

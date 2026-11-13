@@ -1,0 +1,257 @@
+{
+  "milestone": "M03.2-B",
+  "date": "2026-10-30",
+  "operations": 75,
+  "migration": 21,
+  "tables": 31,
+  "distinctRelatedTests": 253,
+  "suites": [
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.file.FilePolicyTest",
+      "time": "0.811",
+      "tests": "38",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.merchant.cache.RatingCacheTest",
+      "time": "0.85",
+      "tests": "18",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+      "time": "0.071",
+      "tests": "22",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.messaging.service.NotificationListenerTest",
+      "time": "6.971",
+      "tests": "4",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "time": "0.193",
+      "tests": "9",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.messaging.service.RabbitOutboxTransportTest",
+      "time": "3.177",
+      "tests": "2",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.order.service.BookingOrderPolicyTest",
+      "time": "0.136",
+      "tests": "22",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.order.service.CouponOrderHashTest",
+      "time": "0.03",
+      "tests": "2",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.order.service.PrintOrderPolicyTest",
+      "time": "0.095",
+      "tests": "30",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.order.service.PrintQuotePolicyTest",
+      "time": "0.021",
+      "tests": "18",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.RegistrationPolicyTest",
+      "time": "1.117",
+      "tests": "12",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.TokenServiceTest",
+      "time": "0.218",
+      "tests": "17",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.WebFoundationTest",
+      "time": "8.21",
+      "tests": "13",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.MysqlIntegrationIT",
+      "time": "6.527",
+      "tests": "12",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.NotificationMysqlIT",
+      "time": "29.061",
+      "tests": "9",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.NotificationRabbitIT",
+      "time": "9.492",
+      "tests": "4",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OpenApiMysqlIT",
+      "time": "3.412",
+      "tests": "3",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OutboxMysqlIT",
+      "time": "6.111",
+      "tests": "10",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OutboxRabbitIT",
+      "time": "25.36",
+      "tests": "8",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    }
+  ],
+  "changedMainFiles": {
+    "src/main/resources/application.properties": "45ea31a1d1734974f2bca65547e02bd2205a82b581f40a31a704adf48bef54dc",
+    "src/main/java/com/campuslife/config/OpenApiConfiguration.java": "2013a5a98f2c5351929935b13d28c5ae023840f4b80b4e61298aafc4c28fa38d",
+    "src/main/java/com/campuslife/messaging/config/RabbitMessagingConfiguration.java": "6132ef9afadb500a919e9ec7da4e63567a010dafe2720c693755858f166a2588"
+  },
+  "addedMainFiles": {
+    "src/main/java/com/campuslife/messaging/bootstrap/MessageMaintenance.java": "7c90fe87b615b75d0cfb5c68e867bb3bceb6ccc35b20e61ecfa79e963d87855b",
+    "src/main/java/com/campuslife/messaging/controller/NotificationController.java": "6143781b11c396ef5da346ae46e940a8b17d13523b4533807606aa1fe9b24dac",
+    "src/main/java/com/campuslife/messaging/mapper/NotificationMapper.java": "6d96e71e35c489654e535c07ca4f1c86004db4be754d92ccc8afd8a68b09eeba",
+    "src/main/java/com/campuslife/messaging/model/NotificationRow.java": "5168bf609f27d7a573bd8128eb40982aa44e802cf854706694f4d940ebcc31ad",
+    "src/main/java/com/campuslife/messaging/service/NotificationDelivery.java": "4bf3b6beb9f78ea89cb42103e31b9730b9660ddf2585fec817c39030b8a863b5",
+    "src/main/java/com/campuslife/messaging/service/NotificationListener.java": "49a8b51acf417a01397bedf63d60619a24dfd5b3feb8185d9077674db1df4542",
+    "src/main/java/com/campuslife/messaging/service/NotificationService.java": "93bd12f065e90e4a417a81ef4c1e0c2e61dec0b1e0baf70ebb9c25175e21c691",
+    "src/main/java/com/campuslife/messaging/vo/NotificationPage.java": "1e846cd7790ba9b322f93c28238dce8ae89b8aa153de8fe9f4954a6a3847a777",
+    "src/main/java/com/campuslife/messaging/vo/NotificationView.java": "d113755bd011425e0906ec2c31e46038de93013d90b66c5b550d51bdf64ab072",
+    "src/main/resources/db/migration/V21__create_notifications.sql": "cee5505e68c9d65a2db96cf23a454dbf954c6097d8d4743d97f2f821136b2784"
+  },
+  "oldMigrationsUnchanged": true,
+  "rabbitCleanup": {
+    "completedAt": "2026-10-30T09:50:29.7760417Z",
+    "cases": "NotificationMysqlIT,NotificationRabbitIT,OutboxMysqlIT,OutboxRabbitIT,MysqlIntegrationIT,OpenApiMysqlIT",
+    "image": "rabbitmq:4.3.6-management@sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+    "containerRemoved": true,
+    "volumeRemoved": true
+  },
+  "manualBrowserAcceptance": "not-run",
+  "maintenance": "standalone jar Inspect/Replay/already-consumed/active UTC lease verified; wrapper syntax checked only",
+  "notDone": [
+    "real application kill / ACK packet loss",
+    "DLQ target unavailable",
+    "frontend",
+    "Lua asynchronous claim"
+  ],
+  "rounds": [
+    "First MySQL: notification6 + schema12 + OpenAPI3 and 11 existing units passed.",
+    "Real MQ round: 206 ordinary/Web + 45 component cases passed, plus JAR smoke and owned cleanup.",
+    "Final: four listener unit cases and nine notification MySQL cases (transaction exception retry and explicit UTC maintenance lease protection) passed; JAR rebuilt/smoked. Distinct final counts across rounds, not repeated execution summed."
+  ]
+}

@@ -1,6 +1,8 @@
 param(
     [ValidateSet('web-only', 'mysql')]
-    [string]$Profile = 'web-only'
+    [string]$Profile = 'web-only',
+    [ValidateRange(1, 300)]
+    [int]$StartupTimeoutSeconds = 30
 )
 
 $ErrorActionPreference = 'Stop'
@@ -31,17 +33,26 @@ New-Item -ItemType Directory -Path (Join-Path $taskRoot '.cache') -Force | Out-N
 $taskProcess = $null
 $taskClient = $null
 try {
+    # Probe the actual HTTP listener rather than redirected stdout, whose writes can be buffered.
+    $taskListener = [Net.Sockets.TcpListener]::new([Net.IPAddress]::Loopback, 0)
+    try { $taskListener.Start(); $taskPort = $taskListener.LocalEndpoint.Port }
+    finally { $taskListener.Stop() }
     $taskProcess = Start-Process -FilePath $taskJava -WorkingDirectory $taskRoot -WindowStyle Hidden -PassThru `
-        -ArgumentList @('-jar', ('"' + $taskJar + '"'), ('--spring.profiles.active=' + $Profile), '--server.port=0', '--server.address=127.0.0.1') `
+        -ArgumentList @('-jar', ('"' + $taskJar + '"'), ('--spring.profiles.active=' + $Profile), ('--server.port=' + $taskPort), '--server.address=127.0.0.1') `
         -RedirectStandardOutput $taskOutput -RedirectStandardError $taskError
-    $taskPort = $null
-    for ($taskAttempt = 0; $taskAttempt -lt 100; $taskAttempt++) {
+    $taskReady = $false
+    $taskStartupTimer = [Diagnostics.Stopwatch]::StartNew()
+    while ($taskStartupTimer.Elapsed.TotalSeconds -lt $StartupTimeoutSeconds) {
         if ($taskProcess.HasExited) { throw 'Packaged application exited before startup. Inspect .cache/smoke.*.log.' }
-        $taskLog = Get-Content -LiteralPath $taskOutput -Raw -ErrorAction SilentlyContinue
-        if ($taskLog -match 'Tomcat started on port (\d+)') { $taskPort = $Matches[1]; break }
+        try {
+            $taskProbe = Invoke-WebRequest -Uri ('http://127.0.0.1:' + $taskPort + '/api/v1/system/health') `
+                -UseBasicParsing -TimeoutSec 1 -ErrorAction Stop
+            if ([int]$taskProbe.StatusCode -eq 200) { $taskReady = $true; break }
+        } catch { } # Startup connection failures are expected until the server is ready.
         Start-Sleep -Milliseconds 200
     }
-    if (-not $taskPort) { throw 'Packaged application did not start within 20 seconds.' }
+    $taskStartupTimer.Stop()
+    if (-not $taskReady) { throw "Packaged application HTTP endpoint did not become ready within $StartupTimeoutSeconds seconds." }
     Add-Type -AssemblyName System.Net.Http
     $taskClient = [System.Net.Http.HttpClient]::new()
     $taskClient.Timeout = [TimeSpan]::FromSeconds(5)

@@ -1,0 +1,128 @@
+{
+  "task": "M06.1-A",
+  "instance": ".cache\\deploy-base\\57156532b7614947b0c95bc032f628c7",
+  "checks": [
+    "exactly-three-services-private-db-and-app",
+    "gateway-health-utf8-and-independent-trace",
+    "no-default-admin-and-original-schema",
+    "api-docs-disabled-by-default",
+    "business-authentication-enforced",
+    "non-root-linux-storage-writable",
+    "runtime-no-dev-secrets-or-test-directories",
+    "image-non-root-no-secret-environment",
+    "register-login-configtree-jwt",
+    "private-pdf-upload-unicode-name",
+    "pdf-proxy-full-bytes-and-safe-disposition",
+    "anonymous-cannot-download-private-content",
+    "exact-20mib-pdf-through-gateway",
+    "20mib-proxy-response-byte-equality",
+    "application-single-file-limit-413",
+    "gateway-total-body-limit-413-with-edge-identity",
+    "explicit-non-http-admin-bootstrap",
+    "merchant-review-operation-and-print-quote",
+    "print-creation-idempotency-and-file-protection",
+    "mock-payment-stays-disabled",
+    "unpaid-print-cancel-and-retention",
+    "explicit-local-openapi-has-75-operations",
+    "explicit-swagger-ui-through-gateway",
+    "edge-502-does-not-forge-application-trace",
+    "stop-keeps-two-owned-volumes",
+    "storage-id-survives-whole-stack-restart",
+    "jwt-session-database-and-pdf-survive-restart",
+    "fresh-write-after-restart",
+    "access-logs-correlate-server-trace-without-auth-or-password",
+    "proxy-streaming-and-no-write-retry-config",
+    "edge-504-has-own-request-id-without-application-trace",
+    "interrupted-pdf-is-original-prefix-without-json-tail",
+    "recovery-after-upstream-process-kill"
+  ],
+  "startedAt": "2026-11-03T03:46:13.590112+00:00",
+  "runtimeVersions": {
+    "java": "openjdk 21.0.13 2026-10-20 LTS",
+    "mysql": "8.4.13",
+    "nginx": "nginx version: nginx/1.30.6"
+  },
+  "edge502Observation": {
+    "status": 502,
+    "code": "EDGE_BAD_GATEWAY",
+    "hasApplicationTrace": false
+  },
+  "passed": true,
+  "businessOperations": 75,
+  "jarSha256": "5b16a6b6de985acf258547fdd447ccc515da3f171e3177b79332019cbef3ba05",
+  "cleanup": {
+    "containers": 0,
+    "volumes": 0,
+    "networks": 0,
+    "generatedSecretsRemoved": true
+  },
+  "finishedAt": "2026-11-03T03:49:06.884171+00:00",
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "distinctChecks": 33,
+  "operations": 75,
+  "migration": 24,
+  "applicationTables": 32,
+  "sourceGuard": {
+    "existingFiles": 530,
+    "changed": []
+  },
+  "image": {
+    "image": "campuslife-base:m061a-5b16a6b6de98-0849cd7e6d6a",
+    "imageId": "sha256:9d726fd5e2c0b9941f7e84cafc14151932072c738e23f348b0e5d3c53bbf581c",
+    "jarSha256": "5b16a6b6de985acf258547fdd447ccc515da3f171e3177b79332019cbef3ba05",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "ff7868f0206220ae47e01e191ac139a9af0d05eb1343e1b493e63f01f46396d0",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T03:39:22.368587+00:00"
+  },
+  "productionJarUnchanged": true,
+  "runtimeDependencies": 148,
+  "all148RuntimeDependenciesUnchanged": true,
+  "fixedImages": {
+    "java": "eclipse-temurin:21.0.13_9-jre-noble@sha256:0eda5830ed7b669abc246a8dc520ea8a23cab06f9a8d4b6964109e2f2394e46f",
+    "mysql": "mysql:8.4.13@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902",
+    "nginx": "nginx:1.30.6-alpine@sha256:0e52bd054126cdc040b1276c0af347aeb02a41b9cfe305d6094767ac30e97949"
+  },
+  "failuresRetained": [
+    {
+      "identity": "83690e16671d45b7a9bc448119e62d54",
+      "stage": "business fixture",
+      "reason": "test fixture used unsupported 24:00; fixed to existing 23:59 rule; no business change"
+    },
+    {
+      "identity": "6909b2968d4d49329eebffbec73252d5",
+      "stage": "gateway fault assertion",
+      "reason": "stopped Docker endpoint timed out as 504, while test expected TCP refusal 502; split deterministic closed-port and paused-upstream experiments"
+    }
+  ],
+  "notExecuted": [
+    "existing developer database/files or migration",
+    "frontend",
+    "Redis/MQ/S3/TLS integration",
+    "Actuator/metrics",
+    "independent Linux host",
+    "all-component backup/restore",
+    "performance/capacity baseline",
+    "public deployment"
+  ],
+  "dockerDesktopStopped": false,
+  "wslShutdown": false,
+  "deliveredFileSha256": {
+    ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+    ".gitattributes": "f876c2fbe3d654c4e45d5d8761a6fa6eb8840cb5e4397921ccd97d158782ee93",
+    "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+    "deploy/base/compose.yaml": "dd69e652e6565d87f41cd6d4e5a3eddad7de38aece3c30ec5f4d3c3ff788d3e5",
+    "deploy/base/nginx.conf": "49538c764e16d3e360347ece455576778a27a7e9d8aaf16f2d979b127fdb6f5e",
+    "deploy/base/mysql-init.sh": "d5cdce8c8bf573b4f49574c1fec9948f70aa2d10ad3e2fabedefbf61f2302369",
+    "deploy/base/app-entrypoint.sh": "ff7868f0206220ae47e01e191ac139a9af0d05eb1343e1b493e63f01f46396d0",
+    "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905",
+    "scripts/deploy_base.py": "3c1db1a7ba737a676ab9654aa000c69563cac73b0c6fa6167e970bb92fd86385",
+    "scripts/deploy-base.ps1": "e5830c0ec2e4d87e19d98fe81a439c4a453b30b79f26cd3618c4ce017491b1ef",
+    "scripts/test_deploy_base.py": "471bdc9fe0db6a07749f89cf90b9448befe08caa009d4705181b092668b80e1c",
+    "scripts/test-deploy-base.ps1": "98efcfafdb535428ff58a48545ee58ee1f741157120dfc1c3d441caf522f9c39"
+  }
+}

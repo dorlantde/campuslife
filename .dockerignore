@@ -1,0 +1,9 @@
+# Explicit allowlist: never send source, developer config, secrets, caches or tests to the builder.
+**
+!deploy/
+!deploy/base/
+!deploy/base/Dockerfile
+!deploy/base/app-entrypoint.sh
+!deploy/base/app-health.sh
+!target/
+!target/campuslife-0.0.1-SNAPSHOT.jar

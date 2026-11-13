@@ -1,0 +1,690 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "task": "M06.1-C",
+  "status": "verified",
+  "unitSuites": [
+    {
+      "name": "com.campuslife.ManagementSecurityTest",
+      "tests": "3",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "17.124"
+    },
+    {
+      "name": "com.campuslife.WebFoundationTest",
+      "tests": "13",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "1.087"
+    },
+    {
+      "name": "com.campuslife.operations.config.ManagementBoundaryTest",
+      "tests": "6",
+      "errors": "0",
+      "failures": "0",
+      "skipped": "0",
+      "time": "0.217"
+    }
+  ],
+  "verification": {
+    "junitTests": 22,
+    "managementDeploymentGroups": 28,
+    "baseRegressionGroups": 7,
+    "showcaseConfigGroups": 1
+  },
+  "management": {
+    "record": ".cache/deploy-base/b40c49060d8f4b7e94d7904bb1ae349c/observability-acceptance.json",
+    "sha256": "16c01869145ed4e287703fce0dc063f7120b77449b31850966db6e6d45d0dc33",
+    "task": "M06.1-C",
+    "checks": [
+      "management-port-unpublished-and-separate",
+      "management-loopback-refuses-peer-container",
+      "nginx-does-not-proxy-actuator",
+      "anonymous-management-request-401",
+      "bearer-management-request-401",
+      "health-summary-does-not-export-details",
+      "only-get-is-authorized",
+      "fixed-read-only-snapshot-is-available",
+      "jvm-http-and-connection-pool-meters-present",
+      "jvm-meter-is-readable",
+      "business-openapi-remains-75",
+      "readiness-detects-real-database-outage",
+      "liveness-stays-up-without-database",
+      "jvm-metrics-still-readable-without-database",
+      "business-health-still-only-http-liveness",
+      "snapshot-reports-database-unavailable-without-error-details",
+      "readiness-recovers-without-app-restart",
+      "actual-admin-jwt-cannot-read-management",
+      "business-port-rejects-actuator-even-for-admin",
+      "broker-down-is-diagnosed-separately",
+      "snapshot-shows-durable-backlog-and-age",
+      "sent-is-not-consumption-and-no-early-notification",
+      "recovered-notification-has-one-consumption-fact",
+      "outbox-is-sent-after-confirm",
+      "application-generates-trace-despite-client-input",
+      "gateway-log-correlates-generated-application-trace",
+      "logs-exclude-query-password-and-bearer-values",
+      "http-meter-tags-use-routes-without-query-or-identities"
+    ],
+    "startedAt": "2026-11-03T08:18:02.872952+00:00",
+    "healthSummary": {
+      "httpStatus": 200,
+      "data": {
+        "groups": [
+          "liveness",
+          "readiness"
+        ],
+        "status": "UP"
+      }
+    },
+    "initialSnapshot": {
+      "observedAt": "2026-11-03T08:18:43.097236+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": []
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0"
+      ]
+    },
+    "meterNames": [
+      "application.ready.time",
+      "application.started.time",
+      "disk.free",
+      "disk.total",
+      "executor.active",
+      "executor.completed",
+      "executor.pool.core",
+      "executor.pool.max",
+      "executor.pool.size",
+      "executor.queue.remaining",
+      "executor.queued",
+      "hikaricp.connections",
+      "hikaricp.connections.acquire",
+      "hikaricp.connections.active",
+      "hikaricp.connections.creation",
+      "hikaricp.connections.idle",
+      "hikaricp.connections.max",
+      "hikaricp.connections.min",
+      "hikaricp.connections.pending",
+      "hikaricp.connections.timeout",
+      "hikaricp.connections.usage",
+      "http.server.requests",
+      "http.server.requests.active",
+      "jdbc.connections.active",
+      "jdbc.connections.idle",
+      "jdbc.connections.max",
+      "jdbc.connections.min",
+      "jvm.buffer.count",
+      "jvm.buffer.memory.used",
+      "jvm.buffer.total.capacity",
+      "jvm.classes.loaded",
+      "jvm.classes.loaded.count",
+      "jvm.classes.unloaded",
+      "jvm.compilation.time",
+      "jvm.gc.live.data.size",
+      "jvm.gc.max.data.size",
+      "jvm.gc.memory.allocated",
+      "jvm.gc.memory.promoted",
+      "jvm.gc.overhead",
+      "jvm.gc.pause",
+      "jvm.info",
+      "jvm.memory.committed",
+      "jvm.memory.max",
+      "jvm.memory.usage.after.gc",
+      "jvm.memory.used",
+      "jvm.threads.daemon",
+      "jvm.threads.live",
+      "jvm.threads.peak",
+      "jvm.threads.started",
+      "jvm.threads.states",
+      "logback.events",
+      "process.cpu.time",
+      "process.cpu.usage",
+      "process.files.max",
+      "process.files.open",
+      "process.start.time",
+      "process.uptime",
+      "rabbitmq.acknowledged",
+      "rabbitmq.acknowledged_published",
+      "rabbitmq.channels",
+      "rabbitmq.connections",
+      "rabbitmq.consumed",
+      "rabbitmq.failed_to_publish",
+      "rabbitmq.not_acknowledged_published",
+      "rabbitmq.published",
+      "rabbitmq.rejected",
+      "rabbitmq.requeued",
+      "rabbitmq.unrouted_published",
+      "spring.security.authorizations",
+      "spring.security.authorizations.active",
+      "spring.security.filterchains",
+      "spring.security.filterchains.SessionAuthenticationFilter.after",
+      "spring.security.filterchains.SessionAuthenticationFilter.before",
+      "spring.security.filterchains.access.exceptions.after",
+      "spring.security.filterchains.access.exceptions.before",
+      "spring.security.filterchains.active",
+      "spring.security.filterchains.authentication.anonymous.after",
+      "spring.security.filterchains.authentication.anonymous.before",
+      "spring.security.filterchains.authentication.basic.after",
+      "spring.security.filterchains.authentication.basic.before",
+      "spring.security.filterchains.authorization.after",
+      "spring.security.filterchains.authorization.before",
+      "spring.security.filterchains.context.async.after",
+      "spring.security.filterchains.context.async.before",
+      "spring.security.filterchains.context.holder.after",
+      "spring.security.filterchains.context.holder.before",
+      "spring.security.filterchains.context.servlet.after",
+      "spring.security.filterchains.context.servlet.before",
+      "spring.security.filterchains.header.after",
+      "spring.security.filterchains.header.before",
+      "spring.security.filterchains.session.management.after",
+      "spring.security.filterchains.session.management.before",
+      "spring.security.filterchains.session.urlencoding.after",
+      "spring.security.filterchains.session.urlencoding.before",
+      "spring.security.http.secured.requests",
+      "spring.security.http.secured.requests.active",
+      "system.cpu.count",
+      "system.cpu.usage",
+      "system.load.average.1m",
+      "tasks.scheduled.execution",
+      "tasks.scheduled.execution.active",
+      "tomcat.sessions.active.current",
+      "tomcat.sessions.active.max",
+      "tomcat.sessions.alive.max",
+      "tomcat.sessions.created",
+      "tomcat.sessions.expired",
+      "tomcat.sessions.rejected"
+    ],
+    "databaseOutageSnapshot": {
+      "observedAt": "2026-11-03T08:19:15.725583+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "exited",
+          "health": "unhealthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 503,
+        "data": {
+          "status": "DOWN"
+        }
+      },
+      "database": {
+        "available": false
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0"
+      ]
+    },
+    "brokerOutageSnapshot": {
+      "observedAt": "2026-11-03T08:19:44.666977+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "exited",
+          "health": "unhealthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 1,
+            "state": "PUBLISHING",
+            "section": "outbox",
+            "oldestAgeSeconds": 5
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "LOCAL",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": {
+        "available": false
+      }
+    },
+    "recoveredSnapshot": {
+      "observedAt": "2026-11-03T08:19:57.377479+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 1,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "LOCAL",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0"
+      ]
+    },
+    "httpMeter": {
+      "availableTags": [
+        {
+          "tag": "exception",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "method",
+          "values": [
+            "POST",
+            "PUT",
+            "PATCH",
+            "GET"
+          ]
+        },
+        {
+          "tag": "error",
+          "values": [
+            "none"
+          ]
+        },
+        {
+          "tag": "uri",
+          "values": [
+            "/api/v1/admin/shops/{shopId}",
+            "/api/v1/merchant/orders/{orderId}/ready-for-pickup",
+            "/api/v1/orders/prints",
+            "/api/v1/auth/login",
+            "/api/v1/print-quotes",
+            "/api/v1/merchant/shop/business-hours",
+            "/api/v1/merchant-applications",
+            "/api/v1/merchant/services/{serviceId}/print-prices",
+            "/api/v1/merchant/orders/{orderId}/start",
+            "/v3/api-docs",
+            "/api/v1/shops/{shopId}",
+            "/api/v1/orders/{orderId}/payments/mock",
+            "/api/v1/shop-categories",
+            "/api/v1/merchant/orders/{orderId}/accept",
+            "/api/v1/system/health",
+            "/api/v1/merchant/shop",
+            "/api/v1/notifications",
+            "UNKNOWN",
+            "/api/v1/admin/shops/{shopId}/approve",
+            "/api/v1/files",
+            "/api/v1/auth/register",
+            "/api/v1/merchant/services"
+          ]
+        },
+        {
+          "tag": "outcome",
+          "values": [
+            "CLIENT_ERROR",
+            "SUCCESS"
+          ]
+        },
+        {
+          "tag": "status",
+          "values": [
+            "404",
+            "200",
+            "201",
+            "403"
+          ]
+        }
+      ],
+      "baseUnit": "seconds",
+      "measurements": [
+        {
+          "statistic": "COUNT",
+          "value": 108.0
+        },
+        {
+          "statistic": "TOTAL_TIME",
+          "value": 2.8759633929999993
+        },
+        {
+          "statistic": "MAX",
+          "value": 1.066843292
+        }
+      ],
+      "name": "http.server.requests"
+    },
+    "passed": true,
+    "operations": 75,
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-03T08:20:12.411400+00:00"
+  },
+  "baseRegression": {
+    "record": ".cache/deploy-base/47636eb75dd5460ba6dbad26401ace2e/base-regression.json",
+    "sha256": "f395e607f16a1ff73ca172c5c7f6ddc062af657e7b92e7a25061da213765eb40",
+    "task": "M06.1-B1 base regression",
+    "checks": [
+      "base-stays-three-services",
+      "base-keeps-all-optional-components-and-money-off",
+      "base-generates-only-original-three-secrets",
+      "base-rejects-demo-money-combination",
+      "base-new-jar-starts-without-redis-or-broker",
+      "old-base-manifest-fields-remain-compatible",
+      "base-stop-still-retains-two-volumes"
+    ],
+    "passed": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "showcaseConfig": {
+    "record": ".cache/deploy-base/2bbeff254dd3437fa9c78ea3e353e7ba/observability-config.json",
+    "sha256": "68cac22550301f04dc505b25f753dc6e620e02b49bbd4d95ca7071dd399d7b6e",
+    "task": "M06.1-C showcase configuration",
+    "passed": true,
+    "checks": [
+      "seven-service-tls-overlay-composes-with-private-management"
+    ],
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "image": {
+    "image": "campuslife-base:m061a-0e08aa56c636-468b0df58bc6",
+    "imageId": "sha256:9760810c7a68e77e375ec0c835c8d618f975ad3313357e25f8dc9a2efd75b626",
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T08:16:33.087940+00:00"
+  },
+  "runtimeDependencies": 156,
+  "preservedExistingDependencyCount": 148,
+  "all148ExistingDependenciesUnchanged": true,
+  "addedRuntimeDependencies": [
+    {
+      "path": "BOOT-INF/lib/spring-boot-micrometer-metrics-4.1.1.jar",
+      "sha256": "70dd91dcc319d00998ce5e410b03b841e682aa2f60e4bab159c78ff0ecdb7d0f"
+    },
+    {
+      "path": "BOOT-INF/lib/spring-boot-micrometer-observation-4.1.1.jar",
+      "sha256": "09ebd9ff7de21d10b1f11c70ca0ea8766a8a727affd19642584bee5a314ea11a"
+    },
+    {
+      "path": "BOOT-INF/lib/spring-boot-actuator-autoconfigure-4.1.1.jar",
+      "sha256": "bedbd4282a0f0c6a08bd5342d3940b50d8a013420d8a536695aedb1421b5e0f5"
+    },
+    {
+      "path": "BOOT-INF/lib/spring-boot-actuator-4.1.1.jar",
+      "sha256": "2bbb38417af25cfc6f57a9b01a85db9b6ccdcadb9e5d40f6b1b2f54a08f8b798"
+    },
+    {
+      "path": "BOOT-INF/lib/spring-boot-health-4.1.1.jar",
+      "sha256": "f60151e1f014b40761d0644be1cb04f82df7fc3e9b7bf6e946848547eec399e7"
+    },
+    {
+      "path": "BOOT-INF/lib/micrometer-jakarta9-1.17.1.jar",
+      "sha256": "37fbb0a98ba92e185ae7ebe0804fe6c1394bf7fba7573b204fa6fc3998c2e246"
+    },
+    {
+      "path": "BOOT-INF/lib/micrometer-core-1.17.1.jar",
+      "sha256": "9ca47dfa831409b40253c8dc98c17b9d3e050ebbde4d1543c5521dca2b95ad56"
+    },
+    {
+      "path": "BOOT-INF/lib/HdrHistogram-2.2.2.jar",
+      "sha256": "22d1d4316c4ec13a68b559e98c8256d69071593731da96136640f864fa14fad8"
+    }
+  ],
+  "sourceGuard": {
+    "selectedExistingFiles": 535,
+    "changed": [
+      "src/main/resources/application.properties",
+      "src/main/java/com/campuslife/auth/config/ApiSecurityConfiguration.java",
+      "scripts/deploy-base.ps1",
+      "scripts/deploy_base.py",
+      "pom.xml"
+    ],
+    "unchanged": 530,
+    "newProductionJava": [
+      "src/main/java/com/campuslife/operations/config/ManagementSecurityConfiguration.java"
+    ]
+  },
+  "operations": 75,
+  "migration": "V24",
+  "applicationTables": 32,
+  "managementHttpEnabledByDefault": false,
+  "managementBind": "127.0.0.1",
+  "explicitDeploymentManagementPort": 8081,
+  "operationsUser": "campuslife_ops",
+  "failureRetained": {
+    "imageBuild": ".cache/m061c-image-failure.log",
+    "firstFixture": ".cache/deploy-base/8707864d8f1d458f9bce59e57a43f1ac/observability-acceptance.json",
+    "firstFixtureReason": "health-summary-does-not-export-details",
+    "firstFixtureCleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "deliveredFileSha256": {
+    "pom.xml": "f8f725166ba4aabc00b22b9a6a8c39ee1fc18fb4c2ee6b57a06e1a24dda2e76b",
+    "src/main/resources/application.properties": "ce58151541fddc88c4685cdf0607522a807a1c443770a8d7f612b99ef26f35d2",
+    "src/main/java/com/campuslife/auth/config/ApiSecurityConfiguration.java": "573cd1ff4731f9479d364d99682cc527fae1035c630cf3d42ec9a042b287a330",
+    "src/main/java/com/campuslife/operations/config/ManagementSecurityConfiguration.java": "d800105c367582a2e2fea299fe890588b62136681250297fc3c51b516919f20e",
+    "src/test/java/com/campuslife/ManagementSecurityTest.java": "8426a566398e118e3f379878541945e731a97e3013f785863fa2a2bcbb821921",
+    "src/test/java/com/campuslife/operations/config/ManagementBoundaryTest.java": "49fb9a98c3d404e9097d6b28ee00a67475aee9e73e02ae451f8c7b34e6d0612a",
+    "scripts/deploy_base.py": "2f6c5c5fb61f010b418c84fd474aef5a1cc6483e3259d642d6b1d2ddc1e3c096",
+    "scripts/deploy-base.ps1": "cd26c3156eb48f15de363fd822220dccdefdee98ed589797a24270c4a68b05dc",
+    "scripts/deploy_observability.py": "3c3f3a35b2c366af4b3fab3f4a238d5cc4a0c7513abe06c6208b01f6942d39c4",
+    "scripts/test_deploy_observability.py": "ad74e35f062a6e8f6b8f293ad987872d53b97a20372edc3289dd6ca6fbc29878",
+    "scripts/test-deploy-observability.ps1": "795c655e84dae74d4a3c1f8b420ed114bf0d16f8935a88171149a4fda8a396e6",
+    "deploy/base/observability.yaml": "21d8b343942d216024c4fbebb8bdf8572b48c51276d7db167122caee6c4d0644"
+  },
+  "cleanup": {
+    "testLabelResources": {
+      "containers": [],
+      "volumes": [],
+      "networks": []
+    },
+    "generatedSecretsRemoved": true,
+    "dockerDesktopStopped": false,
+    "wslShutdown": false
+  },
+  "notExecuted": [
+    "Linux real host acceptance",
+    "Full seven-service runtime observability regression (configuration only here; D next)",
+    "Whole stack backup/restore",
+    "Capacity/performance/HA claims",
+    "Frontend work",
+    "Real data migration"
+  ],
+  "knownLimit": "M04-C cold-restored new-write timeout remains unexplained; runtime DB/broker recovery does not establish its repair."
+}

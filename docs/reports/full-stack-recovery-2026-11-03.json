@@ -1,0 +1,789 @@
+{
+  "date": "2026-11-03",
+  "timezone": "America/New_York",
+  "task": "M06.1-E",
+  "status": "verified for isolated local cold recovery; no cloud deployment",
+  "verification": {
+    "primarySourceRecoveryGroups": 32,
+    "independentRecoveryChecks": 18,
+    "ordinaryModeConfigGroups": 3,
+    "overlappingAndFailedRoundsNotSummed": true
+  },
+  "primary": {
+    "record": ".cache/deploy-base/a061ae6cda534b24b77e2da1fe003ed9/recovery-source.json",
+    "sha256": "f47a019a57ff1408eb8caca2f512a3db248e7ecf2945cad21097c3555018a2ef",
+    "task": "M06.1-E source fixture",
+    "checks": [
+      "seven-healthy-services-with-single-app",
+      "five-persistent-volumes-and-three-networks",
+      "original-schema-and-no-default-business-admin",
+      "private-management-works-in-seven-service-mode",
+      "business-openapi-remains-75",
+      "campaign-remains-default-sync-before-explicit-transition",
+      "async-admission-is-durable-202",
+      "new-print-file-uses-s3-with-complete-content",
+      "real-order-uses-claimed-coupon-and-frozen-payable",
+      "review-statistics-fill-real-rating-redis",
+      "funds-coupon-notification-and-consumption-are-unique",
+      "source-is-paused-and-drained-before-freeze",
+      "freeze-blocks-supported-start-and-maintenance",
+      "known-duplicate-is-durably-queued-with-no-consumers",
+      "complete-backup-has-five-archives-config-and-runtime",
+      "source-stays-stopped-and-retained",
+      "corrupt-archive-is-rejected-before-restore",
+      "incomplete-restore-refuses-application-start",
+      "restore-target-project-and-volumes-are-distinct",
+      "persistent-node-acl-and-storage-identities-are-preserved",
+      "all-33-sql-tables-match-before-application-start",
+      "durable-duplicate-survives-cold-broker-copy",
+      "restored-gate-stays-paused-in-new-generation",
+      "redelivered-original-message-is-not-dead-lettered",
+      "duplicate-redelivery-keeps-one-notification-and-consumption",
+      "old-session-s3-and-local-content-are-restored",
+      "elapsed-original-file-deadline-cleans-exact-restored-object",
+      "restored-new-s3-write-is-fully-readable-before-release",
+      "controlled-resume-accepts-a-new-202",
+      "new-issuance-completes-with-original-stock-and-funds",
+      "disposable-rating-cache-rebuilds-and-management-is-ready",
+      "source-stays-offline-retained-and-backup-verified-after-target-writes"
+    ],
+    "startedAt": "2026-11-03T11:17:10.262523+00:00",
+    "hostSystem": "Windows",
+    "validationScope": "Container lifecycle; independent host acceptance is recorded separately",
+    "initialSnapshot": {
+      "observedAt": "2026-11-03T11:18:09.607931+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": []
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0"
+      ]
+    },
+    "beforeStopSnapshot": {
+      "observedAt": "2026-11-03T11:19:47.317195+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 2,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 1,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "PAUSED",
+            "section": "gates"
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0"
+      ]
+    },
+    "recovery": {
+      "backup": ".cache\\deploy-recovery\\1224a7b4e84c497b8189ad41c3f0fd72",
+      "target": ".cache\\deploy-base\\87b6fb47da104df78facf9aee7ce2a2e",
+      "newWriteAttempts": [
+        {
+          "status": 201,
+          "code": "OK"
+        }
+      ],
+      "finalSnapshot": {
+        "observedAt": "2026-11-03T11:22:02.998898+00:00",
+        "containers": [
+          {
+            "service": "nginx",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "app",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "rating-redis",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "seaweed",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "rabbitmq",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "coupon-redis",
+            "state": "running",
+            "health": "healthy"
+          },
+          {
+            "service": "mysql",
+            "state": "running",
+            "health": "healthy"
+          }
+        ],
+        "liveness": {
+          "httpStatus": 200,
+          "data": {
+            "status": "UP"
+          }
+        },
+        "readiness": {
+          "httpStatus": 200,
+          "data": {
+            "status": "UP"
+          }
+        },
+        "database": {
+          "available": true,
+          "aggregates": [
+            {
+              "count": 3,
+              "state": "SENT",
+              "section": "outbox",
+              "oldestAgeSeconds": null
+            },
+            {
+              "count": 2,
+              "state": "SUCCEEDED",
+              "section": "claims"
+            },
+            {
+              "mode": "ASYNC",
+              "count": 1,
+              "phase": "OPEN",
+              "section": "gates"
+            },
+            {
+              "count": 2,
+              "state": "AVAILABLE",
+              "backend": "S3",
+              "section": "files"
+            },
+            {
+              "count": 1,
+              "state": "AVAILABLE",
+              "backend": "LOCAL",
+              "section": "files"
+            },
+            {
+              "count": 1,
+              "state": "DELETED",
+              "backend": "S3",
+              "section": "files"
+            }
+          ]
+        },
+        "queues": [
+          "name\tmessages_ready\tmessages_unacknowledged",
+          "campuslife.notification.v1\t0\t0",
+          "campuslife.notification.dead.v1\t0\t0",
+          "campuslife.coupon.issue.dead.v1\t0\t0",
+          "campuslife.coupon.issue.v1\t0\t0"
+        ]
+      },
+      "archiveSummary": {
+        "coupon-data": {
+          "file": "coupon-data.tgz",
+          "sha256": "78b743249aaebec287de61a1e8a9a91f2617acef2dc1158b6810828c26093f69",
+          "bytes": 946
+        },
+        "files": {
+          "file": "files.tgz",
+          "sha256": "b647774904805314754f505c49328cb27dc03bf12bbbb9af5934656cc6d483dd",
+          "bytes": 482
+        },
+        "mysql-data": {
+          "file": "mysql-data.tgz",
+          "sha256": "df30977ab0dfffa69afaf8a0681e7510dfb683ad8186793c4b0cccb3d6a361c8",
+          "bytes": 6772525
+        },
+        "rabbit-data": {
+          "file": "rabbit-data.tgz",
+          "sha256": "88ffbcfd348c83d634fc0c4a5643de8204c2df40a1a430dc165d1a27525c4d5f",
+          "bytes": 25420
+        },
+        "seaweed-data": {
+          "file": "seaweed-data.tgz",
+          "sha256": "5c692e5c4d1d91f482dfc2191501558e4379859a17706a578a9682944e2bb838",
+          "bytes": 23072
+        }
+      },
+      "targetCleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    "passed": true,
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "operations": 75,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-03T11:22:19.850218+00:00"
+  },
+  "independent": {
+    "task": "M06.1-E independent retained-backup verification",
+    "checks": [
+      "retained-backup-restores-without-original-source",
+      "original-persistent-event-was-copied",
+      "database-event-payload-hash-is-valid",
+      "target-is-five-new-distinct-volumes",
+      "all-33-sql-tables-match-canonical-source",
+      "canonical-persistent-queue-is-restored",
+      "paused-new-generation-keeps-original-issued-count",
+      "replayed-event-is-not-dead-lettered",
+      "notification-payment-coupon-facts-stay-unique",
+      "persisted-session-allows-old-s3-and-local-content",
+      "restored-expiry-deletes-exact-s3-object",
+      "new-s3-write-and-full-download-succeed",
+      "new-registration-after-restore-is-normal",
+      "controlled-resume-accepts-new-202",
+      "recovered-lua-mq-sql-complete-with-original-stock",
+      "rating-rebuild-and-private-readiness-work",
+      "reference-stays-stopped-and-retained",
+      "logs-do-not-expose-reconstructed-or-new-credentials"
+    ],
+    "originalBackup": ".cache\\deploy-recovery\\f0e290299f1b4b3d9452aca797511749",
+    "originalQueueCounters": {
+      "campuslife.coupon.issue.dead.v1": [
+        0,
+        0
+      ],
+      "campuslife.coupon.issue.v1": [
+        0,
+        0
+      ],
+      "campuslife.notification.v1": [
+        1,
+        0
+      ],
+      "campuslife.notification.dead.v1": [
+        0,
+        0
+      ]
+    },
+    "mysqlClientCharset": "latin1\tlatin1",
+    "originalReplayPayloadHashMatched": true,
+    "canonicalBackup": ".cache\\deploy-recovery\\9318941f7e1549cc96c16b1f593d0d13",
+    "reference": ".cache\\deploy-base\\e806fe847f8c45df87dfb1d6b57dbb89",
+    "target": ".cache\\deploy-base\\c71fca8ad90946c49fae62d571055471",
+    "newWriteAttempts": [
+      {
+        "status": 201,
+        "code": "OK"
+      }
+    ],
+    "passed": true,
+    "finalSnapshot": {
+      "observedAt": "2026-11-03T11:14:53.066133+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 3,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 2,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "OPEN",
+            "section": "gates"
+          },
+          {
+            "count": 2,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "LOCAL",
+            "section": "files"
+          },
+          {
+            "count": 1,
+            "state": "DELETED",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0"
+      ]
+    },
+    "archiveSummary": {
+      "coupon-data": {
+        "file": "coupon-data.tgz",
+        "sha256": "2a11ddb13810d9c402dad2ca33939e92cc8b468ca039be80ffdabb3db1fe0157",
+        "bytes": 952
+      },
+      "files": {
+        "file": "files.tgz",
+        "sha256": "d8f1354741aa7709925cfcc2585be30a211a80d82a8c64a3dfd02e4140fc7724",
+        "bytes": 482
+      },
+      "mysql-data": {
+        "file": "mysql-data.tgz",
+        "sha256": "9e0a8b1c2e4b98b0fb5a3860ca0b8b5744b10db42257920b045ea5453c42ae59",
+        "bytes": 6086774
+      },
+      "rabbit-data": {
+        "file": "rabbit-data.tgz",
+        "sha256": "f8d3bbed2111e499934314131f79bf6105624eea84f35fb965ace381614919e2",
+        "bytes": 46625
+      },
+      "seaweed-data": {
+        "file": "seaweed-data.tgz",
+        "sha256": "9a6bd92d145148ee4c7b281b99cdfaef0f5f5a8e93d9a420037e46b01f096a0d",
+        "bytes": 26651
+      }
+    },
+    "credentialMethod": "Reconstructed original test session/expiry from backed-up key; no account or session data mutated",
+    "targetCleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "referenceCleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "compatibility": [
+    {
+      "record": ".cache/deploy-base/df996d0b64d7472b8d1f761fd682c28b/identity-compatibility.json",
+      "sha256": "e7cce6435648ed397768889a9a63ca11c2920b8509118c34bce474bfb9da33d5",
+      "task": "M06.1-E identity compatibility",
+      "mode": "base",
+      "passed": true,
+      "checks": [
+        "ordinary-mode-keeps-original-identity-and-rejects-implicit-swap"
+      ],
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "record": ".cache/deploy-base/a955c8bb5fb3411fb7cb57e128957a9d/identity-compatibility.json",
+      "sha256": "83242fb22e27db97c0bda69e44e5669ee4d59d4dbeb2f972a4a22b897aced429",
+      "task": "M06.1-E identity compatibility",
+      "mode": "components",
+      "passed": true,
+      "checks": [
+        "ordinary-mode-keeps-original-identity-and-rejects-implicit-swap"
+      ],
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "record": ".cache/deploy-base/c26027faac994604b003d2da53da94de/identity-compatibility.json",
+      "sha256": "50c99211d30d1bbd42d123f3f49604ee1354076cf302bd05ec9d02ac52bdb098",
+      "task": "M06.1-E identity compatibility",
+      "mode": "showcase",
+      "passed": true,
+      "checks": [
+        "ordinary-mode-keeps-original-identity-and-rejects-implicit-swap"
+      ],
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    }
+  ],
+  "backup": {
+    "path": ".cache/deploy-recovery/1224a7b4e84c497b8189ad41c3f0fd72",
+    "inventorySha256": "f44bb8b7066fb092cf605c58b202538dbff0444c95666399b0f3759e13318b9b",
+    "archives": {
+      "coupon-data": {
+        "file": "coupon-data.tgz",
+        "sha256": "78b743249aaebec287de61a1e8a9a91f2617acef2dc1158b6810828c26093f69",
+        "bytes": 946
+      },
+      "files": {
+        "file": "files.tgz",
+        "sha256": "b647774904805314754f505c49328cb27dc03bf12bbbb9af5934656cc6d483dd",
+        "bytes": 482
+      },
+      "mysql-data": {
+        "file": "mysql-data.tgz",
+        "sha256": "df30977ab0dfffa69afaf8a0681e7510dfb683ad8186793c4b0cccb3d6a361c8",
+        "bytes": 6772525
+      },
+      "rabbit-data": {
+        "file": "rabbit-data.tgz",
+        "sha256": "88ffbcfd348c83d634fc0c4a5643de8204c2df40a1a430dc165d1a27525c4d5f",
+        "bytes": 25420
+      },
+      "seaweed-data": {
+        "file": "seaweed-data.tgz",
+        "sha256": "5c692e5c4d1d91f482dfc2191501558e4379859a17706a578a9682944e2bb838",
+        "bytes": 23072
+      }
+    },
+    "protection": "NTFS owner/current user, SYSTEM and local Administrators; no broad user grants",
+    "encrypted": false,
+    "imageExportIncluded": false,
+    "privateKeysRetainedInIgnoredBackup": true
+  },
+  "sourceGuard": {
+    "selectedExistingFiles": 544,
+    "unchanged": 541,
+    "changed": [
+      "scripts/deploy_base.py",
+      "scripts/test_deploy_showcase.py",
+      "deploy/base/components.yaml"
+    ]
+  },
+  "image": {
+    "image": "campuslife-base:m061a-0e08aa56c636-468b0df58bc6",
+    "imageId": "sha256:9760810c7a68e77e375ec0c835c8d618f975ad3313357e25f8dc9a2efd75b626",
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "dc1545f45a4ca0479ccc9704c562d5cf61007780d579185ce8d95408efb498ee",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T08:16:33.087940+00:00"
+  },
+  "runtimeDependencies": 156,
+  "all156DependenciesUnchanged": true,
+  "operations": 75,
+  "migration": "V24",
+  "applicationTables": 32,
+  "failedSourceRoundsRetained": [
+    {
+      "record": ".cache/deploy-base/19c829e71bed4e6e98b1d1565a7b3467/recovery-source.json",
+      "reason": "Expecting ',' delimiter: line 1 column 57 (char 56)",
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "record": ".cache/deploy-base/ce0e0ce93d7646e2b8ab946ab702cc54/recovery-source.json",
+      "reason": "Target volume is not empty: rabbit-data",
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "record": ".cache/deploy-base/d3eca21b003247eabcf53aadf02d81f2/recovery-source.json",
+      "reason": "'messages_ready'",
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    {
+      "record": ".cache/deploy-base/7c9b63f09b544084ba8e443a5a62057a/recovery-source.json",
+      "reason": "Dead queue status unavailable",
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "networks": 0,
+        "generatedSecretsRemoved": true
+      }
+    }
+  ],
+  "otherFailuresRetained": [
+    ".cache/m061e-independent-failure.json",
+    ".cache/m061e-independent-http-failure.json",
+    "QA ACL empty-file-rule audit corrected; backup contents unchanged"
+  ],
+  "cleanup": {
+    "containers": [],
+    "volumes": [],
+    "networks": [],
+    "dockerDesktopStopped": false,
+    "wslShutdown": false,
+    "runtimeInstanceSecretsRemoved": true,
+    "privateBackupCopiesRetained": true
+  },
+  "backupAclAudit": [
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 52,
+      "backup": "02a39d1b04754c54b0bee9c7cee143d2"
+    },
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 52,
+      "backup": "1224a7b4e84c497b8189ad41c3f0fd72"
+    },
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 52,
+      "backup": "3f847e9e1d8c4d62b179388257a67db9"
+    },
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 51,
+      "backup": "843113cf299e4a84807c5d155a9fe6b3"
+    },
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 52,
+      "backup": "9318941f7e1549cc96c16b1f593d0d13"
+    },
+    {
+      "inheritanceDisabled": true,
+      "onlyOwnerUserSystemAndLocalAdministrators": true,
+      "entries": 52,
+      "backup": "f0e290299f1b4b3d9452aca797511749"
+    }
+  ],
+  "logAudit": {
+    "credentialFileNames": [
+      "MYSQL_ROOT_PASSWORD",
+      "DB_PASSWORD",
+      "JWT_SECRET_BASE64",
+      "FILE_S3_SECRET_KEY",
+      "MANAGEMENT_PASSWORD",
+      "MESSAGING_PASSWORD"
+    ],
+    "logs": [
+      ".cache/deploy-base/a061ae6cda534b24b77e2da1fe003ed9/services.log",
+      ".cache/deploy-base/87b6fb47da104df78facf9aee7ce2a2e/recovery-services.log"
+    ],
+    "credentialValuesAbsent": true
+  },
+  "deliveredFileSha256": {
+    "scripts/deploy_base.py": "9131b3d6d8f69b7432c62cf297e476c54d246585ca756e7c8ee7815f71afc34b",
+    "scripts/test_deploy_showcase.py": "c0b1034b0a1085617e5a655a476204bde584ae580c0b5ee0dc789133aec039c8",
+    "deploy/base/components.yaml": "7bac7b22e4c3e80ddfa35333ad5c4133b83063693be305b20d22c83b00d5d848",
+    "deploy/base/restore.yaml": "ad8ee7e7c78b1ecab85f72ed09eaaf4bb643034616ce3f08b9631654513d2666",
+    "scripts/deploy_recovery.py": "97e1d4b9a0827d225a2f6acaf3ab33ba4ccbe31e1b1f33f33f0f5db8504edd84",
+    "scripts/test_deploy_recovery.py": "e5305af26d67eb8de7c004a94f9f763dbb75a5158d1f7079bc7760707bd53b5d",
+    "scripts/verify_deploy_recovery.py": "a59443b55288478e5be8c2dc13b8c8b2f9aa0bfb838fcf6792afc8adde11c55e",
+    "scripts/test-deploy-recovery.ps1": "10e7879e73cc0578cfdb340b09d9a80561d6dcc218e5fc14fd134c9ed18c84f7"
+  },
+  "notExecuted": [
+    "Aliyun connection/preflight/deployment",
+    "Independent Linux host acceptance",
+    "Maven/image rebuild or unrelated JUnit rerun",
+    "Capacity/HA/RTO/RPO claims",
+    "Real database/file migration",
+    "Frontend work"
+  ],
+  "nextRecommendation": "Read-only Aliyun deployment preflight; user has now identified a server, but details/access are not yet checked",
+  "knownBoundary": "M04 cold-restored first-write timeout root cause remains unknown; both final recovery new-write probes returned 201 on first attempt."
+}

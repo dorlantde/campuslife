@@ -1,0 +1,32 @@
+# Only isolated restore targets use this. Avoid image seed files in NEW empty volumes.
+services:
+  mysql:
+    volumes:
+      - type: volume
+        source: mysql-data
+        target: /var/lib/mysql
+        volume: { nocopy: true }
+  app:
+    volumes:
+      - type: volume
+        source: files
+        target: /var/lib/campuslife/files
+        volume: { nocopy: true }
+  coupon-redis:
+    volumes:
+      - type: volume
+        source: coupon-data
+        target: /data
+        volume: { nocopy: true }
+  rabbitmq:
+    volumes:
+      - type: volume
+        source: rabbit-data
+        target: /var/lib/rabbitmq
+        volume: { nocopy: true }
+  seaweed:
+    volumes:
+      - type: volume
+        source: seaweed-data
+        target: /data
+        volume: { nocopy: true }

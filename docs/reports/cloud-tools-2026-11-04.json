@@ -1,0 +1,158 @@
+{
+  "task": "M06.1-D.4",
+  "date": "2026-11-04",
+  "timezone": "America/New_York",
+  "status": "complete: tools/account and all six original pinned public base images verified; no business deployed",
+  "environment": {
+    "user": "campusdeploy",
+    "groups": "campusdeploy docker",
+    "java": "openjdk 21.0.12.1 2026-08-18\nOpenJDK Runtime Environment (build 21.0.12.1+1-1-22.04.4-Ubuntu)\nOpenJDK 64-Bit Server VM (build 21.0.12.1+1-1-22.04.4-Ubuntu, mixed mode, sharing)",
+    "javac": "javac 21.0.12.1",
+    "maven": "\u001b[1mApache Maven 3.6.3\u001b[m\nMaven home: /usr/share/maven\nJava version: 21.0.12.1, vendor: Ubuntu, runtime: /usr/lib/jvm/java-21-openjdk-amd64\nDefault locale: en_US, platform encoding: UTF-8\nOS name: \"linux\", version: \"5.15.0-198-generic\", arch: \"amd64\", family: \"unix\"",
+    "compose": "5.7.0",
+    "buildx": "github.com/docker/buildx v0.38.1 0dbe87f36ed472fe36b6796c3f70b4210a731fc5",
+    "docker": {
+      "ServerVersion": "29.9.3",
+      "Driver": "overlayfs",
+      "CgroupVersion": "2",
+      "NCPU": 2,
+      "MemTotal": 3799158784,
+      "DockerRootDir": "/var/lib/docker",
+      "SecurityOptions": [
+        "name=apparmor,profile=default",
+        "name=seccomp,profile=builtin",
+        "name=cgroupns"
+      ]
+    },
+    "containers": [],
+    "volumes": [],
+    "images": [],
+    "projectDirectoryWritable": true,
+    "snapshotPhase": "historical tools-install snapshot before manual Redis import; current image state in manualProbe evidence"
+  },
+  "accountAuthorization": {
+    "initialAutoReviewRejected": true,
+    "reason": "persistent root-equivalent Docker group grant needed explicit authorization",
+    "userExplicitlyApproved": true,
+    "executedAfterApproval": true,
+    "rootPolicyChanged": false,
+    "sudoersChanged": false
+  },
+  "sourcePolicy": {
+    "ubuntuExistingSignedRepositories": true,
+    "dockerRepository": "https://download.docker.com/linux/ubuntu",
+    "dockerKeyFingerprint": "9DC858229FC7DD38854AE2D88D81803C0EBFCD88",
+    "unknownMirrorsOrProxies": false,
+    "tlsVerificationDisabled": false,
+    "dnsOrHostsChanged": false
+  },
+  "imageState": {
+    "requiredPublicImages": 6,
+    "locallyCached": 6,
+    "targetAvailableImages": 6,
+    "completeTransfers": 6,
+    "businessImageTransferred": false,
+    "workspaceDataOrSecretsTransferred": false,
+    "directPullBudgetSeconds": 25,
+    "sftpBudgetSeconds": 180,
+    "permanentRegistryBlockProven": false,
+    "networkRootCauseKnown": false
+  },
+  "manualProbe": {
+    "path": ".cache/cloud-image-probe/redis-named.tar",
+    "bytes": 55266816,
+    "sha256": "c8cdeeba1698060b953b1401bc5c58431c78cfe0de3376c4d16597f8428287eb",
+    "proposedMethod": "user-side SCP",
+    "executed": true,
+    "userConfirmedComplete": true,
+    "transportSha256Verified": true,
+    "originalDigestPlatformLayersVerified": true,
+    "ociBlobsVerified": 14,
+    "resourceProbePassed": true,
+    "containersAfter": [],
+    "volumesAfter": [],
+    "measuredUploadSeconds": null,
+    "measuredUploadRate": null,
+    "evidence": ".cache/cloud-image-probe/manual-redis-result-2026-11-04.json",
+    "localDockerStarted": false
+  },
+  "candidateImporter": "local export/blob validation tested; manual transfer/import verified separately; automatic transfer end-to-end remains unverified",
+  "sourceCacheRepair": {
+    "redisCanonicalAliasRemovedWithTemporaryTag": true,
+    "restoredFromExactNamedArchive": true,
+    "expectedDigest": "sha256:66b7f4c2f3c6ef1b298bbd7b13c806bc6f71e61f1136a4f58710daf2cb053b21",
+    "versionTagsRetained": true
+  },
+  "changes": {
+    "businessJavaDdlFrontendChanged": false,
+    "businessStarted": false,
+    "dbMigrated": false,
+    "extraCloudServicePurchased": false,
+    "publicSharing": false
+  },
+  "rawEvidenceSha256": {
+    ".cache/cloud-prepare-precheck-2026-11-04.log": "04a3c6dab9148c1d165d4c5c35fc3c18741fad48216d40c8dbce639ab8f6c1dc",
+    ".cache/cloud-tools-install-2026-11-04.log": "603be837f59233827c18cdfcd6ff7851835c7a383b8c96ecba49fe852f82a418",
+    ".cache/cloud-tools-install-retry-2026-11-04.log": "8203dfd901e06c011520e7fc95113f44699531f05467aa4692d9c57fe7144972",
+    ".cache/cloud-access-prepare-2026-11-04.log": "d39cd34836b5457f9fd5d3436694e4e7678bbee345540a8f37643936bb7ccc5e",
+    ".cache/cloud-pull-probe-2026-11-04.log": "7f21dd471ad6bf53fecbed65dd486ca087cc2ff85bf5f17dc85737e6c1225cb2",
+    ".cache/cloud-registry-dns-2026-11-04.log": "0b81e4ddb0a896166c64a9b57c82405ad387630347127a998292d1af54a64583",
+    ".cache/cloud-registry-resolve-2026-11-04.log": "5bb109ccd8246ce7745d829e205fefe5ededa09e950b24e7597b63e4cbcf6887",
+    ".cache/cloud-env-final-2026-11-04.json": "6059612ca69fbbe0939114f8bb0ededee4a958d7de979622263357136b4ace05",
+    ".cache/cloud-images-redis-2026-11-04.log": "f5b6477d15620f6015fc58b9f4bdbc28ee062577963c3803182f9d26967e8aef",
+    ".cache/cloud-images-redis-retry-2026-11-04.log": "a91406ce7a89385c128b172f5645896314eaf93e66c30b3cdb5eb99bcbd8c411",
+    ".cache/cloud-images-sftp-2026-11-04.log": "f60e2d63ddd690cb8c114b6bbb79e627cb534251e2eab5bf1c7819b3bb9f945e",
+    ".cache/cloud-image-probe/manual-redis-result-2026-11-04.json": "97fd25b3853f36e2a96cfcfbb6a47854282fe7573664fa6249fd123d93435f94",
+    ".cache/cloud-image-probe/verify-manual-redis.py": "09e0b8bd28881c4c9892bc513e977d053b53a3b45c3196429f32e322f0d1ca1a",
+    ".cache/cloud-images/remaining-public-2026-11-04/manifest.json": "448b0e9180ad7376802488710df85582f5dc28015a3d39243ba5df75d8298875",
+    ".cache/cloud-images/remaining-public-preflight-2026-11-04.json": "e3e82ff545057be902ed3a36e7480bebd46467a21944a5b57799dd70a26e4341",
+    ".cache/cloud-images/remaining-receipt-2026-11-04.json": "a642623021d0a854f009c2400b5f1641a1b5dbdc1b3c257613e323a3494be3d6",
+    ".cache/cloud-images/remaining-import-2026-11-04.json": "540309c2a8a45bc7d238ad223d8900c6fab527ac820c542c376f7fcf9ee51b23",
+    ".cache/cloud-images/verify-uploaded-remaining.py": "2f3a8981f9e439c6dfe83b8691076e5d70e37dbaaff3585a1269d318ee348327"
+  },
+  "deliveredScriptSha256": {
+    "scripts/prepare-cloud-tools.sh": "e238a9487fb0f45e4bfffe6e2ab22f0c6f73ac3f869b32bb7f41253aa65fc6a8",
+    "scripts/prepare-cloud-access.sh": "335682e837d9f73b3b598dec46049a8d95acd265f59fd2ab237cd8bafd74de62",
+    "scripts/prepare-cloud-images.py": "5ba94f6f48e61db2bef2c620666740927275faaa6871c57ac4785edea4b2e4f9"
+  },
+  "remainingExport": {
+    "executed": true,
+    "passed": true,
+    "imageCount": 5,
+    "bytes": 702969344,
+    "verifiedBlobs": 79,
+    "manifest": ".cache/cloud-images/remaining-public-2026-11-04/manifest.json",
+    "userUploadPending": false,
+    "targetImportedCount": 5,
+    "redisReexported": false,
+    "addedLocalVersionTags": [
+      "chrislusf/seaweedfs:4.51",
+      "eclipse-temurin:21.0.13_9-jre-noble",
+      "mysql:8.4.13",
+      "nginx:1.30.6-alpine"
+    ],
+    "localDockerTemporarilyStarted": true,
+    "existingRedisContainerAutoResumed": true,
+    "dockerDesktopStoppedAfterExport": true,
+    "allWslShutdownClaimed": false
+  },
+  "finalImageVerification": {
+    "passed": true,
+    "imageCount": 6,
+    "evidence": ".cache/cloud-images/remaining-import-2026-11-04.json",
+    "containers": [],
+    "volumes": [],
+    "checks": [
+      "image ID",
+      "original RepoDigest",
+      "linux/amd64",
+      "RootFS layers"
+    ],
+    "redisReimported": false,
+    "localDockerStartedThisRound": false,
+    "applicationBuildVerified": false,
+    "businessRuntimeVerified": false,
+    "uploadRateMeasured": false
+  },
+  "nextTask": "M06.1-D.5: allowlisted source package preparation and target build verification; not started"
+}

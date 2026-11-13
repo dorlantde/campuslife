@@ -1,0 +1,193 @@
+{
+  "task": "M06.1-D.6b",
+  "date": "2026-11-05",
+  "status": "READ_ONLY_COMPARISON_COMPLETED_FIX_NOT_IMPLEMENTED",
+  "parentD6Passed": false,
+  "priorGenericFailuresSameCauseEstablished": false,
+  "newFiles": [
+    {
+      "path": "scripts/diagnostics/coupon_connection_case.py",
+      "name": "coupon_connection_case.py",
+      "bytes": 13213,
+      "sha256": "01cd473b5cd9c7396e7e03d3e38f247e8f7f4083d1948144c2fceb3837df2ece"
+    },
+    {
+      "path": "scripts/diagnostics/CouponConnectionProbe.java",
+      "name": "CouponConnectionProbe.java",
+      "bytes": 3211,
+      "sha256": "350a61ac31ed3262321ff3b0ef5988cbb741d03b5520467a9f9a15431a35ac29"
+    }
+  ],
+  "totalTransferredBytes": 16424,
+  "elapsedSeconds": 398.865,
+  "diagnosticOutcome": {
+    "task": "M06.1-D.6b",
+    "diagnosticOnly": true,
+    "directSqlTechnicalSeed": true,
+    "instance": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/1dd30c1db59b4ebf8b82a76ed45b14c5",
+    "host": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3185254400,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4293902336,
+        "oomKillCount": 0
+      }
+    },
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "phase": "captured",
+    "comparisonCaptured": true,
+    "resumeInvoked": false,
+    "sqlTicketRequested": false,
+    "snapshots": [
+      {
+        "label": "before-stop",
+        "at": "2026-11-05T08:27:29.096145+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t3\t5\tNULL\tNULL\t578755e43e97cdd71b4115bda5965cf4a019e3ea\t0\t2026-11-05 08:27:29.475",
+        "counts": "1\n1\n0",
+        "redisRunId": "578755e43e97cdd71b4115bda5965cf4a019e3ea",
+        "redisControl": [
+          "3",
+          "578755e43e97cdd71b4115bda5965cf4a019e3ea",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-restart",
+        "at": "2026-11-05T08:29:56.069379+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t5\t8\tNULL\tNULL\tc8c34e023e7ba69389d281589901e0d89eae7144\t0\t2026-11-05 08:29:56.344",
+        "counts": "1\n1\n0",
+        "redisRunId": "c8c34e023e7ba69389d281589901e0d89eae7144",
+        "redisControl": [
+          "5",
+          "c8c34e023e7ba69389d281589901e0d89eae7144",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-read-only-comparison",
+        "at": "2026-11-05T08:31:02.354655+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t5\t8\tNULL\tNULL\tc8c34e023e7ba69389d281589901e0d89eae7144\t0\t2026-11-05 08:31:02.781",
+        "counts": "1\n1\n0",
+        "redisRunId": "c8c34e023e7ba69389d281589901e0d89eae7144",
+        "redisControl": [
+          "5",
+          "c8c34e023e7ba69389d281589901e0d89eae7144",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "1",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      }
+    ],
+    "startedAt": "2026-11-05T08:24:40.592531+00:00",
+    "sameFiveVolumes": true,
+    "redisRunIdChanged": true,
+    "trace": [
+      "DIAG before phase=PAUSED generation=5 controlVersion=8 ticketPresent=false",
+      "DIAG call=1 outcome=FAILED elapsedMs=3619 causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException",
+      "DIAG afterCall=1 gateUnchanged=true ticketPresent=false",
+      "DIAG call=2 outcome=OK elapsedMs=311 runIdMatches=true",
+      "DIAG afterCall=2 gateUnchanged=true ticketPresent=false",
+      "DIAG completed calls=2 elapsedMs=58646"
+    ],
+    "gateAndCountsUnchanged": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-05T08:31:12.987000+00:00",
+    "jarUnchanged": true
+  },
+  "finalIndependentAudit": {
+    "sourceMatchesD5PlusRecordedPatch": true,
+    "sourceMismatches": [],
+    "unchangedD5Inputs": 459,
+    "changedD5Inputs": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "recordedPatchMatches": true,
+    "diagnosticTransferMatches": true,
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "generatedFixtureFolders": 16
+  },
+  "firstCall": {
+    "outcome": "FAILED",
+    "elapsedMs": 3619,
+    "causeTypes": [
+      "org.springframework.data.redis.RedisConnectionFailureException",
+      "io.lettuce.core.RedisConnectionException",
+      "io.lettuce.core.RedisCommandTimeoutException"
+    ]
+  },
+  "secondCall": {
+    "outcome": "OK",
+    "elapsedMs": 311,
+    "runIdMatches": true
+  },
+  "contextStartToCompletionMs": 58646,
+  "productionBudgetsChanged": false,
+  "originalMaintenanceCliBudgetSeconds": 90,
+  "diagnosticCliWrapperBudgetSeconds": 110,
+  "diagnosticOuterBudgetSeconds": 780,
+  "connectionBudgetMs": 300,
+  "commandBudgetMs": 500,
+  "rebuildLeaseSeconds": 30,
+  "nextTask": {
+    "id": "M06.1-D.6c",
+    "status": "PROPOSED_AWAITING_CONFIRMATION_NOT_STARTED",
+    "proposal": "docs/coupon-maintenance-preflight-design.md"
+  },
+  "localEvidence": [
+    {
+      "path": ".cache/cloud-connection/case-074e7929437f/runner-result.json",
+      "bytes": 3459,
+      "sha256": "a60d44496dd27be76039fa8fa846cdfb1b9e25c82fa30b1b094626f52ba26716"
+    },
+    {
+      "path": ".cache/cloud-connection/case-074e7929437f/final-audit.json",
+      "bytes": 545,
+      "sha256": "0b16da3a9b7c6fb763c247231ffe144662d8bc0fbcdee269c7a2244d4778ae4d"
+    },
+    {
+      "path": ".cache/cloud-connection/case-074e7929437f/manifest.json",
+      "bytes": 564,
+      "sha256": "7a4f5b757642260feadcc2c5504cc46027e0d180e41691c657193efb9d9fba98"
+    }
+  ]
+}

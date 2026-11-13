@@ -1,5 +1,5 @@
 param(
-    [ValidateSet('Test', 'Build', 'Run', 'DatabaseCheck')]
+    [ValidateSet('Test', 'Build', 'Run', 'DatabaseCheck', 'AdminInit')]
     [string]$Action = 'Test'
 )
 
@@ -44,6 +44,7 @@ try {
         'Build' { @('-B', 'verify') }
         'Run' { @('spring-boot:run') }
         'DatabaseCheck' { @('-B', '-Pmysql-check', 'verify') }
+        'AdminInit' { @('-B', 'spring-boot:run', '-Dcampuslife.main-class=com.campuslife.admin.bootstrap.AdminBootstrap') }
     })
     & $taskMaven.Source @taskMavenArgs
     $taskExitCode = $LASTEXITCODE

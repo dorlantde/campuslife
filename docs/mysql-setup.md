@@ -1,5 +1,21 @@
 # MySQL 接入与账号、会话迁移
 
+2026-10-21 候选时段按 [ADR-0021](decisions/0021-booking-slot-candidates.md) 复用现有 V1～V8，无新增迁移；沿用当前启动方式重启即可，见[验收指南](booking-slots.md)。独立临时 MySQL 定向验证通过，未在用户现有项目库执行测试。
+
+2026-10-21 排班新增 V8 / barber_day_guard、barber_schedule。沿用当前启动配置自动应用未执行迁移，不改写 V1～V7、不重新建库。未替用户在现有项目库执行迁移，重启后由 Flyway 执行。步骤见 [排班指南](merchant-schedule.md)。
+
+2026-10-21 理发师增加 V7 / barber、barber_service，原配置正常启动会自动应用尚未执行的迁移；不重写 V1～V6、不重新建库。配置与验证见 [理发师指南](merchant-barbers.md)。
+
+2026-10-20 打印价目增加 V6 / print_price_rule，原配置正常启动会应用尚未执行的迁移；不修改 V1～V5、不重新建库。价目归属沿 service_id 确定店铺，实际验证见 [价目指南](merchant-print-prices.md)。
+
+2026-10-20 服务任务增加 V5 / service_item，沿用原配置正常启动会应用尚未执行的迁移；保留原有账号、店铺和营业时间，不手动改写 V1～V4。执行记录与步骤见 [服务指南](merchant-service-catalog.md)。
+
+营业时间任务增加 V4 / shop_business_hour，普通 mysql 启动会自动执行尚未应用的迁移，原有账号与店铺数据保留。不要手动改写 V1/V2/V3 或重新建库。实现及独立验证见 [营业时间指南](merchant-business-hours.md)。
+
+后续 V3 已新增 shop_review 审核历史表，平台 ADMIN 为 account 表中的业务账号，由 scripts/init-admin.ps1 显式创建；仍使用 MySQL campuslife 专用账号连接数据库，不需要 root。初始化工具支持与 database.ps1 相同的本机数据库参数，密码只在本机输入。审核事务和独立验证记录见 [管理员指南](admin-shop-review.md)。
+
+2026-10-19 更新：V2 新增 shop_category、shop、shop_member，并初始化理发、打印基础分类；不修改 V1，不重建既有账号和会话。重启应用时自动迁移，详见 [商家入驻验收](merchant-onboarding.md)。当前 Java 21 构建与独立 MySQL 共 164 个用例通过，含新增 24 个商家事务、并发、锁与权限用例；mysql / web-only JAR 检查单独通过。未在用户正式项目库执行本轮迁移或测试。
+
 接入阶段日期：2026-10-13。本页记录数据源、account/auth_session 与 Flyway；注册见 [注册验收](registration.md)，2026-10-15 登录与 JWT 的本机配置见 [认证验收](authentication.md)。
 
 ## 1. 三种身份不要混淆
@@ -39,7 +55,7 @@ setup-mysql.ps1 先让你设置新的 campuslife 数据库账号密码（至少 
 
 database.ps1 提示输入的是刚设置的 campuslife 账号密码，不是 root 密码。已有进程环境中的 DB_PASSWORD 会直接使用；没有时通过 Read-Host -AsSecureString 输入，并仅在子进程环境中提供给 Java，脚本结束恢复原环境。
 
-Check 首次启动 Spring 上下文时执行 Flyway V1；当前包含 11 个 SQL 约束、26 个注册、41 个认证/改密、16 个资料与 4 个文档 HTTP/MySQL 用例，另运行普通单元与 Web 测试，总计 140 个。SQL 用例事务回滚；HTTP 用例使用自己的随机测试账号与会话，结束按归属清理，不删除原有账号。AUTO_INCREMENT 可能正常增长。脚本也准备 JWT 环境，细节见 [认证验收](authentication.md)。人工接口验收推荐 [Swagger / Apifox 指南](api-testing.md)。
+Check 启动 Spring 上下文时执行尚未应用的 Flyway 迁移，当前最新为 V3；包括 SQL 约束、注册、认证/改密、资料、商家申请/审核/重提及文档 HTTP/MySQL 用例，另运行普通单元与 Web 测试，最新执行数量见 [工程记录](engineering-foundation.md)。SQL 用例事务回滚；HTTP 用例使用自己的随机测试账号与会话，结束按归属清理，不删除原有账号。AUTO_INCREMENT 可能正常增长。脚本也准备 JWT 环境，细节见 [认证验收](authentication.md)。人工接口验收推荐 [Swagger / Apifox 指南](api-testing.md)；自动验证优先使用 test-mysql.ps1 的隔离临时库。
 
 若已有项目库和账号，跳过 setup，直接 Check。需要使用 campuslife_dev 等项目专用库时，先自行创建，再通过 database.ps1 的 DatabaseName、DatabasePort、DatabaseUser 参数指定；支持的数据库名为 campuslife 或 campuslife_ 后接小写字母、数字、下划线。
 
@@ -143,3 +159,9 @@ DatabaseMigrationConfiguration 在执行迁移前校验 DB_NAME 和实际连接�
 - Codex 受限终端的网络错误：真实 HTTP/MySQL 验证需要本机回环网络权限；不要修改 SQL 去绕过执行环境限制。
 
 参考：[Spring Boot 数据库初始化](https://docs.spring.io/spring-boot/how-to/data-initialization.html)、[MySQL CHECK 约束](https://dev.mysql.com/doc/refman/8.0/en/create-table-check-constraints.html)、[Connector/J 时间处理](https://dev.mysql.com/doc/connector-j/en/connector-j-time-instants.html)、[Java 21 命令选项（--version / -version 输出流）](https://docs.oracle.com/en/java/javase/21/docs/specs/man/java.html#standard-options-for-java)。
+
+2026-10-22 待支付预约按 [ADR-0022](decisions/0022-booking-orders.md) 增加 V9 四表；沿用当前配置重启，由 Flyway 应用尚未执行迁移，不重建库、不修改 V1～V8。预约验收见[点击指南](booking-orders.md)；独立测试实例的验证不等于已经在用户现有项目库执行迁移。
+
+2026-10-23 文件模块V11新增file_asset；当前V1～V11共20张业务表。本机应用重启按Flyway迁移，上传原文在私有`.local/files`，不写数据库。scripts/test-mysql.ps1为自有fixture注入FILE_STORAGE_ROOT和关闭自动清理，验证结束只清理该fixture；不使用用户持久文件。具体规则和点击流程见[上传验收](print-file-upload.md)。
+
+文件集成测试默认存储根是target/file-it，禁止复用应用的持久根；独立脚本同时注入FILE_TEST_STORAGE_ROOT供Failsafe及FILE_STORAGE_ROOT供测试JAR，二者都在自有fixture内。清理扫描在普通集成上下文中关闭，仅文件用例显式触发；状态统计按当前根标识隔离，不将现有用户文件计入测试断言。

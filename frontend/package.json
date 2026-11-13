@@ -1,0 +1,32 @@
+{
+  "name": "campuslife-web",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "engines": {
+    "node": "24.22.2"
+  },
+  "scripts": {
+    "dev": "vite",
+    "typecheck": "vue-tsc --noEmit",
+    "build": "npm run typecheck && vite build",
+    "test": "vitest run",
+    "preview": "vite preview --host 127.0.0.1 --port 5173 --strictPort"
+  },
+  "dependencies": {
+    "element-plus": "2.14.7",
+    "vue": "3.5.44",
+    "vue-router": "4.6.4"
+  },
+  "overrides": {
+    "@types/estree": "1.0.8"
+  },
+  "devDependencies": {
+    "@types/node": "24.19.2",
+    "@vitejs/plugin-vue": "6.0.10",
+    "typescript": "5.9.3",
+    "vite": "8.3.5",
+    "vitest": "4.1.12",
+    "vue-tsc": "3.3.13"
+  }
+}

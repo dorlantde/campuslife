@@ -1,0 +1,108 @@
+{
+  "date": "2026-11-01",
+  "task": "M08.5-B",
+  "status": "implementation and correctness verified",
+  "operations": 75,
+  "migration": "V23",
+  "applicationTables": 32,
+  "distinctChecks": 182,
+  "latestOutcomes": "passed",
+  "unitChecks": 54,
+  "integrationChecks": 128,
+  "countsByClass": {
+    "com.campuslife.coupon.service.CouponIssueListenerTest": 5,
+    "com.campuslife.coupon.service.CouponRedisRepairJobTest": 3,
+    "com.campuslife.CouponAdmissionIT": 41,
+    "com.campuslife.CouponAsyncRabbitIT": 4,
+    "com.campuslife.CouponOrdersMysqlIT": 19,
+    "com.campuslife.CouponOutboxBatchIT": 3,
+    "com.campuslife.CouponRedisMessagingIT": 3,
+    "com.campuslife.messaging.service.NotificationListenerTest": 4,
+    "com.campuslife.messaging.service.OutboxBatchTest": 28,
+    "com.campuslife.messaging.service.OutboxPublisherTest": 10,
+    "com.campuslife.messaging.service.RabbitOutboxTransportTest": 4,
+    "com.campuslife.MysqlIntegrationIT": 12,
+    "com.campuslife.NotificationMysqlIT": 9,
+    "com.campuslife.NotificationRabbitIT": 4,
+    "com.campuslife.OpenApiMysqlIT": 3,
+    "com.campuslife.OutboxBatchIT": 11,
+    "com.campuslife.OutboxMysqlIT": 10,
+    "com.campuslife.OutboxRabbitIT": 9
+  },
+  "rounds": [
+    {
+      "round": "unit1",
+      "checks": 42,
+      "failed": 6,
+      "skipped": 0
+    },
+    {
+      "round": "unit2",
+      "checks": 42,
+      "failed": 1,
+      "skipped": 0
+    },
+    {
+      "round": "messaging",
+      "checks": 108,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "round": "coupon",
+      "checks": 74,
+      "failed": 0,
+      "skipped": 0
+    }
+  ],
+  "initialRestrictedRun": "No completed reports; proxy/attach communication stalled; only verified own Maven/fork/attacher processes stopped; not counted as passed",
+  "implementation": {
+    "workerThreads": 1,
+    "taskQueueCapacity": 0,
+    "maxClaimCallsPerRound": 32,
+    "continueBudgetMs": 1000,
+    "sharedCloseWaitMs": 8000,
+    "preclaimBatch": false,
+    "continueOnlyAfterAckAndSaved": true
+  },
+  "baseline": {
+    "folder": "D:\\campuslife\\.cache\\m085-baseline-2026-11-01",
+    "classResourceFiles": 376,
+    "dependencies": 115,
+    "jarSha256": "6F406141A158C54B158403FF63A5F85686BF255B3D7EB2AD610079162FE73246",
+    "classesResourcesAndJarIntact": true,
+    "newDependencyFingerprintsMatch": true
+  },
+  "changedPreExistingImplementationFiles": [
+    "src\\main\\java\\com\\campuslife\\messaging\\service\\OutboxPublisher.java",
+    "src\\main\\resources\\application.properties",
+    "src\\test\\java\\com\\campuslife\\messaging\\service\\OutboxPublisherTest.java"
+  ],
+  "unchanged": {
+    "migrations": 23,
+    "frontendSourceFiles": 45,
+    "existingScripts": 34,
+    "pom": true
+  },
+  "newChecks": {
+    "OutboxBatchTest": 28,
+    "OutboxBatchIT": 11,
+    "CouponOutboxBatchIT": 3
+  },
+  "testClassesAbsentFromJar": true,
+  "cleanup": {
+    "testJvms": 0,
+    "isolatedMysqlProcesses": 0,
+    "testContainers": 0,
+    "testVolumes": 0,
+    "jarSmoke": "passed in both completed native rounds",
+    "verifiedAt": "2026-11-01T10:36:19.3744998Z"
+  },
+  "next": {
+    "task": "M08.5-C",
+    "status": "not executed",
+    "trueJvmFaults": "pending",
+    "oldNewMeasurement": "pending",
+    "performanceTarget": "unverified"
+  }
+}

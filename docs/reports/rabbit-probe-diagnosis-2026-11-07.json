@@ -1,0 +1,477 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-B",
+  "status": "ATTEMPT_FAILED_HELPER_FIXED_SHORT_CHECKED",
+  "case": "case-b9b27f8f0da94279",
+  "manifestSha256": "bb38831cb7540a0d2e14296e9351318657a30baa1f01d9df023d1a624dffa8cd",
+  "elapsedSeconds": 101.072,
+  "receipt": {
+    "case_id": "case-b9b27f8f0da94279",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794052365.2321973,
+    "failure_type": null,
+    "finished_unix": 1794051986.3038344,
+    "job": {
+      "exit_code": 1,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "b4b0516227c044deb2c9d73b49c1dc11",
+    "manifest_sha256": "bb38831cb7540a0d2e14296e9351318657a30baa1f01d9df023d1a624dffa8cd",
+    "schema": 1,
+    "started_unix": 1794051885.232197,
+    "state": "FAILED",
+    "task": "D.7.1-B",
+    "task_outcome": "FAILED"
+  },
+  "diagnosis": {
+    "authSamples": [],
+    "businessRequests": 0,
+    "candidateInstalled": false,
+    "diagnosisStatus": "TOOL_OR_PRECONDITION_FAILED",
+    "elapsedSeconds": 98.21337422897341,
+    "failureCode": "BROKER_PROTOCOL_READY_DEADLINE",
+    "failureType": "ValueError",
+    "schema": 1,
+    "slots": [
+      {
+        "atSecond": 0,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 20,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 40,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 10,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 30,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 45,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 0,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 20,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 40,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 10,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 30,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 45,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      }
+    ],
+    "task": "D.7.1-B",
+    "windows": []
+  },
+  "nativeProbes": [
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:03.148794754+08:00",
+      "exitCode": 69,
+      "output": {
+        "categories": [
+          "APPLICATION_NOT_RUNNING"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 142,
+        "outputSha256": "bd427192713f3e2db3076037b778e0701dd2059fb94d44a4a99e37b7e6472712",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:44:59.505267594+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:11.608006022+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:08.150463523+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:19.912794166+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:16.60933996+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:28.383058484+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:24.914369833+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:36.630090444+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:33.383951175+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:45.002803426+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:41.631591301+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:45:53.304876183+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:50.005394249+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:46:01.608924921+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:45:58.305560516+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:46:10.14009242+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:46:06.611152344+08:00"
+    },
+    {
+      "containerId": "bc945b02e320cfee6021df384ac4389a92075b5ae9d0473207f8cb7534792a1c",
+      "end": "2026-11-07T19:46:18.489584313+08:00",
+      "exitCode": 0,
+      "output": {
+        "categories": [
+          "UNKNOWN"
+        ],
+        "markers": [],
+        "mayBeTruncated": false,
+        "observedBytes": 509,
+        "outputSha256": "ae43510cca8a1222eb88e1f78ca79d4f46b1af9abcd60565ff98656945e41d31",
+        "sensitiveSuppressed": false
+      },
+      "start": "2026-11-07T19:46:15.141214152+08:00"
+    }
+  ],
+  "observations": {
+    "nativeCompleted": 10,
+    "exitZero": 9,
+    "exit69": 1,
+    "exitZeroMinSeconds": 3.2461390495300293,
+    "exitZeroMaxSeconds": 3.528939962387085,
+    "hostSamples": 90,
+    "resourceSamples": 18,
+    "maxObservedBrokerBytes": 216252416,
+    "observedOomSwapZero": true,
+    "workerContainerStarted": false,
+    "candidateAuthOrWindowsExecuted": false
+  },
+  "originalHelperBugReproduction": {
+    "sourceSha256": "96ec42fb623343028add81b7af60367e358fbc8389ef68091ac8d0184a8a657d",
+    "httpGlobalIsFunction": true,
+    "result": {
+      "available": false,
+      "error": "HTTP_UNAVAILABLE",
+      "errorType": "AttributeError"
+    },
+    "failureBeforeConnectionConstructor": true
+  },
+  "fixedRelatedChecks": {
+    "stage": "/home/campusdeploy/.cache/campuslife-rabbit-probe-checks/92e5605d8b32",
+    "exitCode": 0,
+    "checks": 16,
+    "passed": true,
+    "skipped": false,
+    "elapsedSeconds": 1.3704682089737616,
+    "controlledLoopbackOnly": true,
+    "brokerStarted": false,
+    "originalDiagnosticRerun": false,
+    "sources": [
+      {
+        "path": "scripts/rabbit_probe_diagnostics.py",
+        "sha256": "5a4911f215fcbf39180de259250e31e7e96d430868a199a6068924b30e4c4830"
+      },
+      {
+        "path": "scripts/test_rabbit_probe_diagnostics.py",
+        "sha256": "2dcb5c44924edd59a4f47b1c181332a5e5523b69492917518e30b5a7709e9f2d"
+      },
+      {
+        "path": "scripts/run_rabbit_probe_diagnosis.py",
+        "sha256": "af872ddeacba6cdd874bde217fb441c24f82e1e803d9e85771297b779d3702d3"
+      }
+    ]
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 23,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "postRunFixes": [
+      "scripts/rabbit_probe_diagnostics.py",
+      "scripts/test_rabbit_probe_diagnostics.py",
+      "scripts/run_rabbit_probe_diagnosis.py"
+    ],
+    "fixedSourcesMatchControlledChecks": true,
+    "fixedBrokerRunExecuted": false
+  },
+  "remoteAudit": {
+    "case": "case-b9b27f8f0da94279",
+    "receiptSha256": "a82245222d051ad041b5fec32e48afcc0a8267516a9578c3adcf6b47aed7ff4f",
+    "sourceFilesVerified": 7,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "diagnosisSha256": "332abdb0fea8c1dd6fec52c52e3c7cef7dd365b60b7d8324ce9ba6f45cd0e129",
+    "diagnosisStatus": "TOOL_OR_PRECONDITION_FAILED",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-b9b27f8f0da94279",
+        "state": "FAILED",
+        "receiptSha256": "a82245222d051ad041b5fec32e48afcc0a8267516a9578c3adcf6b47aed7ff4f",
+        "elapsedSeconds": 101.072,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ],
+    "observedContainerProcessAnchorsNotRunning": 34,
+    "fixedHelperControlledChecks": {
+      "checks": 16,
+      "passed": true,
+      "brokerStarted": false,
+      "originalCaseRepeated": false,
+      "sourceHashesVerified": 3
+    }
+  },
+  "dispatchedSources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/measurement_runtime.py",
+      "sha256": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d"
+    },
+    {
+      "path": "scripts/rabbit_probe_diagnostics.py",
+      "sha256": "96ec42fb623343028add81b7af60367e358fbc8389ef68091ac8d0184a8a657d"
+    },
+    {
+      "path": "scripts/test_rabbit_probe_diagnostics.py",
+      "sha256": "fc95c59aea9d1b374193a726c5836eed6c5848731f71f9cc3aecc8d02befba30"
+    },
+    {
+      "path": "scripts/run_rabbit_probe_diagnosis.py",
+      "sha256": "98bab6f5e867e0bca83f1b141f5c2d9040505f43fb9d27a1508827ed501ca2a6"
+    },
+    {
+      "path": "src/diagnostics/java/campuslife/diagnostics/CpuWindow.java",
+      "sha256": "e0141b0aa8fdd6e43f5637697d6f891114d2a0c26c259ecf99eef9189c3587c0"
+    }
+  ],
+  "limitations": [
+    "No A/B window or manual CLI executed",
+    "Failed readiness polling details were not persisted by dispatched version",
+    "Fixed helper checked with controlled loopback, no new real Broker run",
+    "Single Broker observations do not locate old C.3 failure cause",
+    "Ready endpoint authorization and candidate compatibility untested"
+  ],
+  "evidenceSha256": {
+    "audit-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cleanup.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnosis.json": "332abdb0fea8c1dd6fec52c52e3c7cef7dd365b60b7d8324ce9ba6f45cd0e129",
+    "fetch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fetch.json": "895a41b6deb3bf0419ed52eab1df3929b430cbbabdd7e542d955431d34aa8c4b",
+    "final-audit.json": "27461d32c170a55826dc46cbbab2e57a323373e3a0de4d4b41c36e87e245f488",
+    "host-samples.json": "89ca28acf353e216c333f93f41b8a9988c43e39bdf2d083d5e9d2b685f8c223e",
+    "job.log": "25e3a3892224dfd8799d3fa5c29c184acde1b04134594d7fdcb5bc513cda1c0a",
+    "launch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-audit.json": "0f686e4e26611c375cb7dd165ec9c6594181b4f7fbe68a4912ebe64c3339fbca",
+    "native-probes.json": "b759b55195f78aa0e584e59e9825b29330163f96618e99783dd7c7ee82467a7b",
+    "observer-errors.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "secret-checks.json": "8809024f06e1326142bbd03e0503dfaa83d632362e9ab179b669d425cede4b9e",
+    "slots.json": "483c064a1ad0340e1eef59c62a6920f4d6ec392caf8fd3660be97550bb628b88",
+    "supervisor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-checks.log": "88332147c31d721eb03739184b3efa7a1fcc215bb50f4847c52dcd8e50fd3ceb",
+    "worker-config.json": "1a7d949cf799bf6fca489d89dfec2d61364edc5c150134e6dc9a6359c7b15b06",
+    "worker-short-check.json": "358ad4efd8a4d1e1e22108686ff4d3ecd03d38dbdbc51ea61633a7d07e1e4e80"
+  }
+}

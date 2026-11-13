@@ -1,0 +1,188 @@
+{
+  "milestone": "M03.3",
+  "date": "2026-10-30",
+  "status": "verified-single-node-messaging-faults",
+  "operations": 75,
+  "migration": 21,
+  "tables": 31,
+  "distinctRelatedTests": 65,
+  "suites": [
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.MessagingFaultsIT",
+      "time": "261.654",
+      "tests": "5",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.NotificationMysqlIT",
+      "time": "11.446",
+      "tests": "9",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.NotificationRabbitIT",
+      "time": "7.286",
+      "tests": "4",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OutboxMysqlIT",
+      "time": "5.542",
+      "tests": "10",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OutboxRabbitIT",
+      "time": "25.088",
+      "tests": "8",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.MysqlIntegrationIT",
+      "time": "1.649",
+      "tests": "12",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-failsafe-plugin/xsd/failsafe-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.OpenApiMysqlIT",
+      "time": "3.307",
+      "tests": "3",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.messaging.service.NotificationListenerTest",
+      "time": "7.011",
+      "tests": "4",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    },
+    {
+      "{http://www.w3.org/2001/XMLSchema-instance}noNamespaceSchemaLocation": "https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report.xsd",
+      "version": "3.0.2",
+      "name": "com.campuslife.messaging.service.OutboxPublisherTest",
+      "time": "9.145",
+      "tests": "10",
+      "errors": "0",
+      "skipped": "0",
+      "failures": "0",
+      "flakes": "0"
+    }
+  ],
+  "observations": {
+    "folder": "target\\messaging-faults-14587465131279775138",
+    "cases": [
+      {
+        "producerConcurrency": 1,
+        "sampleCount": 8,
+        "case": "SMALL_BATCH",
+        "consumerConcurrency": 2,
+        "samples": [
+          212,
+          193,
+          187,
+          182,
+          171,
+          180,
+          182,
+          187
+        ],
+        "prefetch": 10
+      },
+      {
+        "messageId": "706fa42a0bbe49e0b93bae10be7e5bb9",
+        "case": "AFTER_CONFIRM",
+        "attempts": 2,
+        "killedPid": 35672
+      },
+      {
+        "recovered": true,
+        "messageId": "4b951e4bdb1b4d498b16b892b4344a3b",
+        "case": "DLQ_TARGET_UNAVAILABLE",
+        "restoreToTransferMs": 178462,
+        "retainedAtSource": 1
+      },
+      {
+        "killedPid": 19236,
+        "case": "BEFORE_COMMIT",
+        "recoveryMs": 10395,
+        "messageId": "538d89aeade04404b6aa8ad151fb4417",
+        "restartPid": 34852,
+        "beforeKillVisibleRows": 0
+      },
+      {
+        "killedPid": 488,
+        "case": "BEFORE_ACK",
+        "recoveryMs": 10367,
+        "messageId": "52f25da96147486a8691dbb7522aa963",
+        "restartPid": 35168,
+        "beforeKillVisibleRows": 1
+      }
+    ]
+  },
+  "productionTreeUnchanged": true,
+  "productionTreeSha256": "a52cd7cb1ef3066b79e42f52a853fe8542c0789ddfd85b2a058af97d20e5011c",
+  "testHooksExcludedFromJar": true,
+  "fixtureCleanup": {
+    "completedAt": "2026-10-30T10:09:47.2820971Z",
+    "cases": "MessagingFaultsIT,NotificationRabbitIT,NotificationMysqlIT,OutboxMysqlIT,OutboxRabbitIT,MysqlIntegrationIT,OpenApiMysqlIT",
+    "image": "rabbitmq:4.3.6-management@sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+    "containerRemoved": true,
+    "volumeRemoved": true
+  },
+  "testSourceSha256": {
+    "src/test/java/com/campuslife/MessagingCrashChild.java": "68be4520874f413ac49d030e8d9ef6f14af7d813582e3cf59eae74baa5353a12",
+    "src/test/java/com/campuslife/MessagingFaultsIT.java": "6e6ec6017e541a4d407cfc35d2ba2b5c98c5bf52f478b247c9975e3fad2f0495",
+    "src/test/java/com/campuslife/messaging/service/OutboxPublisherTest.java": "76c86b56e4b36146dfe46f829f0d6b18b6ee7eea8e463be36062c835e93b0afb"
+  },
+  "rounds": [
+    "Initial five fault cases: dead-letter recovery did not finish within sixty seconds; other four passed but ACK restart observation was strengthened before accepting final evidence.",
+    "Final: 51 component and 13 unit cases passed plus MySQL jar smoke and owned cleanup.",
+    "Added bounded shutdown branch: 10 publisher tests passed; replaces earlier nine, giving 65 distinct final cases across runs."
+  ],
+  "limitations": [
+    "No random network ACK packet loss proxy",
+    "Publisher recovery uses another running application instance and injected lease clock; not real thirty-second wall-time wait",
+    "Eight serial cost samples include consumer startup and 150ms polling; not throughput benchmark or SLA",
+    "Single-node restart/process faults do not prove multi-node quorum-loss/disk-loss HA",
+    "No frontend or Lua asynchronous coupon issuance"
+  ]
+}

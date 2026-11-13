@@ -1,0 +1,187 @@
+{
+  "task": "M06.1-D.6",
+  "dateRange": "2026-11-04 through 2026-11-05",
+  "timezone": "America/New_York",
+  "status": "partial: current acceptance execution and report delivered; D.6 overall NOT passed",
+  "overallPassed": false,
+  "attempts": [
+    {
+      "number": 1,
+      "passed": false,
+      "elapsedSeconds": 57.483,
+      "successfulLifecycleAssertions": 1,
+      "failure": "Command failed; inspect local log: /home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/94b48dcf10254ffd97e8a055dd7f27ed/start.log",
+      "evidence": "attempt-1-runner-result-2026-11-04.json"
+    },
+    {
+      "number": 2,
+      "passed": false,
+      "elapsedSeconds": 643.016,
+      "successfulLifecycleAssertions": 8,
+      "failure": "Command failed; inspect local log: /home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/7293cc274a56427a95b300a7409b38cc/coupon-maintenance.log",
+      "evidence": "attempt-2-runner-result-2026-11-04.json"
+    },
+    {
+      "number": 3,
+      "passed": false,
+      "elapsedSeconds": 1152.169,
+      "successfulLifecycleAssertions": 23,
+      "failure": "Command failed; inspect local log: /home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/157b102ba5104cca9f0f7629f2c16a2a/coupon-maintenance.log",
+      "evidence": "attempt-3-runner-result-2026-11-05.json"
+    }
+  ],
+  "latestSuccessfulAssertions": [
+    "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+    "mysql-resource-parameters-effective-before-business",
+    "seven-healthy-services-with-single-app",
+    "five-persistent-volumes-and-three-networks",
+    "original-schema-and-no-default-business-admin",
+    "private-management-works-in-seven-service-mode",
+    "business-openapi-remains-75",
+    "campaign-remains-default-sync-before-explicit-transition",
+    "async-admission-is-durable-202",
+    "new-print-file-uses-s3-with-complete-content",
+    "real-order-uses-claimed-coupon-and-frozen-payable",
+    "review-statistics-fill-real-rating-redis",
+    "funds-coupon-notification-and-consumption-are-unique",
+    "all-seven-stopped-with-five-volumes-retained",
+    "same-five-volumes-and-24-secret-fingerprints",
+    "new-application-process-after-whole-stack-stop",
+    "async-paused-intent-and-issued-facts-survive-new-run",
+    "s3-and-local-identities-and-old-file-survive",
+    "old-session-order-payment-and-notification-survive",
+    "claim-idempotency-replays-after-restart",
+    "rating-cache-rebuilds-from-preserved-database",
+    "private-readiness-and-jvm-metrics-survive-restart",
+    "post-restart-new-s3-write-and-full-download"
+  ],
+  "latestConfigurationChecks": [
+    "base-default-config-unchanged",
+    "components-default-config-unchanged",
+    "showcase-default-config-unchanged",
+    "base-compact-profile-rejected-before-init",
+    "components-compact-profile-rejected-before-init"
+  ],
+  "failureStage": "second Resume, after original-volume restart and successful new S3 write",
+  "unverified": [
+    "post-restart new async admission and issuance",
+    "post-restart final stock/uniqueness assertion",
+    "final lifecycle resource/guard/credential/log assertions"
+  ],
+  "rootCauseOfOriginalGenericFailures": "not fully located; isolated CONTROL_VERSION_CHANGED is not proof of both original causes",
+  "diagnostics": {
+    "coldRedis": {
+      "task": "D.6 isolated Redis cold diagnostic",
+      "instance": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/709917238fda4326a826079321d92483",
+      "stage": "/home/campusdeploy/.cache/campuslife-host/redis-cold-9b13a99fd6d2",
+      "diagnosticOnly": true,
+      "lines": [
+        "DIAG call=1 outcome=OK elapsedMs=1798",
+        "DIAG call=2 outcome=OK elapsedMs=9",
+        "DIAG call=3 outcome=OK elapsedMs=3"
+      ],
+      "completed": true,
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    "maintenance": {
+      "task": "D.6 targeted Resume diagnosis",
+      "instance": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/8d862cf19412446e8c79728d18e49946",
+      "stage": "/home/campusdeploy/.cache/campuslife-host/maintenance-ee85c275a6e0",
+      "diagnosticOnly": true,
+      "directSqlFixtureNotBusinessAcceptance": true,
+      "invocationSucceeded": false,
+      "lines": [
+        "DIAG outcome=FAILED causes=com.campuslife.coupon.service.CouponMaintenanceTransactions$Refused[CONTROL_VERSION_CHANGED]"
+      ],
+      "gateAfter": "ASYNC\tPAUSED\t3\t5",
+      "diagnosticCaptured": true,
+      "cleanup": {
+        "containers": 0,
+        "volumes": 0,
+        "generatedSecretsRemoved": true
+      }
+    },
+    "businessAcceptance": false,
+    "technicalFixtureDirectSqlSeeded": true,
+    "initialDiagnosticCompileFailure": "registerBean overload ambiguity, fixed before starting probe resources"
+  },
+  "resourceObservation": {
+    "samples": 101,
+    "maxSampledResidentBytes": 1393008640,
+    "maxSampledIncludingOneoffBytes": 1576288256,
+    "residentRecords": 7,
+    "oneoffRecords": 13,
+    "monitorErrors": [],
+    "transientContainerListRetries": 1,
+    "kernelPeakAvailable": false,
+    "hostMinAvailableBytes": 1553342464,
+    "hostMaxSwapUsedBytes": 798720,
+    "hostOomBefore": 0,
+    "hostOomAfter": 0,
+    "finalResourceHookExecuted": false,
+    "capacityClaim": false
+  },
+  "resumeReadinessWaitSeconds": [
+    32.969,
+    2.23
+  ],
+  "operationsObserved": 75,
+  "migrationsObserved": 24,
+  "businessTablesObserved": 32,
+  "finalAudit": {
+    "sourceMatchesD5PlusRecordedPatch": true,
+    "unchangedD5Inputs": 459,
+    "changedD5Inputs": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "generatedFixtureFolders": 14
+  },
+  "boundaries": {
+    "productionJavaDdlPomFrontendChanged": false,
+    "jarOrApplicationImageRebuilt": false,
+    "localDockerStarted": false,
+    "publicPortsOpened": false,
+    "businessWasRunOnlyAsTemporaryAcceptance": true,
+    "persistentShowcaseCreated": false,
+    "coldRecoveryRepeated": false,
+    "redisBudgetOrLeaseChanged": false
+  },
+  "sourceSha256": {
+    "deploy/base/mysql-init.sh": "6572babda58225c105ec0844002a108dddcbbf04761fa3d47f70931f6de5db13",
+    "scripts/test_deploy_compact4g.py": "2e3d7a21f19ffdf78bb2ec241d7164356855abe1551ad6394fa72aa81bd46c46",
+    "scripts/test_deploy_showcase.py": "02174e873d57cd4f57d50ed4c72ca35f5d74f7c81f02f8589af9a50ce5328a35",
+    "scripts/test_deploy_cloud.py": "f6d57c9b573008f451c7d23ec4e3bdc12a0737fe7c9342f74c9e3fa9d7ae875e",
+    "scripts/diagnostics/CouponRedisColdProbe.java": "9b13a99fd6d2ad9f4b3b81aac147d8effd73973a3a19b587f1de91cdeadbd107",
+    "scripts/diagnostics/CouponMaintenanceDiagnostic.java": "ee85c275a6e0ab4aa470340d1a2f2813dcf8ff25698ae30a2143fdeed2c0f4a9"
+  },
+  "evidenceSha256": {
+    ".cache/cloud-host/preflight-2026-11-04.json": "789b39d3710fbb02087cf54cf5e581f96d10c665a18f1fd3a91a2d53f8f82f3c",
+    ".cache/cloud-host/source-2026-11-04/manifest.json": "c7c321ba0565830ecfd4cac3d634fca0295e6dd731ab36e4cfb8ec347385a504",
+    ".cache/cloud-host/script-transfer-2026-11-04.json": "c0d071d1050ca9cf00fc1820516e878b3e60122717d79483da26b28e9ab20dca",
+    ".cache/cloud-host/patch-2026-11-04/manifest.json": "1182eb03b50d8f122f64a20d5abd8f8b7ba83f96631107bb08ddbff94c943452",
+    ".cache/cloud-host/attempt-2-patch-transfer-2026-11-04.json": "bceb963c2778bd5e3953e49c4c9bf5b79c99f12fa9dd35f05f2d4a1ce4c31555",
+    ".cache/cloud-host/readiness-patch-2026-11-05/manifest.json": "952f158c5de3e39486592effc20167415176a16264fb075344710883da7fb66d",
+    ".cache/cloud-host/compatibility-patch-transfer-2026-11-04.json": "6d06ee321479d31a175b3f4cd932c85189c5cc653dca8ca11bce61c379d52f33",
+    ".cache/cloud-host/attempt-1-runner-result-2026-11-04.json": "546eec3f08e4d08a845f371899b792d80ba9353d8aa47025489855b194da5d07",
+    ".cache/cloud-host/attempt-2-runner-result-2026-11-04.json": "1661f37040f452bf109271b853f026261733cef85b2354d179acf0eaee397c4d",
+    ".cache/cloud-host/attempt-3-runner-result-2026-11-05.json": "14ce32c0ebdff7bae720319f640df10764986e2d58356c61bf61259af2a64e92",
+    ".cache/cloud-host/failure-state-2026-11-04.json": "1af986a88c4d52e4dc12b8f05795309d70c3e951ebdee3b88c654b6dc55a72bc",
+    ".cache/cloud-host/mysql-startup-failure-2026-11-04.json": "c38de5498a93169579fd579975ce5f80b4dd96a923c7c50fc1e9bcc4f7ef039a",
+    ".cache/cloud-host/attempt-2-details-2026-11-04.json": "f3372cbee778a8d7745d4319fa3d38d1c871cbac6eafc4583d2f6043681f2dee",
+    ".cache/cloud-host/attempt-3-details-2026-11-05.json": "2d1dc2e2e95326749b378eef12aaf560a15a8a588cc6c72038bcf555967df274",
+    ".cache/cloud-host/redis-cold-probe-result-2026-11-05.json": "0dbc973a083011972b628b8983f377bd332f14b9ba4b9a7b9dd90702d4f9ef54",
+    ".cache/cloud-host/maintenance-diagnostic-result-2026-11-05.log": "a6a6c20f8fd491a97dbd6c74c7f56cf4c5c7d4419ed427e83ec2c1b9657303b9",
+    ".cache/cloud-host/final-audit-2026-11-05.json": "7a133e910504ca596d2259f1c3aed8e376c9ac7c0b4084019ccae64541a247c0"
+  },
+  "nextTask": "M06.1-D.6a: scoped post-restart Resume diagnosis; not started; do not launch fourth whole lifecycle"
+}

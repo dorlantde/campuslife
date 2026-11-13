@@ -1,0 +1,373 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-B.1",
+  "status": "ATTEMPT_FAILED_CONTROL_ENDPOINT_PERMISSION_MISMATCH",
+  "case": "case-27a0f54b72b346da",
+  "manifestSha256": "140ef118550f36ebbd83c39b138eb0c6bd5e6dd8222c24f13ed3965c4434f7da",
+  "elapsedSeconds": 101.298,
+  "receipt": {
+    "case_id": "case-27a0f54b72b346da",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794053144.576378,
+    "failure_type": null,
+    "finished_unix": 1794052765.8738804,
+    "job": {
+      "exit_code": 1,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "844439420ae443bc9dec0d345b238212",
+    "manifest_sha256": "140ef118550f36ebbd83c39b138eb0c6bd5e6dd8222c24f13ed3965c4434f7da",
+    "schema": 1,
+    "started_unix": 1794052664.5763776,
+    "state": "FAILED",
+    "task": "D.7.1-B.1",
+    "task_outcome": "FAILED"
+  },
+  "diagnosis": {
+    "authSamples": [],
+    "businessRequests": 0,
+    "candidateInstalled": false,
+    "diagnosisStatus": "TOOL_OR_PRECONDITION_FAILED",
+    "elapsedSeconds": 98.57835006900132,
+    "failureCode": "BROKER_PROTOCOL_READY_DEADLINE",
+    "failureType": "ValueError",
+    "schema": 1,
+    "slots": [
+      {
+        "atSecond": 0,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 20,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 40,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "A"
+      },
+      {
+        "atSecond": 10,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 30,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 45,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "A"
+      },
+      {
+        "atSecond": 0,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 20,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 40,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "http",
+        "window": "B"
+      },
+      {
+        "atSecond": 10,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 30,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      },
+      {
+        "atSecond": 45,
+        "reason": "BROKER_PROTOCOL_READY_DEADLINE",
+        "state": "NOT_EXECUTED",
+        "type": "manual",
+        "window": "B"
+      }
+    ],
+    "task": "D.7.1-B",
+    "windows": []
+  },
+  "observations": {
+    "native": 10,
+    "exitCounts": {
+      "-1": 1,
+      "0": 9
+    },
+    "successSeconds": [
+      3.295,
+      3.249,
+      3.549,
+      3.233,
+      3.333,
+      3.562,
+      3.433,
+      3.258,
+      3.588
+    ],
+    "categories": {
+      "UNKNOWN": 10
+    },
+    "hostSamples": 90,
+    "resourceSamples": 18,
+    "maxMemoryBytes": 192929792,
+    "allObservedOomSwapZero": true,
+    "hostOomKillFirstLast": [
+      0,
+      0
+    ],
+    "workerEverRunning": false,
+    "attempts": 67,
+    "httpCounts": {
+      "overview": {
+        "HTTP_UNAVAILABLE": 5,
+        "200": 62
+      },
+      "vhost": {
+        "HTTP_UNAVAILABLE": 5,
+        "401": 62
+      }
+    },
+    "last": {
+      "atUnix": 1794052762.5036445,
+      "overview": {
+        "available": true,
+        "hostElapsedSeconds": 0.11571259703487158,
+        "httpStatus": 200,
+        "versionMatches": true
+      },
+      "vhost": {
+        "available": false,
+        "hostElapsedSeconds": 0.111873552959878,
+        "httpStatus": 401
+      }
+    }
+  },
+  "dispatchedSources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/measurement_runtime.py",
+      "sha256": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d"
+    },
+    {
+      "path": "scripts/rabbit_probe_diagnostics.py",
+      "sha256": "5a4911f215fcbf39180de259250e31e7e96d430868a199a6068924b30e4c4830"
+    },
+    {
+      "path": "scripts/test_rabbit_probe_diagnostics.py",
+      "sha256": "2dcb5c44924edd59a4f47b1c181332a5e5523b69492917518e30b5a7709e9f2d"
+    },
+    {
+      "path": "scripts/run_rabbit_probe_diagnosis.py",
+      "sha256": "af872ddeacba6cdd874bde217fb441c24f82e1e803d9e85771297b779d3702d3"
+    },
+    {
+      "path": "src/diagnostics/java/campuslife/diagnostics/CpuWindow.java",
+      "sha256": "e0141b0aa8fdd6e43f5637697d6f891114d2a0c26c259ecf99eef9189c3587c0"
+    }
+  ],
+  "remoteAudit": {
+    "case": "case-27a0f54b72b346da",
+    "receiptSha256": "82cc0568464bdff5a702634fc50aea8eb8f8c937a8c033844c00281fc51d7793",
+    "sourceFilesVerified": 7,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "diagnosisSha256": "e2c450f9aa48f14b2b1f5b5c8bf1edf5aa59226a98e1da34a0205a3941378d4d",
+    "diagnosisStatus": "TOOL_OR_PRECONDITION_FAILED",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-b9b27f8f0da94279",
+        "state": "FAILED",
+        "receiptSha256": "a82245222d051ad041b5fec32e48afcc0a8267516a9578c3adcf6b47aed7ff4f",
+        "elapsedSeconds": 101.072,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-27a0f54b72b346da",
+        "state": "FAILED",
+        "receiptSha256": "82cc0568464bdff5a702634fc50aea8eb8f8c937a8c033844c00281fc51d7793",
+        "elapsedSeconds": 101.298,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ],
+    "observedContainerProcessAnchorsNotRunning": 34,
+    "fixedHelperControlledChecks": {
+      "checks": 16,
+      "passed": true,
+      "brokerStarted": false,
+      "originalCaseRepeated": false,
+      "sourceHashesVerified": 3
+    },
+    "controlEndpointShortChecks": {
+      "checks": 18,
+      "passed": true,
+      "brokerStarted": false,
+      "sourceHashesVerified": 3
+    }
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 25,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "postRunDiagnosticFixes": [
+      "scripts/rabbit_probe_diagnostics.py",
+      "scripts/test_rabbit_probe_diagnostics.py"
+    ],
+    "fixedSourcesMatchControlledChecks": true,
+    "correctedEndpointBrokerRunExecuted": false
+  },
+  "correctedEndpointRelatedChecks": {
+    "stage": "/home/campusdeploy/.cache/campuslife-rabbit-control-checks/10025b378b6b",
+    "exitCode": 0,
+    "checks": 18,
+    "passed": true,
+    "skipped": false,
+    "elapsedSeconds": 1.4682137810159475,
+    "controlledLoopbackOnly": true,
+    "brokerStarted": false,
+    "originalDiagnosticRerun": false,
+    "sources": [
+      {
+        "path": "scripts/rabbit_probe_diagnostics.py",
+        "sha256": "f70d7b9f8e859b52a96a62e03d5510d2c8eb05c9d9c12fc118b2d93b7bbe4a46"
+      },
+      {
+        "path": "scripts/test_rabbit_probe_diagnostics.py",
+        "sha256": "714b064d154d4c96ea90ca456f51c04c43ddd6ddc84394845ceb773c16794176"
+      },
+      {
+        "path": "scripts/run_rabbit_probe_diagnosis.py",
+        "sha256": "af872ddeacba6cdd874bde217fb441c24f82e1e803d9e85771297b779d3702d3"
+      }
+    ]
+  },
+  "sourceFindings": [
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_wm_vhost.erl",
+      "finding": "single-vhost GET uses is_authorized_admin"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_wm_vhosts.erl",
+      "finding": "collection uses ordinary is_authorized; list_visible_vhosts; disable_stats bypasses augmentation"
+    }
+  ],
+  "limitations": [
+    "No A/B windows, manual CLI, ready candidate or negative-credential controls executed",
+    "Native exit -1 output UNKNOWN does not locate cause",
+    "Corrected endpoint has controlled HTTP tests only, no actual Broker rerun",
+    "C.3 and B.2 incomplete; no performance/capacity result"
+  ],
+  "evidenceSha256": {
+    "audit-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "cleanup.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "diagnosis.json": "e2c450f9aa48f14b2b1f5b5c8bf1edf5aa59226a98e1da34a0205a3941378d4d",
+    "fetch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fetch.json": "b0fa9120bd1c4c04f10c8b4c1e59aff12a0eed70fb6545fb9a4be178221bab3a",
+    "final-audit.json": "bb98db742c7334e2a1362b52a0c2976c05f8db1d23d492d0417242516011d29e",
+    "host-samples.json": "b8b9e2168e7c76e9ca2b86fe5ce6c15a7b377511ad17cd741b3270bb54c6ec45",
+    "job.log": "517491ccdeb0e4ad17135ef5bb96cd8aadf2bea53c2bab39f4699214abd7807d",
+    "launch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-audit.json": "490298584b61b46ecaec9bb702ed2d3f8bcac989ac5e70c6c3763d922c4ce616",
+    "native-probes.json": "ae59b922b2981b733c1647e750dbb86ebd3029d154f16c0723d8d6cb7a11c5aa",
+    "observer-errors.json": "37517e5f3dc66819f61f5a7bb8ace1921282415f10551d2defa5c3eb0985b570",
+    "protocol-attempts.json": "d7f8418c6279042da5d61743961c3b2a66ff1e0e0b4e1bd8feec695abb15a778",
+    "secret-checks.json": "8809024f06e1326142bbd03e0503dfaa83d632362e9ab179b669d425cede4b9e",
+    "slots.json": "483c064a1ad0340e1eef59c62a6920f4d6ec392caf8fd3660be97550bb628b88",
+    "summary.json": "1e0f40026991466a1011373b75883f71d192cca9cef3b18f196a712764052e7f",
+    "supervisor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "unit-checks.log": "6133eb1188522a868cc79eb3f7f4a1a3e4f7743059b4b79963901c14f8aae7f1",
+    "worker-config.json": "1a7d949cf799bf6fca489d89dfec2d61364edc5c150134e6dc9a6359c7b15b06",
+    "worker-short-check.json": "e70407b9ad8b926220f1c0d8fec96f9815a2ca616af8267a087138c570823b95"
+  }
+}

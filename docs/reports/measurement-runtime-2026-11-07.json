@@ -1,0 +1,472 @@
+{
+  "date": "2026-11-07",
+  "task": "M06.2-B.2-C.3",
+  "state": "IMPLEMENTED_ACCEPTANCE_FAILED",
+  "case": "case-e8d9047fa1904b96",
+  "manifestSha256": "204a12960c555f93fd9846c2d807010c06f2641751c0c70b98ee0b8a26a3af11",
+  "elapsedSeconds": 270.841,
+  "baseline": {
+    "continuousHealthy": true,
+    "elapsedSeconds": 6.069141992018558,
+    "passed": false,
+    "probeCompletions": [
+      {
+        "end": "2026-11-07T19:15:03.737535579+08:00",
+        "exitCode": -1
+      },
+      {
+        "end": "2026-11-07T19:15:13.932419041+08:00",
+        "exitCode": -1
+      },
+      {
+        "end": "2026-11-07T19:15:24.065937839+08:00",
+        "exitCode": -1
+      },
+      {
+        "end": "2026-11-07T19:15:33.138811546+08:00",
+        "exitCode": 0
+      },
+      {
+        "end": "2026-11-07T19:15:43.268775918+08:00",
+        "exitCode": -1
+      },
+      {
+        "end": "2026-11-07T19:15:53.852676874+08:00",
+        "exitCode": -1
+      }
+    ],
+    "startUnix": 1794050150.4332185,
+    "stopCode": "BROKER_PROBE_FAILED"
+  },
+  "failure": {
+    "failureType": "Invalid",
+    "checks": [
+      "empty-async-gate-open-and-two-stable-facts"
+    ],
+    "code": "HOST_ABORT"
+  },
+  "originalMaintenance": {
+    "elapsedSeconds": 51.62218552001286,
+    "originalLimitSeconds": 90,
+    "originalMainCalls": 1
+  },
+  "resources": {
+    "samples": 6,
+    "residentSampledMaxBytes": 1112887296,
+    "withToolSampledMaxBytes": 1270312960,
+    "observedCgroupOomSwapZero": true,
+    "hostOomBefore": 0,
+    "hostOomAfter": 0,
+    "kernelPeakMissingRows": 46,
+    "maintenanceCliPeakCaptured": false
+  },
+  "targetPythonControlledChecks": {
+    "python": "3.10.12",
+    "checks": 11,
+    "failures": 0,
+    "errors": 0,
+    "passed": true
+  },
+  "targetJavaSignalChecks": {
+    "checks": 12,
+    "passed": true
+  },
+  "credentialChecks": {
+    "exactValuesChecked": 19,
+    "logs": [
+      "service.log",
+      "tool.log"
+    ],
+    "rootJwtS3MountedToTool": false
+  },
+  "remoteAudit": {
+    "case": "case-e8d9047fa1904b96",
+    "receiptSha256": "58481831db98d0a2b8b8df38903709f15f9b6dcfbbcb79b57537c451543c45f4",
+    "sourceFilesVerified": 16,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "failureSha256": "d0a25fdc4690a3c4d72aea0d2323d0fd2404e785a9d1e918d59652c6c94079da",
+    "baselineSha256": "6153afc82c8683b2cf0a931ddb8a43960d5bc7ae139d4d29d61090d6d3d7b109",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-1d75f215864f4896",
+        "state": "FAILED",
+        "receiptSha256": "7f40dc5828b99adf04b6199e67b94c6dd0774049c0e4d82e718e3b5f877de25f",
+        "elapsedSeconds": 110.934,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-51f0e28b230245b9",
+        "state": "CLEANUP_FAILED",
+        "receiptSha256": "620804406b3daf715fcdd432824b3e31cda4faee58e01c29414f53e0a929d792",
+        "elapsedSeconds": 60.238,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": true
+      },
+      {
+        "case": "case-e700190d55f24c74",
+        "state": "FAILED",
+        "receiptSha256": "2bba35e5d5d6c1147667c8c28d98100ec1173f28f726d6d1a2195bb9fd6eb1a7",
+        "elapsedSeconds": 65.787,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-e8d9047fa1904b96",
+        "state": "FAILED",
+        "receiptSha256": "58481831db98d0a2b8b8df38903709f15f9b6dcfbbcb79b57537c451543c45f4",
+        "elapsedSeconds": 270.841,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ]
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 18,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "newTestedSourcesMatch": true
+  },
+  "sources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/measurement_fixture.py",
+      "sha256": "f1cc6b11f5055cb40ca50f7305253adb5ecce39dfd794b2793a83ef124d323dd"
+    },
+    {
+      "path": "scripts/test_measurement_facts.py",
+      "sha256": "04db5aa2cce886ffc11c3d84f6a38e60521f0e3942870fc25f45955ba90f83a1"
+    },
+    {
+      "path": "src/measurement/resources/coupon-observe.lua",
+      "sha256": "24ecc9d970ad070e364845b32eef1bbf880f86973dc02f77f5a6341d96491137"
+    },
+    {
+      "path": "scripts/measurement_runtime.py",
+      "sha256": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d"
+    },
+    {
+      "path": "scripts/run_measurement_runtime.py",
+      "sha256": "9fa6521c3a5182f09992b043649c5ac9ee4e0709aa0f7ac7f2b8ab5d380c57e9"
+    },
+    {
+      "path": "scripts/test_measurement_runtime.py",
+      "sha256": "c50bb95b9d2522de198cc2b63045bfd211efe8b32cbcd34a13be2099c351618a"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementScenario.java",
+      "sha256": "598ab38b789bd8d92b45e93898880ad265c6dcd5911ee8b6ead266cff8f1dc4b"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementDriver.java",
+      "sha256": "a843f3fab759638bcf942a20ff6bbd98b4da50a2921b95c612881478c99c6fb0"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementHttpTransport.java",
+      "sha256": "f23d3042dd32fb5f7f435ffb6a1ef5efb6f8b3105c20ce72049bd8e7cb6c7564"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementFacts.java",
+      "sha256": "7c5f21ef11190697566a71933dedf3325793706dd8a5f8be9acea0dd2eaab79e"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementFactSources.java",
+      "sha256": "80613c2a227a76312f5fd6dfa137db60ee629e1e84d4b039edc610e9f503c169"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/V24MeasurementFixture.java",
+      "sha256": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementRuntime.java",
+      "sha256": "5e86acaf4cff2b66c681818835255053d0e44e8d97668194907a946ba400f064"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementRuntimeSignalChecks.java",
+      "sha256": "34ad11db9dc76cdb98c87c9a6a3d2b7853dc3374e08dfd4de64cc89df08297a4"
+    }
+  ],
+  "factSummary": [
+    {
+      "available": true,
+      "missingCode": "",
+      "sql": {
+        "issued": 0,
+        "coupons": 0,
+        "pending": 0,
+        "outboxOutstanding": 0,
+        "consumed": 0
+      },
+      "redis": {
+        "phase": "OPEN",
+        "generation": 3,
+        "run": "59c74c10418fd322bea2c209e922b72c02870e6d",
+        "ratingRun": "a493014d999b67f6770c272e90b99d0c01a1fc9e",
+        "total": 20,
+        "free": 20,
+        "held": 0,
+        "spent": 0,
+        "proofMismatches": 0
+      },
+      "queues": {
+        "managementCountersAreSampled": true,
+        "unacked": 0,
+        "ready": 0,
+        "queues": [
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.dead.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.dead.v1",
+            "unacked": 0
+          }
+        ]
+      }
+    },
+    {
+      "available": true,
+      "missingCode": "",
+      "sql": {
+        "issued": 0,
+        "coupons": 0,
+        "pending": 0,
+        "outboxOutstanding": 0,
+        "consumed": 0
+      },
+      "redis": {
+        "phase": "OPEN",
+        "generation": 3,
+        "run": "59c74c10418fd322bea2c209e922b72c02870e6d",
+        "ratingRun": "a493014d999b67f6770c272e90b99d0c01a1fc9e",
+        "total": 20,
+        "free": 20,
+        "held": 0,
+        "spent": 0,
+        "proofMismatches": 0
+      },
+      "queues": {
+        "managementCountersAreSampled": true,
+        "unacked": 0,
+        "ready": 0,
+        "queues": [
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.dead.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.dead.v1",
+            "unacked": 0
+          }
+        ]
+      }
+    },
+    {
+      "available": true,
+      "missingCode": "",
+      "sql": {
+        "issued": 0,
+        "coupons": 0,
+        "pending": 0,
+        "outboxOutstanding": 0,
+        "consumed": 0
+      },
+      "redis": {
+        "phase": "OPEN",
+        "generation": 3,
+        "run": "59c74c10418fd322bea2c209e922b72c02870e6d",
+        "ratingRun": "a493014d999b67f6770c272e90b99d0c01a1fc9e",
+        "total": 20,
+        "free": 20,
+        "held": 0,
+        "spent": 0,
+        "proofMismatches": 0
+      },
+      "queues": {
+        "managementCountersAreSampled": true,
+        "unacked": 0,
+        "ready": 0,
+        "queues": [
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.dead.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.dead.v1",
+            "unacked": 0
+          }
+        ]
+      }
+    },
+    {
+      "available": true,
+      "missingCode": "",
+      "sql": {
+        "issued": 0,
+        "coupons": 0,
+        "pending": 0,
+        "outboxOutstanding": 0,
+        "consumed": 0
+      },
+      "redis": {
+        "phase": "OPEN",
+        "generation": 3,
+        "run": "59c74c10418fd322bea2c209e922b72c02870e6d",
+        "ratingRun": "a493014d999b67f6770c272e90b99d0c01a1fc9e",
+        "total": 20,
+        "free": 20,
+        "held": 0,
+        "spent": 0,
+        "proofMismatches": 0
+      },
+      "queues": {
+        "managementCountersAreSampled": true,
+        "unacked": 0,
+        "ready": 0,
+        "queues": [
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.coupon.issue.dead.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.v1",
+            "unacked": 0
+          },
+          {
+            "ready": 0,
+            "queue": "campuslife.notification.dead.v1",
+            "unacked": 0
+          }
+        ]
+      }
+    }
+  ],
+  "notExecuted": [
+    "normal login and account authorization",
+    "six first detail accesses",
+    "eight foreground requests and normal coupon issuance",
+    "drain-authorized replay",
+    "Pilot and formal measurement"
+  ],
+  "evidenceSha256": {
+    "audit-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "baseline.json": "6153afc82c8683b2cf0a931ddb8a43960d5bc7ae139d4d29d61090d6d3d7b109",
+    "cleanup.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "compile.log": "026608506dd3be326bd8dc47d72ea9acf6d9405f700007102157db26750c97ca",
+    "credential-checks.json": "ba46032de6c33803f62e8ad0553f8c975ff1ffc48e5991d8b2c5e18038bf3fac",
+    "expected.json": "73c7206fb4c39dfccea9beea5b11b33d2b9d50732569e74e3be8f33928652d55",
+    "facts-samples.json": "86d645144e04f4c85bd0ad197b058f87763c3b6676400cef21975c9bfc8b6f10",
+    "failure.json": "56feef85aae04d3f0a9ae359f971764d11331302ad4fb93c2cdeeb6cdac9ba37",
+    "fetch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "fetch.json": "7c4823f00bcee2beeeef88f8e3769e4023837154beb810aeb80a309698009550",
+    "final-audit.json": "6652d27cc5d3eeed3e9d58ac704f982e0d12c14f4d3731074ca20d357e4c8929",
+    "host-failure.json": "d0a25fdc4690a3c4d72aea0d2323d0fd2404e785a9d1e918d59652c6c94079da",
+    "host-samples.json": "225a9581b1a5f9cabfda076d1e3b54ee19e31f0f2039314141c1d58dee85c1c8",
+    "job.log": "966aa7c5a12b0d50afd90f03eb78eb5074a54c481eb86b5108a0432e44576d58",
+    "launch-stderr.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "local-audit.json": "74001a7dda3e555581354f132f5ede05e4ed22d365aeedb605416246ee13faf3",
+    "maintenance.json": "d4aa004a7f6d9f199cbee3cd130ce015a7d2adaff10b4c650ce5030ea70ceb2d",
+    "progress.json": "41ece4ed64af3c20a925bf03c8a9e021f6fa5361bcf283232fdae66c4d7b95be",
+    "seed-ready.json": "cbb3deab93fe50c7315f43f001d2e88cdfaddd41576f5fe72059508097daedbe",
+    "service.log": "d1d36c37f697d97cd56d6771eafb685db88b967b3b9bdf6214e93a7430129c3e",
+    "signal-checks.log": "c1e1c14b5d37cd829b4619261e80c28a3efc83ef826aa377b8e3a96b5bde8d5c",
+    "supervisor.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "tool.log": "d20b95b7691e558c057a4a8ae54361c005e4a466dccaabbd999a8f8f13182299"
+  }
+}

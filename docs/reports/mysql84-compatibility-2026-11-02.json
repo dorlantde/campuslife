@@ -1,0 +1,159 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "task": "M06.1-A0",
+  "status": "passed in bounded rounds",
+  "distinctChecks": 80,
+  "startupRecheckCount": 16,
+  "startupRecheckIncludedInDistinct": true,
+  "suites": [
+    {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.Mysql84CompatibilityIT"
+    },
+    {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.MysqlIntegrationIT"
+    },
+    {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.BookingOrdersMysqlIT"
+    },
+    {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.BookingPaymentsMysqlIT"
+    },
+    {
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponOrdersMysqlIT"
+    },
+    {
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponClaimsMysqlIT"
+    },
+    {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponAsyncMysqlIT"
+    },
+    {
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.OutboxMysqlIT"
+    },
+    {
+      "tests": 15,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.PublicShopCatalogMysqlIT"
+    },
+    {
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.PublicShopReviewsMysqlIT"
+    }
+  ],
+  "image": "mysql:8.4.13@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902",
+  "imageInfo": {
+    "Id": "sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902",
+    "RepoDigests": [
+      "mysql@sha256:a81d043930e51745522bd5c430961cf8286f0a23f0a9a2a6e0108f7ea71b0902"
+    ],
+    "Os": "linux",
+    "Architecture": "amd64"
+  },
+  "database": {
+    "version": "8.4.13",
+    "projectAccountPlugin": "caching_sha2_password",
+    "strictModeVerified": true,
+    "standardForeignKeyRestriction": true,
+    "foreignKeyChecks": true,
+    "sessionTimeZone": "+00:00",
+    "migrations": 24,
+    "applicationTables": 32
+  },
+  "fullChecksEvidence": ".cache/mysql84-it/5fb244eb515a46cfa6eb932c19af201b/result.json",
+  "startupEvidence": ".cache/mysql84-it/79c5c5de5ce74744849cd43b3db77f62/result.json",
+  "restart": {
+    "publishedPortBeforeRestart": "63529",
+    "publishedPortAfterRestart": "63533",
+    "restartPersistence": true,
+    "jarSmoke": true
+  },
+  "sourceGuard": {
+    "existingFiles": 527,
+    "changed": []
+  },
+  "productionJarSha256": "5b16a6b6de985acf258547fdd447ccc515da3f171e3177b79332019cbef3ba05",
+  "sameProductionJarAsM04": true,
+  "same148RuntimeDependencies": true,
+  "operations": 75,
+  "migration": 24,
+  "applicationTables": 32,
+  "failuresRetained": [
+    {
+      "identity": "94bd5b9ae11e4dc1977ff7e4d9c1bf3c",
+      "stage": "readiness",
+      "reason": "Windows-mounted option file ignored as world-writable; fixed by container-local 0600 copy"
+    },
+    {
+      "identity": "2b4ee51e05774793b5a9abe0164bf70e",
+      "stage": "readiness",
+      "reason": "temporary initialization socket misidentified as final readiness; TCP probe replaces socket"
+    },
+    {
+      "identity": "623b42757a214c8eb037f39b58a3d0f0",
+      "stage": "checks",
+      "tests": 80,
+      "failures": 3,
+      "reason": "existing async fixture requires campuslife_it; runner keeps original guard and database name in isolated container"
+    },
+    {
+      "identity": "5fb244eb515a46cfa6eb932c19af201b",
+      "stage": "startup",
+      "tests": 80,
+      "failures": 0,
+      "reason": "JAR used stale published random port after Docker restart; rediscovery verified by subsequent startup-only run"
+    }
+  ],
+  "cleanup": {
+    "ownedContainers": 0,
+    "ownedVolumes": 0,
+    "ownedNetworks": 0,
+    "generatedSecretFilesRetained": 0,
+    "dockerDesktopStopped": false,
+    "wslShutdown": false
+  },
+  "notExecuted": [
+    "in-place MySQL 8.0 upgrade or developer-data migration",
+    "full regression or new 8.4 performance/capacity baseline",
+    "Linux application image/Compose/Nginx",
+    "private S3 TLS/Actuator/full-stack backup restore",
+    "frontend work or public deployment"
+  ]
+}

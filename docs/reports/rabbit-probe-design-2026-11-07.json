@@ -1,0 +1,118 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-A",
+  "status": "DESIGN_PENDING_ADOPTION",
+  "planSha256": "cd34d8b8f5ba1998b5f0521571f9b7e715a162aa40bcb0a3c3457534513c0c30",
+  "executed": {
+    "cloudConnected": false,
+    "dockerStarted": false,
+    "buildOrTestsRun": false,
+    "businessCodeChanged": false
+  },
+  "proposed": {
+    "nextTask": "D.7.1-B",
+    "oneCase": true,
+    "totalSeconds": 480,
+    "cleanupSeconds": 120,
+    "workSeconds": 360,
+    "residentServices": [
+      "rabbitmq"
+    ],
+    "residentMemoryMiB": 640,
+    "originalProbeUnchanged": true,
+    "windows": 2,
+    "windowSeconds": 60,
+    "nativeResults": "all visible; first five completions per window predefined subset, actual counts may be fewer",
+    "manualPerWindow": {
+      "instrumentedCombined": 1,
+      "runningOnly": 1,
+      "portsOnly": 1,
+      "outerLimitSecondsEach": 5
+    },
+    "cpuWorker": {
+      "seconds": 60,
+      "memoryMiB": 128,
+      "heapMiB": 32,
+      "maxCpuCores": 1,
+      "cpuset": "0",
+      "network": "none",
+      "sameExistingAppImage": true
+    },
+    "httpCandidateRuntimeVerified": false,
+    "readyEndpointAuthRequired": null,
+    "productionProbeChangeAuthorized": false,
+    "credentialMountChangeProposed": false,
+    "automaticC3Rerun": false
+  },
+  "priorFailure": {
+    "case": "case-e8d9047fa1904b96",
+    "status": "FAILED",
+    "reason": "BROKER_PROBE_FAILED",
+    "outputCaptured": false,
+    "rootCauseKnown": false
+  },
+  "localVerification": {
+    "formalInputsUnchanged": 463,
+    "canonicalInputListSha256": "846174465ea315d1ad57d31d7bce5c3dc3965d469cf6f499a9567a06ac6f0a9c",
+    "helperFilesUnchanged": 23,
+    "helperHashes": {
+      "scripts/case_runner.py": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8",
+      "scripts/measurement_resources.py": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5",
+      "scripts/test_measurement_resources.py": "9b5925fb44d05a29348567cd2469c91103f04c58fa124db3b90e3f74f030a35d",
+      "scripts/measurement_fixture.py": "f1cc6b11f5055cb40ca50f7305253adb5ecce39dfd794b2793a83ef124d323dd",
+      "scripts/test_measurement_fixture.py": "c063cc9814cc96d68788ef8dda8a57cfd98c468fb629f559ba3900e09449f8c9",
+      "scripts/test_measurement_driver.py": "8b208b623ebaf537449d251548bf45f75e78b90915596600a2fabd90b16dad9e",
+      "src/measurement/java/campuslife/measurement/MeasurementDriver.java": "a843f3fab759638bcf942a20ff6bbd98b4da50a2921b95c612881478c99c6fb0",
+      "src/measurement/java/campuslife/measurement/MeasurementDriverChecks.java": "6467a835ba3b507cd481c7dca74482be5838509582a41c75cc55b2bbdf6834e9",
+      "src/measurement/java/campuslife/measurement/MeasurementHttpTransport.java": "f23d3042dd32fb5f7f435ffb6a1ef5efb6f8b3105c20ce72049bd8e7cb6c7564",
+      "src/measurement/java/campuslife/measurement/MeasurementScenario.java": "598ab38b789bd8d92b45e93898880ad265c6dcd5911ee8b6ead266cff8f1dc4b",
+      "src/measurement/java/campuslife/measurement/V24FixtureChecks.java": "82c38e7f140ff6a9c9ef9f1ccc56977df04887026e71c9326065a725e41c25e5",
+      "src/measurement/java/campuslife/measurement/V24MeasurementFixture.java": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128",
+      "src/measurement/resources/coupon-observe.lua": "24ecc9d970ad070e364845b32eef1bbf880f86973dc02f77f5a6341d96491137",
+      "src/measurement/java/campuslife/measurement/MeasurementFactChecks.java": "32c4901e2bf4e45e65de3a765b2addf8e39235cb3c81b6db4368c5f99214eed2",
+      "src/measurement/java/campuslife/measurement/MeasurementFacts.java": "7c5f21ef11190697566a71933dedf3325793706dd8a5f8be9acea0dd2eaab79e",
+      "src/measurement/java/campuslife/measurement/MeasurementFactSources.java": "80613c2a227a76312f5fd6dfa137db60ee629e1e84d4b039edc610e9f503c169",
+      "scripts/report-rating-cache-measurement.py": "9b466452fe45c9edafc3bc61ad7b67cec6e6442f041e7eea63735262226dc7b6",
+      "scripts/test_measurement_facts.py": "04db5aa2cce886ffc11c3d84f6a38e60521f0e3942870fc25f45955ba90f83a1",
+      "scripts/measurement_runtime.py": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d",
+      "scripts/run_measurement_runtime.py": "9fa6521c3a5182f09992b043649c5ac9ee4e0709aa0f7ac7f2b8ab5d380c57e9",
+      "scripts/test_measurement_runtime.py": "c50bb95b9d2522de198cc2b63045bfd211efe8b32cbcd34a13be2099c351618a",
+      "src/measurement/java/campuslife/measurement/MeasurementRuntime.java": "5e86acaf4cff2b66c681818835255053d0e44e8d97668194907a946ba400f064",
+      "src/measurement/java/campuslife/measurement/MeasurementRuntimeSignalChecks.java": "34ad11db9dc76cdb98c87c9a6a3d2b7853dc3374e08dfd4de64cc89df08297a4"
+    },
+    "jarSha256Unchanged": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "docLinksValid": true
+  },
+  "sources": [
+    {
+      "url": "https://www.rabbitmq.com/docs/4.3/man/rabbitmq-diagnostics.8",
+      "version": "4.3",
+      "checked": "CLI semantics; not deployment validation"
+    },
+    {
+      "url": "https://docs.docker.com/reference/dockerfile/#healthcheck",
+      "checked": "completion-based interval, timeout, bounded Output"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_dispatcher.erl",
+      "version": "v4.3.6",
+      "checked": "ready route registered"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_wm_health_check_ready_to_serve_clients.erl",
+      "version": "v4.3.6",
+      "checked": "serving/listener/limit implementation and absence of declared is_authorized callback; runtime auth unknown"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_wm_nodes.erl",
+      "version": "v4.3.6",
+      "checked": "monitor authorization needed; existing account only management tag"
+    }
+  ],
+  "sourceLimitations": [
+    "4.3 HTTP reference not accessible through browser tool",
+    "current HTTP reference is version4.4, not fixed-image compatibility evidence",
+    "tagged source observation does not prove loaded artifact route/auth behavior"
+  ],
+  "cloudResourceNote": "No live query this turn; empty inventory refers only to prior C.3 final audit."
+}

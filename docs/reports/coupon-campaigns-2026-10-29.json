@@ -1,0 +1,367 @@
+{
+  "milestone": "M08.2-A",
+  "date": "2026-10-29",
+  "timezone": "America/New_York",
+  "generatedAt": "2026-10-30T03:12:54.269053+00:00",
+  "status": "verified-merchant-campaigns-only",
+  "implementedOperations": 68,
+  "businessOperations": 67,
+  "flywayVersion": 17,
+  "applicationTables": 25,
+  "newCampaignOperations": 6,
+  "campaignTests": 74,
+  "latestPassedDistinctTests": 516,
+  "suites": [
+    {
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.file.FilePolicyTest",
+      "sha256": "f38551335a1ffb080f1dd2e4de81dced049cad9faff2640cbdde3ce29790fdc5"
+    },
+    {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.merchant.cache.RatingCacheTest",
+      "sha256": "2c82964894a93c1173c9d83dc34053ed6b8eec0ec789a439acf73c6a58e0f38b"
+    },
+    {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+      "sha256": "866e0bca8b33485497751a29d9eec80f7745171203d8316a38d826b3a00c444b"
+    },
+    {
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.BookingOrderPolicyTest",
+      "sha256": "70a2537d2cb9c04133081f532a56370af01545a601294073cca924a6f764bf18"
+    },
+    {
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.PrintOrderPolicyTest",
+      "sha256": "12b73f9ec2eea60370a66e5c60fdb56a2b2d6b68421e636a02eca8c1b0170172"
+    },
+    {
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.order.service.PrintQuotePolicyTest",
+      "sha256": "0a0b8726dd6234ffa343ddb7d1f174c6d3e250cb4cbfcc0d972b98095da689d9"
+    },
+    {
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.RegistrationPolicyTest",
+      "sha256": "964a1b2ac721b77dc25aebce58f5f4c9bc51880f788da8266f6af0a8b9f7f984"
+    },
+    {
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.TokenServiceTest",
+      "sha256": "85580628e4a6ecbf0436529066f8f7d163b687d87971b8d84fe7c85dcdc70c9e"
+    },
+    {
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.WebFoundationTest",
+      "sha256": "4c572774c9799a0d0075fa737b31d828407b16c619657da9241d3f93e3e3f66e"
+    },
+    {
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.AdminAccountStatusMysqlIT",
+      "sha256": "f5e27546c85ad66955405891831c14b12a88aab995f3a251290b531bfbefd19d"
+    },
+    {
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.AuthenticationMysqlIT",
+      "sha256": "6c939444c806e62624815566e72e1a68cc4047ff58953ebf5094d21785ade267"
+    },
+    {
+      "tests": 74,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.CouponCampaignMysqlIT",
+      "sha256": "106f9606193735ffb542a7fcd9f61690aaa0fd728237f3d081f3e41d0eeca400"
+    },
+    {
+      "tests": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.MerchantOperationMysqlIT",
+      "sha256": "c4fb128759740955909b6a7148bffde7dbb1121564164d42d64efff6b0d61445"
+    },
+    {
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.MysqlIntegrationIT",
+      "sha256": "6af842aa644df3f39c3be1954c26e2601f1cf6a46244be86c1ec95c9312ce164"
+    },
+    {
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.OpenApiMysqlIT",
+      "sha256": "2daec6714c73c2f939325763584b510b6fbf9bf524a876d4572c8319e444715d"
+    },
+    {
+      "tests": 78,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.ServiceCatalogMysqlIT",
+      "sha256": "6751506e1fba31ad34e6c1ca6298f51a8e73876f46826788c34181e169def5ed"
+    },
+    {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "name": "com.campuslife.ApiDocsDisabledMysqlIT",
+      "sha256": "a64c605ddf7ffde9d4713607466277cab146eb2af6d3d7769cc550164de7548e"
+    }
+  ],
+  "evidenceRounds": {
+    "first": {
+      "result": {
+        "startedAt": "2026-10-30T02:43:43.2898729Z",
+        "finishedAt": "2026-10-30T02:56:22.2510056Z",
+        "cases": "CouponCampaignMysqlIT,MysqlIntegrationIT,OpenApiMysqlIT,ServiceCatalogMysqlIT,MerchantOperationMysqlIT,AdminAccountStatusMysqlIT,AuthenticationMysqlIT",
+        "exitCode": 1
+      },
+      "suites": [
+        {
+          "tests": 68,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.AdminAccountStatusMysqlIT",
+          "sha256": "f5e27546c85ad66955405891831c14b12a88aab995f3a251290b531bfbefd19d"
+        },
+        {
+          "tests": 41,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.AuthenticationMysqlIT",
+          "sha256": "6c939444c806e62624815566e72e1a68cc4047ff58953ebf5094d21785ade267"
+        },
+        {
+          "tests": 74,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.CouponCampaignMysqlIT",
+          "sha256": "a5fafe96287d3a1789e2aca5f3adec0bcbcb33a020282f2b58428780335fea4d"
+        },
+        {
+          "tests": 50,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.MerchantOperationMysqlIT",
+          "sha256": "c4fb128759740955909b6a7148bffde7dbb1121564164d42d64efff6b0d61445"
+        },
+        {
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.MysqlIntegrationIT",
+          "sha256": "e635cf84c1c19475acc47f2d4e8096c38561ef92a414f5a6786b40718525d8ff"
+        },
+        {
+          "tests": 3,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.OpenApiMysqlIT",
+          "sha256": "0a039fdf367edf52e014f14feb7b8041e83cc884f6b4d9cb59fb878c3876a603"
+        },
+        {
+          "tests": 78,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.ServiceCatalogMysqlIT",
+          "sha256": "6751506e1fba31ad34e6c1ca6298f51a8e73876f46826788c34181e169def5ed"
+        }
+      ]
+    },
+    "second": {
+      "result": {
+        "startedAt": "2026-10-30T02:57:10.2283397Z",
+        "finishedAt": "2026-10-30T03:03:15.8478989Z",
+        "cases": "CouponCampaignMysqlIT,MysqlIntegrationIT,OpenApiMysqlIT,ApiDocsDisabledMysqlIT",
+        "exitCode": 1
+      },
+      "suites": [
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.ApiDocsDisabledMysqlIT",
+          "sha256": "a64c605ddf7ffde9d4713607466277cab146eb2af6d3d7769cc550164de7548e"
+        },
+        {
+          "tests": 74,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.CouponCampaignMysqlIT",
+          "sha256": "106f9606193735ffb542a7fcd9f61690aaa0fd728237f3d081f3e41d0eeca400"
+        },
+        {
+          "tests": 11,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.MysqlIntegrationIT",
+          "sha256": "6af842aa644df3f39c3be1954c26e2601f1cf6a46244be86c1ec95c9312ce164"
+        },
+        {
+          "tests": 3,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.OpenApiMysqlIT",
+          "sha256": "922441ace858aba6a5ffe054a00566b4402b8b385c5daf3e0cdc896f2b595d1f"
+        }
+      ]
+    },
+    "openApiDiagnostic": {
+      "result": {
+        "startedAt": "2026-10-30T03:05:56.1378977Z",
+        "finishedAt": "2026-10-30T03:06:26.9947606Z",
+        "cases": "OpenApiMysqlIT",
+        "exitCode": 1
+      },
+      "suites": [
+        {
+          "tests": 3,
+          "failures": 1,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.OpenApiMysqlIT",
+          "sha256": "06b45c9db1576b807d51f4969228b40626ccac48e265cf134aab52b34fef3bb9"
+        }
+      ]
+    },
+    "final": {
+      "result": {
+        "startedAt": "2026-10-30T03:07:51.6484234Z",
+        "finishedAt": "2026-10-30T03:08:58.8800997Z",
+        "cases": "OpenApiMysqlIT",
+        "exitCode": 0
+      },
+      "suites": [
+        {
+          "tests": 3,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.OpenApiMysqlIT",
+          "sha256": "2daec6714c73c2f939325763584b510b6fbf9bf524a876d4572c8319e444715d"
+        }
+      ]
+    }
+  },
+  "logs": {
+    "m082a-mysql-first.log": "e5686ab0a378e3962a3e589e55d6a964c0b140eed8791afe9ea099848805c7e0",
+    "m082a-mysql-final.log": "c3e02cc412445de023bf592b2f447b4a4a5d59bf0e097303a77a7eb64dadc9b2",
+    "m082a-openapi-diagnostic.log": "6bd57b2cc2751a327708e2028a588bd87e2bc61daeb6640c3cabda00fd989ec4",
+    "m082a-openapi-passed.log": "57f2dbc3c50f3624aab0de2ade71e312e783aaeb795a853b1cda06e03a6841f2"
+  },
+  "finalFixture": {
+    "mysqlPids": [
+      19828,
+      14744
+    ],
+    "port": 53905,
+    "fixtureRoot": "D:\\campuslife\\.cache\\mysql-it\\e98f17d5a3cf468e9a789e2cc810631e",
+    "capturedAt": "2026-10-30T03:08:57.6459907Z"
+  },
+  "cleanup": {
+    "checkedAt": "2026-10-30T03:10:30.7696306Z",
+    "exitCode": 0,
+    "ownedMysqlProcesses": 0,
+    "mysqlListeners": 0,
+    "fixtureDirectoryPresent": false
+  },
+  "changedExistingCodeFiles": [
+    "src/main/resources/application.properties",
+    "src/main/java/com/campuslife/config/OpenApiConfiguration.java",
+    "src/main/java/com/campuslife/merchant/mapper/ShopMapper.java",
+    "src/test/java/com/campuslife/FrontendBrowserFixture.java",
+    "src/test/java/com/campuslife/MysqlIntegrationIT.java",
+    "src/test/java/com/campuslife/OpenApiMysqlIT.java",
+    "src/test/java/com/campuslife/PublicShopQueryFixture.java",
+    "src/test/java/com/campuslife/RatingRevisionUpgradeCheck.java",
+    "scripts/build-api-design.py"
+  ],
+  "sourceSha256": {
+    "src/main/java/com/campuslife/coupon/config/CouponConfiguration.java": "858ff779f04e80418b9ea8469f94cc8208194d97b82102d9a92526c5a523318c",
+    "src/main/java/com/campuslife/coupon/controller/MerchantCampaignController.java": "74df5c351e70510e0cd9bffe9ddfc6fa3836e539964716ddd5340923b376dc1f",
+    "src/main/java/com/campuslife/coupon/dto/CampaignCreate.java": "41e689de51119906516780dc279041ed79f2a1b602ccf6596318b6595395d5ba",
+    "src/main/java/com/campuslife/coupon/dto/CampaignVersion.java": "76615b1d5320e183c7212bca256c5fd1ee52d39a9c6e35b4749c6f9298418b49",
+    "src/main/java/com/campuslife/coupon/dto/CampaignWrite.java": "8c7c33b3bc501c3bf956d37b34c9c29c49e167a45f80a281e4710caa600a12b3",
+    "src/main/java/com/campuslife/coupon/entity/CouponCampaignEntity.java": "ba08223a1bbb01c3fb514cfb638813f61339b4614a512deb0654796bb967c533",
+    "src/main/java/com/campuslife/coupon/mapper/CampaignMapper.java": "80582e78a09cd0ff5e4a6692c9cbd47acaa37809855089a7690a0e4d0abc01b2",
+    "src/main/java/com/campuslife/coupon/service/CampaignPolicy.java": "12415adad7d45fea5635c989a4e72b549ff2cefd9524e4e2d160651dbea12ca0",
+    "src/main/java/com/campuslife/coupon/service/MerchantCampaignService.java": "d423726886c92ff48857d6a31033988b108df8a93f81076e7ca52be511616408",
+    "src/main/java/com/campuslife/coupon/vo/CampaignPage.java": "7ced475ed861507506612971fd9455b5e96f3fee581323db61d616266c6047bb",
+    "src/main/java/com/campuslife/coupon/vo/CampaignView.java": "63226f371b022c055c5a1cdd82f57317767bb590fe5405514d9d8e00136727ee",
+    "src/main/resources/db/migration/V17__create_coupon_campaigns.sql": "2e931c0c368f2a2f515893ae7eb602999ef867048e1a5564c41b4324d1666f0d",
+    "src/test/java/com/campuslife/CouponCampaignMysqlIT.java": "af9a0ddc9ff62496dccf64efd5d0302a5b55a0bd23de102cf3b50c638780e6e6",
+    "src/main/resources/application.properties": "933dc9b4fca74207b682326f081ec9652957c1c7fff2934c34d937b6514aca56",
+    "src/main/java/com/campuslife/config/OpenApiConfiguration.java": "b1c45f3c250ae5ba2a0c8fae92d1c6b83df48243549a23b3a23b5b020005dafc",
+    "src/main/java/com/campuslife/merchant/mapper/ShopMapper.java": "644b5c5a2f42df8b4b7b0b98a82c631329014d8d228bc653ff5a03e00802b1f8",
+    "src/test/java/com/campuslife/FrontendBrowserFixture.java": "b553f49e70601198386551d5c6f5a3016eee0843c1532191cfdee126c7731ad9",
+    "src/test/java/com/campuslife/MysqlIntegrationIT.java": "03154a838c568770f4b0300c2d5ed5bd171a69aa6f135f378e53e4efc4d1ad0b",
+    "src/test/java/com/campuslife/OpenApiMysqlIT.java": "841ceeccab6019250314136385dcb3352940d57c8860807fbf1e1d218b9644c4",
+    "src/test/java/com/campuslife/PublicShopQueryFixture.java": "5183e05839d5b8961c4e6076176e58c3b16cd8129c3894d417609a3c7ac987dd",
+    "src/test/java/com/campuslife/RatingRevisionUpgradeCheck.java": "82e1a9420d399a10bdfa133b7927c125952c25140382d6c2c9da9bfaf674de37",
+    "scripts/build-api-design.py": "98c6ae07ccf2a41ff136ee0adb8155fa90dd52c6efce2363c70c1c4ef79139be"
+  },
+  "frontendAndDependenciesUnchanged": true,
+  "ordersAuthAndRatingCacheCoreUnchanged": true,
+  "historicalMigrationsUnchanged": true,
+  "manualBrowserAcceptance": "not performed; click guide provided",
+  "limitations": [
+    "Student claims, owned coupons and order coupon use not implemented",
+    "Lua and RabbitMQ not implemented",
+    "No load test or renewed Redis verification",
+    "Historical 2675-case full regression not rerun",
+    "516 is distinct latest passing cases across rounds, not one full-suite run"
+  ],
+  "nextTask": "M08.2-B MySQL synchronous claims and own coupon/result queries"
+}

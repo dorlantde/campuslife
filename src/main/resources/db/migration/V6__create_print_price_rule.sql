@@ -1,0 +1,21 @@
+CREATE TABLE print_price_rule (
+    id BIGINT NOT NULL AUTO_INCREMENT,
+    service_id BIGINT NOT NULL,
+    paper_size VARCHAR(8) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    color_mode VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    side_mode VARCHAR(16) CHARACTER SET ascii COLLATE ascii_bin NOT NULL,
+    price_per_impression BIGINT NOT NULL,
+    enabled BOOLEAN NOT NULL,
+    version BIGINT NOT NULL DEFAULT 0,
+    created_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3),
+    updated_at DATETIME(3) NOT NULL DEFAULT CURRENT_TIMESTAMP(3) ON UPDATE CURRENT_TIMESTAMP(3),
+    PRIMARY KEY (id),
+    UNIQUE KEY uk_print_price_spec (service_id, paper_size, color_mode, side_mode),
+    CONSTRAINT fk_print_price_service FOREIGN KEY (service_id) REFERENCES service_item (id) ON DELETE RESTRICT ON UPDATE RESTRICT,
+    CONSTRAINT ck_print_price_paper CHECK (paper_size = 'A4'),
+    CONSTRAINT ck_print_price_color CHECK (color_mode IN ('BW', 'COLOR')),
+    CONSTRAINT ck_print_price_side CHECK (side_mode IN ('SINGLE', 'DOUBLE')),
+    CONSTRAINT ck_print_price_amount CHECK (price_per_impression BETWEEN 1 AND 100000),
+    CONSTRAINT ck_print_price_enabled CHECK (enabled IN (0, 1)),
+    CONSTRAINT ck_print_price_version CHECK (version >= 0)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci;

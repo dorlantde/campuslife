@@ -1,0 +1,591 @@
+{
+  "expectedSuites": 55,
+  "completedSuites": 55,
+  "missing": [],
+  "unexpected": [],
+  "totals": {
+    "tests": 2675,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "suites": [
+    {
+      "suite": "com.campuslife.file.FilePolicyTest",
+      "kind": "ordinary",
+      "tests": 38,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.827
+    },
+    {
+      "suite": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+      "kind": "ordinary",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.095
+    },
+    {
+      "suite": "com.campuslife.order.service.BookingOrderPolicyTest",
+      "kind": "ordinary",
+      "tests": 22,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.273
+    },
+    {
+      "suite": "com.campuslife.order.service.PrintOrderPolicyTest",
+      "kind": "ordinary",
+      "tests": 30,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.092
+    },
+    {
+      "suite": "com.campuslife.order.service.PrintQuotePolicyTest",
+      "kind": "ordinary",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.03
+    },
+    {
+      "suite": "com.campuslife.RegistrationPolicyTest",
+      "kind": "ordinary",
+      "tests": 12,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.944
+    },
+    {
+      "suite": "com.campuslife.TokenServiceTest",
+      "kind": "ordinary",
+      "tests": 17,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.174
+    },
+    {
+      "suite": "com.campuslife.WebFoundationTest",
+      "kind": "ordinary",
+      "tests": 13,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.914
+    },
+    {
+      "suite": "com.campuslife.AdminAccountListMysqlIT",
+      "kind": "integration",
+      "tests": 66,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.36
+    },
+    {
+      "suite": "com.campuslife.AdminAccountStatusDomainMysqlIT",
+      "kind": "integration",
+      "tests": 7,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 9.044
+    },
+    {
+      "suite": "com.campuslife.AdminAccountStatusMysqlIT",
+      "kind": "integration",
+      "tests": 68,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 5.194
+    },
+    {
+      "suite": "com.campuslife.AdminBookingExceptionMysqlIT",
+      "kind": "integration",
+      "tests": 57,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 40.09
+    },
+    {
+      "suite": "com.campuslife.AdminPrintExceptionMysqlIT",
+      "kind": "integration",
+      "tests": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 82.078
+    },
+    {
+      "suite": "com.campuslife.AdminReviewHideMysqlIT",
+      "kind": "integration",
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 61.654
+    },
+    {
+      "suite": "com.campuslife.AdminShopReviewMysqlIT",
+      "kind": "integration",
+      "tests": 23,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 25.838
+    },
+    {
+      "suite": "com.campuslife.ApiDocsDisabledMysqlIT",
+      "kind": "integration",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.093
+    },
+    {
+      "suite": "com.campuslife.AuthenticationMysqlIT",
+      "kind": "integration",
+      "tests": 41,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 22.179
+    },
+    {
+      "suite": "com.campuslife.BarberManagementMysqlIT",
+      "kind": "integration",
+      "tests": 108,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.386
+    },
+    {
+      "suite": "com.campuslife.BarberScheduleMysqlIT",
+      "kind": "integration",
+      "tests": 91,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 23.356
+    },
+    {
+      "suite": "com.campuslife.BookingJourneyMysqlIT",
+      "kind": "integration",
+      "tests": 4,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 7.676
+    },
+    {
+      "suite": "com.campuslife.BookingOrdersMysqlIT",
+      "kind": "integration",
+      "tests": 65,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 33.332
+    },
+    {
+      "suite": "com.campuslife.BookingPaymentsMysqlIT",
+      "kind": "integration",
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 14.704
+    },
+    {
+      "suite": "com.campuslife.BookingSlotsMysqlIT",
+      "kind": "integration",
+      "tests": 66,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 3.139
+    },
+    {
+      "suite": "com.campuslife.BusinessHoursMysqlIT",
+      "kind": "integration",
+      "tests": 58,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 14.084
+    },
+    {
+      "suite": "com.campuslife.FileDownloadMysqlIT",
+      "kind": "integration",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 10.933
+    },
+    {
+      "suite": "com.campuslife.FileUploadMysqlIT",
+      "kind": "integration",
+      "tests": 64,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 23.857
+    },
+    {
+      "suite": "com.campuslife.MerchantBookingCancellationMysqlIT",
+      "kind": "integration",
+      "tests": 47,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.482
+    },
+    {
+      "suite": "com.campuslife.MerchantBookingConfirmationMysqlIT",
+      "kind": "integration",
+      "tests": 59,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 33.044
+    },
+    {
+      "suite": "com.campuslife.MerchantBookingFulfillmentMysqlIT",
+      "kind": "integration",
+      "tests": 54,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 37.936
+    },
+    {
+      "suite": "com.campuslife.MerchantOnboardingMysqlIT",
+      "kind": "integration",
+      "tests": 24,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 4.08
+    },
+    {
+      "suite": "com.campuslife.MerchantOperationMysqlIT",
+      "kind": "integration",
+      "tests": 50,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 39.119
+    },
+    {
+      "suite": "com.campuslife.MerchantOrderListMysqlIT",
+      "kind": "integration",
+      "tests": 48,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 15.404
+    },
+    {
+      "suite": "com.campuslife.MerchantPrintCancellationMysqlIT",
+      "kind": "integration",
+      "tests": 83,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 52.147
+    },
+    {
+      "suite": "com.campuslife.MerchantPrintConfirmationMysqlIT",
+      "kind": "integration",
+      "tests": 87,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 38.459
+    },
+    {
+      "suite": "com.campuslife.MerchantPrintDownloadMysqlIT",
+      "kind": "integration",
+      "tests": 72,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 44.027
+    },
+    {
+      "suite": "com.campuslife.MerchantPrintFulfillmentMysqlIT",
+      "kind": "integration",
+      "tests": 79,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 46.288
+    },
+    {
+      "suite": "com.campuslife.MerchantResubmissionMysqlIT",
+      "kind": "integration",
+      "tests": 40,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 32.37
+    },
+    {
+      "suite": "com.campuslife.MockPaymentConfigurationMysqlIT",
+      "kind": "integration",
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.416
+    },
+    {
+      "suite": "com.campuslife.MysqlIntegrationIT",
+      "kind": "integration",
+      "tests": 11,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 0.483
+    },
+    {
+      "suite": "com.campuslife.OpenApiMysqlIT",
+      "kind": "integration",
+      "tests": 3,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 1.761
+    },
+    {
+      "suite": "com.campuslife.OrderEventsMysqlIT",
+      "kind": "integration",
+      "tests": 54,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 31.324
+    },
+    {
+      "suite": "com.campuslife.OrderReviewsMysqlIT",
+      "kind": "integration",
+      "tests": 90,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 68.404
+    },
+    {
+      "suite": "com.campuslife.PrintJourneyMysqlIT",
+      "kind": "integration",
+      "tests": 6,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 7.605
+    },
+    {
+      "suite": "com.campuslife.PrintOrdersMysqlIT",
+      "kind": "integration",
+      "tests": 79,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 27.238
+    },
+    {
+      "suite": "com.campuslife.PrintPaymentsMysqlIT",
+      "kind": "integration",
+      "tests": 71,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 28.16
+    },
+    {
+      "suite": "com.campuslife.PrintPricesMysqlIT",
+      "kind": "integration",
+      "tests": 84,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 21.915
+    },
+    {
+      "suite": "com.campuslife.PrintQuoteMysqlIT",
+      "kind": "integration",
+      "tests": 87,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 18.688
+    },
+    {
+      "suite": "com.campuslife.ProfileMysqlIT",
+      "kind": "integration",
+      "tests": 16,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 7.843
+    },
+    {
+      "suite": "com.campuslife.PublicBarbersMysqlIT",
+      "kind": "integration",
+      "tests": 33,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.44
+    },
+    {
+      "suite": "com.campuslife.PublicShopCatalogMysqlIT",
+      "kind": "integration",
+      "tests": 61,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.386
+    },
+    {
+      "suite": "com.campuslife.PublicShopReviewsMysqlIT",
+      "kind": "integration",
+      "tests": 62,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 6.266
+    },
+    {
+      "suite": "com.campuslife.RegistrationMysqlIT",
+      "kind": "integration",
+      "tests": 26,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 2.675
+    },
+    {
+      "suite": "com.campuslife.ServiceCatalogMysqlIT",
+      "kind": "integration",
+      "tests": 78,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 17.831
+    },
+    {
+      "suite": "com.campuslife.StudentOrderListMysqlIT",
+      "kind": "integration",
+      "tests": 43,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 11.138
+    },
+    {
+      "suite": "com.campuslife.StudentPrintPickupMysqlIT",
+      "kind": "integration",
+      "tests": 79,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0,
+      "seconds": 49.813
+    }
+  ],
+  "problems": [],
+  "reportDate": "2026-10-26",
+  "scope": "current workspace, including uncommitted source; isolated MySQL only",
+  "initialRun": {
+    "completedSuites": 55,
+    "totals": {
+      "tests": 2675,
+      "failures": 1,
+      "errors": 0,
+      "skipped": 0
+    },
+    "finding": "PublicBarbersMysqlIT retained an obsolete expectation that the subsequently implemented public shop reviews endpoint requires authentication.",
+    "fix": "Check the still-protected /reviews/1 subpath instead; public review access and exact-method boundaries remain covered by PublicShopReviewsMysqlIT.",
+    "productionCodeChanged": false
+  },
+  "artifact": {
+    "path": "target/campuslife-0.0.1-SNAPSHOT.jar",
+    "sha256": "67746a6bcc27a4e3f0ba9dc8b2ce799556a5333775a7d8e0ac5b989e97416e5e"
+  },
+  "javaSqlPomSha256": "8a000871a9dcf4218744c2eba66aeeca707be4e3d0a49b40be6697e59f437a0b",
+  "runtimeOperations": 62,
+  "businessTables": 23,
+  "migrations": 15,
+  "bundledLibraries": {
+    "Spring Boot": "spring-boot-4.1.1.jar",
+    "MyBatis-Plus": "mybatis-plus-core-3.5.17.jar",
+    "Flyway": "flyway-core-12.4.0.jar",
+    "PDFBox": "pdfbox-3.0.8.jar",
+    "MySQL Connector/J": "mysql-connector-j-9.7.0.jar"
+  },
+  "moduleSummary": [
+    {
+      "module": "工程、迁移与接口配置",
+      "suites": 5,
+      "tests": 29
+    },
+    {
+      "module": "账号、会话与账号管理",
+      "suites": 8,
+      "tests": 253
+    },
+    {
+      "module": "商家入驻与审核",
+      "suites": 3,
+      "tests": 87
+    },
+    {
+      "module": "经营配置与排班",
+      "suites": 6,
+      "tests": 469
+    },
+    {
+      "module": "公开目录、空位与评价管理",
+      "suites": 6,
+      "tests": 305
+    },
+    {
+      "module": "预约交易与履约",
+      "suites": 7,
+      "tests": 344
+    },
+    {
+      "module": "公共订单查询与本人评价",
+      "suites": 4,
+      "tests": 235
+    },
+    {
+      "module": "私有PDF与打印报价",
+      "suites": 5,
+      "tests": 255
+    },
+    {
+      "module": "打印交易与文件引用",
+      "suites": 9,
+      "tests": 688
+    },
+    {
+      "module": "真实HTTP业务整链",
+      "suites": 2,
+      "tests": 10
+    }
+  ]
+}

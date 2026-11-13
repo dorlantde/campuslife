@@ -1,0 +1,93 @@
+{
+  "cases" : [ {
+    "issued" : 1,
+    "generation" : 4,
+    "killedPid" : 33756,
+    "case" : "AFTER_SEED",
+    "killToVerifiedMs" : 32827,
+    "campaignId" : 1,
+    "restartPid" : 34916
+  }, {
+    "issued" : 1,
+    "generation" : 4,
+    "killedPid" : 15008,
+    "case" : "AFTER_ACTIVATE",
+    "killToVerifiedMs" : 31101,
+    "campaignId" : 2,
+    "restartPid" : 20764
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 33900,
+    "case" : "AFTER_RESERVE",
+    "killToVerifiedMs" : 32963,
+    "campaignId" : 3,
+    "restartPid" : 34832
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 11232,
+    "case" : "BEFORE_COMMIT",
+    "killToVerifiedMs" : 32682,
+    "campaignId" : 4,
+    "restartPid" : 34224
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 34768,
+    "case" : "BEFORE_CHECKPOINT",
+    "killToVerifiedMs" : 6867,
+    "campaignId" : 5,
+    "restartPid" : 10584
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 29568,
+    "case" : "AFTER_ADMISSION",
+    "killToVerifiedMs" : 7021,
+    "campaignId" : 6,
+    "restartPid" : 25632
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 23352,
+    "case" : "BEFORE_ISSUE_COMMIT",
+    "killToVerifiedMs" : 15147,
+    "campaignId" : 7,
+    "restartPid" : 32728
+  }, {
+    "issued" : 1,
+    "generation" : 2,
+    "killedPid" : 35372,
+    "case" : "BEFORE_ACK",
+    "killToVerifiedMs" : 10108,
+    "campaignId" : 8,
+    "restartPid" : 648
+  }, {
+    "issued" : 3,
+    "generation" : 2,
+    "killedPid" : 25832,
+    "case" : "BEFORE_SEND",
+    "killToVerifiedMs" : 31643,
+    "campaignId" : 9,
+    "restartPid" : 35240
+  }, {
+    "issued" : 3,
+    "generation" : 2,
+    "killedPid" : 26748,
+    "case" : "AFTER_CONFIRM",
+    "killToVerifiedMs" : 25591,
+    "campaignId" : 10,
+    "restartPid" : 30376
+  }, {
+    "issued" : 3,
+    "generation" : 2,
+    "killedPid" : 35852,
+    "case" : "BETWEEN_MESSAGES",
+    "killToVerifiedMs" : 15015,
+    "campaignId" : 11,
+    "restartPid" : 36848
+  } ],
+  "clock" : "real system clock; no advancement",
+  "folder" : "target\\coupon-faults-18377483678986495905"
+}

@@ -1,0 +1,415 @@
+{
+  "date": "2026-11-07",
+  "task": "M06.2-B.2-C.2",
+  "case": "case-3d97454eea1b4ac6",
+  "elapsedSeconds": 175.919,
+  "checks": {
+    "businessHttpRequests": 0,
+    "elapsedSeconds": 113.140021797,
+    "syntheticSqlIssuance": true,
+    "task": "M06.2-B.2-C.2",
+    "passed": true,
+    "checks": [
+      "one-original-resume-completed",
+      "required-counter-fields-ready-within-preparation",
+      "real-private-stores-sampled",
+      "mysql-two-coupons-redis-two-spent-observed-drained",
+      "queues-all-four-required-and-zero",
+      "real-performance-schema-and-lock-counters",
+      "real-counter-delta-available",
+      "observer-catalog-separates-observation-statements",
+      "read-query-count-and-cost-recorded",
+      "actual-observer-sql-write-refused",
+      "real-repeatable-read-snapshot",
+      "redis-eval-ro-rejects-write",
+      "unavailable-critical-cannot-authorize",
+      "too-short-stability-window-refused",
+      "wrong-generation-refused",
+      "nonconserved-inventory-refused",
+      "sql-issued-coupon-mismatch-invalid",
+      "historical-facts-change-invalid",
+      "accepted-result-set-must-be-reconciled",
+      "redis-proof-mismatch-does-not-drain",
+      "pending-and-outstanding-not-drained",
+      "optional-missing-never-becomes-zero-delta",
+      "counter-reset-not-performance-benefit",
+      "digest-disappearance-is-missing",
+      "digest-loss-invalidates-delta",
+      "same-digest-reset-is-detected",
+      "sampler-five-second-rate-limit",
+      "sampler-no-overlap-or-queue",
+      "sampler-worker-finished",
+      "real-sql-inconsistent-issuance-refused",
+      "real-wrong-consumption-hash-refused",
+      "real-broker-ready-backlog-blocks-drain",
+      "controlled-message-held-unacked",
+      "real-unacked-backlog-blocks-drain",
+      "real-missing-queue-is-unavailable-not-zero",
+      "restored-stores-require-two-stable-samples",
+      "no-order-funds-or-file-mutation"
+    ],
+    "samples": 9
+  },
+  "hostChecks": {
+    "appPrivilegesChanged": false,
+    "dependencyJars": 156,
+    "observerAccount": "SELECT campuslife_deploy.* + SELECT performance_schema.*",
+    "originalResumeCalls": 1,
+    "originalResumeElapsedSeconds": 45.52256903500529,
+    "privateCredentialFiles": [
+      "DB_PASSWORD",
+      "RATING_REDIS_OPS_PASSWORD",
+      "RABBIT_OPS_PASSWORD",
+      "METRICS_DB_PASSWORD",
+      "COUPON_REDIS_OPS_PASSWORD",
+      "STUDENT_PASSWORD"
+    ],
+    "readiness": {
+      "httpReady": true,
+      "rabbitDockerHealth": "starting"
+    },
+    "toolImageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "toolLimitBytes": 268435456,
+    "toolMounts": [
+      "/output",
+      "/run/fixture",
+      "/tool/classes",
+      "/tool/lib",
+      "/tool/migrations",
+      "/tool/observe.lua",
+      "/tool/redis"
+    ],
+    "toolOomKilled": false
+  },
+  "samples": [
+    {
+      "index": 0,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 1630.12,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 1,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 500.827,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 2,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 311.116,
+      "issued": 3,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 3,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 451.651,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 1,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 4,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 366.401,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 1,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 5,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 346.997,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 1,
+      "observerSelects": 32
+    },
+    {
+      "index": 6,
+      "available": false,
+      "missingCode": "BROKER_HTTP_UNAVAILABLE",
+      "elapsedMs": 263.722,
+      "issued": null,
+      "coupons": null,
+      "accepted": null,
+      "pending": null,
+      "outboxOutstanding": null,
+      "missingReceipts": null,
+      "badReceipts": null,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": null,
+      "unacked": null,
+      "observerSelects": null
+    },
+    {
+      "index": 7,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 232.043,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    },
+    {
+      "index": 8,
+      "available": true,
+      "missingCode": "",
+      "elapsedMs": 324.799,
+      "issued": 2,
+      "coupons": 2,
+      "accepted": 2,
+      "pending": 0,
+      "outboxOutstanding": 0,
+      "missingReceipts": 0,
+      "badReceipts": 0,
+      "redisFree": 18,
+      "redisHeld": 0,
+      "redisSpent": 2,
+      "ready": 0,
+      "unacked": 0,
+      "observerSelects": 32
+    }
+  ],
+  "sources": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_resources.py",
+      "sha256": "7b2324b3b1ebe31f7e4c7ee23eebd2a4a6c0d4ddaa520ca2f35321572b2c5ad5"
+    },
+    {
+      "path": "scripts/measurement_fixture.py",
+      "sha256": "f1cc6b11f5055cb40ca50f7305253adb5ecce39dfd794b2793a83ef124d323dd"
+    },
+    {
+      "path": "scripts/test_measurement_facts.py",
+      "sha256": "04db5aa2cce886ffc11c3d84f6a38e60521f0e3942870fc25f45955ba90f83a1"
+    },
+    {
+      "path": "src/measurement/resources/coupon-observe.lua",
+      "sha256": "24ecc9d970ad070e364845b32eef1bbf880f86973dc02f77f5a6341d96491137"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementScenario.java",
+      "sha256": "598ab38b789bd8d92b45e93898880ad265c6dcd5911ee8b6ead266cff8f1dc4b"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementDriver.java",
+      "sha256": "a843f3fab759638bcf942a20ff6bbd98b4da50a2921b95c612881478c99c6fb0"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementHttpTransport.java",
+      "sha256": "f23d3042dd32fb5f7f435ffb6a1ef5efb6f8b3105c20ce72049bd8e7cb6c7564"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementFacts.java",
+      "sha256": "7c5f21ef11190697566a71933dedf3325793706dd8a5f8be9acea0dd2eaab79e"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementFactSources.java",
+      "sha256": "80613c2a227a76312f5fd6dfa137db60ee629e1e84d4b039edc610e9f503c169"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementFactChecks.java",
+      "sha256": "32c4901e2bf4e45e65de3a765b2addf8e39235cb3c81b6db4368c5f99214eed2"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/V24MeasurementFixture.java",
+      "sha256": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128"
+    }
+  ],
+  "remoteAudit": {
+    "case": "case-3d97454eea1b4ac6",
+    "receiptSha256": "300921e3ae8739d6c389d6517d927502a996f416f8a2823512eef4eb8e6147d0",
+    "sourceFilesVerified": 12,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "checksSha256": "64ad42109e2efc002ef5b73ea3a4c4bf9cd63fc169b6afc803f222b1cf91d2ae",
+    "scopeJournals": 1,
+    "scopeStates": [
+      "CLEANED"
+    ],
+    "lineage": [
+      {
+        "case": "case-1684180d9ca24277",
+        "state": "FAILED",
+        "receiptSha256": "59b66ed4908ade03aaf8aaa25556ae04f17744fbd765ca84aeaa06eae82c763d",
+        "elapsedSeconds": 127.301,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-3d97454eea1b4ac6",
+        "state": "SUCCEEDED",
+        "receiptSha256": "300921e3ae8739d6c389d6517d927502a996f416f8a2823512eef4eb8e6147d0",
+        "elapsedSeconds": 175.919,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      },
+      {
+        "case": "case-68c92a096dd84261",
+        "state": "SUCCEEDED",
+        "receiptSha256": "572e0e6ff7c57da943bb0bb65cab7d17e4a6a4ebd769a2fda5c91eedfdc60b90",
+        "elapsedSeconds": 177.936,
+        "scopeJournals": 1,
+        "allJournalsCleaned": true,
+        "workAbsent": true,
+        "postFailureCleanup": false
+      }
+    ]
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "preservedFileCount": 12,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "newTestedSourcesMatch": true
+  },
+  "evidenceSha256": {
+    "checks.json": "64ad42109e2efc002ef5b73ea3a4c4bf9cd63fc169b6afc803f222b1cf91d2ae",
+    "compile.log": "09e6f17eba3228cf7052aa77d504e71b62da026bd4bb3d7c54475e1adc2eb0a7",
+    "fetch.json": "c74ab3ecbe54e2fd5fe5c7bdcb03c16aa78ba8c98adc580e0f71dbcc96f9eec0",
+    "final-audit.json": "53a90aedfdf5051a3cd9142d66050c94e5e3c18e2e509a3adabd0adfa8262423",
+    "host-checks.json": "d8e6a96fdb78cf1d12209ec90dd9766b1c41a1822f2bcf01d3da41635cb8ed0f",
+    "local-audit.json": "999aaf6d2cb30c8c4857191a75af36b4ded38aa6389eeaa9e42aa6e3a8ed7085",
+    "samples.json": "0144054d374d5d3d28931e898d57e1f7020cc3c9ab0293e615950e1a76f7108c",
+    "tool.log": "59d4ff084658bd0de46d54a4f20d484feb5423573b0dc37867665e386edbdce6"
+  },
+  "scope": {
+    "formalMeasurement": false,
+    "pilot": false,
+    "businessHttpRequests": 0,
+    "syntheticSqlCoupons": 2,
+    "originalResumeCalls": 1,
+    "productionChanges": false
+  },
+  "limitations": [
+    "SQL issuance/outbox/receipts are synthetic, not normal HTTP admission and consumer validation",
+    "two stable observations are not a distributed atomic snapshot",
+    "Rabbit management counters are sampled",
+    "old Rabbit probe/SSH issues remain unresolved",
+    "C.3 and B.2 overall remain incomplete"
+  ]
+}

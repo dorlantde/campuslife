@@ -1,0 +1,64 @@
+# Explicit new-instance showcase resource profile. Default deployments do not load this file.
+# Seven resident containers total 3072 MiB; all share logical CPUs 0 and 1, no container swap.
+x-labels: &labels
+  campuslife.base.resources: compact4g
+x-cpu: &cpu '0,1'
+services:
+  app:
+    labels: *labels
+    mem_limit: 896m
+    memswap_limit: 896m
+    cpuset: *cpu
+    environment:
+      JAVA_TOOL_OPTIONS: '-Xms128m -Xmx448m -XX:ActiveProcessorCount=2'
+      SPRING_DATASOURCE_HIKARI_MAXIMUM_POOL_SIZE: '5'
+      SPRING_DATASOURCE_HIKARI_MINIMUM_IDLE: '1'
+      SERVER_TOMCAT_THREADS_MAX: '32'
+      SERVER_TOMCAT_THREADS_MIN_SPARE: '2'
+  mysql:
+    labels: *labels
+    mem_limit: 768m
+    memswap_limit: 768m
+    cpuset: *cpu
+    # Startup arguments avoid Windows bind-mount mode bits making MySQL ignore a cnf.
+    # Preserve all original command switches, including commit/binlog policy.
+    command:
+      - --mysqlx=OFF
+      - --default-time-zone=+00:00
+      - --skip-log-bin
+      - --innodb-buffer-pool-size=128M
+      - --max-connections=40
+      - --table-open-cache=256
+      - --table-definition-cache=400
+      - --temptable-max-ram=16M
+      - --temptable-max-mmap=0
+      - --performance-schema-digests-size=1000
+  nginx:
+    labels: *labels
+    mem_limit: 64m
+    memswap_limit: 64m
+    cpuset: *cpu
+  rating-redis:
+    labels: *labels
+    mem_limit: 128m
+    memswap_limit: 128m
+    cpuset: *cpu
+  coupon-redis:
+    labels: *labels
+    mem_limit: 192m
+    memswap_limit: 192m
+    cpuset: *cpu
+  rabbitmq:
+    labels: *labels
+    mem_limit: 640m
+    memswap_limit: 640m
+    cpuset: *cpu
+    environment:
+      RABBITMQ_SERVER_ADDITIONAL_ERL_ARGS: '+S 2:2 +A 4'
+    volumes:
+      - ./rabbitmq-compact4g.conf:/etc/rabbitmq/rabbitmq.conf:ro
+  seaweed:
+    labels: *labels
+    mem_limit: 384m
+    memswap_limit: 384m
+    cpuset: *cpu

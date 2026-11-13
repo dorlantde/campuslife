@@ -34,6 +34,19 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 .body(ApiResponse.failure("VALIDATION_FAILED", "请求参数不符合要求"));
     }
 
+    @ExceptionHandler(org.springframework.dao.TransientDataAccessException.class)
+    public ResponseEntity<ApiResponse<Void>> handleDatabaseContention(org.springframework.dao.TransientDataAccessException exception) {
+        log.warn("Database operation rolled back after transient contention", exception);
+        return ResponseEntity.status(HttpStatus.SERVICE_UNAVAILABLE).contentType(JSON_UTF8)
+                .body(ApiResponse.failure("SERVICE_TEMPORARILY_UNAVAILABLE", "数据库竞争已回滚，请稍后重试；创建订单请保留原请求键"));
+    }
+
+    @ExceptionHandler(org.springframework.web.multipart.MultipartException.class)
+    public ResponseEntity<ApiResponse<Void>> handleMalformedMultipart(org.springframework.web.multipart.MultipartException exception) {
+        return ResponseEntity.badRequest().contentType(JSON_UTF8)
+                .body(ApiResponse.failure("VALIDATION_FAILED", "文件上传表单格式错误"));
+    }
+
     @Override
     protected ResponseEntity<Object> handleExceptionInternal(
             Exception exception, Object body, HttpHeaders headers, HttpStatusCode status, WebRequest request) {
@@ -60,6 +73,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
                 code = "UNSUPPORTED_MEDIA_TYPE";
                 message = "不支持此请求内容类型";
             }
+            case 413 -> {
+                code = "FILE_TOO_LARGE";
+                message = "PDF最多20 MiB，上传表单总大小最多22 MiB";
+            }
             default -> {
                 code = status.is5xxServerError() ? "INTERNAL_ERROR" : "HTTP_ERROR";
                 message = status.is5xxServerError() ? "服务暂时无法处理请求" : "请求无法处理";
@@ -75,7 +92,10 @@ public class GlobalExceptionHandler extends ResponseEntityExceptionHandler {
     }
 
     @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse<Void>> handleUnexpected(Exception exception) {
+    public ResponseEntity<ApiResponse<Void>> handleUnexpected(Exception exception,jakarta.servlet.http.HttpServletResponse response)throws Exception {
+        // An incomplete binary response must reach the container so it closes the connection.
+        // Returning JSON (or swallowing the failure) here could corrupt the PDF or leave clients waiting.
+        if(response.isCommitted()){throw exception;}
         log.error("Unexpected request failure", exception);
         return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR)
                 .contentType(JSON_UTF8)

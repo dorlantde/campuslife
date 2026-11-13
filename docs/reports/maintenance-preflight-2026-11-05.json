@@ -1,0 +1,320 @@
+{
+  "task": "M06.1-D.6c",
+  "date": "2026-11-05",
+  "status": "IMPLEMENTED_TARGETED_CHECKS_PASSED_CLOUD_ARTIFACT_PENDING",
+  "proposalAdopted": true,
+  "parentD6Passed": false,
+  "newCloudJarDeployed": false,
+  "oldFailuresAllExplained": false,
+  "productionSourceChanges": [
+    "src/main/java/com/campuslife/coupon/service/CouponMaintenance.java",
+    "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java"
+  ],
+  "localVerification": {
+    "task": "M06.1-D.6c",
+    "localMavenBuildPassed": true,
+    "mysqlPackagedStartupPassed": true,
+    "mavenSeconds": 31.401,
+    "initialRestrictedRun": "JDK_ATTACH_PIPE_ACCESS_DENIED_ABORTED_NO_TEST_RESULT",
+    "productionSourceChanges": [
+      "src/main/java/com/campuslife/coupon/service/CouponMaintenance.java",
+      "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java"
+    ],
+    "unchangedBaselineFiles": 367,
+    "tests": [
+      {
+        "name": "com.campuslife.coupon.service.CouponMaintenancePreflightTest",
+        "tests": "11",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "0.998",
+        "sha256": "6416b649e377a8b4c65aef2839959806e41628d555d5f032c8b803cfd34c79a3"
+      },
+      {
+        "name": "com.campuslife.CouponMaintenancePreflightMysqlIT",
+        "tests": "11",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "16.17",
+        "sha256": "9277c8c0e41af17057f7d77068ab29dc3f7d2583dafd238498ead58d88192646"
+      },
+      {
+        "name": "com.campuslife.CouponMaintenanceBootstrapCheck",
+        "tests": "1",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "4.41",
+        "sha256": "a0a865f24c299476492fa80e2f024767fa05de4c732881845acbe0f3bd5abe0f"
+      },
+      {
+        "name": "com.campuslife.MysqlIntegrationIT",
+        "tests": "12",
+        "failures": "0",
+        "errors": "0",
+        "skipped": "0",
+        "time": "1.168",
+        "sha256": "0ddd5bff1049faa163ad3b3598491e8cb06cb69a8a16542f175d8e21abaac6ae"
+      }
+    ],
+    "testsTotal": 35,
+    "jarSha256": "2bc27269d1a8241b899e807ab4868bc4d2042f5266027d6f77a97b7af9e905c6",
+    "dependencyCount": 156,
+    "dependenciesUnchanged": true,
+    "runtimeContentChangedFromD5": [
+      "BOOT-INF/classes/com/campuslife/coupon/service/CouponMaintenance.class",
+      "BOOT-INF/classes/com/campuslife/coupon/service/CouponRedisRecovery.class"
+    ],
+    "jarFileEntries": 649,
+    "recordedXmlKeptPrivate": true
+  },
+  "uploadedSources": [
+    {
+      "path": "scripts/diagnostics/coupon_preflight_case.py",
+      "name": "coupon_preflight_case.py",
+      "bytes": 15382,
+      "sha256": "0e28c65d6d04ce559d8c475ff3e344f6929dcd5b7006a33a642c5e768cebe9d0"
+    },
+    {
+      "path": "scripts/diagnostics/CouponPreflightVerification.java",
+      "name": "CouponPreflightVerification.java",
+      "bytes": 5849,
+      "sha256": "4974dee1aab4e9138cea4d31bf7d1da22575e2e2cbe9c50d473b1009625b25de"
+    },
+    {
+      "path": "src/main/java/com/campuslife/coupon/service/CouponMaintenance.java",
+      "name": "CouponMaintenance.java",
+      "bytes": 2771,
+      "sha256": "eb2712c553544d68b0d12ee2212c6e9ba7941501478919ba69773c4a7741fb23"
+    },
+    {
+      "path": "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java",
+      "name": "CouponRedisRecovery.java",
+      "bytes": 5940,
+      "sha256": "942203dad66826f8c617c3cdd617924b0dbc18bb3f8bae01bb0f2b42dbedfde0"
+    }
+  ],
+  "totalTransferredBytes": 29942,
+  "cloudElapsedSeconds": 282.845,
+  "cloudSourceClasspathVerification": {
+    "task": "M06.1-D.6c",
+    "sourceClasspathVerification": true,
+    "newJarDeployed": false,
+    "directSqlTechnicalSeed": true,
+    "instance": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/deploy-base/22b8ca280fa34e019e61f81b591abb73",
+    "host": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3150024704,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4293902336,
+        "oomKillCount": 0
+      }
+    },
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "phase": "captured",
+    "resumeAndNewClaim": true,
+    "syncAndSyncResume": true,
+    "snapshots": [
+      {
+        "label": "before-maintenance",
+        "at": "2026-11-05T08:52:13.849398+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t3\t5\tNULL\tNULL\tfe87d21899961d9156dbe3b07f0b87b74c340b81\t0\t2026-11-05 08:52:14.180",
+        "counts": "1\n1\n0",
+        "redisRunId": "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+        "redisControl": [
+          "3",
+          "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "3",
+          "2",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-patched-resume",
+        "at": "2026-11-05T08:52:58.450394+00:00",
+        "sqlGate": "ASYNC\tOPEN\t4\t7\tNULL\tNULL\tfe87d21899961d9156dbe3b07f0b87b74c340b81\t0\t2026-11-05 08:52:58.832",
+        "counts": "1\n1\n0",
+        "redisRunId": "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+        "redisControl": [
+          "4",
+          "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+          "OPEN"
+        ],
+        "redisCounters": [
+          "3",
+          "2",
+          "0",
+          "1",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-new-async-claim",
+        "at": "2026-11-05T08:53:04.323663+00:00",
+        "sqlGate": "ASYNC\tOPEN\t4\t7\tNULL\tNULL\tfe87d21899961d9156dbe3b07f0b87b74c340b81\t0\t2026-11-05 08:53:04.518",
+        "counts": "2\n2\n0",
+        "redisRunId": "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+        "redisControl": [
+          "4",
+          "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+          "OPEN"
+        ],
+        "redisCounters": [
+          "3",
+          "1",
+          "0",
+          "2",
+          "1",
+          "1"
+        ]
+      },
+      {
+        "label": "after-sync-and-sync-resume",
+        "at": "2026-11-05T08:53:50.602951+00:00",
+        "sqlGate": "SYNC\tOPEN\t5\t12\tNULL\tNULL\tfe87d21899961d9156dbe3b07f0b87b74c340b81\t0\t2026-11-05 08:53:51.030",
+        "counts": "2\n2\n0",
+        "redisRunId": "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+        "redisControl": [
+          "5",
+          "fe87d21899961d9156dbe3b07f0b87b74c340b81",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "3",
+          "1",
+          "0",
+          "2",
+          "2",
+          "2"
+        ]
+      }
+    ],
+    "startedAt": "2026-11-05T08:49:25.772765+00:00",
+    "compiledProductionClasses": {
+      "diagnostic/CouponPreflightVerification$1.class": "865f4bce5cd8f5542b4bfc42a40f038733afdd5e6fc7e3ae46ec7b29fd6b7c6c",
+      "diagnostic/CouponPreflightVerification.class": "26cabcb5e95b58877caf9f34d03318e8ee9cf76ece1da13b055a4c5e68a85847",
+      "com/campuslife/coupon/service/CouponMaintenance.class": "59b332a6730b0b4c2e36afdd0192580bb051f020eb47b242c37a179bbbdc56d8",
+      "com/campuslife/coupon/service/CouponRedisRecovery.class": "f194330b3ae2b275447babe26954caf1c24b8f238a715324bc2e39fd17bfcd45"
+    },
+    "traces": {
+      "Resume": [
+        "DIAG updatedProductionClassesLoaded=true",
+        "DIAG read=1 beforePhase=PAUSED ticketPresent=false",
+        "DIAG read=1 outcome=OK elapsedMs=2833",
+        "DIAG read=2 beforePhase=PAUSED ticketPresent=false",
+        "DIAG read=2 outcome=OK elapsedMs=16",
+        "DIAG action=Resume outcome=OK mode=ASYNC phase=OPEN generation=4 controlVersion=7 redisReads=2 elapsedMs=38678"
+      ],
+      "Sync": [
+        "DIAG updatedProductionClassesLoaded=true",
+        "DIAG read=1 beforePhase=PAUSED ticketPresent=false",
+        "DIAG read=1 outcome=OK elapsedMs=2922",
+        "DIAG read=2 beforePhase=PAUSED ticketPresent=false",
+        "DIAG read=2 outcome=OK elapsedMs=10",
+        "DIAG syncResumeAddedRedisReads=0",
+        "DIAG action=Sync outcome=OK mode=SYNC phase=OPEN generation=5 controlVersion=12 redisReads=2 elapsedMs=40971"
+      ]
+    },
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-05T08:54:01.181580+00:00",
+    "jarUnchanged": true
+  },
+  "cloudFinalIndependentAudit": {
+    "sourceMatchesD5PlusRecordedPatch": true,
+    "sourceMismatches": [],
+    "unchangedD5Inputs": 459,
+    "changedD5Inputs": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "recordedPatchMatches": true,
+    "diagnosticTransferMatches": true,
+    "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+    "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "generatedFixtureFolders": 17
+  },
+  "localCleanup": {
+    "ownedMysqlProcesses": 0
+  },
+  "budgetsChanged": false,
+  "socketConnectMs": 300,
+  "commandTimeoutMs": 500,
+  "leaseSeconds": 30,
+  "maintenanceCliSeconds": 90,
+  "nextTask": {
+    "id": "M06.1-D.6d",
+    "status": "PROPOSED_NOT_STARTED",
+    "scope": "New independent cloud release, source whitelist build and JAR/image verification; no business startup or public exposure."
+  },
+  "observerLimitations": [
+    "Only external Store.runId calls are proxied, not self-invocations.",
+    "Mapper gate callbacks are not guaranteed current reads; external SQL snapshots and real MySQL fault tests supply gate assertions."
+  ],
+  "localEvidence": [
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/baseline.json",
+      "bytes": 69143,
+      "sha256": "1306fc414a440d19c1636648421a7d9d97d1d23ab1460d596d16d9c409783b3e"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/manifest.json",
+      "bytes": 1072,
+      "sha256": "b1498f6ec579095712c2a2f9e22eab189ea7ad28513c77539baef4b390a5a5eb"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/runner-result.json",
+      "bytes": 4983,
+      "sha256": "d2e3634cbe34920123c9756f078fb53c6a965171c73016b5493728638bb3796c"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/final-audit.json",
+      "bytes": 545,
+      "sha256": "951025b8d3e5dd2894671b33cce83c3c3ec0c6365f82e5ca5227cb59881610bd"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/local-verification.json",
+      "bytes": 2000,
+      "sha256": "891264892d44860297bc15c01a6b6c711c63649a4f9a11808bef5cfa57c68615"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/local-cleanup.json",
+      "bytes": 27,
+      "sha256": "7f894ed9c168dcbe507dbc9221496a555e9ea808420703f97f671b341b51caeb"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/budget-check.json",
+      "bytes": 77,
+      "sha256": "e91b5c83f7bbc3d593b3182e38270f1556cd6b5a8833270b50e249502c410be3"
+    },
+    {
+      "path": ".cache/maintenance-preflight/case-8944ebe2414a/mysql-run.log",
+      "bytes": 24412,
+      "sha256": "678b30253a0b0387832443445418f281c41ce3a651b51d2855f6d41f1966d7f0"
+    }
+  ]
+}

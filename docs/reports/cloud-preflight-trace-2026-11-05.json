@@ -1,0 +1,824 @@
+{
+  "task": "M06.1-D.6f",
+  "date": "2026-11-05",
+  "status": "DIAGNOSIS_COMPLETED_FIRST_HANDSHAKE_TIMEOUT_CAPTURED_FINAL_REFUSAL_NOT_REPRODUCED",
+  "diagnosticGoalCompleted": true,
+  "firstPreflightFailureCaptured": true,
+  "overallResumeSucceeded": true,
+  "d6eFinalRefusalReproduced": false,
+  "parentD6Passed": false,
+  "fixImplementedThisTask": false,
+  "productionBudgetsChanged": false,
+  "elapsedSeconds": 264.072,
+  "sourceFiles": [
+    {
+      "path": "scripts/diagnostics/coupon_preflight_trace_case.py",
+      "name": "coupon_preflight_trace_case.py",
+      "bytes": 14443,
+      "sha256": "6e8c944be1cdc0c402c51ddbdbb0cf21f8aa79154b442716036b22e4016772c7"
+    },
+    {
+      "path": "scripts/diagnostics/CouponPreflightTrace.java",
+      "name": "CouponPreflightTrace.java",
+      "bytes": 9399,
+      "sha256": "0ce2f6d6ed317491a7cbc25b0d61579aefdca7d6b66f420b4824bda1b29fb1d4"
+    }
+  ],
+  "totalTransferredBytes": 23842,
+  "attempts": [
+    {
+      "read": 1,
+      "stage": "PREFLIGHT",
+      "outcome": "FAILED",
+      "elapsedMs": 2696,
+      "interrupted": false,
+      "causes": "org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException"
+    },
+    {
+      "read": 2,
+      "stage": "PREFLIGHT",
+      "outcome": "OK",
+      "elapsedMs": 768,
+      "interrupted": false,
+      "causes": null
+    },
+    {
+      "read": 3,
+      "stage": "RECOVERY",
+      "outcome": "OK",
+      "elapsedMs": 51,
+      "interrupted": false,
+      "causes": null
+    }
+  ],
+  "observedHandshakeFailureFrame": "io.lettuce.core.protocol.RedisHandshakeHandler.lambda$channelRegistered$0",
+  "configurationFacts": {
+    "tcpConnectMs": 300,
+    "configuredCommandTimeoutMs": 500,
+    "uriAndHandshakeInitializationMs": 500,
+    "commandExpiryMs": 500,
+    "maxPreflightReads": 2,
+    "rebuildLeaseSeconds": 30,
+    "maintenanceCliSeconds": 90
+  },
+  "localDependencyBytesMatchRuntimePackage": {
+    "lettuce-core-7.5.2.RELEASE.jar": "86e245a6cfc36a40aaa1f54027e639a70cb4008d12717164041aefe9bbd072c1",
+    "spring-data-redis-4.1.1.jar": "ad609b5a51bb8591cd923d358125a65d9bea193f79480a37ae60a1d0d5ae55b2"
+  },
+  "result": {
+    "task": "M06.1-D.6f",
+    "diagnosticOnly": true,
+    "directSqlTechnicalSeed": true,
+    "instance": "/home/campusdeploy/campuslife/releases/5382d9dd9ca2/.cache/deploy-base/99abbc40362b4c08ae9086a601682f83",
+    "host": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3151888384,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      }
+    },
+    "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+    "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+    "checks": [
+      "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+      "mysql-resource-parameters-effective-before-business"
+    ],
+    "phase": "captured",
+    "diagnosisCaptured": false,
+    "operationSucceeded": true,
+    "snapshots": [
+      {
+        "label": "before-single-resume",
+        "at": "2026-11-06T04:22:36.846071+00:00",
+        "sqlGate": "ASYNC\tPAUSED\t3\t5\tNULL\tNULL\t5508fd9827c13bf23acf06f26216521d2877114e\t0\t2026-11-06 04:22:37.080",
+        "counts": "0\n0\n0",
+        "redisRunId": "5508fd9827c13bf23acf06f26216521d2877114e",
+        "redisControl": [
+          "3",
+          "5508fd9827c13bf23acf06f26216521d2877114e",
+          "PAUSED"
+        ],
+        "redisCounters": [
+          "2",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "hostLoadAverage": [
+          4.51416015625,
+          2.17041015625,
+          0.9052734375
+        ],
+        "hostCpuPressure": "some avg10=43.49 avg60=51.76 avg300=25.70 total=2653330130\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+        "redisServerStats": {
+          "total_connections_received": 56,
+          "rejected_connections": 0,
+          "total_error_replies": 6
+        },
+        "redisAclSummary": {
+          "available": true,
+          "countsByReason": {}
+        }
+      },
+      {
+        "label": "after-single-resume",
+        "at": "2026-11-06T04:23:43.466219+00:00",
+        "sqlGate": "ASYNC\tOPEN\t4\t7\tNULL\tNULL\t5508fd9827c13bf23acf06f26216521d2877114e\t0\t2026-11-06 04:23:44.089",
+        "counts": "0\n0\n0",
+        "redisRunId": "5508fd9827c13bf23acf06f26216521d2877114e",
+        "redisControl": [
+          "4",
+          "5508fd9827c13bf23acf06f26216521d2877114e",
+          "OPEN"
+        ],
+        "redisCounters": [
+          "2",
+          "2",
+          "0",
+          "0",
+          "0",
+          "0"
+        ],
+        "hostLoadAverage": [
+          6.52197265625,
+          3.208984375,
+          1.35205078125
+        ],
+        "hostCpuPressure": "some avg10=80.70 avg60=70.59 avg300=36.68 total=2706517295\nfull avg10=0.00 avg60=0.00 avg300=0.00 total=0\n",
+        "redisServerStats": {
+          "total_connections_received": 84,
+          "rejected_connections": 0,
+          "total_error_replies": 8
+        },
+        "redisAclSummary": {
+          "available": true,
+          "countsByReason": {}
+        }
+      }
+    ],
+    "startedAt": "2026-11-06T04:19:36.236290+00:00",
+    "resourceProfile": "compact4g",
+    "hostEngine": {
+      "cpus": 2,
+      "memoryBytes": 3799158784,
+      "cgroupVersion": "2"
+    },
+    "validationScope": "One packaged Resume with safe observation; technical zero-issued fixture, not full acceptance.",
+    "nativeHost": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3151888384,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      }
+    },
+    "trace": [
+      "DIAG atMs=49694 packagedProductionClasses=true",
+      "DIAG atMs=49738 jvm=context-ready-before-listeners uptimeMs=51657 loadedClasses=12848 gcCollections=27",
+      "DIAG atMs=49803 commandAndConnectionListenersAttached=true",
+      "DIAG atMs=49825 configuration passwordMatchesMountedSecret=true expectedUser=true expectedHost=true expectedPort=true",
+      "DIAG atMs=49827 jvm=context-ready uptimeMs=51764 loadedClasses=12930 gcCollections=27",
+      "DIAG atMs=49996 gate=before mode=ASYNC phase=PAUSED generation=3 version=5 ticketPresent=0 leasePresent=0",
+      "DIAG atMs=50520 read=1 stage=PREFLIGHT outcome=STARTED interrupted=false",
+      "DIAG atMs=53123 connectionEvent=ConnectedEvent",
+      "DIAG atMs=53220 connectionEvent=DisconnectedEvent",
+      "DIAG atMs=53253 read=1 stage=PREFLIGHT outcome=FAILED elapsedMs=2696 interrupted=false causes=org.springframework.data.redis.RedisConnectionFailureException->io.lettuce.core.RedisConnectionException->io.lettuce.core.RedisCommandTimeoutException",
+      "DIAG atMs=53272 connectionEvent=ConnectionDeactivatedEvent",
+      "DIAG atMs=53295 read=1 causeDepth=0 frame=org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.translateException",
+      "DIAG atMs=53296 read=1 causeDepth=0 frame=org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$ExceptionTranslatingConnectionProvider.getConnection",
+      "DIAG atMs=53296 read=1 causeDepth=0 frame=org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.getNativeConnection",
+      "DIAG atMs=53296 read=1 causeDepth=0 frame=org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory$SharedConnection.lambda$getConnection$0",
+      "DIAG atMs=53296 read=1 causeDepth=0 frame=org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory.doInLock",
+      "DIAG atMs=53296 read=1 causeDepth=1 frame=io.lettuce.core.RedisConnectionException.create",
+      "DIAG atMs=53296 read=1 causeDepth=1 frame=io.lettuce.core.RedisConnectionException.create",
+      "DIAG atMs=53296 read=1 causeDepth=1 frame=io.lettuce.core.AbstractRedisClient.getConnection",
+      "DIAG atMs=53296 read=1 causeDepth=1 frame=io.lettuce.core.RedisClient.connect",
+      "DIAG atMs=53296 read=1 causeDepth=1 frame=org.springframework.data.redis.connection.lettuce.StandaloneConnectionProvider.lambda$getConnection$1",
+      "DIAG atMs=53296 read=1 causeDepth=2 frame=io.lettuce.core.protocol.RedisHandshakeHandler.lambda$channelRegistered$0",
+      "DIAG atMs=53296 read=1 causeDepth=2 frame=io.netty.util.concurrent.PromiseTask.runTask",
+      "DIAG atMs=53296 read=1 causeDepth=2 frame=io.netty.util.concurrent.PromiseTask.run",
+      "DIAG atMs=53296 read=1 causeDepth=2 frame=io.netty.util.concurrent.AbstractEventExecutor.runTask",
+      "DIAG atMs=53296 read=1 causeDepth=2 frame=io.netty.util.concurrent.DefaultEventExecutor.run",
+      "DIAG atMs=53297 read=2 stage=PREFLIGHT outcome=STARTED interrupted=false",
+      "DIAG atMs=53330 connectionEvent=ConnectedEvent",
+      "DIAG atMs=53579 connectionEvent=ConnectionActivatedEvent",
+      "DIAG atMs=53948 command=INFO outcome=STARTED",
+      "DIAG atMs=54094 command=INFO outcome=OK elapsedMs=53",
+      "DIAG atMs=54153 read=2 stage=PREFLIGHT outcome=OK elapsedMs=768 interrupted=false",
+      "DIAG atMs=54709 read=3 stage=RECOVERY outcome=STARTED interrupted=false",
+      "DIAG atMs=54710 command=INFO outcome=STARTED",
+      "DIAG atMs=54760 command=INFO outcome=OK elapsedMs=49",
+      "DIAG atMs=54760 read=3 stage=RECOVERY outcome=OK elapsedMs=51 interrupted=false",
+      "DIAG atMs=54777 command=INFO outcome=STARTED",
+      "DIAG atMs=54780 command=INFO outcome=OK elapsedMs=3",
+      "DIAG atMs=54919 command=EVALSHA outcome=STARTED",
+      "DIAG atMs=54959 command=EVALSHA outcome=STARTED",
+      "DIAG atMs=54962 command=EVALSHA outcome=OK elapsedMs=43",
+      "DIAG atMs=55010 command=EVALSHA outcome=FAILED elapsedMs=50 causes=io.lettuce.core.RedisNoScriptException",
+      "DIAG atMs=55064 command=EVAL outcome=STARTED",
+      "DIAG atMs=55071 command=EVAL outcome=OK elapsedMs=9",
+      "DIAG atMs=55130 command=INFO outcome=STARTED",
+      "DIAG atMs=55146 command=INFO outcome=OK elapsedMs=16",
+      "DIAG atMs=55147 command=EVALSHA outcome=STARTED",
+      "DIAG atMs=55159 command=EVALSHA outcome=OK elapsedMs=11",
+      "DIAG atMs=55572 command=INFO outcome=STARTED",
+      "DIAG atMs=55577 command=INFO outcome=OK elapsedMs=5",
+      "DIAG atMs=55582 command=EVALSHA outcome=STARTED",
+      "DIAG atMs=55589 command=EVALSHA outcome=OK elapsedMs=7",
+      "DIAG atMs=55610 command=INFO outcome=STARTED",
+      "DIAG atMs=55648 command=INFO outcome=OK elapsedMs=37",
+      "DIAG atMs=55651 command=EVALSHA outcome=STARTED",
+      "DIAG atMs=55664 command=EVALSHA outcome=OK elapsedMs=13",
+      "DIAG atMs=55973 outcome=OK phase=OPEN generation=4 version=7 externalRunIdCalls=3",
+      "DIAG atMs=56004 gate=after mode=ASYNC phase=OPEN generation=4 version=7 ticketPresent=0 leasePresent=0",
+      "DIAG atMs=56005 jvm=operation-finished uptimeMs=57942 loadedClasses=14305 gcCollections=30",
+      "DIAG atMs=56082 connectionEvent=DisconnectedEvent",
+      "DIAG atMs=56089 connectionEvent=ConnectionDeactivatedEvent"
+    ],
+    "resourceObservation": {
+      "containerRecords": [
+        {
+          "service": "seaweed",
+          "oneOff": false,
+          "memoryLimitBytes": 402653184,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 46264320,
+          "successfulSamples": 23,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 2977792,
+          "successfulSamples": 1,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rabbitmq",
+          "oneOff": false,
+          "memoryLimitBytes": 671088640,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 212545536,
+          "successfulSamples": 20,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "coupon-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 201326592,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 12267520,
+          "successfulSamples": 20,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rating-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 134217728,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 6561792,
+          "successfulSamples": 20,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "mysql",
+          "oneOff": false,
+          "memoryLimitBytes": 805306368,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 389615616,
+          "successfulSamples": 20,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": false,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 338321408,
+          "successfulSamples": 17,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "nginx",
+          "oneOff": false,
+          "memoryLimitBytes": 67108864,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 5918720,
+          "successfulSamples": 10,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 261246976,
+          "successfulSamples": 5,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        }
+      ],
+      "samples": [
+        {
+          "at": "2026-11-06T04:19:36.390196+00:00",
+          "residentCurrentBytes": 0,
+          "allOwnedCurrentBytes": 0,
+          "runningOwnedContainers": 0
+        },
+        {
+          "at": "2026-11-06T04:19:44.814346+00:00",
+          "residentCurrentBytes": 32952320,
+          "allOwnedCurrentBytes": 32952320,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-06T04:19:53.261007+00:00",
+          "residentCurrentBytes": 34586624,
+          "allOwnedCurrentBytes": 37564416,
+          "runningOwnedContainers": 2
+        },
+        {
+          "at": "2026-11-06T04:20:01.722611+00:00",
+          "residentCurrentBytes": 35639296,
+          "allOwnedCurrentBytes": 35639296,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-06T04:20:11.922194+00:00",
+          "residentCurrentBytes": 362143744,
+          "allOwnedCurrentBytes": 362143744,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T04:20:22.203878+00:00",
+          "residentCurrentBytes": 297013248,
+          "allOwnedCurrentBytes": 297013248,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T04:20:32.176229+00:00",
+          "residentCurrentBytes": 523522048,
+          "allOwnedCurrentBytes": 523522048,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T04:20:42.967778+00:00",
+          "residentCurrentBytes": 704716800,
+          "allOwnedCurrentBytes": 704716800,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:20:53.972312+00:00",
+          "residentCurrentBytes": 757841920,
+          "allOwnedCurrentBytes": 757841920,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:04.741857+00:00",
+          "residentCurrentBytes": 784764928,
+          "allOwnedCurrentBytes": 784764928,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:15.678792+00:00",
+          "residentCurrentBytes": 836947968,
+          "allOwnedCurrentBytes": 836947968,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:26.061300+00:00",
+          "residentCurrentBytes": 786341888,
+          "allOwnedCurrentBytes": 786341888,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:36.665559+00:00",
+          "residentCurrentBytes": 829919232,
+          "allOwnedCurrentBytes": 829919232,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:47.231861+00:00",
+          "residentCurrentBytes": 851959808,
+          "allOwnedCurrentBytes": 851959808,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T04:21:58.395810+00:00",
+          "residentCurrentBytes": 898125824,
+          "allOwnedCurrentBytes": 898125824,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T04:22:09.365276+00:00",
+          "residentCurrentBytes": 939630592,
+          "allOwnedCurrentBytes": 939630592,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T04:22:20.178417+00:00",
+          "residentCurrentBytes": 962396160,
+          "allOwnedCurrentBytes": 962396160,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T04:22:30.732689+00:00",
+          "residentCurrentBytes": 962568192,
+          "allOwnedCurrentBytes": 962568192,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T04:22:42.780718+00:00",
+          "residentCurrentBytes": 970362880,
+          "allOwnedCurrentBytes": 970362880,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T04:22:55.456174+00:00",
+          "residentCurrentBytes": 957263872,
+          "allOwnedCurrentBytes": 1062100992,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T04:23:07.356713+00:00",
+          "residentCurrentBytes": 969678848,
+          "allOwnedCurrentBytes": 1120854016,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T04:23:19.069481+00:00",
+          "residentCurrentBytes": 898543616,
+          "allOwnedCurrentBytes": 1079230464,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T04:23:31.284663+00:00",
+          "residentCurrentBytes": 966639616,
+          "allOwnedCurrentBytes": 1185169408,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T04:23:43.020188+00:00",
+          "residentCurrentBytes": 986017792,
+          "allOwnedCurrentBytes": 1247264768,
+          "runningOwnedContainers": 8
+        }
+      ],
+      "errors": [],
+      "transientContainerListRetries": 0,
+      "residentLimitSumBytes": 3221225472,
+      "maxSampledResidentCurrentBytes": 986017792,
+      "maxSampledIncludingOneOffCurrentBytes": 1247264768,
+      "note": "Sequential cgroup samples include cache. Missing memory.peak is reported as null, not zero; sampledPeakBytes is sampled current usage only. Sampling may miss short-lived CLI containers; per-container peaks are not a simultaneous total."
+    },
+    "hostObservation": {
+      "before": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3151888384,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      },
+      "after": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 2227560448,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      },
+      "samples": [
+        {
+          "at": "2026-11-06T04:19:36.390196+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3177381888,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:19:44.814346+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3117805568,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:19:53.261007+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3093643264,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:01.722611+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3087208448,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:11.922194+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2861723648,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:22.203878+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2769162240,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:32.176229+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2589839360,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:42.967778+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2425348096,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:20:53.972312+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2434015232,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:04.741857+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2357731328,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:15.678792+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2301562880,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:26.061300+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2338897920,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:36.665559+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2298826752,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:47.231861+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2286784512,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:21:58.395810+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2243776512,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:22:09.365276+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2177273856,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:22:20.178417+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2180616192,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:22:30.732689+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2176311296,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:22:42.780718+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2225369088,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:22:55.456174+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2038804480,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:23:07.356713+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2039726080,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:23:19.069481+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1990213632,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:23:31.284663+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1946677248,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T04:23:43.020188+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2114330624,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        }
+      ],
+      "minSampledAvailableBytes": 1946677248,
+      "maxSampledHostSwapUsedBytes": 2908160,
+      "note": "Host observations include unrelated host processes and caches. No fixed capacity/RTO claim."
+    },
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-06T04:23:53.300016+00:00",
+    "jarUnchanged": true
+  },
+  "finalIndependentAudit": {
+    "newEffectiveSourceFilesVerified": 462,
+    "newOriginalInputsUnchanged": 461,
+    "newRecordedDeploymentPatch": {
+      "path": "scripts/deploy_base.py",
+      "oldSha256": "0b196cab5e3bf863269f897e7ebae455544272f892355f5831d91c146b44eb7e",
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+      "bytes": 28148,
+      "reason": "Explicit directory mode for the UID 10001 admin input bind under umask 0077"
+    },
+    "diagnosticSourcesVerified": 2,
+    "existingHelpersVerified": 7,
+    "newJarAndImageUnchanged": true,
+    "oldSourcePatchesJarAndImagePreserved": true,
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "newFixtureFolders": 9,
+    "oldFixtureFolders": 17
+  },
+  "limitations": [
+    "Technical zero-issued fixture and observation main, not the original non-observing CLI execution.",
+    "Listeners and safe tracing can affect class loading and timing; event delivery timestamps are not packet timestamps.",
+    "This captures one first-attempt handshake timeout, not every earlier failure or the final D.6e refusal."
+  ],
+  "nextTask": {
+    "id": "M06.1-D.6g",
+    "status": "PROPOSED_AWAITING_ADOPTION_NOT_STARTED",
+    "proposal": "docs/maintenance-initialization-budget-design.md"
+  },
+  "localEvidence": [
+    {
+      "path": ".cache/cloud-preflight-trace/case-df9d93c96b81/manifest.json",
+      "bytes": 572,
+      "sha256": "cd5ba504d3272c0a7d2cf7985fe67566ecb7e29ef1814836a0e3353f753eb88d"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/case-df9d93c96b81/runner-result.json",
+      "bytes": 19282,
+      "sha256": "64430dd7bfa6378f8686f8fe4dcafaf15f99c5fa19897b56f2cfe113cdda8e07"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/case-df9d93c96b81/final-audit.json",
+      "bytes": 755,
+      "sha256": "f587aab4dd5216b70c7b95573c2a11b7345cf2e56f2296bd9b64a896f1f0ab76"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/handshake-handler.javap.txt",
+      "bytes": 12867,
+      "sha256": "ed86f1e686d46a8499856c6c45df03d719d530246bfd3fe975a5ad3c586ec1da"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/connection-builder.javap.txt",
+      "bytes": 36227,
+      "sha256": "553b4bb5fceae4f04854a3fe530fea16e13d9d03bd5f91923433e5c20e3365b1"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/connection-factory.javap.txt",
+      "bytes": 139229,
+      "sha256": "acf7cc3ff01767093a8b87b7b2c084be6062409ef9b168a782c90183c7895d83"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/redis-client.javap.txt",
+      "bytes": 89329,
+      "sha256": "abd7ab823580c9ddeb2c85154c14aac1ecd8564a9a50407042fa9ef472e7e840"
+    },
+    {
+      "path": ".cache/cloud-preflight-trace/abstract-client.javap.txt",
+      "bytes": 57007,
+      "sha256": "1fc7f796dc7138d94627f75df524cdbe87eb71f5f6a7a0fe1f6df0fec25278d0"
+    }
+  ]
+}

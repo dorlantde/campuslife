@@ -1,0 +1,68 @@
+{
+  "date": "2026-11-01",
+  "task": "M08.5-C",
+  "status": "completed fixed comparison and true JVM faults",
+  "distinctLatestChecks": 62,
+  "unitChecks": 50,
+  "integrationChecks": 12,
+  "latestOutcomes": "passed",
+  "countsByClass": {
+    "com.campuslife.coupon.service.CouponIssueListenerTest": 5,
+    "com.campuslife.coupon.service.CouponRedisRepairJobTest": 3,
+    "com.campuslife.CouponMeasurementIT": 1,
+    "com.campuslife.messaging.service.OutboxBatchTest": 28,
+    "com.campuslife.messaging.service.OutboxPublisherTest": 10,
+    "com.campuslife.OutboxBatchFaultsIT": 11,
+    "com.campuslife.PublisherComparisonClasspathTest": 4
+  },
+  "rounds": [
+    {
+      "round": "faults",
+      "checksFromSelectedXml": 49,
+      "failures": 0,
+      "skipped": 0,
+      "additionalRepeatedUnitPassesFromLog": 0
+    },
+    {
+      "round": "attempt1",
+      "checksFromSelectedXml": 1,
+      "failures": 1,
+      "skipped": 0,
+      "additionalRepeatedUnitPassesFromLog": 12
+    },
+    {
+      "round": "final",
+      "checksFromSelectedXml": 13,
+      "failures": 0,
+      "skipped": 0,
+      "additionalRepeatedUnitPassesFromLog": 0
+    }
+  ],
+  "initialMeasurementAttempt": "11 OLD runs retained; final management queue assertion failed after SQL/Redis invariants passed; excluded from final comparison",
+  "correctedObserver": "bounded post-window drain observation, no production or timed-window change",
+  "productionFrontendPomFilesUnchanged": 361,
+  "productionTestHooksAbsent": true,
+  "operations": 75,
+  "migration": "V23",
+  "tables": 32,
+  "fixedComparisonRuns": 48,
+  "fixedComparisonPosts": 4104.0,
+  "performanceGoalPassed": true,
+  "cleanup": {
+    "testJvms": 0,
+    "isolatedMysqlProcesses": 0,
+    "testContainers": 0,
+    "testVolumes": 0,
+    "jarSmoke": "passed in faults and final measurement batches",
+    "failedMysqlDiagnosticDirectoryRetained": true,
+    "verifiedAt": "2026-11-02T04:40:40.6303578Z"
+  },
+  "rawSha256": {
+    "attempt1-old-incomplete-raw.json": "3496E404DEC1EC6C3FC6F9C0016498337DAE2F6FC0ED0076C570066E639F2704",
+    "faults.json": "84F52909B5E6B5AF8C5629EC635A98D44AA9BB305CB5983C54FDE95857BD5B05",
+    "old-raw.json": "F7E95E876D372A82EB400204825CEB2B0F6E472F51E2D9445DAE14ACB919EB96",
+    "new-raw.json": "308FCF5234172F77ACC435ACAA36F14C776730E9AD0AE4F523B6185D40AD7737",
+    "comparison.json": "2942F10784D93B1CD1202129388014955BEDB63F0ADD9200D8B88910A31D45DC"
+  },
+  "next": "M04.1 storage/migration design; frontend remains paused"
+}

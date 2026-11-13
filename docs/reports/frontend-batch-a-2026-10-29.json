@@ -1,0 +1,151 @@
+{
+  "date": "2026-10-29",
+  "milestone": "M05.2-A",
+  "fixtureFolder": "D:\\campuslife\\.cache\\frontend-it\\2c2d39052c8e486ca925050978ff38c2",
+  "backend": {
+    "backendPort": "61470",
+    "databaseName": "campuslife_it",
+    "fixtureDataDir": "D:\\campuslife\\.cache\\mysql-it\\8e58c327d8e94a2a95e291fa0dadb531\\data\\",
+    "shopId": "1000008",
+    "readyAt": "2026-10-29T04:43:15.306899300Z"
+  },
+  "ordinaryBackend": {
+    "classes": 9,
+    "tests": 190,
+    "failures": 0,
+    "errors": 0,
+    "skipped": 0
+  },
+  "frontend": {
+    "testFiles": 2,
+    "tests": 31,
+    "failures": 0,
+    "typecheck": "passed",
+    "build": "passed",
+    "lockReinstall": "npm ci --offline passed"
+  },
+  "browserCheckpointsPassed": 22,
+  "manualPasswordChange": {
+    "status": "passed_user_confirmed",
+    "date": "2026-10-29",
+    "source": "用户明确回复：已修改并用新密码登录成功",
+    "newCredentialsReadOrSaved": false
+  },
+  "fixtureCleanup": "verified_complete",
+  "productionFilesUnchanged": 233,
+  "sourceSHA256": {
+    "frontend/index.html": "c2db07836b746af52b3ae052a6272d4dc1452de15b97b1c48f7bd397e3366448",
+    "frontend/package-lock.json": "b4eba9b3bb29123d4ca2d7842f8814d17852343447ddecd4d9a6f2300755dfeb",
+    "frontend/package.json": "856865b0e56dcd8095d0a722f834afb57093a6925dc706612e255346adf3b252",
+    "frontend/tsconfig.json": "208db1844d282976010faedb7619887acbe610d56a78c732a56068a80db05f28",
+    "frontend/vite.config.ts": "54dc424e2e5b2d5cc802bf7d2c61074abc9eb2cb49645e68055ee3ac275f9414",
+    "frontend/public/favicon.svg": "8d69b82f9a62fc7f1606f07f6447b60853f06914af43adebe7a25740e46ffa3b",
+    "frontend/src/App.vue": "4d8c96d4ef7ce7e6241cceb6a71ada7862befbda57551f13be224e30c224c808",
+    "frontend/src/context.ts": "3f8e2a5b6303fa1e70c72204ed260f4bc8c223c09bb190af8b9b13fb16f00aaf",
+    "frontend/src/main.ts": "2d2d23a371dd9a7d00702a4ceb716ea62eb953fe8df4f26119803a34a5f83aae",
+    "frontend/src/router.ts": "462d9b43bad5e2f5889c35e75e4d0dcadca3244db8768fab7402aa24b32d6964",
+    "frontend/src/style.css": "e826aa5158a4cf79d128feeec7da8787f0045aac4f758d172b9c9aabb78d08b1",
+    "frontend/tests/client.test.ts": "6920482ca2b58dfb7b2cf41ec279d5d8726cc03e8e7eacfd8481e5dd2f07bc0a",
+    "frontend/tests/format.test.ts": "3e93dfcac11ef18dd51c90efbf20aebc294ca9ba3ebac898cc28289689cb9d2d",
+    "frontend/src/api/client.ts": "a63ccbbe6ee2f0b37a2f12c3948670b5a3fd7ae40212cbbf2377788d99e53481",
+    "frontend/src/api/types.ts": "c3521817076ba67f04212a4345fb6497459dc6156f9e5ed72ab2449c89b0c33e",
+    "frontend/src/auth/session.ts": "e5ae331c6d7403ca97aa31bb008bf035c84fd4c274525e4d54fd22386a0188d5",
+    "frontend/src/components/ErrorNotice.vue": "0806d02295656b7e6e7bc314951063e7637a407f6c2fc9b526ac3593cc2ccbb7",
+    "frontend/src/pages/AuthPage.vue": "30c3a6b4353b3e06ba8255690a29d9375ca19a96b5243e7c08823ba423bbfef7",
+    "frontend/src/pages/ProfilePage.vue": "ff50ce9a817b6d61c3c281a7c59161b798cc42fd19597f4ff04e8d0f51340b6e",
+    "frontend/src/pages/ShopPage.vue": "a6e4396277faef71c26464979ef29e7f177c09a42eed2ca6152065226bee1adc",
+    "frontend/src/pages/ShopsPage.vue": "fa69051cbc299da40bd3dae1942ea0ee01412f1cb9b81dc06677906eb72e0b22",
+    "frontend/src/pages/StatusPage.vue": "c3593cfc9441241c25a0892472d67d0ffbca1d1fc3cccf01cd7052dee87f99b6",
+    "frontend/src/pages/WorkspacePage.vue": "c9b28bae7759097e6abf145d2681fa458f36aea1c2dc2f0b4f7b99b77e4e9ace",
+    "frontend/src/shared/format.ts": "84a383301006cd0c20574aa585ff547283208b8d5fdf52fe632796062bd896b0",
+    "scripts/frontend.ps1": "8eba5ec39ce3b1a811510de4ed73cac719123a766c86bef73c7a38896a0d6926",
+    "scripts/setup-frontend.ps1": "02704ff384512391b7805ce8b9624c0bf0f3f3cfc7edf86a7ca1e01b0e62cfb1",
+    "scripts/preview-frontend.ps1": "9ec081386cd186351c912d1665efa27392f5210cae1c2da0dcfcf813c77f16e9",
+    "src/test/java/com/campuslife/FrontendBrowserFixture.java": "53bc213b1269412c86f868362f50e22ccad155bb02326efc58e73058814211ad"
+  },
+  "screenshots": {
+    "output/frontend/batch-a-directory-desktop.jpg": "4dc7b6830332b6fc96101382b74b632e33677b39490548e86a386281e86eeb88",
+    "output/frontend/batch-a-directory.jpg": "98bc297dbf4f5a7b55c803195599bb74b40e0d1b529448818d2ea9392ed0411c",
+    "output/frontend/batch-a-login-narrow.jpg": "6bf951403d6251543ceeebff46af4f09fa4cf234d37793b4ecda9059a8f846e5",
+    "output/frontend/batch-a-profile-conflict.jpg": "8f1d32ad7d54eda1857d0b41f784e6a0c9eee36c92744fb0b46cbb347067a1f5",
+    "output/frontend/batch-a-profile-narrow.jpg": "34dd445cd2bd8c38306e582bc0141a2a431497352991f330bdc2e023f7cc68f0",
+    "output/frontend/batch-a-service-unavailable.jpg": "1cdab1e767eb28b1cfd14a55a2570ae85136cbcad1a6186f74019300a8e5795d"
+  },
+  "sourceSHA256AtFirstHandoff": {
+    "frontend/index.html": "c2db07836b746af52b3ae052a6272d4dc1452de15b97b1c48f7bd397e3366448",
+    "frontend/package-lock.json": "b4eba9b3bb29123d4ca2d7842f8814d17852343447ddecd4d9a6f2300755dfeb",
+    "frontend/package.json": "856865b0e56dcd8095d0a722f834afb57093a6925dc706612e255346adf3b252",
+    "frontend/tsconfig.json": "208db1844d282976010faedb7619887acbe610d56a78c732a56068a80db05f28",
+    "frontend/vite.config.ts": "54dc424e2e5b2d5cc802bf7d2c61074abc9eb2cb49645e68055ee3ac275f9414",
+    "frontend/public/favicon.svg": "8d69b82f9a62fc7f1606f07f6447b60853f06914af43adebe7a25740e46ffa3b",
+    "frontend/src/App.vue": "4d8c96d4ef7ce7e6241cceb6a71ada7862befbda57551f13be224e30c224c808",
+    "frontend/src/context.ts": "3f8e2a5b6303fa1e70c72204ed260f4bc8c223c09bb190af8b9b13fb16f00aaf",
+    "frontend/src/main.ts": "2d2d23a371dd9a7d00702a4ceb716ea62eb953fe8df4f26119803a34a5f83aae",
+    "frontend/src/router.ts": "462d9b43bad5e2f5889c35e75e4d0dcadca3244db8768fab7402aa24b32d6964",
+    "frontend/src/style.css": "e826aa5158a4cf79d128feeec7da8787f0045aac4f758d172b9c9aabb78d08b1",
+    "frontend/tests/client.test.ts": "6920482ca2b58dfb7b2cf41ec279d5d8726cc03e8e7eacfd8481e5dd2f07bc0a",
+    "frontend/tests/format.test.ts": "3e93dfcac11ef18dd51c90efbf20aebc294ca9ba3ebac898cc28289689cb9d2d",
+    "frontend/src/api/client.ts": "a63ccbbe6ee2f0b37a2f12c3948670b5a3fd7ae40212cbbf2377788d99e53481",
+    "frontend/src/api/types.ts": "c3521817076ba67f04212a4345fb6497459dc6156f9e5ed72ab2449c89b0c33e",
+    "frontend/src/auth/session.ts": "e5ae331c6d7403ca97aa31bb008bf035c84fd4c274525e4d54fd22386a0188d5",
+    "frontend/src/components/ErrorNotice.vue": "0806d02295656b7e6e7bc314951063e7637a407f6c2fc9b526ac3593cc2ccbb7",
+    "frontend/src/pages/AuthPage.vue": "30c3a6b4353b3e06ba8255690a29d9375ca19a96b5243e7c08823ba423bbfef7",
+    "frontend/src/pages/ProfilePage.vue": "ff50ce9a817b6d61c3c281a7c59161b798cc42fd19597f4ff04e8d0f51340b6e",
+    "frontend/src/pages/ShopPage.vue": "a6e4396277faef71c26464979ef29e7f177c09a42eed2ca6152065226bee1adc",
+    "frontend/src/pages/ShopsPage.vue": "fa69051cbc299da40bd3dae1942ea0ee01412f1cb9b81dc06677906eb72e0b22",
+    "frontend/src/pages/StatusPage.vue": "c3593cfc9441241c25a0892472d67d0ffbca1d1fc3cccf01cd7052dee87f99b6",
+    "frontend/src/pages/WorkspacePage.vue": "c9b28bae7759097e6abf145d2681fa458f36aea1c2dc2f0b4f7b99b77e4e9ace",
+    "frontend/src/shared/format.ts": "84a383301006cd0c20574aa585ff547283208b8d5fdf52fe632796062bd896b0",
+    "scripts/frontend.ps1": "8eba5ec39ce3b1a811510de4ed73cac719123a766c86bef73c7a38896a0d6926",
+    "scripts/setup-frontend.ps1": "02704ff384512391b7805ce8b9624c0bf0f3f3cfc7edf86a7ca1e01b0e62cfb1",
+    "scripts/preview-frontend.ps1": "bc976b031dbc657f2b45de26fc7270fcf23c9dc0a0d6dc100b286140e5787125",
+    "src/test/java/com/campuslife/FrontendBrowserFixture.java": "53bc213b1269412c86f868362f50e22ccad155bb02326efc58e73058814211ad"
+  },
+  "agentBrowserCheckpointsPassed": 21,
+  "userReportedBrowserChecksPassed": 1,
+  "originalWrapper": {
+    "status": "failed_after_tests",
+    "reason": "PowerShell 5.1 native stderr warning under *> log redirection",
+    "fixtureTestsPassed": 1,
+    "ownedDataRemoved": true,
+    "diagnosticLogsRetained": true
+  },
+  "postCheckRun": {
+    "folder": "D:\\campuslife\\.cache\\frontend-it\\9b1a4ba7a69543b3a60a5378f7a06717",
+    "backend": {
+      "backendPort": "64092",
+      "databaseName": "campuslife_it",
+      "fixtureDataDir": "D:\\campuslife\\.cache\\mysql-it\\e4d4a5edf8eb4a7ea15a27be60bf89a2\\data\\",
+      "shopId": "1000008",
+      "readyAt": "2026-10-29T05:09:29.572895100Z"
+    },
+    "completed": {
+      "finishedAt": "2026-10-29T05:10:04.1556363Z",
+      "mysqlCleaned": true
+    },
+    "cleanup": {
+      "checkedAt": "2026-10-29T05:11:30.0314973Z",
+      "ownedMysqlProcesses": 0,
+      "viteStopped": true,
+      "frontendPortReleased": true,
+      "oldMysqlDataRemoved": true,
+      "newMysqlDataRemoved": true
+    },
+    "fixture": {
+      "tests": 1,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "ordinaryBackend": {
+      "classes": 9,
+      "tests": 190,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    "uniqueBackendTestTotal": 191,
+    "mysqlJarSmoke": "passed",
+    "browserJourneyRepeated": false
+  }
+}

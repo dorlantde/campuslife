@@ -1,0 +1,303 @@
+{
+  "task": "M06.2-B.2-B",
+  "date": "2026-11-07",
+  "status": "CONTROLLED_VALIDATION_PASSED",
+  "parentB2Complete": false,
+  "case": "case-083cc10a34714343",
+  "elapsedSecondsIncludingCompile": 21.312,
+  "result": {
+    "task": "M06.2-B.2-B",
+    "passed": true,
+    "checks": [
+      "formal-six-hundred-exact-mixture",
+      "seeded-order-reproducible",
+      "three-groups-unique-claim-actors-and-keys",
+      "first-access-six-and-read-only-warmup-hundred",
+      "pilot-sixty-exact-mixture",
+      "fixed-three-ninety-sixty-and-poll-rate",
+      "refuse-altered-fixed-policy",
+      "reject-wrong-rating-count",
+      "reject-wrong-rating-value",
+      "reject-cross-student-order-page",
+      "reject-wrong-frozen-order-amount",
+      "reject-unsorted-public-page",
+      "reject-incomplete-business-hours",
+      "nearest-rank-small-sample",
+      "empty-distribution-no-invented-percentiles",
+      "latencies-separated-and-zero-unsent-excluded",
+      "actual-foreground-window-excludes-poll-replay",
+      "censor-and-http202-not-issued-coupons",
+      "mixed-http-c1",
+      "concurrency-c1-and-single-poller",
+      "replay-outside-foreground-c1",
+      "raw-json-csv-and-manifest-c1",
+      "artifact-no-overwrite-c1",
+      "mixed-http-c5",
+      "concurrency-c5-and-single-poller",
+      "replay-outside-foreground-c5",
+      "raw-json-csv-and-manifest-c5",
+      "artifact-no-overwrite-c5",
+      "mixed-http-c10",
+      "concurrency-c10-and-single-poller",
+      "replay-outside-foreground-c10",
+      "raw-json-csv-and-manifest-c10",
+      "artifact-no-overwrite-c10",
+      "separate-first-access-and-warmup-http",
+      "http11-connections-reused",
+      "stop-and-preserve-unsent-http503",
+      "redact-payloads-http503",
+      "stop-and-preserve-unsent-wrongReadId",
+      "redact-payloads-wrongReadId",
+      "refuse-sync-fallback-without-retrying-post",
+      "duplicate-admission-id-stops",
+      "changed-replay-coupon-rejected",
+      "pending-right-censored-and-no-replay",
+      "poll-error-preserves-accepted-request",
+      "failed-terminal-counted-separately",
+      "foreground-cutoff-keeps-unsent",
+      "external-stop-sends-nothing",
+      "http-deadline-includes-stalled-body",
+      "http-body-memory-is-bounded",
+      "http-redirect-does-not-forward-credentials",
+      "fixed-global-poll-spacing-forty-per-second",
+      "fixed-per-id-spacing-and-fair-rotation",
+      "late-terminal-excluded-after-observation-cutoff",
+      "no-replay-without-verified-drain-gate"
+    ],
+    "failureCode": "",
+    "controlledRuns": [
+      {
+        "foregroundRequests": 600,
+        "maxForegroundInFlight": 1,
+        "replays": 6,
+        "controlledConcurrency": 1,
+        "observedSucceeded": 20,
+        "expectedSoldOut": 40
+      },
+      {
+        "foregroundRequests": 600,
+        "maxForegroundInFlight": 5,
+        "replays": 6,
+        "controlledConcurrency": 5,
+        "observedSucceeded": 20,
+        "expectedSoldOut": 40
+      },
+      {
+        "foregroundRequests": 600,
+        "maxForegroundInFlight": 10,
+        "replays": 6,
+        "controlledConcurrency": 10,
+        "observedSucceeded": 20,
+        "expectedSoldOut": 40
+      }
+    ],
+    "elapsedSeconds": 3.0574657,
+    "businessServicesStarted": false,
+    "databaseConnected": false,
+    "java": "21.0.12.1",
+    "performanceConclusion": false
+  },
+  "compileExitCode": 0,
+  "jdk": "javac 21.0.12.1",
+  "dependencyJars": 156,
+  "fixtureExpectedSha256": "9839b2b852ab5f13c93598f93dc60deea1047da5e07addadb17d2ce5c8675c5a",
+  "sourceFiles": [
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementDriver.java",
+      "sha256": "a843f3fab759638bcf942a20ff6bbd98b4da50a2921b95c612881478c99c6fb0"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementDriverChecks.java",
+      "sha256": "6467a835ba3b507cd481c7dca74482be5838509582a41c75cc55b2bbdf6834e9"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementHttpTransport.java",
+      "sha256": "f23d3042dd32fb5f7f435ffb6a1ef5efb6f8b3105c20ce72049bd8e7cb6c7564"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/MeasurementScenario.java",
+      "sha256": "598ab38b789bd8d92b45e93898880ad265c6dcd5911ee8b6ead266cff8f1dc4b"
+    },
+    {
+      "path": "scripts/test_measurement_driver.py",
+      "sha256": "8b208b623ebaf537449d251548bf45f75e78b90915596600a2fabd90b16dad9e"
+    }
+  ],
+  "artifactAudit": {
+    "task": "M06.2-B.2-B",
+    "case": "case-083cc10a34714343",
+    "formalInputsVerified": 463,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "fixtureSourcesPreserved": {
+      "src\\measurement\\java\\campuslife\\measurement\\V24FixtureChecks.java": "82c38e7f140ff6a9c9ef9f1ccc56977df04887026e71c9326065a725e41c25e5",
+      "src\\measurement\\java\\campuslife\\measurement\\V24MeasurementFixture.java": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128"
+    },
+    "sourceFiles": [
+      {
+        "path": "src/measurement/java/campuslife/measurement/MeasurementDriver.java",
+        "sha256": "a843f3fab759638bcf942a20ff6bbd98b4da50a2921b95c612881478c99c6fb0"
+      },
+      {
+        "path": "src/measurement/java/campuslife/measurement/MeasurementDriverChecks.java",
+        "sha256": "6467a835ba3b507cd481c7dca74482be5838509582a41c75cc55b2bbdf6834e9"
+      },
+      {
+        "path": "src/measurement/java/campuslife/measurement/MeasurementHttpTransport.java",
+        "sha256": "f23d3042dd32fb5f7f435ffb6a1ef5efb6f8b3105c20ce72049bd8e7cb6c7564"
+      },
+      {
+        "path": "src/measurement/java/campuslife/measurement/MeasurementScenario.java",
+        "sha256": "598ab38b789bd8d92b45e93898880ad265c6dcd5911ee8b6ead266cff8f1dc4b"
+      },
+      {
+        "path": "scripts/test_measurement_driver.py",
+        "sha256": "8b208b623ebaf537449d251548bf45f75e78b90915596600a2fabd90b16dad9e"
+      }
+    ],
+    "processExited": true,
+    "artifactGroups": [
+      {
+        "directory": ".cache/measurement-driver-b2b/case-083cc10a34714343/output/controlled-c1",
+        "rows": 646,
+        "files": [
+          {
+            "name": "manifest.json",
+            "bytes": 45210,
+            "sha256": "209c76baa69f8fa92ee006d3b7395b7a2ca673b872af85594896c2aa7672457e"
+          },
+          {
+            "name": "requests.csv",
+            "bytes": 35921,
+            "sha256": "b518cb634c04d066422e9976709e44415aa5b03cd6e363e4069357ee047863ef"
+          },
+          {
+            "name": "observations.json",
+            "bytes": 3761,
+            "sha256": "3fc2efcd81ee401788f41f1dd1c9eb33e894d5b3a25a3d4a8c6b22bb66d5ca56"
+          },
+          {
+            "name": "result.json",
+            "bytes": 105196,
+            "sha256": "740312679faf0944dd59fa43ab374ea48d19e62cfd754bfd0c25d0932ea91c26"
+          }
+        ]
+      },
+      {
+        "directory": ".cache/measurement-driver-b2b/case-083cc10a34714343/output/controlled-c10",
+        "rows": 646,
+        "files": [
+          {
+            "name": "manifest.json",
+            "bytes": 45211,
+            "sha256": "8cc77f1975504366dd2be251b24bd444c96976d668971de909af546b6a95ed1a"
+          },
+          {
+            "name": "requests.csv",
+            "bytes": 35547,
+            "sha256": "1c10d33db910aeb1befec21554b2a4b370b461ddd7dd5370dc08784c0230f098"
+          },
+          {
+            "name": "observations.json",
+            "bytes": 3795,
+            "sha256": "07d1da34256cb990bc202985a675cd7a6023a604f270e0efc4601a50491f6e5d"
+          },
+          {
+            "name": "result.json",
+            "bytes": 104862,
+            "sha256": "3fb6f70fcdc9bf6d8da1278e124e40a1e8c0d82626dab4c225a306c15d8f46f0"
+          }
+        ]
+      },
+      {
+        "directory": ".cache/measurement-driver-b2b/case-083cc10a34714343/output/controlled-c5",
+        "rows": 646,
+        "files": [
+          {
+            "name": "manifest.json",
+            "bytes": 45210,
+            "sha256": "c20f5c4b4b8169919fa5e49e02bcf6ce935840162422fcf412a3d019a1b1d12c"
+          },
+          {
+            "name": "requests.csv",
+            "bytes": 35258,
+            "sha256": "4ea299efa59a4db9667de5a496b899caab56c032c94f6352bdfabf6d8d77cc06"
+          },
+          {
+            "name": "observations.json",
+            "bytes": 3797,
+            "sha256": "9bc17991f61e8b72cb2d824d6da9727850a6e9d9fbddd7b98c19d456f3e9b55c"
+          },
+          {
+            "name": "result.json",
+            "bytes": 104568,
+            "sha256": "53de71c2590686c3db9270a84968703b49a9a66c8536185b494c1d37cbd470cc"
+          }
+        ]
+      }
+    ],
+    "credentialMarkersAbsentFromArtifacts": true,
+    "EcsContacted": false,
+    "DockerStarted": false
+  },
+  "priorRunsNotAccumulated": [
+    {
+      "case": "case-d0fb8920c68d4daf",
+      "passed": false,
+      "checks": 18,
+      "failureCode": "IOException",
+      "path": ".cache/measurement-driver-b2b/case-d0fb8920c68d4daf/run.json",
+      "sha256": "3ea79601afa2a6553bd907f703571522918bb10741a7845f7f7fc03ef732c859"
+    },
+    {
+      "case": "case-f06c0e2b719f4b65",
+      "passed": true,
+      "checks": 52,
+      "failureCode": "",
+      "path": ".cache/measurement-driver-b2b/case-f06c0e2b719f4b65/run.json",
+      "sha256": "c9913192a470b222d174600276a07dcd18fb01e06fb41950fd165a841e1a28bb"
+    }
+  ],
+  "evidence": [
+    {
+      "path": ".cache/measurement-driver-b2b/case-083cc10a34714343/run.json",
+      "sha256": "219035ec04d71b3d41c3072b52ebf4655e5923b7d83c68da1f5085c3b61d0e47",
+      "bytes": 4523
+    },
+    {
+      "path": ".cache/measurement-driver-b2b/case-083cc10a34714343/compile.log",
+      "sha256": "b7aea83996aaf8484d147ac2fbe37cf2d8d31d73c799f2fabb72a2547735d167",
+      "bytes": 100
+    },
+    {
+      "path": ".cache/measurement-driver-b2b/case-083cc10a34714343/checks.log",
+      "sha256": "af9ee8046312245510fc393d67d87dfb8a8fa927b6c3cb2ff89b5d9b737148dc",
+      "bytes": 2478
+    },
+    {
+      "path": ".cache/measurement-driver-b2b/case-083cc10a34714343/output/result.json",
+      "sha256": "8c13ff525c6d95d85fc0e631e5a73b2ef2e1b67f22b3501938725df0c9cfee23",
+      "bytes": 2476
+    },
+    {
+      "path": ".cache/measurement-driver-b2b/case-083cc10a34714343/audit.json",
+      "sha256": "81a5c69f22147308eaca7433b63c2d05d91c1d576d62fcd8f22d3bb1894e8b54",
+      "bytes": 4166
+    }
+  ],
+  "unexecuted": [
+    "database or ECS connection",
+    "real application HTTP or authorization",
+    "SQL/Redis issuance/drain proof",
+    "component metrics and health integration",
+    "seven-service lifecycle",
+    "Pilot",
+    "formal5400-request measurement"
+  ],
+  "limits": [
+    "CONTROLLED_TEST timing is shorter than fixed production measurement policy",
+    "temporary stub outcomes do not prove real coupon issuance, permissions or capacity",
+    "no fresh cloud-state audit",
+    "no production performance conclusion"
+  ],
+  "nextTask": "M06.2-B.2-C metrics, health, verified drain and resource integration"
+}

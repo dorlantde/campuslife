@@ -1,0 +1,1891 @@
+{
+  "task": "M06.1-D.6i",
+  "date": "2026-11-06",
+  "status": "REMAINING_TARGETED_ACCEPTANCE_PASSED_REMEDIATION_CLOSED_WITH_OBSERVATIONS",
+  "passed": true,
+  "parentD6RemediationClosed": true,
+  "parentD6ClosureBasis": "Prior transaction evidence retained; regression and remaining assertions pass on the new formal artifact. No new full lifecycle run and no old failed round relabelled as passed.",
+  "singleCase": "case-f3b1fc89a03e",
+  "elapsedSeconds": 841.056,
+  "sourceFiles": [
+    {
+      "path": "scripts/test_deploy_remaining.py",
+      "name": "test_deploy_remaining.py",
+      "bytes": 16736,
+      "sha256": "d3d0ca18c4f5230ae9d411e0eddfcae8863cea25f80efd430f81ac8025894887"
+    },
+    {
+      "path": "scripts/test_deploy_cloud.py",
+      "name": "test_deploy_cloud.py",
+      "bytes": 5314,
+      "sha256": "f6d57c9b573008f451c7d23ec4e3bdc12a0737fe7c9342f74c9e3fa9d7ae875e"
+    },
+    {
+      "path": "scripts/test_deploy_compact4g.py",
+      "name": "test_deploy_compact4g.py",
+      "bytes": 9841,
+      "sha256": "2e3d7a21f19ffdf78bb2ec241d7164356855abe1551ad6394fa72aa81bd46c46"
+    },
+    {
+      "path": "scripts/test_deploy_showcase.py",
+      "name": "test_deploy_showcase.py",
+      "bytes": 19321,
+      "sha256": "02174e873d57cd4f57d50ed4c72ca35f5d74f7c81f02f8589af9a50ce5328a35"
+    },
+    {
+      "path": "scripts/test_deploy_components.py",
+      "name": "test_deploy_components.py",
+      "bytes": 25210,
+      "sha256": "fb1277540e06b9c119a8286be1f68fc74daf4e4e9b02f9549a293ed39e6e03f0"
+    },
+    {
+      "path": "scripts/test_deploy_base.py",
+      "name": "test_deploy_base.py",
+      "bytes": 18782,
+      "sha256": "471bdc9fe0db6a07749f89cf90b9448befe08caa009d4705181b092668b80e1c"
+    },
+    {
+      "path": "scripts/deploy_recovery.py",
+      "name": "deploy_recovery.py",
+      "bytes": 12864,
+      "sha256": "ff0df6551729bd0a8f4dce474dcfe409151664f7eff21861f5169750e62a488b"
+    },
+    {
+      "path": "scripts/deploy_base.py",
+      "name": "deploy_base.py",
+      "bytes": 28148,
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977"
+    }
+  ],
+  "totalTransferredBytes": 136216,
+  "clientStartedAt": "2026-11-06T02:19:20.625159-05:00",
+  "clientFinishedAt": "2026-11-06T02:33:15.698407-05:00",
+  "fullLifecycleRunExecutedThisTask": false,
+  "productionChangedThisTask": false,
+  "budgetsChangedThisTask": false,
+  "configChecks": [
+    "base-default-config-unchanged",
+    "components-default-config-unchanged",
+    "showcase-default-config-unchanged",
+    "base-compact-profile-rejected-before-init",
+    "components-compact-profile-rejected-before-init"
+  ],
+  "checks": [
+    "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+    "mysql-resource-parameters-effective-before-business",
+    "seven-healthy-formal-artifact-services",
+    "five-volumes-and-three-networks",
+    "new-jar-image-used-without-business-overlay",
+    "original-v24-32-tables-and-no-default-admin",
+    "mock-funds-remain-off",
+    "openapi-75-operations",
+    "private-observation-ready",
+    "management-denies-anonymous",
+    "app-does-not-mount-eight-ops-or-root-secrets",
+    "student-jwt-cannot-authorize-management",
+    "new-campaign-default-sync",
+    "remaining-first-durable-202",
+    "all-seven-stop-retains-five-volumes",
+    "same-five-volumes-and-24-credential-fingerprints",
+    "new-app-process-after-restart",
+    "paused-new-generation-keeps-issued-fact",
+    "local-and-private-s3-identities-preserved",
+    "old-session-and-original-key-replay-survive",
+    "post-restart-original-cli-resume-opens",
+    "remaining-second-durable-202",
+    "new-issuance-unique-and-not-oversold",
+    "no-order-or-money-chain-run",
+    "post-restart-readiness-and-jvm-metrics",
+    "actual-cgroups-have-two-shared-cpus-no-swap-and-no-oom",
+    "mysql-budget-and-original-commit-durability-effective",
+    "existing-compact-containers-refuse-profile-reinterpretation",
+    "unverified-compact-cold-recovery-refused-before-freeze",
+    "host-oom-counter-unchanged-with-memory-and-swap-samples",
+    "service-logs-do-not-contain-generated-credential-values",
+    "logs-omit-fixture-password-and-all-four-tokens"
+  ],
+  "result": {
+    "task": "M06.1-D.6i",
+    "checks": [
+      "native-two-cpu-host-visible-ram-between-three-and-four-gib",
+      "mysql-resource-parameters-effective-before-business",
+      "seven-healthy-formal-artifact-services",
+      "five-volumes-and-three-networks",
+      "new-jar-image-used-without-business-overlay",
+      "original-v24-32-tables-and-no-default-admin",
+      "mock-funds-remain-off",
+      "openapi-75-operations",
+      "private-observation-ready",
+      "management-denies-anonymous",
+      "app-does-not-mount-eight-ops-or-root-secrets",
+      "student-jwt-cannot-authorize-management",
+      "new-campaign-default-sync",
+      "remaining-first-durable-202",
+      "all-seven-stop-retains-five-volumes",
+      "same-five-volumes-and-24-credential-fingerprints",
+      "new-app-process-after-restart",
+      "paused-new-generation-keeps-issued-fact",
+      "local-and-private-s3-identities-preserved",
+      "old-session-and-original-key-replay-survive",
+      "post-restart-original-cli-resume-opens",
+      "remaining-second-durable-202",
+      "new-issuance-unique-and-not-oversold",
+      "no-order-or-money-chain-run",
+      "post-restart-readiness-and-jvm-metrics",
+      "actual-cgroups-have-two-shared-cpus-no-swap-and-no-oom",
+      "mysql-budget-and-original-commit-durability-effective",
+      "existing-compact-containers-refuse-profile-reinterpretation",
+      "unverified-compact-cold-recovery-refused-before-freeze",
+      "host-oom-counter-unchanged-with-memory-and-swap-samples",
+      "service-logs-do-not-contain-generated-credential-values",
+      "logs-omit-fixture-password-and-all-four-tokens"
+    ],
+    "passed": true,
+    "businessClassOverlay": false,
+    "fullPrintLifecycleRun": false,
+    "configChecks": [
+      "base-default-config-unchanged",
+      "components-default-config-unchanged",
+      "showcase-default-config-unchanged",
+      "base-compact-profile-rejected-before-init",
+      "components-compact-profile-rejected-before-init"
+    ],
+    "instance": "/home/campusdeploy/campuslife/releases/1cf0cb53a24a/.cache/deploy-base/e0610440b1574982a67a19dfa7f4ae1d",
+    "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+    "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "startedAt": "2026-11-06T07:19:20.625159+00:00",
+    "resourceProfile": "compact4g",
+    "hostEngine": {
+      "cpus": 2,
+      "memoryBytes": 3799158784,
+      "cgroupVersion": "2"
+    },
+    "validationScope": "Formal packaged artifact, targeted restart/claim/resource closure; not a fourth print lifecycle or capacity test.",
+    "nativeHost": {
+      "system": "Linux",
+      "machine": "x86_64",
+      "release": "5.15.0-198-generic",
+      "cpus": 2,
+      "engineVersion": "29.9.3",
+      "engineMemoryBytes": 3799158784,
+      "cgroupVersion": "2",
+      "memoryBefore": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3170840576,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      }
+    },
+    "maintenance": [
+      {
+        "action": "Pause",
+        "state": {
+          "id": "1",
+          "mode": "SYNC",
+          "phase": "PAUSED",
+          "generation": "1",
+          "version": "1",
+          "pending": "0",
+          "issued": "0",
+          "actual": "0"
+        },
+        "elapsedSeconds": 63.2
+      },
+      {
+        "action": "Async",
+        "state": {
+          "id": "1",
+          "mode": "ASYNC",
+          "phase": "PAUSED",
+          "generation": "1",
+          "version": "2",
+          "pending": "0",
+          "issued": "0",
+          "actual": "0"
+        },
+        "elapsedSeconds": 59.469
+      },
+      {
+        "action": "Resume",
+        "state": {
+          "id": "1",
+          "mode": "ASYNC",
+          "phase": "OPEN",
+          "generation": "4",
+          "version": "7",
+          "pending": "0",
+          "issued": "0",
+          "actual": "0"
+        },
+        "elapsedSeconds": 71.344
+      },
+      {
+        "action": "Pause",
+        "state": {
+          "id": "1",
+          "mode": "ASYNC",
+          "phase": "PAUSED",
+          "generation": "4",
+          "version": "8",
+          "pending": "0",
+          "issued": "1",
+          "actual": "1"
+        },
+        "elapsedSeconds": 62.372
+      },
+      {
+        "action": "Resume",
+        "state": {
+          "id": "1",
+          "mode": "ASYNC",
+          "phase": "OPEN",
+          "generation": "7",
+          "version": "13",
+          "pending": "0",
+          "issued": "1",
+          "actual": "1"
+        },
+        "elapsedSeconds": 76.285
+      }
+    ],
+    "readinessWaitSeconds": [
+      31.891,
+      28.904,
+      1.474
+    ],
+    "beforeStopSnapshot": {
+      "observedAt": "2026-11-06T07:28:30.138418+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "unhealthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 1,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 1,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "PAUSED",
+            "section": "gates"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.notification.v1\t0\t0"
+      ]
+    },
+    "finalSnapshot": {
+      "observedAt": "2026-11-06T07:32:51.290848+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 2,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 2,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "OPEN",
+            "section": "gates"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.notification.v1\t0\t0"
+      ]
+    },
+    "generatedCredentialChecks": 13,
+    "operations": 75,
+    "services": 7,
+    "volumes": 5,
+    "networks": 3,
+    "credentialFingerprintsChecked": 24,
+    "fixtureTokensChecked": 4,
+    "resourceObservation": {
+      "containerRecords": [
+        {
+          "service": "seaweed",
+          "oneOff": false,
+          "memoryLimitBytes": 402653184,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 114728960,
+          "successfulSamples": 71,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 3002368,
+          "successfulSamples": 1,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "coupon-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 201326592,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 16719872,
+          "successfulSamples": 68,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "mysql",
+          "oneOff": false,
+          "memoryLimitBytes": 805306368,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 426721280,
+          "successfulSamples": 68,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rabbitmq",
+          "oneOff": false,
+          "memoryLimitBytes": 671088640,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 268816384,
+          "successfulSamples": 68,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rating-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 134217728,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 19132416,
+          "successfulSamples": 67,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": false,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 426680320,
+          "successfulSamples": 63,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "nginx",
+          "oneOff": false,
+          "memoryLimitBytes": 67108864,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 9768960,
+          "successfulSamples": 47,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 180891648,
+          "successfulSamples": 3,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 222994432,
+          "successfulSamples": 5,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 231419904,
+          "successfulSamples": 4,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 242810880,
+          "successfulSamples": 6,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 231579648,
+          "successfulSamples": 5,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": null,
+          "kernelPeakAvailable": false,
+          "sampledPeakBytes": 238587904,
+          "successfulSamples": 5,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        }
+      ],
+      "samples": [
+        {
+          "at": "2026-11-06T07:19:20.783609+00:00",
+          "residentCurrentBytes": 0,
+          "allOwnedCurrentBytes": 0,
+          "runningOwnedContainers": 0
+        },
+        {
+          "at": "2026-11-06T07:19:29.171722+00:00",
+          "residentCurrentBytes": 35926016,
+          "allOwnedCurrentBytes": 35926016,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-06T07:19:37.730593+00:00",
+          "residentCurrentBytes": 37548032,
+          "allOwnedCurrentBytes": 40550400,
+          "runningOwnedContainers": 2
+        },
+        {
+          "at": "2026-11-06T07:19:47.282023+00:00",
+          "residentCurrentBytes": 49356800,
+          "allOwnedCurrentBytes": 49356800,
+          "runningOwnedContainers": 3
+        },
+        {
+          "at": "2026-11-06T07:19:57.875825+00:00",
+          "residentCurrentBytes": 568664064,
+          "allOwnedCurrentBytes": 568664064,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T07:20:08.882311+00:00",
+          "residentCurrentBytes": 663404544,
+          "allOwnedCurrentBytes": 663404544,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T07:20:19.625708+00:00",
+          "residentCurrentBytes": 620810240,
+          "allOwnedCurrentBytes": 620810240,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:20:30.392884+00:00",
+          "residentCurrentBytes": 700452864,
+          "allOwnedCurrentBytes": 700452864,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:20:41.120121+00:00",
+          "residentCurrentBytes": 762007552,
+          "allOwnedCurrentBytes": 762007552,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:20:51.871149+00:00",
+          "residentCurrentBytes": 790818816,
+          "allOwnedCurrentBytes": 790818816,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:02.816242+00:00",
+          "residentCurrentBytes": 828968960,
+          "allOwnedCurrentBytes": 828968960,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:13.198577+00:00",
+          "residentCurrentBytes": 884391936,
+          "allOwnedCurrentBytes": 884391936,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:24.048631+00:00",
+          "residentCurrentBytes": 942174208,
+          "allOwnedCurrentBytes": 942174208,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:34.986361+00:00",
+          "residentCurrentBytes": 1000624128,
+          "allOwnedCurrentBytes": 1000624128,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:46.447830+00:00",
+          "residentCurrentBytes": 1049161728,
+          "allOwnedCurrentBytes": 1049161728,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:21:58.664396+00:00",
+          "residentCurrentBytes": 1047535616,
+          "allOwnedCurrentBytes": 1047535616,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:22:10.676186+00:00",
+          "residentCurrentBytes": 1074745344,
+          "allOwnedCurrentBytes": 1074745344,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:22:22.785611+00:00",
+          "residentCurrentBytes": 1110364160,
+          "allOwnedCurrentBytes": 1110364160,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:22:34.005764+00:00",
+          "residentCurrentBytes": 1177366528,
+          "allOwnedCurrentBytes": 1177366528,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:22:46.997957+00:00",
+          "residentCurrentBytes": 1087201280,
+          "allOwnedCurrentBytes": 1087201280,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:22:59.163555+00:00",
+          "residentCurrentBytes": 1103790080,
+          "allOwnedCurrentBytes": 1201094656,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:23:11.281329+00:00",
+          "residentCurrentBytes": 1126584320,
+          "allOwnedCurrentBytes": 1273671680,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:23:23.185431+00:00",
+          "residentCurrentBytes": 1052065792,
+          "allOwnedCurrentBytes": 1232957440,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:23:34.746263+00:00",
+          "residentCurrentBytes": 1131319296,
+          "allOwnedCurrentBytes": 1131319296,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:23:47.091794+00:00",
+          "residentCurrentBytes": 1135058944,
+          "allOwnedCurrentBytes": 1196384256,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:23:59.039173+00:00",
+          "residentCurrentBytes": 1062920192,
+          "allOwnedCurrentBytes": 1172979712,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:24:11.839237+00:00",
+          "residentCurrentBytes": 1107435520,
+          "allOwnedCurrentBytes": 1259520000,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:24:24.169848+00:00",
+          "residentCurrentBytes": 1132400640,
+          "allOwnedCurrentBytes": 1319673856,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:24:36.392623+00:00",
+          "residentCurrentBytes": 1156820992,
+          "allOwnedCurrentBytes": 1379815424,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:24:48.245429+00:00",
+          "residentCurrentBytes": 1150746624,
+          "allOwnedCurrentBytes": 1150746624,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:25:00.864176+00:00",
+          "residentCurrentBytes": 1158791168,
+          "allOwnedCurrentBytes": 1259941888,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:25:13.253679+00:00",
+          "residentCurrentBytes": 1124421632,
+          "allOwnedCurrentBytes": 1272983552,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:25:25.480188+00:00",
+          "residentCurrentBytes": 1151209472,
+          "allOwnedCurrentBytes": 1336934400,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:25:37.753487+00:00",
+          "residentCurrentBytes": 1084833792,
+          "allOwnedCurrentBytes": 1316253696,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:25:49.088094+00:00",
+          "residentCurrentBytes": 1167405056,
+          "allOwnedCurrentBytes": 1167405056,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:25:59.006277+00:00",
+          "residentCurrentBytes": 1094500352,
+          "allOwnedCurrentBytes": 1094500352,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:26:09.163996+00:00",
+          "residentCurrentBytes": 1094635520,
+          "allOwnedCurrentBytes": 1094635520,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:26:21.425317+00:00",
+          "residentCurrentBytes": 1171505152,
+          "allOwnedCurrentBytes": 1204273152,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:26:33.440533+00:00",
+          "residentCurrentBytes": 1098596352,
+          "allOwnedCurrentBytes": 1207054336,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:26:45.122455+00:00",
+          "residentCurrentBytes": 1098854400,
+          "allOwnedCurrentBytes": 1247887360,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:26:57.080510+00:00",
+          "residentCurrentBytes": 1099522048,
+          "allOwnedCurrentBytes": 1282596864,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:27:09.261144+00:00",
+          "residentCurrentBytes": 1176338432,
+          "allOwnedCurrentBytes": 1393643520,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:27:21.759268+00:00",
+          "residentCurrentBytes": 1140928512,
+          "allOwnedCurrentBytes": 1383739392,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:27:33.681763+00:00",
+          "residentCurrentBytes": 1169555456,
+          "allOwnedCurrentBytes": 1235423232,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:27:45.970291+00:00",
+          "residentCurrentBytes": 1181036544,
+          "allOwnedCurrentBytes": 1313038336,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:27:58.081897+00:00",
+          "residentCurrentBytes": 1165848576,
+          "allOwnedCurrentBytes": 1326698496,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:28:10.439043+00:00",
+          "residentCurrentBytes": 1176510464,
+          "allOwnedCurrentBytes": 1370017792,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:28:23.528152+00:00",
+          "residentCurrentBytes": 1144258560,
+          "allOwnedCurrentBytes": 1375838208,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:28:34.832020+00:00",
+          "residentCurrentBytes": 1203900416,
+          "allOwnedCurrentBytes": 1203900416,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:28:44.840036+00:00",
+          "residentCurrentBytes": 212332544,
+          "allOwnedCurrentBytes": 212332544,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-06T07:28:53.068627+00:00",
+          "residentCurrentBytes": 105357312,
+          "allOwnedCurrentBytes": 105357312,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-06T07:29:03.337579+00:00",
+          "residentCurrentBytes": 570519552,
+          "allOwnedCurrentBytes": 570519552,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T07:29:13.272054+00:00",
+          "residentCurrentBytes": 696930304,
+          "allOwnedCurrentBytes": 696930304,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-06T07:29:24.658380+00:00",
+          "residentCurrentBytes": 770932736,
+          "allOwnedCurrentBytes": 770932736,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:29:35.719092+00:00",
+          "residentCurrentBytes": 831283200,
+          "allOwnedCurrentBytes": 831283200,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:29:46.897232+00:00",
+          "residentCurrentBytes": 849113088,
+          "allOwnedCurrentBytes": 849113088,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:29:58.130342+00:00",
+          "residentCurrentBytes": 884359168,
+          "allOwnedCurrentBytes": 884359168,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:30:09.359917+00:00",
+          "residentCurrentBytes": 865828864,
+          "allOwnedCurrentBytes": 865828864,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:30:21.318785+00:00",
+          "residentCurrentBytes": 959389696,
+          "allOwnedCurrentBytes": 959389696,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:30:33.325670+00:00",
+          "residentCurrentBytes": 980938752,
+          "allOwnedCurrentBytes": 980938752,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-06T07:30:46.057496+00:00",
+          "residentCurrentBytes": 963166208,
+          "allOwnedCurrentBytes": 963166208,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:30:56.402489+00:00",
+          "residentCurrentBytes": 960303104,
+          "allOwnedCurrentBytes": 960303104,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:31:06.939527+00:00",
+          "residentCurrentBytes": 962650112,
+          "allOwnedCurrentBytes": 962650112,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:31:17.939667+00:00",
+          "residentCurrentBytes": 965869568,
+          "allOwnedCurrentBytes": 965869568,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:31:29.644320+00:00",
+          "residentCurrentBytes": 973111296,
+          "allOwnedCurrentBytes": 973111296,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:31:42.751094+00:00",
+          "residentCurrentBytes": 1044959232,
+          "allOwnedCurrentBytes": 1143742464,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:31:55.788990+00:00",
+          "residentCurrentBytes": 1048080384,
+          "allOwnedCurrentBytes": 1193332736,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:32:08.760826+00:00",
+          "residentCurrentBytes": 1043218432,
+          "allOwnedCurrentBytes": 1221304320,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:32:22.425907+00:00",
+          "residentCurrentBytes": 1049309184,
+          "allOwnedCurrentBytes": 1258160128,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:32:34.633394+00:00",
+          "residentCurrentBytes": 1026125824,
+          "allOwnedCurrentBytes": 1264713728,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-06T07:32:47.160166+00:00",
+          "residentCurrentBytes": 1068072960,
+          "allOwnedCurrentBytes": 1068072960,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:32:57.873841+00:00",
+          "residentCurrentBytes": 1121038336,
+          "allOwnedCurrentBytes": 1121038336,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-06T07:33:03.265262+00:00",
+          "residentCurrentBytes": 989995008,
+          "allOwnedCurrentBytes": 989995008,
+          "runningOwnedContainers": 7
+        }
+      ],
+      "errors": [],
+      "transientContainerListRetries": 0,
+      "residentLimitSumBytes": 3221225472,
+      "maxSampledResidentCurrentBytes": 1203900416,
+      "maxSampledIncludingOneOffCurrentBytes": 1393643520,
+      "note": "Sequential cgroup samples include cache. Missing memory.peak is reported as null, not zero; sampledPeakBytes is sampled current usage only. Sampling may miss short-lived CLI containers; per-container peaks are not a simultaneous total."
+    },
+    "hostObservation": {
+      "before": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 3170840576,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4292055040,
+        "oomKillCount": 0
+      },
+      "after": {
+        "MemTotal": 3799158784,
+        "MemAvailable": 2107494400,
+        "SwapTotal": 4294963200,
+        "SwapFree": 4290744320,
+        "oomKillCount": 0
+      },
+      "samples": [
+        {
+          "at": "2026-11-06T07:19:20.783609+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3158482944,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:19:29.171722+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3090317312,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:19:37.730593+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3094753280,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:19:47.282023+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3019956224,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:19:57.875825+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2590556160,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4292055040,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:20:08.882311+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2529955840,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:20:19.625708+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2545037312,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:20:30.392884+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2474483712,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:20:41.120121+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2461233152,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:20:51.871149+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2415321088,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:02.816242+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2357432320,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:13.198577+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2306523136,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:24.048631+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2274086912,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:34.986361+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2232631296,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291530752,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:46.447830+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2194214912,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291268608,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:21:58.664396+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2188599296,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291268608,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:22:10.676186+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2182729728,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291268608,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:22:22.785611+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2141761536,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291268608,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:22:34.005764+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2116874240,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:22:46.997957+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2139738112,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:22:59.163555+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2045980672,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:23:11.281329+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1993379840,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:23:23.185431+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2001375232,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:23:34.746263+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2138075136,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:23:47.091794+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2050859008,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:23:59.039173+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2068635648,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:24:11.839237+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1978884096,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4291006464,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:24:24.169848+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1931239424,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:24:36.392623+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1985978368,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:24:48.245429+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2068598784,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:00.864176+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2041888768,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:13.253679+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1965424640,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:25.480188+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1917861888,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:37.753487+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1931784192,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:49.088094+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2101936128,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:25:59.006277+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2215706624,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:26:09.163996+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2167037952,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:26:21.425317+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2046672896,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:26:33.440533+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2021998592,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:26:45.122455+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2012569600,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:26:57.080510+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1954721792,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:27:09.261144+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1903017984,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:27:21.759268+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1851465728,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:27:33.681763+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2007724032,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:27:45.970291+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2012520448,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:27:58.081897+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1919963136,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:28:10.439043+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1937891328,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:28:23.528152+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1877004288,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:28:34.832020+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2050158592,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:28:44.840036+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2901209088,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:28:53.068627+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 3056295936,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:03.337579+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2533924864,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:13.272054+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2457133056,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:24.658380+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2370080768,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:35.719092+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2354626560,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:46.897232+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2285568000,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:29:58.130342+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2313392128,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:30:09.359917+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2267688960,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:30:21.318785+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2172432384,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:30:33.325670+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2149564416,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:30:46.057496+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2192150528,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:30:56.402489+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2193862656,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:31:06.939527+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2177482752,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:31:17.939667+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2171293696,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:31:29.644320+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2109181952,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:31:42.751094+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1991176192,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:31:55.788990+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1928830976,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:32:08.760826+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1921081344,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:32:22.425907+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1850515456,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:32:34.633394+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 1851437056,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:32:47.160166+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2101673984,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:32:57.873841+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2028675072,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        },
+        {
+          "at": "2026-11-06T07:33:03.265262+00:00",
+          "MemTotal": 3799158784,
+          "MemAvailable": 2156285952,
+          "SwapTotal": 4294963200,
+          "SwapFree": 4290744320,
+          "oomKillCount": 0
+        }
+      ],
+      "minSampledAvailableBytes": 1850515456,
+      "maxSampledHostSwapUsedBytes": 4218880,
+      "note": "Host observations include unrelated host processes and caches. No fixed capacity/RTO claim."
+    },
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-06T07:33:15.698407+00:00",
+    "jarUnchanged": true
+  },
+  "finalIndependentAudit": {
+    "testSourcesVerified": 8,
+    "installedAuxiliaryInputsVerified": 7,
+    "newSourceMatches": true,
+    "newSourceFiles": 463,
+    "oldSourceMatchesRecordedPatch": true,
+    "oldChangedFromD5": [
+      "deploy/base/mysql-init.sh"
+    ],
+    "oldRecordedTestPatchesMatch": true,
+    "priorFormalReleaseEffectiveInputsVerified": 462,
+    "priorFormalReleaseHelperFilesVerified": 7,
+    "priorFormalJarAndImagePreserved": true,
+    "oldJarAndImagePreserved": true,
+    "newJarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+    "newJarBytes": 72026099,
+    "newImageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "cacheTarget": "/home/campusdeploy/campuslife/releases/110d141b50c2/.cache/maven-repository",
+    "containers": [],
+    "volumes": [],
+    "testNetworks": [],
+    "generatedSecretsRemaining": [],
+    "oldFixtureFolders": 17,
+    "newFixtureFolders": 4,
+    "priorFormalFixtureFolders": 9,
+    "budgetNetworks": [],
+    "probeSecretsRemaining": [],
+    "mavenSummary": [
+      "[INFO] Compiling 285 source files with javac [debug parameters release 21] to target/classes",
+      "[INFO] Compiling 119 source files with javac [debug parameters release 21] to target/test-classes",
+      "[INFO] Tests are skipped.",
+      "[INFO] BUILD SUCCESS",
+      "[INFO] Total time:  01:06 min",
+      "[INFO] Finished at: 2026-11-06T13:01:09+08:00"
+    ]
+  },
+  "resourceSummary": {
+    "samples": 73,
+    "residentMaxBytes": 1203900416,
+    "includingCliMaxBytes": 1393643520,
+    "hostOomBefore": 0,
+    "hostOomAfter": 0,
+    "maxHostSwapUsedBytes": 4218880,
+    "samplingErrors": []
+  },
+  "transportObservation": {
+    "originalReceiptEmpty": true,
+    "originalClientError": "client_loop: send disconnect: Connection reset",
+    "recoveredSameRemoteCase": true,
+    "originalSupervisorVerified": {
+      "runnerResultAvailable": false,
+      "originalCaseProcesses": [
+        {
+          "pid": 330366,
+          "sessionGroupMatchesPid": true,
+          "elapsedSeconds": 653,
+          "parentAlive": true,
+          "parentIsExpectedPythonStdin": true
+        }
+      ]
+    }
+  },
+  "healthObservations": [
+    {
+      "evidence": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-022716.json",
+      "phase": "normal-virtual-shop-review-and-original-maintenance",
+      "rabbitHealthObservation": {
+        "status": "unhealthy",
+        "failingStreak": 40,
+        "recentProbeExitCodes": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "recentProbeTimeoutMarkers": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "evidence": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-022921.json",
+      "phase": "restarting-original-five-volumes",
+      "rabbitHealthObservation": {
+        "status": "healthy",
+        "failingStreak": 0,
+        "recentProbeExitCodes": [
+          -1,
+          -1,
+          69,
+          69,
+          0
+        ],
+        "recentProbeTimeoutMarkers": [
+          true,
+          true,
+          false,
+          false,
+          false
+        ]
+      }
+    },
+    {
+      "evidence": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-023104.json",
+      "phase": "restarting-original-five-volumes",
+      "rabbitHealthObservation": {
+        "status": "healthy",
+        "failingStreak": 10,
+        "recentProbeExitCodes": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "recentProbeTimeoutMarkers": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    },
+    {
+      "evidence": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-023222.json",
+      "phase": "formal-packaged-post-restart-resume-and-new-claim",
+      "rabbitHealthObservation": {
+        "status": "healthy",
+        "failingStreak": 17,
+        "recentProbeExitCodes": [
+          -1,
+          -1,
+          -1,
+          -1,
+          -1
+        ],
+        "recentProbeTimeoutMarkers": [
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      }
+    }
+  ],
+  "unresolvedObservations": [
+    "RabbitMQ health probes timed out and were observed unhealthy before the planned restart. Later status recovered, but further probe timeouts were also observed; cause not diagnosed or fixed.",
+    "SSH connection reset cause unknown; original supervised process continued.",
+    "Sampling cannot establish continuous health, capacity, HA or fixed RTO."
+  ],
+  "nextTask": {
+    "id": "M06.1-D.7",
+    "status": "SUGGESTED_DESIGN_ONLY_NOT_STARTED",
+    "scope": "Private demo handoff/operational plan: evaluate recorded health probe behaviour and decide whether/how to retain an instance before implementation; no default public release."
+  },
+  "evidence": [
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/manifest.json",
+      "bytes": 1780,
+      "sha256": "81df3ef87a474fd1cb81881a264da2a771883232937c6e9d2b220fbd2ad4da15"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/runner-result.json",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/runner-stderr.log",
+      "bytes": 48,
+      "sha256": "122fe5b07412700f17cc10f788d008f45925ff06641c2bb79e4b02ef9c48a49e"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/runner-result-recovered.json",
+      "bytes": 51093,
+      "sha256": "0419b3ec5e5c72023b129e68d67c9aa3f895251754b59cc0f5572b7cbd7b9867"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/ssh-recovery-status.json",
+      "bytes": 190,
+      "sha256": "03412157c01aae1c2244e6a23050f1952652d2bc120c474bd738fd2cbc505738"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/final-audit.json",
+      "bytes": 1394,
+      "sha256": "521f34219242a39a21db7d4b47aafc7ea84aadf9015139264f72435ffcfb8475"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/local-input-audit.json",
+      "bytes": 216,
+      "sha256": "050257eb735b3058503534f0dea541981310d8f4358b5b24905cf2a0c81621f4"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-022716.json",
+      "bytes": 1319,
+      "sha256": "15b2fff1e7458b7cf10fb38962e26d2df24b93ed91d0b8cfd0cdc3f0eb2530bd"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-022921.json",
+      "bytes": 1250,
+      "sha256": "a47cfd3713e3a1c4bbb123f6138711adbc0e9fb52b7edc12c4312a153578a225"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-023104.json",
+      "bytes": 1238,
+      "sha256": "4ac9513b48e59a5d890e9d791a27d61d48818cf82dd907533ff0c7707346be3e"
+    },
+    {
+      "path": ".cache/cloud-final-remaining/case-f3b1fc89a03e/progress-023222.json",
+      "bytes": 1419,
+      "sha256": "bca9df9a63ade13684cf293f20578f25c7f604affef0d033906c615c0d6af810"
+    }
+  ]
+}

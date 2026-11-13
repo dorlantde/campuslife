@@ -1,0 +1,101 @@
+# B1 is an explicit six-service intermediate mode. S3 remains LOCAL/off until B2.
+x-labels: &labels
+  campuslife.base.identity: ${DEPLOY_ID:?Missing identity}
+  campuslife.base.kind: ${DEPLOY_KIND:?Missing kind}
+  campuslife.base.mode: ${DEPLOY_MODE:-components}
+x-logging: &logging
+  driver: json-file
+  options: { max-size: 10m, max-file: '3' }
+services:
+  app:
+    environment:
+      RATING_CACHE_ENABLED: 'true'
+      RATING_CACHE_HOST: rating-redis
+      RATING_CACHE_NAMESPACE: ${DATA_NAMESPACE:?Missing owned namespace}
+      RATING_CACHE_USERNAME: rating_app
+      COUPON_REDIS_ENABLED: 'true'
+      COUPON_REDIS_HOST: coupon-redis
+      COUPON_REDIS_NAMESPACE: ${DATA_NAMESPACE:?Missing owned namespace}
+      COUPON_REDIS_USERNAME: coupon_app
+      MESSAGING_ENABLED: 'true'
+      MESSAGING_HOST: rabbitmq
+      MESSAGING_USERNAME: campuslife_app
+      MESSAGING_VHOST: ${RABBIT_VHOST:?Missing owned vhost}
+      MOCK_PAYMENT_ENABLED: ${DEMO_MONEY_ENABLED:-false}
+    secrets: [RATING_CACHE_PASSWORD, COUPON_REDIS_PASSWORD, MESSAGING_PASSWORD]
+    depends_on:
+      rating-redis: { condition: service_healthy }
+      coupon-redis: { condition: service_healthy }
+      rabbitmq: { condition: service_healthy }
+  rating-redis:
+    image: redis:8.2.9@sha256:66b7f4c2f3c6ef1b298bbd7b13c806bc6f71e61f1136a4f58710daf2cb053b21
+    command: [redis-server, /etc/campuslife-redis.conf, --aclfile, /run/secrets/RATING_REDIS_ACL]
+    secrets: [RATING_CACHE_PASSWORD, RATING_REDIS_OPS_PASSWORD, RATING_REDIS_ACL]
+    volumes: [./redis-rating.conf:/etc/campuslife-redis.conf:ro]
+    tmpfs: ['/data:size=96m,mode=1777']
+    networks: [core]
+    labels: *labels
+    logging: *logging
+    mem_limit: 192m
+    cpus: 1
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH="$$(cat /run/secrets/RATING_CACHE_PASSWORD)" redis-cli --user rating_app --raw PING | grep -qx PONG']
+      interval: 3s
+      timeout: 3s
+      retries: 25
+    restart: 'no'
+  coupon-redis:
+    image: redis:8.2.9@sha256:66b7f4c2f3c6ef1b298bbd7b13c806bc6f71e61f1136a4f58710daf2cb053b21
+    command: [redis-server, /etc/campuslife-redis.conf, --aclfile, /run/secrets/COUPON_REDIS_ACL]
+    secrets: [COUPON_REDIS_PASSWORD, COUPON_REDIS_OPS_PASSWORD, COUPON_REDIS_ACL]
+    volumes: [coupon-data:/data, ./redis-coupon.conf:/etc/campuslife-redis.conf:ro]
+    networks: [core]
+    labels: *labels
+    logging: *logging
+    mem_limit: 256m
+    cpus: 1
+    healthcheck:
+      test: [CMD-SHELL, 'REDISCLI_AUTH="$$(cat /run/secrets/COUPON_REDIS_PASSWORD)" redis-cli --user coupon_app --raw PING | grep -qx PONG']
+      interval: 3s
+      timeout: 3s
+      retries: 25
+    stop_grace_period: 15s
+    restart: 'no'
+  rabbitmq:
+    image: rabbitmq:4.3.6-management@sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58
+    hostname: campuslife-${DATA_ID:?Missing persistent identity}
+    entrypoint: [sh, /etc/campuslife-rabbit-entrypoint.sh]
+    environment:
+      RABBITMQ_NODENAME: rabbit@campuslife-${DATA_ID:?Missing persistent identity}
+    secrets: [RABBIT_ERLANG_COOKIE, RABBIT_DEFINITIONS]
+    volumes:
+      - rabbit-data:/var/lib/rabbitmq
+      - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf:ro
+      - ./rabbit-entrypoint.sh:/etc/campuslife-rabbit-entrypoint.sh:ro
+    networks: [core]
+    labels: *labels
+    logging: *logging
+    mem_limit: 1024m
+    cpus: 2
+    healthcheck:
+      test: [CMD-SHELL, 'gosu rabbitmq rabbitmq-diagnostics -q check_running && gosu rabbitmq rabbitmq-diagnostics -q check_port_connectivity']
+      interval: 5s
+      timeout: 5s
+      retries: 30
+      start_period: 15s
+    stop_grace_period: 45s
+    restart: 'no'
+volumes:
+  coupon-data: { labels: *labels }
+  rabbit-data: { labels: *labels }
+secrets:
+  RATING_CACHE_PASSWORD: { file: '${SECRET_DIR:?}/RATING_CACHE_PASSWORD' }
+  RATING_REDIS_OPS_PASSWORD: { file: '${SECRET_DIR:?}/RATING_REDIS_OPS_PASSWORD' }
+  COUPON_REDIS_PASSWORD: { file: '${SECRET_DIR:?}/COUPON_REDIS_PASSWORD' }
+  COUPON_REDIS_OPS_PASSWORD: { file: '${SECRET_DIR:?}/COUPON_REDIS_OPS_PASSWORD' }
+  MESSAGING_PASSWORD: { file: '${SECRET_DIR:?}/MESSAGING_PASSWORD' }
+  RABBIT_OPS_PASSWORD: { file: '${SECRET_DIR:?}/RABBIT_OPS_PASSWORD' }
+  RABBIT_ERLANG_COOKIE: { file: '${SECRET_DIR:?}/RABBIT_ERLANG_COOKIE' }
+  RATING_REDIS_ACL: { file: '${SECRET_DIR:?}/RATING_REDIS_ACL' }
+  COUPON_REDIS_ACL: { file: '${SECRET_DIR:?}/COUPON_REDIS_ACL' }
+  RABBIT_DEFINITIONS: { file: '${SECRET_DIR:?}/RABBIT_DEFINITIONS' }

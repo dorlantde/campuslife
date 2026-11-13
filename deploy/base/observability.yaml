@@ -1,0 +1,9 @@
+# Opt-in on a NEW managed instance; no listener is published or proxied.
+services:
+  app:
+    environment:
+      MANAGEMENT_ENABLED: 'true'
+      MANAGEMENT_PORT: '8081'
+    secrets: [MANAGEMENT_PASSWORD]
+secrets:
+  MANAGEMENT_PASSWORD: { file: '${SECRET_DIR:?}/MANAGEMENT_PASSWORD' }

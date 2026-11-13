@@ -1,0 +1,187 @@
+{
+  "date": "2026-11-02",
+  "timezone": "America/New_York",
+  "task": "M06.1-B1",
+  "status": "passed in bounded batches",
+  "verification": {
+    "unitCases": 20,
+    "componentGroups": 34,
+    "baseRegressionGroups": 7,
+    "separateOpenApiCheck": 1
+  },
+  "unitSuites": [
+    {
+      "name": "com.campuslife.merchant.cache.RatingCacheTest",
+      "tests": 18,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    },
+    {
+      "name": "com.campuslife.merchant.config.RatingRedisConfigurationTest",
+      "tests": 2,
+      "failures": 0,
+      "errors": 0,
+      "skipped": 0
+    }
+  ],
+  "components": {
+    "task": "M06.1-B1",
+    "instance": ".cache\\deploy-base\\0e596fd6fd994b2eb6965186bf410867",
+    "checks": [
+      "six-services-only-gateway-published",
+      "original-schema-default-no-admin",
+      "application-has-only-runtime-not-ops-secrets",
+      "rating-redis-anonymous-denied",
+      "rating-redis-foreign-namespace-and-flush-denied",
+      "coupon-redis-anonymous-denied",
+      "coupon-redis-foreign-namespace-and-flush-denied",
+      "redis-persistence-policies-differ",
+      "rabbit-no-guest-and-dedicated-vhost",
+      "original-four-quorum-queues-declared",
+      "rating-cache-hit-skips-aggregate-query",
+      "rating-outage-falls-back-to-mysql",
+      "activities-still-default-sync",
+      "explicit-maintenance-opens-async",
+      "coupon-outage-does-not-fall-back-sync",
+      "coupon-restart-rebuilds-without-changing-mode",
+      "broker-offline-202-is-durable-pending",
+      "pending-replay-keeps-id-and-deadline",
+      "plain-jdbc-message-inspect-gets-file-secret",
+      "final-replay-is-one-issued-coupon",
+      "lua-and-mysql-stock-have-one-remaining-winner",
+      "real-print-order-uses-issued-coupon",
+      "original-print-event-notifies-student-once",
+      "consumed-message-replay-does-not-duplicate-notification",
+      "review-write-advances-versioned-rating-cache",
+      "funds-and-coupon-remain-unique",
+      "ordinary-stop-keeps-four-persistent-volumes",
+      "paused-intent-and-issued-facts-survive-new-redis-run",
+      "broker-local-files-and-notification-survive-restart",
+      "stale-operator-cannot-reopen-paused-gate",
+      "controlled-sync-return-keeps-original-coupon-facts",
+      "new-default-sync-claim-still-returns-201",
+      "existing-component-volumes-cannot-silently-become-base",
+      "logs-do-not-contain-test-password-or-token"
+    ],
+    "startedAt": "2026-11-03T04:05:05.562652+00:00",
+    "explicitDemoMoney": true,
+    "versions": {
+      "rating": "8.2.9",
+      "coupon": "8.2.9",
+      "rabbit": "4.3.6"
+    },
+    "passed": true,
+    "jarSha256": "041fd9a692f133ee53cd540c10de9a593ac1336b3a8a7c3091d8573c79c411ea",
+    "persistentVolumes": 4,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-03T04:10:00.800400+00:00"
+  },
+  "baseRegression": {
+    "task": "M06.1-B1 base regression",
+    "checks": [
+      "base-stays-three-services",
+      "base-keeps-all-optional-components-and-money-off",
+      "base-generates-only-original-three-secrets",
+      "base-rejects-demo-money-combination",
+      "base-new-jar-starts-without-redis-or-broker",
+      "old-base-manifest-fields-remain-compatible",
+      "base-stop-still-retains-two-volumes"
+    ],
+    "passed": true,
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    }
+  },
+  "openApi": {
+    "httpStatus": 200,
+    "operations": 75
+  },
+  "sourceGuard": {
+    "existingFiles": 541,
+    "changed": [
+      "src/main/resources/application.properties",
+      "src/main/java/com/campuslife/merchant/config/RatingCacheProperties.java",
+      "src/main/java/com/campuslife/merchant/config/RatingRedisConfiguration.java",
+      "scripts/deploy-base.ps1",
+      "scripts/deploy_base.py",
+      "deploy/base/app-entrypoint.sh",
+      "deploy/base/compose.yaml"
+    ],
+    "unchanged": 534
+  },
+  "image": {
+    "image": "campuslife-base:m061a-041fd9a692f1-84995de4cd76",
+    "imageId": "sha256:7658a5c33cc6bde93f11256603a479d4e5fb42917010df51087c6584121d6500",
+    "jarSha256": "041fd9a692f133ee53cd540c10de9a593ac1336b3a8a7c3091d8573c79c411ea",
+    "inputs": {
+      ".dockerignore": "23b88251d4354b65c8ce26473f667d393395e3ae8e69247b3ed892c15a1cdd9b",
+      "deploy/base/Dockerfile": "b5d668bc11c016d8c55642331c432145e1e7e9ab170f8e29a9cd366762d36439",
+      "deploy/base/app-entrypoint.sh": "f9487391416bc1f0a68ac02c24b7d5a27e4d1c3506fceba24fcde1141eac755a",
+      "deploy/base/app-health.sh": "eda7a570fccf79ed632debb859b38a8ebc0adc9d638ed5b08949688cd83d6905"
+    },
+    "builtAt": "2026-11-03T04:01:05.077036+00:00"
+  },
+  "runtimeDependencies": 148,
+  "all148RuntimeDependenciesUnchanged": true,
+  "redisImage": "redis:8.2.9@sha256:66b7f4c2f3c6ef1b298bbd7b13c806bc6f71e61f1136a4f58710daf2cb053b21",
+  "rabbitImage": "rabbitmq:4.3.6-management@sha256:54cb013d76cd1fd6c0a0708f34062ad61c452bb6f016b434c6c33f1a765d2b58",
+  "operations": 75,
+  "migration": 24,
+  "applicationTables": 32,
+  "defaultMode": "base",
+  "defaultMoney": false,
+  "fileBackend": "LOCAL",
+  "failuresRetained": [
+    {
+      "path": ".cache/m061b1-failures/rating-acl-first-binding.txt",
+      "reason": "overloaded record constructors required explicit canonical ConstructorBinding; 18 original cache cases passed, new 2 binding cases errored; corrected and final20 passed"
+    },
+    {
+      "instance": ".cache/deploy-base/d0199d99b4134adfbcbf67f6f161f3da",
+      "reason": "test helper http function shadowed http module; fixed alias; pre-workflow component checks passed"
+    }
+  ],
+  "notExecuted": [
+    "old developer Redis upgrade or data migration",
+    "old8.2.4 performance rerun/claim on8.2.9",
+    "S3/TLS/Actuator",
+    "full-component backup restore",
+    "independent Linux host",
+    "capacity/HA",
+    "frontend or public deployment"
+  ],
+  "dockerDesktopStopped": false,
+  "wslShutdown": false,
+  "deliveredFileSha256": {
+    "src/main/resources/application.properties": "2f99cd4c9bd6c96668361b22bbb97e2de6b3a81483908cc13de76aaf50415c04",
+    "src/main/java/com/campuslife/merchant/config/RatingCacheProperties.java": "f54fd2c54c91d54467b9863e0adaf344106cdb74a7ee1030da3141bd221a7e14",
+    "src/main/java/com/campuslife/merchant/config/RatingRedisConfiguration.java": "1e24252bba2090216257f34531abc49eae62ee50abd80999fffcfbc351f63ec3",
+    "scripts/deploy-base.ps1": "5b513efd343697508f1a8c3b652c6547aa3580681a025da28fbeac5d7e8c0a25",
+    "scripts/deploy_base.py": "80a8a62e07e1bbfe163ed97b6e5c39baedb3076985d274577c8d3ea63d939615",
+    "deploy/base/app-entrypoint.sh": "f9487391416bc1f0a68ac02c24b7d5a27e4d1c3506fceba24fcde1141eac755a",
+    "deploy/base/compose.yaml": "3e63ca5fee073faf29cd698fa07788b96fec0278cdf40148255778d2a3c5f182",
+    "deploy/base/components.yaml": "d19b1c8a88047bca87889bb582c74ebc11e696769ebca7e8620ab6260293f9f7",
+    "deploy/base/redis-rating.conf": "6c539fdab9d5a178716b5ba4444c1a06c82b251761839c32261b19b4571ec002",
+    "deploy/base/redis-coupon.conf": "031939e7e9757d054f3df2d96d35c2bddb878ea5e837e1575628b89c13e6ea0c",
+    "deploy/base/rabbitmq.conf": "814b91441e3d9b1516a84b92868a54ab94904dc3028c3e5f34b4ceb33e69fdd9",
+    "deploy/base/rabbit-entrypoint.sh": "1b4ca19a28bd646493b2def77bf7b7b5c88583ad9a2376c3b499d0f1799f4c4d",
+    "scripts/test_deploy_components.py": "fb1277540e06b9c119a8286be1f68fc74daf4e4e9b02f9549a293ed39e6e03f0",
+    "scripts/test-deploy-components.ps1": "d3e1417ae22a5062e255a8f8a741884be3ea49cf7327e814b3e4897855953ef5",
+    "src/test/java/com/campuslife/merchant/config/RatingRedisConfigurationTest.java": "dd083446aef3270bb0b5f4708987281b3e34354e64640626e55ab3f507d55b7c"
+  },
+  "cleanup": {
+    "ownedTestContainers": 0,
+    "ownedTestVolumes": 0,
+    "ownedTestNetworks": 0,
+    "generatedSecretsRemoved": true
+  }
+}

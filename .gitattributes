@@ -1,0 +1,5 @@
+deploy/base/*.sh text eol=lf
+deploy/base/Dockerfile text eol=lf
+deploy/base/*.yaml text eol=lf
+deploy/base/*.conf text eol=lf
+scripts/prepare-cloud-*.sh text eol=lf

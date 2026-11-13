@@ -1,0 +1,683 @@
+{
+  "task": "M06.1-D.3",
+  "date": "2026-11-04",
+  "timezone": "America/New_York",
+  "status": "isolated compact4g prevalidation passed; no ECS deployment",
+  "sourceEvidence": ".cache/deploy-base/f25b5a73d2714f1095b7ccac3d74b71d/compact4g-acceptance.json",
+  "sourceEvidenceSha256": "39092fb637e0bfd70ef2fd94e768d6c729d2b193fce17c7d28de68ac9c76dd68",
+  "acceptance": {
+    "task": "M06.1-D.3 compact4g prevalidation",
+    "checks": [
+      "mysql-resource-parameters-effective-before-business",
+      "seven-healthy-services-with-single-app",
+      "five-persistent-volumes-and-three-networks",
+      "original-schema-and-no-default-business-admin",
+      "private-management-works-in-seven-service-mode",
+      "business-openapi-remains-75",
+      "campaign-remains-default-sync-before-explicit-transition",
+      "async-admission-is-durable-202",
+      "new-print-file-uses-s3-with-complete-content",
+      "real-order-uses-claimed-coupon-and-frozen-payable",
+      "review-statistics-fill-real-rating-redis",
+      "funds-coupon-notification-and-consumption-are-unique",
+      "all-seven-stopped-with-five-volumes-retained",
+      "same-five-volumes-and-24-secret-fingerprints",
+      "new-application-process-after-whole-stack-stop",
+      "async-paused-intent-and-issued-facts-survive-new-run",
+      "s3-and-local-identities-and-old-file-survive",
+      "old-session-order-payment-and-notification-survive",
+      "claim-idempotency-replays-after-restart",
+      "rating-cache-rebuilds-from-preserved-database",
+      "private-readiness-and-jvm-metrics-survive-restart",
+      "post-restart-new-s3-write-and-full-download",
+      "new-async-request-after-controlled-resume-is-202",
+      "post-restart-new-issuance-is-not-duplicate-or-oversold",
+      "actual-cgroups-have-two-shared-cpus-no-swap-and-no-oom",
+      "mysql-budget-and-original-commit-durability-effective",
+      "existing-compact-containers-refuse-profile-reinterpretation",
+      "unverified-compact-cold-recovery-refused-before-freeze",
+      "combined-logs-have-no-test-password-tokens-or-ops-password"
+    ],
+    "startedAt": "2026-11-04T05:23:41.509815+00:00",
+    "hostSystem": "Windows",
+    "validationScope": "Same two logical CPUs and per-container no-swap memory caps; host is not a 4 GiB VM. No cloud/capacity claim.",
+    "resourceProfile": "compact4g",
+    "hostEngine": {
+      "cpus": 32,
+      "memoryBytes": 8157614080,
+      "cgroupVersion": "2"
+    },
+    "pdfBytes": 20971520,
+    "initialSnapshot": {
+      "observedAt": "2026-11-04T05:24:43.209031+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": []
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0"
+      ]
+    },
+    "beforeStopSnapshot": {
+      "observedAt": "2026-11-04T05:26:42.490161+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 2,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 1,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "PAUSED",
+            "section": "gates"
+          },
+          {
+            "count": 1,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0"
+      ]
+    },
+    "stopElapsedSeconds": 9.046,
+    "restartElapsedSeconds": 34.985,
+    "finalSnapshot": {
+      "observedAt": "2026-11-04T05:28:25.957939+00:00",
+      "containers": [
+        {
+          "service": "nginx",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "app",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "coupon-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rabbitmq",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "rating-redis",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "mysql",
+          "state": "running",
+          "health": "healthy"
+        },
+        {
+          "service": "seaweed",
+          "state": "running",
+          "health": "healthy"
+        }
+      ],
+      "liveness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "readiness": {
+        "httpStatus": 200,
+        "data": {
+          "status": "UP"
+        }
+      },
+      "database": {
+        "available": true,
+        "aggregates": [
+          {
+            "count": 3,
+            "state": "SENT",
+            "section": "outbox",
+            "oldestAgeSeconds": null
+          },
+          {
+            "count": 2,
+            "state": "SUCCEEDED",
+            "section": "claims"
+          },
+          {
+            "mode": "ASYNC",
+            "count": 1,
+            "phase": "OPEN",
+            "section": "gates"
+          },
+          {
+            "count": 2,
+            "state": "AVAILABLE",
+            "backend": "S3",
+            "section": "files"
+          }
+        ]
+      },
+      "queues": [
+        "name\tmessages_ready\tmessages_unacknowledged",
+        "campuslife.notification.v1\t0\t0",
+        "campuslife.notification.dead.v1\t0\t0",
+        "campuslife.coupon.issue.dead.v1\t0\t0",
+        "campuslife.coupon.issue.v1\t0\t0"
+      ]
+    },
+    "passed": true,
+    "operations": 75,
+    "jarSha256": "0e08aa56c63682daf7e1a556fc21c33309cf2b8c52d72dbe644dcc686100b6df",
+    "imageId": "sha256:9760810c7a68e77e375ec0c835c8d618f975ad3313357e25f8dc9a2efd75b626",
+    "volumes": 5,
+    "services": 7,
+    "networks": 3,
+    "resourceObservation": {
+      "containerRecords": [
+        {
+          "service": "seaweed",
+          "oneOff": false,
+          "memoryLimitBytes": 402653184,
+          "peakBytes": 297689088,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 0,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rabbitmq",
+          "oneOff": false,
+          "memoryLimitBytes": 671088640,
+          "peakBytes": 314245120,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "mysql",
+          "oneOff": false,
+          "memoryLimitBytes": 805306368,
+          "peakBytes": 418029568,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "coupon-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 201326592,
+          "peakBytes": 15908864,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "rating-redis",
+          "oneOff": false,
+          "memoryLimitBytes": 134217728,
+          "peakBytes": 12816384,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": false,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 442408960,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "nginx",
+          "oneOff": false,
+          "memoryLimitBytes": 67108864,
+          "peakBytes": 14979072,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 158953472,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 0,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 0,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        },
+        {
+          "service": "app",
+          "oneOff": true,
+          "memoryLimitBytes": 939524096,
+          "peakBytes": 136388608,
+          "oom": 0,
+          "oomKill": 0,
+          "swapBytes": 0,
+          "restartCount": 0
+        }
+      ],
+      "samples": [
+        {
+          "at": "2026-11-04T05:23:42.242690+00:00",
+          "residentCurrentBytes": 0,
+          "allOwnedCurrentBytes": 0,
+          "runningOwnedContainers": 0
+        },
+        {
+          "at": "2026-11-04T05:23:50.785299+00:00",
+          "residentCurrentBytes": 37888000,
+          "allOwnedCurrentBytes": 37888000,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-04T05:24:00.043343+00:00",
+          "residentCurrentBytes": 39346176,
+          "allOwnedCurrentBytes": 39346176,
+          "runningOwnedContainers": 1
+        },
+        {
+          "at": "2026-11-04T05:24:09.491013+00:00",
+          "residentCurrentBytes": 293552128,
+          "allOwnedCurrentBytes": 293552128,
+          "runningOwnedContainers": 3
+        },
+        {
+          "at": "2026-11-04T05:24:19.867318+00:00",
+          "residentCurrentBytes": 615821312,
+          "allOwnedCurrentBytes": 615821312,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-04T05:24:30.202039+00:00",
+          "residentCurrentBytes": 891740160,
+          "allOwnedCurrentBytes": 891740160,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-04T05:24:40.854220+00:00",
+          "residentCurrentBytes": 898609152,
+          "allOwnedCurrentBytes": 898609152,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:24:51.467319+00:00",
+          "residentCurrentBytes": 934559744,
+          "allOwnedCurrentBytes": 934559744,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:25:02.186872+00:00",
+          "residentCurrentBytes": 941957120,
+          "allOwnedCurrentBytes": 941957120,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:25:13.073615+00:00",
+          "residentCurrentBytes": 936898560,
+          "allOwnedCurrentBytes": 936898560,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:25:23.883147+00:00",
+          "residentCurrentBytes": 945131520,
+          "allOwnedCurrentBytes": 945131520,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:25:35.364393+00:00",
+          "residentCurrentBytes": 953040896,
+          "allOwnedCurrentBytes": 1111994368,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-04T05:25:46.740140+00:00",
+          "residentCurrentBytes": 960770048,
+          "allOwnedCurrentBytes": 960770048,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:25:57.383888+00:00",
+          "residentCurrentBytes": 962269184,
+          "allOwnedCurrentBytes": 962269184,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:08.028791+00:00",
+          "residentCurrentBytes": 1180659712,
+          "allOwnedCurrentBytes": 1180659712,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:19.250365+00:00",
+          "residentCurrentBytes": 1176109056,
+          "allOwnedCurrentBytes": 1176109056,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:29.958806+00:00",
+          "residentCurrentBytes": 1177444352,
+          "allOwnedCurrentBytes": 1177444352,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:40.528367+00:00",
+          "residentCurrentBytes": 1179688960,
+          "allOwnedCurrentBytes": 1179688960,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:51.134021+00:00",
+          "residentCurrentBytes": 1180131328,
+          "allOwnedCurrentBytes": 1180131328,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:26:59.301540+00:00",
+          "residentCurrentBytes": 0,
+          "allOwnedCurrentBytes": 0,
+          "runningOwnedContainers": 0
+        },
+        {
+          "at": "2026-11-04T05:27:09.187969+00:00",
+          "residentCurrentBytes": 621068288,
+          "allOwnedCurrentBytes": 621068288,
+          "runningOwnedContainers": 5
+        },
+        {
+          "at": "2026-11-04T05:27:19.709168+00:00",
+          "residentCurrentBytes": 877285376,
+          "allOwnedCurrentBytes": 877285376,
+          "runningOwnedContainers": 6
+        },
+        {
+          "at": "2026-11-04T05:27:30.411001+00:00",
+          "residentCurrentBytes": 967294976,
+          "allOwnedCurrentBytes": 967294976,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:27:41.666773+00:00",
+          "residentCurrentBytes": 960225280,
+          "allOwnedCurrentBytes": 1093095424,
+          "runningOwnedContainers": 8
+        },
+        {
+          "at": "2026-11-04T05:27:52.554051+00:00",
+          "residentCurrentBytes": 1006886912,
+          "allOwnedCurrentBytes": 1006886912,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:28:03.196698+00:00",
+          "residentCurrentBytes": 1176420352,
+          "allOwnedCurrentBytes": 1176420352,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:28:13.824923+00:00",
+          "residentCurrentBytes": 1180258304,
+          "allOwnedCurrentBytes": 1180258304,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:28:24.523869+00:00",
+          "residentCurrentBytes": 1185009664,
+          "allOwnedCurrentBytes": 1185009664,
+          "runningOwnedContainers": 7
+        },
+        {
+          "at": "2026-11-04T05:28:32.969906+00:00",
+          "residentCurrentBytes": 1246040064,
+          "allOwnedCurrentBytes": 1246040064,
+          "runningOwnedContainers": 7
+        }
+      ],
+      "errors": [],
+      "residentLimitSumBytes": 3221225472,
+      "maxSampledResidentCurrentBytes": 1246040064,
+      "maxSampledIncludingOneOffCurrentBytes": 1246040064,
+      "note": "Sequential cgroup samples include cache. Sampling may miss short-lived CLI containers; per-container peaks are not a simultaneous total."
+    },
+    "cleanup": {
+      "containers": 0,
+      "volumes": 0,
+      "networks": 0,
+      "generatedSecretsRemoved": true
+    },
+    "finishedAt": "2026-11-04T05:28:42.296883+00:00"
+  },
+  "configChecks": {
+    "passed": true,
+    "checks": [
+      "base-default-config-unchanged",
+      "components-default-config-unchanged",
+      "showcase-default-config-unchanged",
+      "base-compact-profile-rejected-before-init",
+      "components-compact-profile-rejected-before-init"
+    ]
+  },
+  "staticChecks": {
+    "pythonSyntax": true,
+    "profileFlagRestrictedToInit": true,
+    "localLinks": true,
+    "markdownWhitespace": true
+  },
+  "finalCleanupAudit": {
+    "finalInstance": {
+      "container": 0,
+      "volume": 0,
+      "network": 0
+    },
+    "generatedSecretsRemoved": true,
+    "compact4gContainers": 0,
+    "dockerDesktopStopped": false,
+    "wslShutdown": false
+  },
+  "sourceGuard": {
+    "examinedExistingFiles": 568,
+    "changed": [
+      "scripts/deploy-base.ps1",
+      "scripts/deploy_base.py",
+      "scripts/deploy_recovery.py",
+      "scripts/test_deploy_showcase.py"
+    ],
+    "unchanged": 564,
+    "javaFrontendPomJarUnchanged": true,
+    "runtimeDependencies": 156
+  },
+  "deliveredFileSha256": {
+    "scripts/deploy-base.ps1": "a6d313af10ac89c43837562d87ed0bc618b60a1c623e370ecafc8c2ddaa22e6a",
+    "scripts/deploy_base.py": "0b196cab5e3bf863269f897e7ebae455544272f892355f5831d91c146b44eb7e",
+    "scripts/deploy_recovery.py": "ff0df6551729bd0a8f4dce474dcfe409151664f7eff21861f5169750e62a488b",
+    "scripts/test_deploy_showcase.py": "9c06ea755f6accd3715839c76e7696d8892a90bbcf8d6f811973ce56a8173479",
+    "deploy/base/compact4g.yaml": "d6fc1499992abafa171aa1efb4a41d7b5fdc2f98040016df661993a68d1df4e7",
+    "deploy/base/rabbitmq-compact4g.conf": "4fcc8cefe4e98acd7f5d6a66861426cc02e02a140dc199c28f3828c40e4be7fb",
+    "scripts/test_deploy_compact4g.py": "467b4324c73d6cb4ce18dd73a0c24a282e0f943af1e8e92c859d0c4885ceb55a",
+    "scripts/test-deploy-compact4g.ps1": "07419dc8f043ee9539b439267e8d4279a9907d7173a4d7df24f44b8b8a414bb9"
+  },
+  "observationScope": {
+    "residentCgroupsRead": 7,
+    "samples": 29,
+    "transientClientsNotFullyMeasured": true,
+    "zeroPeakMeansNotSampled": true,
+    "hostIsNot4GiB": true
+  },
+  "failedRounds": [
+    {
+      "log": ".cache/compact4g-run1.log",
+      "reason": "Compose serialized memory values as strings; configuration assertion stopped before runtime."
+    },
+    {
+      "log": ".cache/compact4g-run2.log",
+      "evidence": ".cache/deploy-base/e6c88cda5ceb49b89fe44731c5bf5a3c/compact4g-acceptance.json",
+      "reason": "MySQL ignored Windows world-writable cnf; intentionally stopped owned app. Partial checks are not accepted. Cleanup passed."
+    }
+  ],
+  "limitations": [
+    "No cloud/whole-4GiB-host/capacity/pressure-test claim",
+    "Transient JVM clients need extra memory and serial maintenance",
+    "Compact cold backup rehearsal explicitly refused; standard E scope retained",
+    "M04 cold recovery timeout root cause remains unknown"
+  ]
+}

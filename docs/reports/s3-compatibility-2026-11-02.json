@@ -1,0 +1,417 @@
+{
+  "date": "2026-11-02",
+  "task": "M04.2-A",
+  "status": "isolated protocol verified; business integration not implemented",
+  "image": "chrislusf/seaweedfs:4.51@sha256:f7a49e3f3972ebed5be2ed4befa4a0c68eb7bdddba6e692d42729ceb545134b8",
+  "platform": "linux/amd64",
+  "platformManifest": "sha256:3a522c379599e163433a636e75022630848b63a74f08ea37bf06f8d776e9a707",
+  "sdk": "2.57.8",
+  "httpClient": "Apache5",
+  "java": 21,
+  "protocolChecks": 33,
+  "existingLocalPolicyChecks": 38,
+  "distinctFinalChecks": 71,
+  "suites": [
+    {
+      "class": "com.campuslife.S3CompatibilityProbeTest",
+      "checks": 33,
+      "seconds": 41.816
+    },
+    {
+      "class": "com.campuslife.file.FilePolicyTest",
+      "checks": 38,
+      "seconds": 1.665
+    }
+  ],
+  "productionDependencyHashesUnchanged": 115,
+  "preExistingCodeScriptFrontendFilesUnchanged": 497,
+  "preExistingChangedFiles": [
+    "pom.xml"
+  ],
+  "operations": 75,
+  "migration": "V23",
+  "tables": 32,
+  "businessStorage": "LOCAL",
+  "sdkTestProfileOnly": true,
+  "defaultBuild": "passed",
+  "jarSmoke": "web-only passed; MySQL not tested",
+  "cleanup": {
+    "testContainers": 0,
+    "testVolumes": 0,
+    "testNetworks": 0,
+    "testJvms": 0,
+    "verifiedAt": "2026-11-02T06:29:04.6037945Z"
+  },
+  "observations": {
+    "sdkJar": "s3-2.57.8.jar",
+    "sampleBytes": 20971520,
+    "sampleSha256": "e1dc7599019abd59f3cf7afd4b7834a121b186f329b01701beac1132cfbb5fe2",
+    "checksumHeaders": [
+      "x-amz-checksum-crc32",
+      "x-amz-checksum-mode",
+      "x-amz-sdk-checksum-algorithm"
+    ],
+    "unprivilegedListBuckets": "200 empty list, not 403",
+    "blackholeMs": 1102,
+    "blackholeAttempts": 2,
+    "serviceStopStart": true,
+    "restartPersistence": true
+  },
+  "protocolCases": [
+    {
+      "case": "signedTwentyMiBPutHeadGetWithDefaultChecksum()",
+      "outcome": "passed",
+      "ms": 1635
+    },
+    {
+      "case": "explicitSha256ChecksumIsAcceptedAndReturned()",
+      "outcome": "passed",
+      "ms": 53
+    },
+    {
+      "case": "incorrectChecksumIsRejectedWithoutCreatingObject()",
+      "outcome": "passed",
+      "ms": 115
+    },
+    {
+      "case": "repeatedSameKeySameBytesIsRecoverable()",
+      "outcome": "passed",
+      "ms": 1355
+    },
+    {
+      "case": "applicationCanReadButNotOverwriteOrDeleteStorageMarker()",
+      "outcome": "passed",
+      "ms": 237
+    },
+    {
+      "case": "[1] operation = \"anonymousGet\"",
+      "outcome": "passed",
+      "ms": 117
+    },
+    {
+      "case": "[2] operation = \"anonymousHead\"",
+      "outcome": "passed",
+      "ms": 19
+    },
+    {
+      "case": "[3] operation = \"anonymousPut\"",
+      "outcome": "passed",
+      "ms": 25
+    },
+    {
+      "case": "[4] operation = \"anonymousDelete\"",
+      "outcome": "passed",
+      "ms": 9
+    },
+    {
+      "case": "[5] operation = \"wrongSignature\"",
+      "outcome": "passed",
+      "ms": 21
+    },
+    {
+      "case": "[6] operation = \"crossPrefixGet\"",
+      "outcome": "passed",
+      "ms": 36
+    },
+    {
+      "case": "[7] operation = \"crossPrefixPut\"",
+      "outcome": "passed",
+      "ms": 18
+    },
+    {
+      "case": "[8] operation = \"crossPrefixDelete\"",
+      "outcome": "passed",
+      "ms": 13
+    },
+    {
+      "case": "[9] operation = \"crossBucketGet\"",
+      "outcome": "passed",
+      "ms": 11
+    },
+    {
+      "case": "[10] operation = \"crossBucketPut\"",
+      "outcome": "passed",
+      "ms": 17
+    },
+    {
+      "case": "[11] operation = \"listBuckets\"",
+      "outcome": "passed",
+      "ms": 16
+    },
+    {
+      "case": "[12] operation = \"listObjects\"",
+      "outcome": "passed",
+      "ms": 84
+    },
+    {
+      "case": "[13] operation = \"createBucket\"",
+      "outcome": "passed",
+      "ms": 20
+    },
+    {
+      "case": "[14] operation = \"deleteBucket\"",
+      "outcome": "passed",
+      "ms": 23
+    },
+    {
+      "case": "[15] operation = \"replacePolicy\"",
+      "outcome": "passed",
+      "ms": 20
+    },
+    {
+      "case": "[16] operation = \"deleteFolder\"",
+      "outcome": "passed",
+      "ms": 21
+    },
+    {
+      "case": "[1] value = \"\"",
+      "outcome": "passed",
+      "ms": 5
+    },
+    {
+      "case": "[2] value = \"/\"",
+      "outcome": "passed",
+      "ms": 1
+    },
+    {
+      "case": "[3] value = \"../bad.pdf\"",
+      "outcome": "passed",
+      "ms": 2
+    },
+    {
+      "case": "[4] value = \"objects/\"",
+      "outcome": "passed",
+      "ms": 1
+    },
+    {
+      "case": "[5] value = \"UPPER.pdf\"",
+      "outcome": "passed",
+      "ms": 2
+    },
+    {
+      "case": "[6] value = \"aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa.pdf/\"",
+      "outcome": "passed",
+      "ms": 2
+    },
+    {
+      "case": "unauthorizedWritesDidNotChangeOtherObjects()",
+      "outcome": "passed",
+      "ms": 551
+    },
+    {
+      "case": "missingExactObjectReturns404()",
+      "outcome": "passed",
+      "ms": 12
+    },
+    {
+      "case": "sdkTimeoutAndRetryBoundAreRealLoopbackIo()",
+      "outcome": "passed",
+      "ms": 1125
+    },
+    {
+      "case": "serviceStopFailsAndRestartRestoresOriginalBytes()",
+      "outcome": "passed",
+      "ms": 10234
+    },
+    {
+      "case": "containerRestartPreservesBytesAuthenticationAndBucketPolicy()",
+      "outcome": "passed",
+      "ms": 9164
+    },
+    {
+      "case": "exactDeleteAndMissingDeleteAreIdempotent()",
+      "outcome": "passed",
+      "ms": 9871
+    }
+  ],
+  "actualSdkAndHttpDependencies": [
+    {
+      "jar": "s3-2.57.8.jar",
+      "sha256": "BC57E1D16550A1DC4F464ADAACEDF8451FCF890BD8B201CD76FAC322C4576927"
+    },
+    {
+      "jar": "aws-xml-protocol-2.57.8.jar",
+      "sha256": "FBFE1ADB9542A0989C0D37FCB65BCCD332D13928627905D94B38836C13DD9395"
+    },
+    {
+      "jar": "aws-query-protocol-2.57.8.jar",
+      "sha256": "997F6212E71077F378E85C34C6F6C2D23056CA7FFB93DE287CAB23D5A3CE5799"
+    },
+    {
+      "jar": "protocol-core-2.57.8.jar",
+      "sha256": "60C84AE2AB04AE11F30482E1A16EDE98DD98CA7C677583282D21CB3143E8C4DE"
+    },
+    {
+      "jar": "arns-2.57.8.jar",
+      "sha256": "94E7BF9437B79C0C30BFA14D5AC532B032B5D3025A63A928E811306FE61F0C83"
+    },
+    {
+      "jar": "profiles-2.57.8.jar",
+      "sha256": "A569D92320886A14F8EFB8C26CC897C4B0F830C1DDDFF39F17C7506365EC7EFB"
+    },
+    {
+      "jar": "crt-core-2.57.8.jar",
+      "sha256": "C4AE0E0BB5A5777459A2823588EC4220D58BD0046996FB8CA44B0B6101CF23A6"
+    },
+    {
+      "jar": "http-auth-2.57.8.jar",
+      "sha256": "78B7B9CCCE2F7C352F8E70217EE76B7E7F70BD36D7EA319B7C4E8E6E39210388"
+    },
+    {
+      "jar": "identity-spi-2.57.8.jar",
+      "sha256": "6CD55D9BCE3D8FC96729C8786CA451A7592DB22F65564EE43FCF5977E1B0DF12"
+    },
+    {
+      "jar": "http-auth-spi-2.57.8.jar",
+      "sha256": "09E032DBE524E72D48A969ED34208178AEC77E0E5CDB15621AA684D15BBF17B0"
+    },
+    {
+      "jar": "http-auth-aws-2.57.8.jar",
+      "sha256": "A9E2AB376DB220B3C72704496CD19401EFDE529E8A4A833C3462B67A759ECA00"
+    },
+    {
+      "jar": "checksums-2.57.8.jar",
+      "sha256": "D3F5B7AC0D055D26AA9565257A431BC608A89F53098689CCB6E49A28EB44522E"
+    },
+    {
+      "jar": "checksums-spi-2.57.8.jar",
+      "sha256": "D2D7F87A48022C8E819C0C29495B1296C54549A9B1123E3AD5BD154A5DE2C298"
+    },
+    {
+      "jar": "retries-spi-2.57.8.jar",
+      "sha256": "0489225C14E579515CC7988B84298901ACA0F993E2305F6C2261BEED1D834A93"
+    },
+    {
+      "jar": "sdk-core-2.57.8.jar",
+      "sha256": "C51385C9954073E7182BF78C28CA5D20079637C0693681A835081DF522B4E737"
+    },
+    {
+      "jar": "retries-2.57.8.jar",
+      "sha256": "41F07D1CF30158410E9CB1DED8DB92329733C2345F0FB9D6ED85F3887E1B1E0A"
+    },
+    {
+      "jar": "auth-2.57.8.jar",
+      "sha256": "007EDD3374577A53295C341BC71370AF53E4DA7F646862C39669F19EF2EB3FDC"
+    },
+    {
+      "jar": "http-auth-aws-eventstream-2.57.8.jar",
+      "sha256": "506672E012C2D7DBF54485697F710B1BC36911E482DFD2F03379ADA991CCABAB"
+    },
+    {
+      "jar": "eventstream-2.57.8.jar",
+      "sha256": "5CB6A34A0054D0388B5F6998D3D6AE55E59FCD231CEA3537429CED67E5394BB0"
+    },
+    {
+      "jar": "http-client-spi-2.57.8.jar",
+      "sha256": "879C6C44F42539253D6AC501E634DACE51DEF6E4EAC206E6A2C5B12DEEC7092A"
+    },
+    {
+      "jar": "regions-2.57.8.jar",
+      "sha256": "9B781252515549243A899829FF9A0E26BE84DBE79D852FBD4FDC8C9882191839"
+    },
+    {
+      "jar": "annotations-2.57.8.jar",
+      "sha256": "825C182A148F8731CC10FB2352B02B2C95AEF4F7CE021216C68FABF1B4F496F2"
+    },
+    {
+      "jar": "utils-2.57.8.jar",
+      "sha256": "5CCC52464978B8B866510194587790EF35BC509724753E4F668EC1604709D7B0"
+    },
+    {
+      "jar": "aws-core-2.57.8.jar",
+      "sha256": "0EAEE342EFC79341A1C02C8A283A1D47C4C5FB85D962FE94DE56A5CC45E95E31"
+    },
+    {
+      "jar": "utils-lite-2.57.8.jar",
+      "sha256": "8D26D5BBF01C70E2BEDDBE1E576D034D8222E6283D134F7E7CE0BBAA8FAA47E2"
+    },
+    {
+      "jar": "metrics-spi-2.57.8.jar",
+      "sha256": "2AA0E5E1BF0859175F296908B4C2291900B8A3092FF74FEDC6BB4C6545EECC19"
+    },
+    {
+      "jar": "json-utils-2.57.8.jar",
+      "sha256": "5445CF5B375E086AA2F2FA73A60820ABAA996406B129A5D67F2010FE0408DCD2"
+    },
+    {
+      "jar": "third-party-jackson-core-2.57.8.jar",
+      "sha256": "AE23ADF5B08E5E8A8470532094D2D43EEA62DCD2AB0FC2C037DAD77118041D17"
+    },
+    {
+      "jar": "endpoints-spi-2.57.8.jar",
+      "sha256": "AA9984DB787239EBBA4C72F7610F21CC24AB8E51B09D9E723A460C4981F317C3"
+    },
+    {
+      "jar": "apache5-client-2.57.8.jar",
+      "sha256": "CAF0B198719B3CA48D2FA01E81A906DE20AB282190A8099913F2A5595F71AE8B"
+    },
+    {
+      "jar": "httpclient5-5.6.4.jar",
+      "sha256": "BDEF5F8841145CD76C4C605FF301BC840EEA0D5292332B7B892A93316C0D8EE1"
+    },
+    {
+      "jar": "httpcore5-h2-5.4.3.jar",
+      "sha256": "C7DB7026B8E2DEA39132B04A6069F6671E2858309B20A146EC5C7DD6ED73A0B6"
+    },
+    {
+      "jar": "httpcore5-5.4.3.jar",
+      "sha256": "18BFBBABB478DFB67F31AEAF428C387F3C3DF654582E1309F708EE1F3086830A"
+    }
+  ],
+  "attempts": [
+    {
+      "reason": "unquoted dotted PowerShell flags split, incorrect bind/config; no protocol cases completed",
+      "result": "failed",
+      "stage": "initialization",
+      "attempt": 1
+    },
+    {
+      "reason": "Docker internal network had no effective host port mapping; no protocol cases completed",
+      "result": "failed",
+      "stage": "initialization",
+      "attempt": 2
+    },
+    {
+      "reason": "Apache5 proxy config requires built object, not lambda",
+      "result": "failed",
+      "stage": "test compilation",
+      "attempt": 3
+    },
+    {
+      "passed": 28,
+      "failures": 1,
+      "reason": "fixed-length encoding, exact marker grant, empty-list semantics; original evidence retained",
+      "stage": "protocol",
+      "result": "failed",
+      "checks": 33,
+      "attempt": 4,
+      "errors": 4
+    },
+    {
+      "stage": "protocol",
+      "attempt": 5,
+      "checks": 33,
+      "failures": 0,
+      "result": "passed",
+      "errors": 0
+    },
+    {
+      "stage": "final entrypoint cleanup revalidation",
+      "attempt": 6,
+      "checks": 33,
+      "failures": 0,
+      "result": "passed",
+      "errors": 0,
+      "reason": "environment restored even if cleanup fails; completion marker only after cleanup; protocol source unchanged"
+    }
+  ],
+  "limitations": [
+    "No business HTTP or MySQL integration",
+    "No PDF parsing assertion in binary protocol sample",
+    "Stop/start and restart same volume/config, not backup restore or multi-node HA",
+    "SDK blackhole uses real owned loopback sockets with shortened test timeouts",
+    "Dedicated bridge permits egress; only S3 loopback port published",
+    "B must implement verified client/identity constraints in production and V24; C covers delayed PUT/backup/isolated migration"
+  ],
+  "next": "M04.2-B file integration and LOCAL history compatibility, already covered by adopted ADR-0056"
+}

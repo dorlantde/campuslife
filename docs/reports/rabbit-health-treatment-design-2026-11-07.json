@@ -1,0 +1,82 @@
+{
+  "date": "2026-11-07",
+  "task": "D.7.1-C",
+  "status": "DESIGN_PENDING_ADOPTION",
+  "plan": "docs/rabbit-health-treatment-design.md",
+  "planSha256": "15b4918e8adbf6a132df6d5837b15bf9b87c748dba52865ad42efc0b84f77d90",
+  "executed": {
+    "cloudConnected": false,
+    "dockerStarted": false,
+    "serviceStarted": false,
+    "buildRun": false,
+    "testsRun": false,
+    "productionImplementation": false,
+    "probeChanged": false
+  },
+  "recommendation": {
+    "candidate": "container-local HTTP ready without credentials, conditional on fixed-image compatibility",
+    "next": "D.7.1-C.1 only after adoption",
+    "compatibilityTotalSeconds": 300,
+    "compatibilityCleanupSeconds": 120,
+    "isolatedVerificationTotalSeconds": 480,
+    "isolatedVerificationCleanupSeconds": 120,
+    "dockerProbeTimeoutSeconds": 5,
+    "measurementHealthGateUnchanged": true,
+    "missingClient": "stop and preserve original probe; no automatic installation or permission/secret change"
+  },
+  "remainingUnknown": [
+    "Fixed digest client and total-deadline capabilities",
+    "Ready endpoint no/wrong-credential behavior in fixed image",
+    "Listener-stop/response-deadline/recovery behavior",
+    "Seven-service integration and old C.3 root cause"
+  ],
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "existingHelpersVerified": 27,
+    "historicalReportsVerified": 7,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "sourceAndJarUnchanged": true,
+    "documentLinksVerified": true
+  },
+  "cloudState": "No live audit this turn; previous B.2 receipt and cleanup remain historical evidence",
+  "localSourceSha256": {
+    "deploy/base/components.yaml": "7bac7b22e4c3e80ddfa35333ad5c4133b83063693be305b20d22c83b00d5d848",
+    "deploy/base/compact4g.yaml": "d6fc1499992abafa171aa1efb4a41d7b5fdc2f98040016df661993a68d1df4e7",
+    "deploy/base/rabbitmq.conf": "814b91441e3d9b1516a84b92868a54ab94904dc3028c3e5f34b4ceb33e69fdd9",
+    "deploy/base/rabbitmq-compact4g.conf": "4fcc8cefe4e98acd7f5d6a66861426cc02e02a140dc199c28f3828c40e4be7fb",
+    "scripts/deploy_base.py": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+    "scripts/measurement_runtime.py": "ca13123235abe7694001f0f713416d85d9980ee108bf86047395d249088a780d",
+    "docs/reports/rabbit-probe-observation-2026-11-07.json": "60bdb93f942fd70d104d3a82a8a2e0818ac76d096924e9ab09fc0684fc04c50e"
+  },
+  "historicalReportsSha256": {
+    "docs/reports/rabbit-probe-design-2026-11-07.json": "9fe9d65b52d225d64eae6673f29bc711a9c49589a04ee3bc60b344c05481d75a",
+    "docs/reports/rabbit-probe-diagnosis-2026-11-07.json": "aac2da3377d432bb9e02a9c8e29e9f35c1b534fc86bb16af50af3a920b2d1b2d",
+    "docs/reports/rabbit-probe-diagnosis-2026-11-07.md": "fd21d12eff9c925ede11c9ed2454ee3028a7c93184e045d8807b160a9e71d6e6",
+    "docs/reports/rabbit-probe-observation-2026-11-07.json": "60bdb93f942fd70d104d3a82a8a2e0818ac76d096924e9ab09fc0684fc04c50e",
+    "docs/reports/rabbit-probe-observation-2026-11-07.md": "6b8d97b2b5a5b3f81cc8fa918b7c534ea1c4d312a791566e6dd45af5709b95c6",
+    "docs/reports/rabbit-probe-rediagnosis-2026-11-07.json": "8a44bfae9676811f65f68af88ceec2204e534f50096eeed58caffbf7ad395cb3",
+    "docs/reports/rabbit-probe-rediagnosis-2026-11-07.md": "32a8ddd4026d4c52fd0dcd75c233c8017a276dc17c6c30c2c47eda3243828d99"
+  },
+  "primarySources": [
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbitmq_management/src/rabbit_mgmt_wm_health_check_ready_to_serve_clients.erl",
+      "finding": "fixed-version readiness semantics; authentication behavior not established by source alone"
+    },
+    {
+      "url": "https://www.rabbitmq.com/docs/4.3/man/rabbitmq-diagnostics.8",
+      "finding": "port check accepts TCP, no protocol handshake/authentication"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/docker-library/rabbitmq/master/4.3/ubuntu/Dockerfile",
+      "finding": "moving branch currently 4.3.7, not actual fixed-digest inventory"
+    },
+    {
+      "url": "https://curl.se/docs/manpage.html",
+      "finding": "overall transfer timeout and proxy controls; actual installed options not verified"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/rabbitmq/rabbitmq-server/v4.3.6/deps/rabbit/src/rabbit_networking.erl",
+      "finding": "exported listener-stop function for proposed isolated fault control only"
+    }
+  ]
+}

@@ -1,4 +1,9 @@
 # Isolated native MySQL fixture; never connects to or stops the user's MySQL80 service.
+param(
+    [ValidateRange(1, 300)]
+    [int]$StartupTimeoutSeconds = 30
+)
+
 $ErrorActionPreference = 'Stop'
 $taskRoot = (Resolve-Path -LiteralPath (Join-Path $PSScriptRoot '..')).Path
 $taskMysql = Get-Command mysql -ErrorAction Stop
@@ -14,7 +19,7 @@ $taskInitProcess = $null
 $taskServerProcess = $null
 $taskOriginalEncoding = $OutputEncoding
 $taskOriginalEnvironment = @{}
-foreach ($taskName in @('DB_HOST','DB_PORT','DB_NAME','DB_USERNAME','DB_PASSWORD','SPRING_PROFILES_ACTIVE','JWT_SECRET_BASE64')) {
+foreach ($taskName in @('DB_HOST','DB_PORT','DB_NAME','DB_USERNAME','DB_PASSWORD','SPRING_PROFILES_ACTIVE','JWT_SECRET_BASE64','FILE_STORAGE_ROOT','FILE_CLEANUP_ENABLED','FILE_TEST_STORAGE_ROOT','FILE_S3_ENABLED','FILE_UPLOAD_TARGET','MESSAGING_ENABLED','MESSAGING_SCHEDULING_ENABLED','COUPON_REDIS_ENABLED','COUPON_REDIS_SCHEDULING_ENABLED','RATING_CACHE_ENABLED')) {
     $taskOriginalEnvironment[$taskName] = [Environment]::GetEnvironmentVariable($taskName, 'Process')
 }
 $taskExitCode = 1
@@ -84,6 +89,19 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, REFERENCES ON campus
     $env:DB_USERNAME = 'campuslife'
     $env:DB_PASSWORD = $taskGeneratedPassword
     $env:SPRING_PROFILES_ACTIVE = 'mysql'
+    $env:FILE_STORAGE_ROOT = Join-Path $taskFixtureRoot 'files'
+    $env:FILE_TEST_STORAGE_ROOT = $env:FILE_STORAGE_ROOT
+    $env:FILE_CLEANUP_ENABLED = 'false'
+    # Business S3 tests use per-context DynamicPropertySource with an owned fixture; ordinary SQL/JAR checks stay LOCAL.
+    $env:FILE_S3_ENABLED='false'
+    $env:FILE_UPLOAD_TARGET='LOCAL'
+    # Only the dedicated owned-broker runner may opt this isolated test into MQ.
+    if($env:CAMPUSLIFE_MQ_IT -ne 'owned-isolated-fixture'){$env:MESSAGING_ENABLED='false'}
+    $env:MESSAGING_SCHEDULING_ENABLED='false'
+    # Optional local opt-in files must not connect ordinary SQL tests to developer Redis.
+    if($env:CAMPUSLIFE_COUPON_REDIS_IT -ne 'owned-isolated-fixture'){$env:COUPON_REDIS_ENABLED='false'}
+    if($env:CAMPUSLIFE_CACHE_IT -ne 'isolated-fixture'){$env:RATING_CACHE_ENABLED='false'}
+    $env:COUPON_REDIS_SCHEDULING_ENABLED='false'
     . (Join-Path $PSScriptRoot 'jwt-env.ps1')
     $env:JWT_SECRET_BASE64 = New-CampusLifeJwtSecret
     Write-Host "Running MySQL integration checks on isolated loopback port $taskPort."
@@ -91,7 +109,7 @@ GRANT SELECT, INSERT, UPDATE, DELETE, CREATE, ALTER, INDEX, REFERENCES ON campus
     $taskExitCode = $LASTEXITCODE
     if ($taskExitCode -eq 0) {
         $taskExitCode = 1
-        & (Join-Path $PSScriptRoot 'smoke.ps1') -Profile mysql
+        & (Join-Path $PSScriptRoot 'smoke.ps1') -Profile mysql -StartupTimeoutSeconds $StartupTimeoutSeconds
         $taskExitCode = 0
         Write-Host 'PASS: isolated MySQL migration, constraints and mysql-profile jar startup.'
     }

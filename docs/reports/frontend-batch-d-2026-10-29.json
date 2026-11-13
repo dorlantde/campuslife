@@ -1,0 +1,1209 @@
+{
+  "milestone": "M05.2-D",
+  "date": "2026-10-29",
+  "timezone": "America/New_York",
+  "generatedAt": "2026-10-29T11:13:52.061030+00:00",
+  "status": "pages-delivered-operable-stages-targeted-verified",
+  "remainingManual": [
+    "New BOOKING real-time merchant start/complete then new student review was not executed. All three new bookings closed before their windows. Historical seeded completion is not this journey. Use normal local backend; 90-minute preview cannot wait the 2-hour booking lead time."
+  ],
+  "nextTask": "M08.1 coupon business/rules proposal only (not started or approved in detail)",
+  "apiMappings": {
+    "newThisBatch": [
+      {
+        "method": "GET",
+        "path": "/api/v1/shops/{shopId}/barbers"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/shops/{shopId}/booking-slots"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/orders/bookings"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/merchant/orders/{orderId}/complete"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/orders/{orderId}"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/admin/orders/{orderId}/close-exception"
+      },
+      {
+        "method": "GET",
+        "path": "/api/v1/admin/accounts"
+      },
+      {
+        "method": "PATCH",
+        "path": "/api/v1/admin/accounts/{accountId}/status"
+      },
+      {
+        "method": "POST",
+        "path": "/api/v1/admin/reviews/{reviewId}/hide"
+      }
+    ],
+    "totalBusinessMappings": 61,
+    "backendOperations": 62,
+    "mappingIsNotFullBrowserExecutionCoverage": true
+  },
+  "production": {
+    "filesChecked": 233,
+    "unchangedAgainstTaskStart": true,
+    "flywayVersion": 16,
+    "applicationTables": 24,
+    "sha256": {
+      "src/main/resources/application-mysql.properties": "f8ab8672ed10a4d203e699f049cfae5e29a1dc822b8ffd3ce7abbcb7a19750d6",
+      "src/main/resources/application-web-only.properties": "eb30c16c7c24f2d9812bca26d3ffc34f7a4d5d2e884e12379829c95b48cdf6c1",
+      "src/main/resources/application.properties": "f6687e51098ee1ad67a43c6ff3f5a6d00a46befee787e043443bb13c26e5a165",
+      "src/main/java/com/campuslife/CampusLifeApplication.java": "caa3aca60141c6ccd97674d6e67367a99d068d5bbc998e2c02759a665ddd7c41",
+      "src/main/java/com/campuslife/config/DatabaseMigrationConfiguration.java": "d12f8a66929f97300e95f8633c486d66ae828e96f1cce7e572fc151045bb9bf5",
+      "src/main/java/com/campuslife/config/OpenApiConfiguration.java": "bfbb8bcbea4cb688589e4404a33617db9bcd9591a41792306e1580c7e0ed8217",
+      "src/main/java/com/campuslife/config/TimeConfiguration.java": "7df520d7681e59ca5bc34851892d0f4b2405adb6d2fbd54964a4b574ed6858e9",
+      "src/main/java/com/campuslife/admin/bootstrap/AdminAccountInitializer.java": "332ee2863781a799f4c5cbb4a2e64fe04f63c7fbf4c303e272d3a3ab1fc0c68a",
+      "src/main/java/com/campuslife/admin/bootstrap/AdminBootstrap.java": "99d4a5a2b7f7a073615af6ae2849a6c27779f323d5a0dd1b7ce9d057a3f6223b",
+      "src/main/java/com/campuslife/admin/config/AdminConfiguration.java": "083cdce5ee8f916ffc32973977e886e757097e1626fb667110d65d782bda6c9e",
+      "src/main/java/com/campuslife/admin/controller/AdminAccountController.java": "099a6821ae96e23b3bdc18fc705e204f52e0065399218188bf13e308879730a9",
+      "src/main/java/com/campuslife/admin/controller/AdminShopController.java": "3e32e01d5764f15ac98379ee1f58c2d12e8e5b811ea85c17df0efda66423534c",
+      "src/main/java/com/campuslife/admin/dto/AccountStatusWrite.java": "2a5d7308c392c1fefbacd39ee757c59b9f11ccb5d8e3b7fd6d058b3565cbdac4",
+      "src/main/java/com/campuslife/admin/dto/ShopApprovalRequest.java": "dd631dfd2607c19556d47da4b74bfbb0797f4a2b0657c10b0fd7e59669cda5fc",
+      "src/main/java/com/campuslife/admin/dto/ShopRejectionRequest.java": "55dd6b7b8ef858bc3cea9a559057caf115b8574f2f1ac6bd112848738d69f9a1",
+      "src/main/java/com/campuslife/admin/mapper/AccountStatusChangeMapper.java": "717e7a618a78cd1a2882f4778f4c9a04a1062fc47a67cadcabad3de43592ca8a",
+      "src/main/java/com/campuslife/admin/mapper/AdminAccountMapper.java": "075a9883b8e8e14de238f35c0a94248b378689b6aad6093fdd3b5cbc2654e30a",
+      "src/main/java/com/campuslife/admin/mapper/AdminShopMapper.java": "fce8f6b23c64d2b10787a4d7d8351222803848e6e61a120cd248a1c664538a8b",
+      "src/main/java/com/campuslife/admin/mapper/ShopReviewMapper.java": "d5b0af2c86e7893333e36ee85c16c33fd97c3179f2f90674853b17d5053f3bfa",
+      "src/main/java/com/campuslife/admin/service/AdminAccountService.java": "332ecb679fb2ab34ad6aa33d2a3b77da0b13efe2485e4f6fe37f14c295a6c5cf",
+      "src/main/java/com/campuslife/admin/service/AdminAccountStatusService.java": "ceb2d20d06e7a83e2e6ac556d6ef8464bbdf46761351f82a0925a0334f63b830",
+      "src/main/java/com/campuslife/admin/service/ShopReviewService.java": "c1660485941ef989a3483c5aa8108a1b80110d02a3bae56fdbfaa60ffc3c2a3d",
+      "src/main/java/com/campuslife/admin/vo/AdminAccountPage.java": "53ea69087b80f36013aa0fefce1c963d16183bd4e8c8fff895cde1346121ed42",
+      "src/main/java/com/campuslife/admin/vo/AdminShopPage.java": "c1922a9e0db17c7474c608e0e1c92e5009206fe2ce6754838a73d34c28a65775",
+      "src/main/java/com/campuslife/admin/mapper/model/ReviewShopRow.java": "23d82a2a50610ce44d9398dc4f909ae010b6b874f65218102e41186dcc7566f8",
+      "src/main/java/com/campuslife/auth/config/ApiSecurityConfiguration.java": "47d5d98490cf4324fa5bdee167829015267d71bc1daca114022dc9e3bf548175",
+      "src/main/java/com/campuslife/auth/config/RegistrationConfiguration.java": "22f7708df753d5af932e603a8dcdbbfeb67285f134f546452a446c2d4751f075",
+      "src/main/java/com/campuslife/auth/controller/AuthController.java": "268611b68e5afd14e3b94d8116dc9bf9ea4b518297418e4ebeb6d045664119b5",
+      "src/main/java/com/campuslife/auth/controller/MeController.java": "d0b48ebf98806e7ac6763f0c8efeff7936efc27eb4899523207c99720d62ec34",
+      "src/main/java/com/campuslife/auth/dto/LoginRequest.java": "b6f7331499a04d8393cdf6d5de95f061b5aba285876ea3a0123a8a06ad187f2c",
+      "src/main/java/com/campuslife/auth/dto/PasswordChangeRequest.java": "489153cbef8907bbf368d511a0b24d68fce5710deffbcbe3d8ce2631500d4d9f",
+      "src/main/java/com/campuslife/auth/dto/ProfileUpdateRequest.java": "187300a2a6bcab10f48d192065e7a66a3c47b9244d63ffed2b51ae54fd09c2d9",
+      "src/main/java/com/campuslife/auth/dto/RegisterRequest.java": "168a510a1ec57257087bc9ae9b1701d55ae5d23362551eb66defe5d9fb41aa46",
+      "src/main/java/com/campuslife/auth/entity/AccountEntity.java": "d430dc44196325d8cc05fe8a9403cb5c9bf94178e72e90f1d5e8884bd799fab4",
+      "src/main/java/com/campuslife/auth/mapper/AccountMapper.java": "873be03cdf374d80b071d5420407203ae75d3da56a1516574219077a2da2f43b",
+      "src/main/java/com/campuslife/auth/mapper/AuthSessionMapper.java": "d3e171f97ebcdfcdc07ab2ba7ea5f541479265c1a45db99e7ed45df60a9c8ca7",
+      "src/main/java/com/campuslife/auth/security/AuthHttpErrors.java": "5b50934a8cff056680f4cbff20d8f80a05bbacf15e2f745d51434adbb146cd03",
+      "src/main/java/com/campuslife/auth/security/AuthPrincipal.java": "d16fd820c541c29106ee94f64394a77fe64a4a4fae958be63298b79e2c9a781a",
+      "src/main/java/com/campuslife/auth/security/SessionAuthenticationFilter.java": "2a48bf86022e23e270a2680f170312880d0d6e6c300a62805e6c612e035176f3",
+      "src/main/java/com/campuslife/auth/security/TokenService.java": "fb4914d9b86edc456691387771566c264387f35846fc466adf40ca07d94f24cc",
+      "src/main/java/com/campuslife/auth/service/LoginService.java": "aaf26b424b358ea611974757f4213433a19a8afa3fe7ab40075015c401f88901",
+      "src/main/java/com/campuslife/auth/service/PasswordChangeService.java": "f404fe4353f12e63a5d2a6b20174c15fc1c5e1d1d00904453440400411c03ae9",
+      "src/main/java/com/campuslife/auth/service/PasswordChangeTransactions.java": "cfcef6bc652c282efa80e5c340afffe021bbf50bfbe061d1c0b928d6374f2b42",
+      "src/main/java/com/campuslife/auth/service/ProfileUpdateService.java": "7fe10f12efc0cca47eb21fb860ec2be8c9ac588935d3e4d17de236e1d94791de",
+      "src/main/java/com/campuslife/auth/service/RegistrationPolicy.java": "81e703f538dcc02e3e584561909771ab2a08d4ce15990c33dfc7f12638265978",
+      "src/main/java/com/campuslife/auth/service/RegistrationService.java": "fe17916e0a810ac2996a5322622be242d1a2b13c6ccbe0aa560475d3e12ddafa",
+      "src/main/java/com/campuslife/auth/service/SessionService.java": "672342a3e8202afc139550de495dc5851ac0446758fcf688e8239f2410ffb6ab",
+      "src/main/java/com/campuslife/auth/vo/AccountView.java": "244d055aaa2b418cca7382a15f736fed6240fd3283173553984bfea7a1dbbb50",
+      "src/main/java/com/campuslife/auth/vo/LoginView.java": "8f10e30fb2c3a43f44d6b1c5fd5c5bf904c73ec916ff5d22ee0432cf698e8d13",
+      "src/main/java/com/campuslife/auth/mapper/model/AuthSessionState.java": "bc3df5c581588edad3a15a04ac892f55ccd9d5b1227c41168b61da1bc8f2382f",
+      "src/main/java/com/campuslife/auth/mapper/model/SessionAccount.java": "2f8714a3017b13a05420add65bbcbccb620af3394000fa8e90449e4301458331",
+      "src/main/java/com/campuslife/common/api/ApiResponse.java": "c89db736ff4d3fca9dc0de914198ca6c13e8eb8b5f6817f10c016d8fe70165b5",
+      "src/main/java/com/campuslife/common/exception/BusinessException.java": "455a790e664c017d06d765aef2b8267cb9b8930f09a9ed36c0070d3e8d526486",
+      "src/main/java/com/campuslife/common/exception/GlobalExceptionHandler.java": "ed30fc7e5b79f3e2daefae01e29f4505869cdba1ca2b9efcaf5cf8388ea2d894",
+      "src/main/java/com/campuslife/common/web/TraceContext.java": "a08e0238bcbe3f5c3f0568bf8bf3540e1c27959425996ed509df3fad0193444f",
+      "src/main/java/com/campuslife/common/web/TraceIdFilter.java": "701074251dc9a30554f2089430aadbcf6593738d4ad9ba150b6649c15eaafd69",
+      "src/main/java/com/campuslife/file/config/FileConfiguration.java": "077cfd52e05b17a0a4860bf303e962532516243a3df99e189e946c76d1765772",
+      "src/main/java/com/campuslife/file/controller/FileController.java": "6b648bab1cc07f9ff4b3305591d61035cfae597b1e72461078bff7446b631aeb",
+      "src/main/java/com/campuslife/file/entity/FileAssetEntity.java": "5ab084ff9abee1edda19aff8dd843aa5662f76f47945519a664038a337c92b85",
+      "src/main/java/com/campuslife/file/mapper/FileAssetMapper.java": "9511b7bd45690a3a52930b1512211f93c214406f77de258d395e193546847d8a",
+      "src/main/java/com/campuslife/file/mapper/FileReferenceMapper.java": "93ac6d4903dd43b7e2c5fe7b384b81eb9b254a06c97f293f57dd0a7cb37ddcff",
+      "src/main/java/com/campuslife/file/service/FileCleanup.java": "d6981c21ff00162d79688d90d897cf2abe57e4ed54d349e406213f3b075430b6",
+      "src/main/java/com/campuslife/file/service/FileDownloadService.java": "0d4e093819aaa2fbc3f6d5885495679637ef3cd993d3c0b122dace39207c992d",
+      "src/main/java/com/campuslife/file/service/FileReferenceProtection.java": "d7bf6d8a8e921dffd0aa0464dfe36ae9692cf6d95ca7deddc7b44071b8c81118",
+      "src/main/java/com/campuslife/file/service/FileRules.java": "1ee6defde2e848e8338472df824216e1e131604138ede625260b5f382d037d83",
+      "src/main/java/com/campuslife/file/service/FileTransactions.java": "3ba2731f4cf1bbab0e94f7bc9c68b8da250e8138985c5c7448b36ba45bab4d54",
+      "src/main/java/com/campuslife/file/service/FileUploadService.java": "859d6b8858df8fc99e7155a53b8b1cf54536710c2eb94425d0455c2111b07022",
+      "src/main/java/com/campuslife/file/service/PdfInspector.java": "35d5129e98902039db3afdbd02ee403e8f5790c919c1872af565b53881a86bfe",
+      "src/main/java/com/campuslife/file/storage/LocalFileStorage.java": "9fecc550c73b4c0190857f9b55faa9af0b557159fe47f069f4260b83d4de7772",
+      "src/main/java/com/campuslife/file/vo/FileView.java": "c0b887f121f6981cd453bff9c665e0e219d61bb54ce7751185b99dd79bb38f54",
+      "src/main/java/com/campuslife/merchant/cache/RatingCache.java": "3cb6eb5562030f65b992bf000c63cb3a0b240dbb20e4f344f95f62b18f81bd65",
+      "src/main/java/com/campuslife/merchant/cache/RatingCacheCodec.java": "12944262e0b3e71231acbb1f1a82730815455a860ebb57948c9ef36f627328a6",
+      "src/main/java/com/campuslife/merchant/cache/RatingCacheKey.java": "0cf43ec869f7abe2c9db88cd38e194d464f8fb5e4b50857b1735ce04a215cc47",
+      "src/main/java/com/campuslife/merchant/cache/RatingStats.java": "6070cefca1a431d2c408e3f73de1d2e3b28f929a0bd2ece258466fb134c18791",
+      "src/main/java/com/campuslife/merchant/cache/RedisRatingStore.java": "0547aa898bcbb8e99674d6538efdba115837d2e3d91ceac13bb0f79e14ca2e07",
+      "src/main/java/com/campuslife/merchant/config/MerchantConfiguration.java": "3d7b1de45379a2bd49afc9c2171a9d79dad198ce13dec61a5ccdcc284c19f63e",
+      "src/main/java/com/campuslife/merchant/config/RatingCacheProperties.java": "806ee622f690d733c35ce4e9b28f2b6a681f123c5eb48e71ad01e5e751f007e7",
+      "src/main/java/com/campuslife/merchant/config/RatingRedisConfiguration.java": "11a3c352c23c4c2178bf884ba119f2f79d582c8dd8b8bacb36bef32783e7881f",
+      "src/main/java/com/campuslife/merchant/controller/BarberController.java": "4e03b7ba9a958060d93793293d716421580b5f4db527763163b10bd845774c1b",
+      "src/main/java/com/campuslife/merchant/controller/BarberScheduleController.java": "7d6b4ea909938b9809a41870138a938e3f2c72e013614fb3bd016fd8b7306e11",
+      "src/main/java/com/campuslife/merchant/controller/MerchantController.java": "540f76232125de63f66bd22269936dc6fa924039a4096312bf2cbcceb27cc292",
+      "src/main/java/com/campuslife/merchant/controller/MerchantOperationController.java": "fe4c7726a6944a3f123b35b2efe3714cc13d1bb1b99c25873e5fbf329e81ee47",
+      "src/main/java/com/campuslife/merchant/controller/MerchantServiceController.java": "5e18187436de03566ccb49ac05aa27ee76a7fd7e5cc48f4763fc7164600c0dc7",
+      "src/main/java/com/campuslife/merchant/controller/PrintPriceController.java": "4ae5323a628095d9ba0ae247aa5d4baa5bcc0c5768ecfbac408d036fa9a96dee",
+      "src/main/java/com/campuslife/merchant/controller/PublicShopController.java": "3c0d5d19a2717ec0054a001b0519ab3793aca994d0acebb40d75deb49221c793",
+      "src/main/java/com/campuslife/merchant/dto/BarberCreateRequest.java": "f0f4e4cd9f32c15f05def1dd19a364b65010737465b3adcee1fa339f4b71d21d",
+      "src/main/java/com/campuslife/merchant/dto/BarberPatchRequest.java": "270392ac6d4f90546440e9e3730006d2291034dc6d541064b3382d74293c750d",
+      "src/main/java/com/campuslife/merchant/dto/BarberServicesRequest.java": "66790ddc404085a0a7dd3c5fac6aff91ecb018b13fa2c141492f7e3a0491ae07",
+      "src/main/java/com/campuslife/merchant/dto/BusinessHoursRequest.java": "3a3de984ce0056ec01486c195edf0c612ac0a39e4d4ebaad87f53603a62fa034",
+      "src/main/java/com/campuslife/merchant/dto/MerchantApplicationRequest.java": "e336be51594c245c612f3332963948311f4a422a40d5cde57548355e6c729892",
+      "src/main/java/com/campuslife/merchant/dto/MerchantResubmitRequest.java": "ed2f6d25e3dc1609a3807d81115f1888098fb04ef82349c8de6065456f39baaa",
+      "src/main/java/com/campuslife/merchant/dto/PrintPriceRuleRequest.java": "091955fdec60f165dd206a9eda6657145587d26da04408541ae5980f4bb93241",
+      "src/main/java/com/campuslife/merchant/dto/PrintPricesRequest.java": "badfb682b15584aff457154e2087d8e715f22846910bf7dde49857080e10432d",
+      "src/main/java/com/campuslife/merchant/dto/ScheduleWrite.java": "cf9d42871fe7825dbce698d1830d0bba6807d9e13141ee173eb6807a84100e73",
+      "src/main/java/com/campuslife/merchant/dto/ServiceCreateRequest.java": "710e0336cde5bd5f270c4abbf0b5757f63b8855fbc7c0597f3a640f704944815",
+      "src/main/java/com/campuslife/merchant/dto/ServicePatchRequest.java": "60f5585a311e86047e56a4939e3037b87b15cd1dedc2dad5fd00ffcd788dc2aa",
+      "src/main/java/com/campuslife/merchant/dto/ShopPatchRequest.java": "77a7b7c4fd7403b0909ca543223e12ca19c65694d93d43487792a5db0aab3242",
+      "src/main/java/com/campuslife/merchant/entity/BarberEntity.java": "2cbc45690b51d3197d8512113047de0bed10b86848a02269d25758420063a5db",
+      "src/main/java/com/campuslife/merchant/entity/PrintPriceRuleEntity.java": "05531962c3cec630d9bb59da1c88e3750d735c0f968a5d40dc47c0d68c15bed0",
+      "src/main/java/com/campuslife/merchant/entity/ServiceItemEntity.java": "ae1a0639d1d01af48929d372725bae44fed4b36990084c1b1e3bf1f6786003da",
+      "src/main/java/com/campuslife/merchant/entity/ShopEntity.java": "5572ac9b7933a135c65104f9e6b8631ac623e8b940ef3d12f8e41b4aa0e093a7",
+      "src/main/java/com/campuslife/merchant/mapper/BarberMapper.java": "bdbe34d0da3dd6439fb0794166e5c4444e5d1056691ea4a2a3632e1e6d2f6250",
+      "src/main/java/com/campuslife/merchant/mapper/BarberScheduleMapper.java": "f5d218895fe49d51e50e9f56e5ced6c74ac232b5853097480114bf8f42577caf",
+      "src/main/java/com/campuslife/merchant/mapper/BarberServiceMapper.java": "9c0a8c9a1a1f6f15159ad08a8c3cf5aac6756df5ab95b55e96433c8c9a374958",
+      "src/main/java/com/campuslife/merchant/mapper/BusinessHourMapper.java": "75aae0512a11713a399369a44a8cc9e21b9bf8c20bd83e3e71187fa4de1d07d2",
+      "src/main/java/com/campuslife/merchant/mapper/PrintPriceRuleMapper.java": "f49446329f89b36b7502d1c5810280bbc64f40a7e830ff13d300c2d84253eec6",
+      "src/main/java/com/campuslife/merchant/mapper/PublicBarberMapper.java": "c7758f193217deaded1543620db2a2d068543b8b07159c75335df38a6f63acf7",
+      "src/main/java/com/campuslife/merchant/mapper/PublicReviewMapper.java": "ed6e54eabe0f956bb29d76074fd6e8f77208fb3b9c59d744552f844db22c19cc",
+      "src/main/java/com/campuslife/merchant/mapper/PublicShopMapper.java": "3c0a854f4f8e1b6935e6e4762e84b705d2d24c62491225ec968aedc1116f8c79",
+      "src/main/java/com/campuslife/merchant/mapper/RatingRevisionMapper.java": "58b49a5b6d55fe592e7543a4d835d0bfe1ea5d7660f9f52ffd56445800e1d18e",
+      "src/main/java/com/campuslife/merchant/mapper/ServiceItemMapper.java": "f7291d312e4486181852aa995bf0addb10ba3d02b92de2780bdc3da08a6b01a0",
+      "src/main/java/com/campuslife/merchant/mapper/ShopCategoryMapper.java": "9460ee85e5adf3dcec3626dafc73e23ae88f4c68d89566f38bb70e848c861cf3",
+      "src/main/java/com/campuslife/merchant/mapper/ShopMapper.java": "efed965b0ea32241ae970a990a6f04a4e215453f1e553b231f0d4e48c56356c3",
+      "src/main/java/com/campuslife/merchant/mapper/ShopMemberMapper.java": "9023c09558c9aa6fbc474dd3ed97458515592b9439c5baeb01ec1f524d785d71",
+      "src/main/java/com/campuslife/merchant/service/BarberManagementService.java": "21e2b995cfddfad171398f7a11cfe28eb6b6d78a88184cbc2090af2ef7ad3e3d",
+      "src/main/java/com/campuslife/merchant/service/BarberPolicy.java": "c81d62ef2f88f74a2fd9b1f9f9bae27456d98fe73967331d9ef486080bd51fb7",
+      "src/main/java/com/campuslife/merchant/service/BarberScheduleService.java": "db1836d9918f64846eaa2b1e55cfcb82a6f56db6beadcdfc6066d68f5c30f877",
+      "src/main/java/com/campuslife/merchant/service/BookingSlotPolicy.java": "09122fcffd9b2531c6d3614399e2390bea2d4c52706d8235b74eb20889f09a65",
+      "src/main/java/com/campuslife/merchant/service/BookingSlotsService.java": "2956f0cc505d92cba7f009bd53278f44d0a1f974129f1858f188e6f1bd82bd9b",
+      "src/main/java/com/campuslife/merchant/service/BusinessHoursPolicy.java": "2f50745bf81497d68d093152c0f782ed4eff9d63e8da159e25a52a3c8e688f25",
+      "src/main/java/com/campuslife/merchant/service/BusinessHoursService.java": "130c9aac16f5e9ae36a2b39ed6d50d64689911fcfe133b6f861bd76a9f623d5e",
+      "src/main/java/com/campuslife/merchant/service/MerchantApplicationService.java": "8d50286dd2d6bb8e2179317d4343c039d20196135bd24dc7c19f392d2fca0ee4",
+      "src/main/java/com/campuslife/merchant/service/MerchantOperationService.java": "65761fef22ca78044cebcc09b5713ee9cc6db5960191601141309ab5d0db6237",
+      "src/main/java/com/campuslife/merchant/service/MerchantResubmissionService.java": "34fc320b6fc2664c2df9cf87e8f0446407970c709b20d6563041a93ecdff5acb",
+      "src/main/java/com/campuslife/merchant/service/MerchantServicePolicy.java": "53bad38aa366ef08ed88cb53f71deaec3292722acb0ed28c518ced87c5b28878",
+      "src/main/java/com/campuslife/merchant/service/MerchantShopPolicy.java": "79bea859bf531e5aac18957a7569b67f3cfa1f4836aed4ac9c85e81ced8694ac",
+      "src/main/java/com/campuslife/merchant/service/MerchantShopService.java": "854c260e9d16676eff41d47d1e2d04ca83f3fa8223804fec86ea57e7e8f1acdf",
+      "src/main/java/com/campuslife/merchant/service/PrintPricePolicy.java": "72b83e0f7bbbdcae9d45d1efbfefc507f0bdc262002ada7ab0cb9715d1212e30",
+      "src/main/java/com/campuslife/merchant/service/PrintPriceService.java": "15583fe5a8ec2344c6456bd693687bae2122785d7f964182cdf5338b84880560",
+      "src/main/java/com/campuslife/merchant/service/PublicShopCatalogService.java": "d1d944e070c9699073b36be71ea623368c630e4b9c97f0573d1714bde93a682c",
+      "src/main/java/com/campuslife/merchant/service/PublicShopDetailTransactions.java": "01c5f84cbc0e0a183aa225ea3d431cedb4802c0e6ea57a5596244ac9928b0666",
+      "src/main/java/com/campuslife/merchant/service/ScheduleHoursProtection.java": "f3dc3ef1ca89463d7d191cba0d17db6fa04de538a4eb3dc0391daa4c5dc8c1f0",
+      "src/main/java/com/campuslife/merchant/service/SchedulePolicy.java": "7a5cb186f4d9d3d03ae08331bd50c0b0b7406bd5154553aeb7cfdb1e809485f7",
+      "src/main/java/com/campuslife/merchant/service/ServiceCatalogService.java": "d4c09c1d8aa5af8b382eebc2ee7ecb5cddab0684adfabc2168ddfd7f354a47d5",
+      "src/main/java/com/campuslife/merchant/vo/BookingSlot.java": "45c7b4ca7592b6f7ae1efe34cb7b122e8fd3228432282a3f255b2864936b9f14",
+      "src/main/java/com/campuslife/merchant/vo/BookingSlotsView.java": "ae9283892f53702f89bb588c0134a56c25b083dc4182271650038bbffaf1f1bc",
+      "src/main/java/com/campuslife/merchant/vo/BusinessHourView.java": "48fd5ffc48491eeb3136133d59b06c003ad95430185ca0fef294c820afd6bf62",
+      "src/main/java/com/campuslife/merchant/vo/MerchantApplicationView.java": "c4e88114151e1b30830670b04134ad4056db423ca1f1e1b841a3931a1011e309",
+      "src/main/java/com/campuslife/merchant/vo/MerchantBarberView.java": "cfe3888de9da1fd72ad569ad2bf5e81ca9e6c391dbebac47d3c784dd1a1be44e",
+      "src/main/java/com/campuslife/merchant/vo/MerchantServiceView.java": "d1caad382f36f9015cfab7214d3f5a69bf32036c1bd4e881e8e79ab8d1642b28",
+      "src/main/java/com/campuslife/merchant/vo/MerchantShopView.java": "303a537f1096065289bb0e6241b1f57845f36b0d6ff846f3ccff5739a5c40e86",
+      "src/main/java/com/campuslife/merchant/vo/PrintPriceView.java": "897af3ed19c7e09728b5910dcbead1ce3c3f0a2584cce6e3c7a6dbe79ce5d4e8",
+      "src/main/java/com/campuslife/merchant/vo/PublicBarberView.java": "06da7ab23a5ba017cefc19481e30e097f3da53d7a7d2cca66683249f0a0060c9",
+      "src/main/java/com/campuslife/merchant/vo/PublicReviewPage.java": "b9d4b81024057d1f8f7c39b997260f51a20d86f9aa74523eb16d630619af4beb",
+      "src/main/java/com/campuslife/merchant/vo/PublicReviewView.java": "1d5b60865c0fe6ecdd3f569ea876d84e9e4182eb2138df1fdeac72602a8e0ede",
+      "src/main/java/com/campuslife/merchant/vo/ScheduleInterval.java": "bf683b253b6685465dc0b8a547caa02900aac7a03130fae21397146352cf7d8f",
+      "src/main/java/com/campuslife/merchant/vo/ScheduleView.java": "c817c508d80791517183b9c0bb54dc02daf7e4957624d7b96f195c4cf0a5be1b",
+      "src/main/java/com/campuslife/merchant/vo/ServiceView.java": "a1def41728c34809062f169222e473af3eb369c1bbea61996505129122fd4097",
+      "src/main/java/com/campuslife/merchant/vo/ShopCategoryView.java": "b9e21a579dd4a571734b9636f0e340354d4bbf954f4218fdc463f3a619b43448",
+      "src/main/java/com/campuslife/merchant/vo/ShopDetail.java": "ccd8143deee20a3a2dfc06afaf516f28eea5d8e49485e9be7390e425c22d51f2",
+      "src/main/java/com/campuslife/merchant/vo/ShopPage.java": "30bd3a296d97ba53a53b7a5d6575b56e6fa8f10855dcb8305b7b76c9dd980272",
+      "src/main/java/com/campuslife/merchant/vo/ShopSummary.java": "b260e3eba2cc0687ee6b7782113f7603e16c97acbbacde919332bcccddb872c5",
+      "src/main/java/com/campuslife/merchant/mapper/model/BarberDay.java": "b5efb0194646b29661eb6220781525c610db5fbc1e295e5bdea2f807c8a07765",
+      "src/main/java/com/campuslife/merchant/mapper/model/BarberScheduleRow.java": "03032a46cb05875938060d5ad297fc0b1110a20683fac3aca53e5988a796c2f1",
+      "src/main/java/com/campuslife/merchant/mapper/model/BarberServiceRow.java": "5738ff5a617f21600d9debaf01ddc443969ae05de9f73838d3c5ded29f6863df",
+      "src/main/java/com/campuslife/merchant/mapper/model/BusinessHourRow.java": "652fe7181db023b30f4f6ef07f1739798e0fb2b43cc3269f72ccc4959f595a42",
+      "src/main/java/com/campuslife/merchant/mapper/model/OwnShopRow.java": "24026117ac2ec85823cb8c1002140e43c231341506e77ab93d73c6047b5fc230",
+      "src/main/java/com/campuslife/merchant/mapper/model/PublicBarberRow.java": "f358a1b6b92beda15b8e0f97eb4c1471e0015d7315214cb692790ad2c635b9b3",
+      "src/main/java/com/campuslife/merchant/mapper/model/PublicShopRatingRow.java": "170ae72cc1e31a292b1ed602ebb11d52c1763ee109b99ce677583052b8fad3a7",
+      "src/main/java/com/campuslife/merchant/mapper/model/PublicShopRow.java": "d3df8c9d02bee16c970f381916ae835c74276cdf16e805cc2d4a514f595cfb4f",
+      "src/main/java/com/campuslife/order/config/OrderConfiguration.java": "e3d7a5d2e733b0bbb17f31a078f48d6add0e3d220e4a20bcf4dbefd6f2f8ec38",
+      "src/main/java/com/campuslife/order/controller/AdminBookingOrderController.java": "6280410ac3f99242a9e9d16fc47ba5583d9053d89281c8a62d87d3ceff496fe1",
+      "src/main/java/com/campuslife/order/controller/AdminReviewController.java": "9f5d06d73da82d393c951a9ae255e63cebcbbf1affa75782a50b5651491d449f",
+      "src/main/java/com/campuslife/order/controller/BookingOrderController.java": "631de11828a753f4bf6ebbb4bf434bccea0b6ec3ffa1db31670aaf1d03f31121",
+      "src/main/java/com/campuslife/order/controller/MerchantBookingOrderController.java": "3e51257b88a025291a9b49ffbfddd2a688a502135eb6808a675781bf92beea5e",
+      "src/main/java/com/campuslife/order/controller/OrderReviewController.java": "87279d3fb679de5de310551d1946f595357efc6495fcb3dbdab2219dbf21b74f",
+      "src/main/java/com/campuslife/order/controller/PrintOrderController.java": "32b56fd8fa899501ab2be031e1083916700208f7219b8b5dc6c2639805ca3c2a",
+      "src/main/java/com/campuslife/order/controller/PrintQuoteController.java": "2fc97af30dc5e13e73a52e15a4fadd9d41a2d500f8c36bf004127271db94e8ff",
+      "src/main/java/com/campuslife/order/dto/BookingCancellation.java": "5b10a6743fb8f113f52e484b1b66b97c058817a434c11f67a2f2f4c44c8e60a8",
+      "src/main/java/com/campuslife/order/dto/BookingCreate.java": "e65b2b2c7c5d96a1bedd73155b243ee34d928a06c44386604d3785dbdd1de659",
+      "src/main/java/com/campuslife/order/dto/BookingExceptionClose.java": "0359765f11557d7cff38e5f9813a0e2d728203c0d518219af8d74f18d18252ad",
+      "src/main/java/com/campuslife/order/dto/BookingRejection.java": "96f5971f6dfb5221459607dc977297fd6f08dcb6b63ecb4afb817731e8fa017d",
+      "src/main/java/com/campuslife/order/dto/OrderReviewWrite.java": "5d4f0243374f32606a2e5dfd95ad9d071c596da425f3f85caf84b903fd6a69ad",
+      "src/main/java/com/campuslife/order/dto/PrintCreate.java": "9550a33e18d60dd10d51ec17574ca23db7a997064768c9693a14f67d1c2f7ea6",
+      "src/main/java/com/campuslife/order/dto/PrintQuoteRequest.java": "05660b668b70b985166daacd24250d3f4137cd68efa8e20d4886112231ba2af0",
+      "src/main/java/com/campuslife/order/dto/ReviewHideWrite.java": "570c919fba3426a6774778179488611f96b4ca3e8cdc59cee6427107f9c1833b",
+      "src/main/java/com/campuslife/order/entity/BookingDetailEntity.java": "30d21cc223e3724c2ab2f0484361ba61fc11764f37ba19b324b5a572a7f5ad4c",
+      "src/main/java/com/campuslife/order/entity/OrderReviewEntity.java": "d861d8cdceef87f776a49c0365b81d877a3144489ea9b346ce8e3632d3c24336",
+      "src/main/java/com/campuslife/order/entity/PrintDetailEntity.java": "a88974d1a9a868f6aaa614ef7cbe9ecac877d46974fee5ac769a1e00848854a8",
+      "src/main/java/com/campuslife/order/entity/ServiceOrderEntity.java": "8d05e787f65eeeb772a71c5f1a6249768efe6af8f418a49e2ebf1662cdbba212",
+      "src/main/java/com/campuslife/order/mapper/BookingMapper.java": "a21828bdc70c15453f67b91bf258a468d31ee5e104da5b1d89818fc9c8d68bd4",
+      "src/main/java/com/campuslife/order/mapper/IdempotencyMapper.java": "682bed5601858e56859c4f0a90af7b96a33564777e353369b0b2fcc8a3e8c24e",
+      "src/main/java/com/campuslife/order/mapper/MoneyMapper.java": "23d439a22a3c0eb497c88b335e450e0776b018961fb032f85884cd6b00e3f238",
+      "src/main/java/com/campuslife/order/mapper/OrderEventMapper.java": "2e4e2ef40b9ba42560b3c7cedb1b78187372e8504a9ccb6bb41c0775eb74cad3",
+      "src/main/java/com/campuslife/order/mapper/OrderListMapper.java": "91d38b923c2c575b82bcdb55d60adc30c0be56f08c4b37da4e73756b537daf8a",
+      "src/main/java/com/campuslife/order/mapper/OrderMapper.java": "a56a93c1aa7a07830274b914c05dd16b36ce1be90418a7570ddb1b446c9e85fd",
+      "src/main/java/com/campuslife/order/mapper/OrderReviewMapper.java": "9b487aa4e79b631876ea43bacfbf0a6e8a67a0e0f0aee3199483d2b11db04abb",
+      "src/main/java/com/campuslife/order/mapper/PrintOrderMapper.java": "34df5f0422418cb7d79b052c154158783c8814cfa3333d7e663286096711661f",
+      "src/main/java/com/campuslife/order/service/BookingConfigurationProtection.java": "ae975158ce90f2e75e853712d1f47cf5fc72a6fe493f625d0400480db69d8ca5",
+      "src/main/java/com/campuslife/order/service/BookingExpiryJob.java": "cb3e6d8335a9ad2b236e28647c3e577139f440435cf51248df14a8e2ccbbd5a6",
+      "src/main/java/com/campuslife/order/service/BookingOrderPolicy.java": "95041a88452163c7ec3830552f40ff18e09921f128423f09e428451e95c7a965",
+      "src/main/java/com/campuslife/order/service/BookingOrderService.java": "3b52cb6bf326e0e5ccbf65efdc467a811f508a91b0d541bcc9ca292dee094467",
+      "src/main/java/com/campuslife/order/service/BookingOrderTransactions.java": "98aa43bdca641b98018de5fb618b6737ec9e752fdde18c213a68869493e7e8cb",
+      "src/main/java/com/campuslife/order/service/MockPaymentPolicy.java": "ef004e04fe2122ede65cc80c2db676f5c399fa36ea0a8d8da7807e46359b734d",
+      "src/main/java/com/campuslife/order/service/OrderReviewService.java": "e4acbe83b127f366bdfe28bed7e60f2e13ff938ac82c67f32cb92eb84e46db51",
+      "src/main/java/com/campuslife/order/service/OrderReviewTransactions.java": "8db18350086b64b47d5cfba208bae8a0d9d2c73a2f8a7c10d0baff58f2062c72",
+      "src/main/java/com/campuslife/order/service/PrintExpiryJob.java": "6542089f2bda74e1a160b6a747dd8d5a38053b8d510d00a0f6166fd362413891",
+      "src/main/java/com/campuslife/order/service/PrintOrderPolicy.java": "93cf1dc0276167bcf3423ec169674df04040a57557c3037663826c8560c1bb89",
+      "src/main/java/com/campuslife/order/service/PrintOrderService.java": "5fe35b0f83798eb0d73558d348e28455f6ead704fbf7e1637ce28965e06df63e",
+      "src/main/java/com/campuslife/order/service/PrintOrderTransactions.java": "13a76b7cc926f62135b489daf4d4a5e6d23d4694467aa7c362150b160054a5ac",
+      "src/main/java/com/campuslife/order/service/PrintQuotePolicy.java": "7ccefbcfbc9612f78544765bc3289f481388e06f990e8b4c19459bebfac9c28b",
+      "src/main/java/com/campuslife/order/service/PrintQuoteService.java": "9e5bc77e0c957d3b109f320434d2746b42324617f160241aaa588e1c47a0dee9",
+      "src/main/java/com/campuslife/order/vo/BookingOrderView.java": "85a454865dbe1141f2a57da890df7f55bfeebe77cdefc17ed06745ee0d7f330b",
+      "src/main/java/com/campuslife/order/vo/OrderDetail.java": "aca9352ec51440e106970e2c6a7ca7a1607cf1875c2278508d9306b389846801",
+      "src/main/java/com/campuslife/order/vo/OrderEventView.java": "8c70665bea23c94f7211df86f0e9c218b8992acf4149a62914df547af65a6a90",
+      "src/main/java/com/campuslife/order/vo/OrderPage.java": "309ae6e8437d81edbc7459fb383cfac7490a6d3b7a74b7788e62d0d44e062b6c",
+      "src/main/java/com/campuslife/order/vo/OrderSummary.java": "b89a5d92c29167f5c86b5b1f84bf6b286f8cace730529b1367b0f8344bdbaf86",
+      "src/main/java/com/campuslife/order/vo/OwnReviewView.java": "597c9f76fe46491a091095e503fa8974a93e471cbf66248984788b58088948e8",
+      "src/main/java/com/campuslife/order/vo/PaymentResult.java": "e9fc1f34f3682b7bf7d5a511e08fb20236b390b02617a18153c00b5a9a0ad3cc",
+      "src/main/java/com/campuslife/order/vo/PaymentView.java": "186eadd608b593f7fc34b2195cf9f66cfc0f350489e76b011bede7bfee411aa1",
+      "src/main/java/com/campuslife/order/vo/PrintingOrderView.java": "609be8e08505da8506300c36ac2f2f384a05c2899f6b318f13756ef9796bbf69",
+      "src/main/java/com/campuslife/order/vo/PrintQuote.java": "fab9c65b1865946911ca473dd21368aaddd545fb65a044b4e8544e9b1f645a66",
+      "src/main/java/com/campuslife/order/vo/RefundView.java": "f183dc6eeac793669ef52f9068bac4727ff74ff3d69b83b00330c4ab2455b426",
+      "src/main/java/com/campuslife/order/mapper/model/OrderEventRow.java": "53387398ca17c4585f64632b232cb260d2c051ecb957ab60c7be6cf6e485b06e",
+      "src/main/java/com/campuslife/order/mapper/model/OrderSummaryRow.java": "74ce0f8193542b67d3097a6866c510c77a4042c602e9b5814ae32406402eb1d9",
+      "src/main/java/com/campuslife/system/controller/HealthController.java": "c812717a8ef13c44c04aad32d618e1ff59f3a8e651cc9dd0e035e7e18584ccff",
+      "src/main/resources/db/migration/V10__booking_mock_payments.sql": "bf71d0cf92e906c44c7ebd7afb35e4066bab26cb7091afaec5b3620df81ccc55",
+      "src/main/resources/db/migration/V11__create_file_asset.sql": "a8132d6eb71589cac9f8d556cd61c9ec9f97443fd663278d98a01a59081fec8e",
+      "src/main/resources/db/migration/V12__create_print_detail.sql": "26b7fd01c4c35f5268ce0e5ab8d03b88390cb33050bb84e1f0bc200d7de40ea9",
+      "src/main/resources/db/migration/V13__create_order_review.sql": "db5e66aafe4baa8def073aa7e1988d3587cf9aa8c8bca081ca8e17104acbc270",
+      "src/main/resources/db/migration/V14__review_moderation.sql": "64f457586ec22a377782931dd9dc859ec41f4732469f906764158e5215189735",
+      "src/main/resources/db/migration/V15__account_status_change.sql": "d75668df03839a5ffb8f42f08ca3d498b1f7588967cdbff93c5f298822121b9d",
+      "src/main/resources/db/migration/V16__shop_rating_revision.sql": "725f1c46695acc18f861028b864e3953df45595263a1cae58ab1a88c070bd58c",
+      "src/main/resources/db/migration/V1__create_account_and_auth_session.sql": "bfd1c16c8891e0b1dd45f1017e9091c2fa8da52ee27d0d039cb2826444fb1ed4",
+      "src/main/resources/db/migration/V2__create_merchant_onboarding.sql": "7750edcc256dec188e784e684f6ff7ab85049202b67b1b43c485130ec13dc5db",
+      "src/main/resources/db/migration/V3__create_shop_review.sql": "bb3a6420b956c4b3d961ef29b8e3c61c2ac45f7cb2ba01f8566ad53c8b40f6e4",
+      "src/main/resources/db/migration/V4__create_shop_business_hour.sql": "fccc72d9d45193c8b598380102ad555cb8815ecd6ecc49c52af4d79a5fc5de1a",
+      "src/main/resources/db/migration/V5__create_service_item.sql": "c1266c72e7620ff37ff4b7fa0c0af90c7164a6ceb1ff41e20fde8228814ec1e7",
+      "src/main/resources/db/migration/V6__create_print_price_rule.sql": "48c4bd868ad1089e116f289813d7b55195d7c4ad1e35711997078ea4370839e7",
+      "src/main/resources/db/migration/V7__create_barber_and_services.sql": "1e7873c470b41ba1e4df45ba25f2f2362614aef955e3350889e8c758fc8f6364",
+      "src/main/resources/db/migration/V8__create_barber_schedule.sql": "e24f7fe30e1b737c8debc3bb4f62f7ecfda2d02727890cd18f3fb30348e724d9",
+      "src/main/resources/db/migration/V9__create_booking_orders.sql": "b4ced9514eb379e082fea0fbe1ad59604481fe98c5ff7299657c013a84cb0e88",
+      "pom.xml": "f0e1d01020624c96627c59930e38c220133abb7308148c67f82fdc740d40b250"
+    }
+  },
+  "frontend": {
+    "testFiles": 5,
+    "tests": 114,
+    "previousTests": 91,
+    "newTests": 23,
+    "failures": 0,
+    "skipped": 0,
+    "typecheck": "passed",
+    "build": "passed",
+    "dependenciesUnchanged": true,
+    "testLog": "D:\\campuslife\\.cache\\frontend-it\\b40f4e08a017433d8c15ea1b50ab1db1\\frontend-test-d.log",
+    "testLogSha256": "0ba89fc79686212c72734b02c1ae56e77d4abefc21addb950d73ee4770419db9",
+    "buildLog": "D:\\campuslife\\.cache\\frontend-it\\b40f4e08a017433d8c15ea1b50ab1db1\\frontend-build-d.log",
+    "buildLogSha256": "bd786d57d1233c7d9b14cae15e62277e889cc9d7d3b015cfb56138657c28029f"
+  },
+  "backend": {
+    "classes": 10,
+    "tests": 191,
+    "ordinaryWebTests": 190,
+    "fixtureTests": 1,
+    "suites": [
+      {
+        "tests": 38,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.file.FilePolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.file.FilePolicyTest.xml",
+        "sha256": "8ad83dcec84f2181110e7882f6eebba8eb0495c296ce7f7c3d00258437542eb9"
+      },
+      {
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.merchant.cache.RatingCacheTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.merchant.cache.RatingCacheTest.xml",
+        "sha256": "e4b2f7c12afcdb0b2b43d830379cd8930acac4447d2b92669cae15cd59005df6"
+      },
+      {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.merchant.service.BookingSlotPolicyTest.xml",
+        "sha256": "fe1ed74ef484fdce86aeec1934f62ed6266ac0567180f1c0d1af2720f55f9541"
+      },
+      {
+        "tests": 22,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.order.service.BookingOrderPolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.order.service.BookingOrderPolicyTest.xml",
+        "sha256": "61bb8785f61749c1f2e441ccf1f01998e257d3099790ba8c40dfc1552f96afb4"
+      },
+      {
+        "tests": 30,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.order.service.PrintOrderPolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.order.service.PrintOrderPolicyTest.xml",
+        "sha256": "f55172c44239984681b27d2669fe6357f7342c7c93f7ae4e3a98906a9d24f682"
+      },
+      {
+        "tests": 18,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.order.service.PrintQuotePolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.order.service.PrintQuotePolicyTest.xml",
+        "sha256": "b7d24672c0b3ca9fcc13b4c4e2f5df0655dcf43aaa8db761da558eb540df8482"
+      },
+      {
+        "tests": 12,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.RegistrationPolicyTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.RegistrationPolicyTest.xml",
+        "sha256": "9792aaa74ac562848ea0f9203bb8ac660dd473cc590a2132e12ad7c5bffadee6"
+      },
+      {
+        "tests": 17,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.TokenServiceTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.TokenServiceTest.xml",
+        "sha256": "f87808e5c89857026cf4186c3c30ad676e6923ff3a4a312c99bfe3d03849e0e1"
+      },
+      {
+        "tests": 13,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.WebFoundationTest",
+        "report": "target/surefire-reports/TEST-com.campuslife.WebFoundationTest.xml",
+        "sha256": "d3684921fc5cf3316e083c29e19a8bb8d2d7013e6d9da8b3b3867c889f95ecd7"
+      },
+      {
+        "tests": 1,
+        "failures": 0,
+        "errors": 0,
+        "skipped": 0,
+        "name": "com.campuslife.FrontendBrowserFixture",
+        "report": "target/failsafe-reports/TEST-com.campuslife.FrontendBrowserFixture.xml",
+        "sha256": "2220f200d89bf6406a4a2cbb59b6046b92361edd6370ed63b33a5bed2f5c2094"
+      }
+    ],
+    "mysqlJarSmoke": "passed",
+    "fullHistorical2675TestRegression": false,
+    "log": "D:\\campuslife\\.cache\\frontend-it\\e7ce9a49fe4f4d53833ab47fd3404eb7\\backend.log",
+    "logSha256": "bae0817e3a877b587ae9a0cbddcc12b3106b8a4e75edcf3f6d23b607c784c1da"
+  },
+  "browser": {
+    "surfaces": [
+      "in-app Chromium for main workflows",
+      "Chrome for actual 390px validation"
+    ],
+    "functionalChecks": 28,
+    "layoutChecks": 4,
+    "checkpoints": [
+      {
+        "id": 1,
+        "name": "匿名预约路由回登录",
+        "status": "passed"
+      },
+      {
+        "id": 2,
+        "name": "公开人员/校园日期/真实候选",
+        "status": "passed"
+      },
+      {
+        "id": 3,
+        "name": "对应价格/时长/服务版本与UTC候选",
+        "status": "passed"
+      },
+      {
+        "id": 4,
+        "name": "双学生旧候选冲突",
+        "status": "passed"
+      },
+      {
+        "id": 5,
+        "name": "刷新原键恢复与同单重放",
+        "status": "passed"
+      },
+      {
+        "id": 6,
+        "name": "预约冻结金额模拟支付",
+        "status": "passed"
+      },
+      {
+        "id": 7,
+        "name": "商家接单及真实开始前无按钮",
+        "status": "passed"
+      },
+      {
+        "id": 8,
+        "name": "真实占用从候选排除",
+        "status": "passed"
+      },
+      {
+        "id": 9,
+        "name": "已接单学生合法取消/退款/候选恢复",
+        "status": "passed"
+      },
+      {
+        "id": 10,
+        "name": "管理员核实旧版本竞争",
+        "status": "passed"
+      },
+      {
+        "id": 11,
+        "name": "明确重读后核实退款及实际ADMIN事件",
+        "status": "passed"
+      },
+      {
+        "id": 12,
+        "name": "公开评价带入真实摘要",
+        "status": "passed"
+      },
+      {
+        "id": 13,
+        "name": "隐藏后真实评分/数量排除",
+        "status": "passed"
+      },
+      {
+        "id": 14,
+        "name": "仅ID同原因隐藏重放不再扣统计",
+        "status": "passed"
+      },
+      {
+        "id": 15,
+        "name": "账号角色筛选与本人保护",
+        "status": "passed"
+      },
+      {
+        "id": 16,
+        "name": "双管理员账号旧版本冲突",
+        "status": "passed"
+      },
+      {
+        "id": 17,
+        "name": "停用后旧会话失效",
+        "status": "passed"
+      },
+      {
+        "id": 18,
+        "name": "恢复后另一旧会话仍失效",
+        "status": "passed"
+      },
+      {
+        "id": 19,
+        "name": "重新登录读取原退款单",
+        "status": "passed"
+      },
+      {
+        "id": 20,
+        "name": "学生管理员路由隔离",
+        "status": "passed"
+      },
+      {
+        "id": 21,
+        "name": "同学生打印回归与独立创建记录",
+        "status": "passed"
+      },
+      {
+        "id": 22,
+        "name": "打印接单/开始",
+        "status": "passed"
+      },
+      {
+        "id": 23,
+        "name": "打印中管理员全额退款/保留开始事实",
+        "status": "passed"
+      },
+      {
+        "id": 24,
+        "name": "本人两类列表筛选",
+        "status": "passed"
+      },
+      {
+        "id": 25,
+        "name": "打印店预约筛选空页/归属",
+        "status": "passed"
+      },
+      {
+        "id": 26,
+        "name": "历史完成单禁止核实退款",
+        "status": "passed"
+      },
+      {
+        "id": 27,
+        "name": "历史本人隐藏预约评价仍可读",
+        "status": "passed"
+      },
+      {
+        "id": 28,
+        "name": "带备注未付预约取消/无资金",
+        "status": "passed"
+      },
+      {
+        "id": 29,
+        "name": "390px打印规格控件布局",
+        "status": "passed"
+      },
+      {
+        "id": 30,
+        "name": "390px订单冻结明细/事件布局",
+        "status": "passed"
+      },
+      {
+        "id": 31,
+        "name": "390px预约查询布局",
+        "status": "passed"
+      },
+      {
+        "id": 32,
+        "name": "390px管理员账号目标表单布局",
+        "status": "passed"
+      }
+    ],
+    "orders": [
+      {
+        "id": "10000300020",
+        "type": "BOOKING",
+        "outcome": "CLOSED/REFUNDED/USER_CANCEL",
+        "amount": 3000
+      },
+      {
+        "id": "10000300021",
+        "type": "BOOKING",
+        "outcome": "CLOSED/REFUNDED/ADMIN_EXCEPTION",
+        "amount": 3000
+      },
+      {
+        "id": "10000300022",
+        "type": "PRINT",
+        "outcome": "CLOSED/REFUNDED/ADMIN_EXCEPTION",
+        "amount": 100
+      },
+      {
+        "id": "10000300023",
+        "type": "BOOKING",
+        "outcome": "CLOSED/NOT_PAID/USER_CANCEL",
+        "amount": 3000
+      }
+    ],
+    "mockPaidTotal": 6100,
+    "mockRefundedTotal": 6100,
+    "reviewHidden": {
+      "id": "80",
+      "before": {
+        "rating": "3.22",
+        "count": 18
+      },
+      "after": {
+        "rating": "3.12",
+        "count": 17
+      },
+      "sameReasonReplayCount": 17
+    },
+    "accountStatus": {
+      "accountId": "1000034",
+      "versions": [
+        "0",
+        "1",
+        "2"
+      ],
+      "transitions": [
+        "ACTIVE",
+        "DISABLED",
+        "ACTIVE"
+      ],
+      "oldSessionsInvalidated": true,
+      "reloginVerified": true
+    },
+    "historicalFixtureChecks": {
+      "orderId": "10000080000",
+      "ownHiddenReviewId": "61",
+      "newBrowserJourneyCompletion": false
+    },
+    "viewport": {
+      "inAppOverride": "ineffective; not counted",
+      "chrome": [
+        {
+          "page": "print form",
+          "documentWidth": 390,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "order detail",
+          "documentWidth": 375,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "booking form",
+          "documentWidth": 375,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "admin account form",
+          "documentWidth": 375,
+          "headerBottom": -76.66668701171875,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": -145.6666717529297,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 178,
+              "right": 234,
+              "text": "入驻审核",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 250,
+              "right": 306,
+              "text": "订单核实",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -91.66667175292967,
+              "left": 20,
+              "right": 76,
+              "text": "账号管理",
+              "top": -135.6666717529297
+            },
+            {
+              "bottom": -91.66667175292967,
+              "left": 92,
+              "right": 148,
+              "text": "评价处理",
+              "top": -135.6666717529297
+            }
+          ]
+        }
+      ],
+      "overridesReset": true,
+      "batchCPendingNarrowScreenResolved": true,
+      "headerVisuallyVerified": true,
+      "initialWidthOnlyCheckInsufficient": true
+    },
+    "screenshots": [
+      {
+        "path": "output/frontend/batch-d-account-restored.jpg",
+        "sha256": "b620f154a20bc406c78d4d8d9ca57fda99d4b6d178466e34e3bf61b9931554b9"
+      },
+      {
+        "path": "output/frontend/batch-d-admin-narrow.jpg",
+        "sha256": "1d225895005ff4827161d10bf8b4d6ea08132fac35e1a22b1570b926934f083e"
+      },
+      {
+        "path": "output/frontend/batch-d-admin-print-exception.jpg",
+        "sha256": "624636f00d3c99941bcdb12971086f864576cec831efc90b8ba442ddaae19809"
+      },
+      {
+        "path": "output/frontend/batch-d-admin-refunded.jpg",
+        "sha256": "11b5ecd30ac439f04351a38cac5b59261418cbe591144b85a369ab3d31ffbab1"
+      },
+      {
+        "path": "output/frontend/batch-d-admin-version-conflict.jpg",
+        "sha256": "dd5dc816cfa50425c483a210f060a416ce8629bfdc6ecb84ef598a5ddfa56659"
+      },
+      {
+        "path": "output/frontend/batch-d-booking-cancelled.jpg",
+        "sha256": "291e97528933869e3b20053cb33e8fac88215917730f9fe83df30f22903a04c9"
+      },
+      {
+        "path": "output/frontend/batch-d-booking-narrow.jpg",
+        "sha256": "9c5c8e344a67786c4a727419ae143fe7f436829690946e05b43ec9c26e7ff255"
+      },
+      {
+        "path": "output/frontend/batch-d-order-narrow.jpg",
+        "sha256": "8d0a16a7fd077dac696fdd4c1050e854d10a08f89efce057c58ab338eb9e6b40"
+      },
+      {
+        "path": "output/frontend/batch-d-print-narrow.jpg",
+        "sha256": "f3cef58c7a1ab8200e2c6ba04d987c4b57c103bb75553e869e70d7659828e068"
+      },
+      {
+        "path": "output/frontend/batch-d-review-hidden.jpg",
+        "sha256": "fd8d8e27164f7833bf69720d9fc3044ddcafbc3b7ce459094d1b033622592a9c"
+      }
+    ]
+  },
+  "fixture": {
+    "folder": "D:\\campuslife\\.cache\\frontend-it\\e7ce9a49fe4f4d53833ab47fd3404eb7",
+    "ready": {
+      "backendPort": "64159",
+      "databaseName": "campuslife_it",
+      "fixtureDataDir": "D:\\campuslife\\.cache\\mysql-it\\8b94efa20dcc434b9bcb047da71beecf\\data\\",
+      "shopId": "1000008",
+      "printShopId": "1000005",
+      "printServiceId": "1000033",
+      "hairShopId": "1000008",
+      "hairServiceId": "1000008",
+      "hairBarberId": "1000008",
+      "otherStudentId": "1000034",
+      "readyAt": "2026-10-29T10:29:32.178422400Z"
+    },
+    "completed": {
+      "finishedAt": "2026-10-29T11:00:22.1153609Z",
+      "mysqlCleaned": true
+    },
+    "cleanup": {
+      "checkedAt": "2026-10-29T11:04:22.8999977Z",
+      "completedMarkerCleaned": true,
+      "ownedMysqlProcesses": 0,
+      "recordedViteProcessPresent": false,
+      "frontendAndBackendListeners": 0,
+      "fixtureDirectoryPresent": false
+    },
+    "realClock": true,
+    "mockFundsExplicitlyEnabledInFixtureOnly": true,
+    "redisCacheEnabled": false,
+    "automaticExpiryScannersEnabled": false,
+    "userDatabaseAccessed": false
+  },
+  "sourceSha256": {
+    "frontend/index.html": "c2db07836b746af52b3ae052a6272d4dc1452de15b97b1c48f7bd397e3366448",
+    "frontend/package-lock.json": "b4eba9b3bb29123d4ca2d7842f8814d17852343447ddecd4d9a6f2300755dfeb",
+    "frontend/package.json": "856865b0e56dcd8095d0a722f834afb57093a6925dc706612e255346adf3b252",
+    "frontend/public/favicon.svg": "8d69b82f9a62fc7f1606f07f6447b60853f06914af43adebe7a25740e46ffa3b",
+    "frontend/src/admin/admin.css": "586a13973845a5a32cb24bb5ceb4fb7dc35761c7d91cd01d7e71112b7b8ef291",
+    "frontend/src/admin/rules.ts": "e17a5e51634d8cbfbd867072a37d6df1dc54abed514c2e005e0c926acc766493",
+    "frontend/src/api/client.ts": "edf13625f038b0ea597f35f8990f97938451e9d49d23a8da90664619c938cf35",
+    "frontend/src/api/files.ts": "51dc1f847a52bfafb80ed366737867d91ccf9f294dac5dfbbe729eb9c4aadf64",
+    "frontend/src/api/types.ts": "bc7c6e86673f36326f93d29c86c0bd77423ab08b1610017961cc0d9cecdfcd82",
+    "frontend/src/App.vue": "f5e930b9a00aba35059005d4d6b2c15e5dbfa256857daa686af92de21bd80ef9",
+    "frontend/src/auth/session.ts": "e5ae331c6d7403ca97aa31bb008bf035c84fd4c274525e4d54fd22386a0188d5",
+    "frontend/src/components/DiscardPrompt.vue": "f7fa52be3d2f965980c93235a06cd7b72c6aa050a7370ebef5a950a00fa805d5",
+    "frontend/src/components/ErrorNotice.vue": "0806d02295656b7e6e7bc314951063e7637a407f6c2fc9b526ac3593cc2ccbb7",
+    "frontend/src/context.ts": "3f8e2a5b6303fa1e70c72204ed260f4bc8c223c09bb190af8b9b13fb16f00aaf",
+    "frontend/src/main.ts": "6ba77e7e704e9c6b105eae068676060fc50e156b027e2ec4598dad22525b792f",
+    "frontend/src/merchant/BarbersPanel.vue": "59f21501509e63593bb024af186771f6b78dba66ce45ff219aabdc3b3b3aede1",
+    "frontend/src/merchant/BusinessHoursPanel.vue": "0dd803de47e27d4fcc947860d193c1c2dcf5bd06735e11278d4403000eeac476",
+    "frontend/src/merchant/forms.ts": "f72c320129d58411070c8e45387aa9190653b8eb3c7abdd97e8db6f9441495e7",
+    "frontend/src/merchant/IntervalEditor.vue": "8aa9121ade6045044ebbe29a0941758ea08a44351b28d3ccd726c3948e29ac2a",
+    "frontend/src/merchant/management.css": "f93692ece3f8c654cf2faded13f6324269e97199644841c1cd4dceb7c80cc82f",
+    "frontend/src/merchant/PrintPricesPanel.vue": "b83cb678ad1ef8181603da758ddd45fa300829a66ff5485be5c8a4339c1541f2",
+    "frontend/src/merchant/SchedulePanel.vue": "42cfba5a21cd4f6afdd47e61d841b7fa10a27d734f876e31b3fb467a2aa1e39b",
+    "frontend/src/merchant/ServicesPanel.vue": "d736358352ab6fd2b432133b2cd93e9cff005adf2c93bff02b73bd986d253fe1",
+    "frontend/src/merchant/ShopProfilePanel.vue": "4192974177d3507969d708e92f7638c9a7fdbf85c64b7b31ac5102fa94183365",
+    "frontend/src/merchant/useRequests.ts": "57b6f0564699758d379d74633baf8b49d0d5f2d8fecfa6753e3d018893fd34af",
+    "frontend/src/orders/orders.css": "cc3f0b77360084c9adac3b0c1ac8f73b5211474a7130306906756c0c838ef220",
+    "frontend/src/orders/pending.ts": "dd4f16eb76388458e318857a7c793a31a8c0f88cad8b4c558f90eaaa5eab0017",
+    "frontend/src/orders/rules.ts": "b50880979cb41e08633e4ee6d588192369a6b05c1c1b1f66b49662edecb06390",
+    "frontend/src/pages/AdminAccountsPage.vue": "03bd65f766cbd7625ea5941fbeb5c7c62a3b6423522acfa5e96128c7b54e6e98",
+    "frontend/src/pages/AdminOrderPage.vue": "c4b5f82a67d7bf967684eeed499375f01f84da2358d1b7386bb943b97116fdf3",
+    "frontend/src/pages/AdminReviewsPage.vue": "2efd65ff697c2881970c60a0d6579c87fc744bbe73c289f200e02d35f3aa4a86",
+    "frontend/src/pages/AdminShopPage.vue": "113f39fc5b07a97574c82fc721d8db9ae1bbed86cb926257815c5706a61724ce",
+    "frontend/src/pages/AdminShopsPage.vue": "bf8b242a1c6a5572fb4ae54dcf540f9b4a2d66b361d3f785d78eaf878e923ea7",
+    "frontend/src/pages/AuthPage.vue": "49f7aeba8f5858d1621ab71c8e4b1f9d2fdec5809afc1ca0ca441749c68dfb26",
+    "frontend/src/pages/BookingPage.vue": "02aa10a1c15b25c9532210fe6cddff73d2421fd32be1b094725c942cd8cd97d2",
+    "frontend/src/pages/MerchantApplyPage.vue": "a1f291c916be487b045fd1ffc4857eb2b42e3e310ae7e9b715cdac4243c4dbb5",
+    "frontend/src/pages/MerchantShopPage.vue": "56404de0b0bee75e441ea74c73e941e618ee85d7064b4186141167b6e920df59",
+    "frontend/src/pages/OrderPage.vue": "f18bb861c4c8c6c0c0c1fd3a145280a4cc78a8eb769e4f9a6246e4f8677e8577",
+    "frontend/src/pages/OrdersPage.vue": "6f021b8ba02828528d137b2a304b9c2998c5272866bcc87140e7de3149b4c1de",
+    "frontend/src/pages/PrintPage.vue": "2a59964cb933794dde12ecc47cd27b029bf6ef9e7d5c9bec05d463e304dd8b66",
+    "frontend/src/pages/ProfilePage.vue": "85458e2c3832b5b8dced4ba4c2ce7bebfbb391e8b16cdcf9b43b6d8ade169182",
+    "frontend/src/pages/ShopPage.vue": "f6a6c4286ec6576d99cb0556f20251585f98a0492dd8fb1812e4e173c991a28d",
+    "frontend/src/pages/ShopsPage.vue": "fa69051cbc299da40bd3dae1942ea0ee01412f1cb9b81dc06677906eb72e0b22",
+    "frontend/src/pages/StatusPage.vue": "c3593cfc9441241c25a0892472d67d0ffbca1d1fc3cccf01cd7052dee87f99b6",
+    "frontend/src/pages/WorkspacePage.vue": "6300fd9d4bd08a66b2a247ffdcf206c1b5e477c4729e02600f903b8993923852",
+    "frontend/src/router.ts": "7bb903035dacbf32df37bb507669597b7ae41f4268ac466d93b4800097c1648d",
+    "frontend/src/shared/discard.ts": "70e14ae1f25a17d97b8d76aead1454a208f8776fa22447ff45f2d2e27d42e838",
+    "frontend/src/shared/format.ts": "84a383301006cd0c20574aa585ff547283208b8d5fdf52fe632796062bd896b0",
+    "frontend/src/style.css": "e826aa5158a4cf79d128feeec7da8787f0045aac4f758d172b9c9aabb78d08b1",
+    "frontend/tests/booking-admin.test.ts": "4892aba4ec8013dd51171c38e15a186052b181afbfbce09098fac5be7ea7f905",
+    "frontend/tests/client.test.ts": "6920482ca2b58dfb7b2cf41ec279d5d8726cc03e8e7eacfd8481e5dd2f07bc0a",
+    "frontend/tests/format.test.ts": "3e93dfcac11ef18dd51c90efbf20aebc294ca9ba3ebac898cc28289689cb9d2d",
+    "frontend/tests/merchant.test.ts": "b0e1b1f5df28ac017a5abcd17629cced8fe19131c164094b67ccd8d963963b8a",
+    "frontend/tests/printing.test.ts": "8ae112c1c9133e4e628442af15c3cf06d2bb05cd9d0d32b1bb78973d7582b4f8",
+    "frontend/tsconfig.json": "208db1844d282976010faedb7619887acbe610d56a78c732a56068a80db05f28",
+    "frontend/vite.config.ts": "ce7302c298603d08739c07e1f5f320aaa12db5a394b2dcd60d94221d9f840593",
+    "scripts/frontend.ps1": "8eba5ec39ce3b1a811510de4ed73cac719123a766c86bef73c7a38896a0d6926",
+    "scripts/preview-frontend.ps1": "c1a048ebb28deb8a043b5ff7848724b24da5979630d6628b8262773a03e5ff89",
+    "scripts/setup-frontend.ps1": "02704ff384512391b7805ce8b9624c0bf0f3f3cfc7edf86a7ca1e01b0e62cfb1",
+    "src/test/java/com/campuslife/FrontendBrowserFixture.java": "8147fb4911dd6c35360bb2c3227478f8ac1a8b3742dc706257b254e80ffe1180"
+  },
+  "limitations": [
+    "No load/all-browser claim",
+    "New BOOKING start/complete/review awaits real-time manual validation",
+    "Booking response-loss injection not run; refresh/manual original-key replay run, printing response-loss evidence belongs to batch C",
+    "No new SQL lock or Redis consistency proof claimed",
+    "No coupon/Lua/MQ implementation"
+  ],
+  "reviewTimeout": "First Stop automatic approval review timed out without execution; one allowed retry succeeded; no permissions weakened.",
+  "layoutRecheck": {
+    "folder": "D:\\campuslife\\.cache\\frontend-it\\b40f4e08a017433d8c15ea1b50ab1db1",
+    "purpose": "CSS header wrap correction only; no new business/order writes",
+    "ready": {
+      "backendPort": "55019",
+      "databaseName": "campuslife_it",
+      "fixtureDataDir": "D:\\campuslife\\.cache\\mysql-it\\d8a3cf87a9ba4c7998dbd854378f4a33\\data\\",
+      "shopId": "1000008",
+      "printShopId": "1000005",
+      "printServiceId": "1000033",
+      "hairShopId": "1000008",
+      "hairServiceId": "1000008",
+      "hairBarberId": "1000008",
+      "otherStudentId": "1000034",
+      "readyAt": "2026-10-29T11:07:11.028804Z"
+    },
+    "completed": {
+      "finishedAt": "2026-10-29T11:13:00.2168291Z",
+      "mysqlCleaned": true
+    },
+    "cleanup": {
+      "checkedAt": "2026-10-29T11:13:27.4570537Z",
+      "completedMarkerCleaned": true,
+      "ownedMysqlProcesses": 0,
+      "recordedViteProcessPresent": false,
+      "frontendAndBackendListeners": 0,
+      "fixtureDirectoryPresent": false
+    },
+    "viewportEvidence": {
+      "checkedAt": "2026-10-29T11:12:22.784Z",
+      "purpose": "CSS-only recheck; no new order writes",
+      "headerVisuallyVerified": true,
+      "checks": [
+        {
+          "page": "print form",
+          "documentWidth": 390,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "order detail",
+          "documentWidth": 375,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "booking form",
+          "documentWidth": 375,
+          "headerBottom": 132,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": 117,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": 73
+            },
+            {
+              "bottom": 117,
+              "left": 178,
+              "right": 234,
+              "text": "我的订单",
+              "top": 73
+            }
+          ]
+        },
+        {
+          "page": "admin account form",
+          "documentWidth": 375,
+          "headerBottom": -76.66668701171875,
+          "innerWidth": 390,
+          "links": [
+            {
+              "bottom": -145.6666717529297,
+              "left": 20,
+              "right": 76,
+              "text": "发现商家",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 92,
+              "right": 162,
+              "text": "我的工作区",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 178,
+              "right": 234,
+              "text": "入驻审核",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -145.6666717529297,
+              "left": 250,
+              "right": 306,
+              "text": "订单核实",
+              "top": -189.6666717529297
+            },
+            {
+              "bottom": -91.66667175292967,
+              "left": 20,
+              "right": 76,
+              "text": "账号管理",
+              "top": -135.6666717529297
+            },
+            {
+              "bottom": -91.66667175292967,
+              "left": 92,
+              "right": 148,
+              "text": "评价处理",
+              "top": -135.6666717529297
+            }
+          ]
+        }
+      ]
+    },
+    "backend": {
+      "classes": 10,
+      "tests": 191,
+      "ordinaryWebTests": 190,
+      "fixtureTests": 1,
+      "suites": [
+        {
+          "tests": 38,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.file.FilePolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.file.FilePolicyTest.xml",
+          "sha256": "1eb0e3d61db6c52a57fd0c186279a8f72982d1e5b49000259466d363cdf6b1c8"
+        },
+        {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.merchant.cache.RatingCacheTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.merchant.cache.RatingCacheTest.xml",
+          "sha256": "034b2cf763300a10e7bf44b9b46844612d0e0bceea3095b24fe3fffb8019be66"
+        },
+        {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.merchant.service.BookingSlotPolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.merchant.service.BookingSlotPolicyTest.xml",
+          "sha256": "8ccaa9e7c56a86bbf7571ef1e99b42bdc779723d8666fc737ad35b30fe21ee93"
+        },
+        {
+          "tests": 22,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.order.service.BookingOrderPolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.order.service.BookingOrderPolicyTest.xml",
+          "sha256": "40b404e5d0dd099ba61ff8bc01bb4a02b09b2c28ce85cbb11ac9701ac3eaf057"
+        },
+        {
+          "tests": 30,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.order.service.PrintOrderPolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.order.service.PrintOrderPolicyTest.xml",
+          "sha256": "bd09fa008e2b6b5d6cf78715b5219aa1c3496884064d5fe3584bc1a386dc224e"
+        },
+        {
+          "tests": 18,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.order.service.PrintQuotePolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.order.service.PrintQuotePolicyTest.xml",
+          "sha256": "629fb89c98582862e30c0cb6f04f93c2219ce46a77a1356616e73299d6f603b6"
+        },
+        {
+          "tests": 12,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.RegistrationPolicyTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.RegistrationPolicyTest.xml",
+          "sha256": "1f57796a14e97a4872f164a165a7e95c43a7ffb7f6de8efbaa9ad4474929d086"
+        },
+        {
+          "tests": 17,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.TokenServiceTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.TokenServiceTest.xml",
+          "sha256": "ade2ce545dc22a2ef8db726083ab90009475c1e5d36c060d0ebb0a344ec0125c"
+        },
+        {
+          "tests": 13,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.WebFoundationTest",
+          "report": "target/surefire-reports/TEST-com.campuslife.WebFoundationTest.xml",
+          "sha256": "b08392dab65e4b8f5b5db35a9e707e47c44efeb8efce390691060e86279f056a"
+        },
+        {
+          "tests": 1,
+          "failures": 0,
+          "errors": 0,
+          "skipped": 0,
+          "name": "com.campuslife.FrontendBrowserFixture",
+          "report": "target/failsafe-reports/TEST-com.campuslife.FrontendBrowserFixture.xml",
+          "sha256": "42dbb77c7f034dd730d85d8981d4a3d4ea09481d447c8ed93a06c7dd1a4c8e88"
+        }
+      ],
+      "mysqlJarSmoke": "passed",
+      "fullHistorical2675TestRegression": false,
+      "log": "D:\\campuslife\\.cache\\frontend-it\\b40f4e08a017433d8c15ea1b50ab1db1\\backend.log",
+      "logSha256": "63e25572a920e09f1100bcf66f816acb0da7703ceca367671dc631849018aeb0"
+    },
+    "repeatedBackendTestsAreNotAdditionalUniqueCoverage": true
+  }
+}

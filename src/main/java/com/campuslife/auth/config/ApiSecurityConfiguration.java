@@ -10,6 +10,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Profile;
 import org.springframework.core.env.Environment;
 import org.springframework.http.HttpStatus;
+import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
 import org.springframework.security.config.annotation.web.configurers.AbstractHttpConfigurer;
@@ -30,7 +31,13 @@ public class ApiSecurityConfiguration {
                 .logout(AbstractHttpConfigurer::disable).requestCache(AbstractHttpConfigurer::disable)
                 .sessionManagement(config -> config.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
                 .authorizeHttpRequests(config -> {
+                    config.requestMatchers("/actuator", "/actuator/**").denyAll();
                     config.requestMatchers("/api/v1/system/health", "/api/v1/auth/register", "/api/v1/auth/login").permitAll();
+                    config.requestMatchers(HttpMethod.GET, "/api/v1/shop-categories").permitAll();
+                    config.requestMatchers(HttpMethod.GET, "/api/v1/shops", "/api/v1/shops/{shopId}", "/api/v1/shops/{shopId}/services",
+                            "/api/v1/shops/{shopId}/barbers", "/api/v1/shops/{shopId}/booking-slots", "/api/v1/shops/{shopId}/reviews", "/api/v1/shops/{shopId}/coupon-campaigns").permitAll();
+                    config.requestMatchers(HttpMethod.POST, "/api/v1/merchant-applications").permitAll();
+                    config.requestMatchers("/api/v1/admin/**").hasRole("ADMIN");
                     if (environment.getProperty("springdoc.api-docs.enabled", Boolean.class, false)) {
                         config.requestMatchers("/swagger-ui.html", "/swagger-ui/**", "/v3/api-docs", "/v3/api-docs/**",
                                 "/v3/api-docs.yaml").permitAll();

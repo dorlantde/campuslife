@@ -18,10 +18,46 @@
         <java.version>21</java.version>
         <mybatis-plus.version>3.5.17</mybatis-plus.version>
         <springdoc.version>3.1.1</springdoc.version>
+        <campuslife.main-class>com.campuslife.CampusLifeApplication</campuslife.main-class>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+        <campuslife.test-file-root>${project.build.directory}/file-it</campuslife.test-file-root>
+        <campuslife.test-source>${project.basedir}/src/test/java</campuslife.test-source>
+        <campuslife.test-output>${project.build.directory}/test-classes</campuslife.test-output>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>software.amazon.awssdk</groupId><artifactId>bom</artifactId><version>2.57.8</version><type>pom</type><scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-actuator</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>software.amazon.awssdk</groupId><artifactId>s3</artifactId>
+            <exclusions>
+                <exclusion><groupId>software.amazon.awssdk</groupId><artifactId>netty-nio-client</artifactId></exclusion>
+                <exclusion><groupId>software.amazon.awssdk</groupId><artifactId>apache-client</artifactId></exclusion>
+            </exclusions>
+        </dependency>
+        <dependency><groupId>software.amazon.awssdk</groupId><artifactId>apache5-client</artifactId></dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-amqp</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.pdfbox</groupId>
+            <artifactId>pdfbox</artifactId>
+            <version>3.0.8</version>
+        </dependency>
         <dependency>
             <groupId>org.springdoc</groupId>
             <artifactId>springdoc-openapi-starter-webmvc-ui</artifactId>
@@ -80,14 +116,26 @@
         </dependency>
     </dependencies>
     <build>
+        <testSourceDirectory>${campuslife.test-source}</testSourceDirectory>
+        <testOutputDirectory>${campuslife.test-output}</testOutputDirectory>
         <plugins>
             <plugin>
                 <groupId>org.springframework.boot</groupId>
                 <artifactId>spring-boot-maven-plugin</artifactId>
+                <configuration>
+                    <mainClass>${campuslife.main-class}</mainClass>
+                </configuration>
             </plugin>
         </plugins>
     </build>
     <profiles>
+        <profile>
+            <id>s3-probe</id>
+            <properties>
+                <campuslife.test-source>${project.basedir}/src/s3-test/java</campuslife.test-source>
+                <campuslife.test-output>${project.build.directory}/s3-probe-test-classes</campuslife.test-output>
+            </properties>
+        </profile>
         <profile>
             <id>mysql-check</id>
             <build>
@@ -95,6 +143,17 @@
                     <plugin>
                         <groupId>org.apache.maven.plugins</groupId>
                         <artifactId>maven-failsafe-plugin</artifactId>
+                        <configuration>
+                            <systemPropertyVariables>
+                                <!-- Tests advance Clock and invoke the real scanner explicitly. -->
+                                <campuslife.booking.expiry-enabled>false</campuslife.booking.expiry-enabled>
+                                <campuslife.print.expiry-enabled>false</campuslife.print.expiry-enabled>
+                            <campuslife.coupon.expiry-enabled>false</campuslife.coupon.expiry-enabled>
+                            <campuslife.coupon-redis.scheduling-enabled>false</campuslife.coupon-redis.scheduling-enabled>
+                                <campuslife.files.cleanup-enabled>false</campuslife.files.cleanup-enabled>
+                                <campuslife.files.root>${campuslife.test-file-root}</campuslife.files.root>
+                            </systemPropertyVariables>
+                        </configuration>
                         <executions>
                             <execution>
                                 <goals>
@@ -106,6 +165,13 @@
                     </plugin>
                 </plugins>
             </build>
+        </profile>
+        <profile>
+            <id>isolated-file-storage</id>
+            <activation><property><name>env.FILE_TEST_STORAGE_ROOT</name></property></activation>
+            <properties>
+                <campuslife.test-file-root>${env.FILE_TEST_STORAGE_ROOT}</campuslife.test-file-root>
+            </properties>
         </profile>
     </profiles>
 </project>

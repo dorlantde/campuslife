@@ -1,0 +1,440 @@
+{
+  "date": "2026-11-12",
+  "task": "M07.1-B question preparation",
+  "status": "QUESTION_BANK_DELIVERED_HUMAN_NOT_ASSESSED",
+  "request": "resume highlights with basic questions, deeper follow-ups, and failure scenarios",
+  "deliverables": {
+    "docs/interview/highlight-question-bank.md": "c61c4b5d2d4216d15d5be7c11cd4a3f11ef4ede2f46432ab236e531775ccac95",
+    "docs/interview/questions-only.md": "204b90ebe2a4c83bbf356a76ad9eba1562975ea5a2c742447f233725eba37e11"
+  },
+  "coverage": {
+    "coreHighlights": 4,
+    "optionalHighlights": 3,
+    "questionsPerHighlight": 9,
+    "basic": 21,
+    "deepFollowups": 21,
+    "failureScenarios": 21,
+    "generalProjectQuestions": 6,
+    "total": 69,
+    "coreBasicPriority": 12
+  },
+  "questions": [
+    {
+      "id": "H1-B1",
+      "question": "事务具体保护了什么？如果不用事务会怎样？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-B2",
+      "question": "幂等是什么？和前端禁止重复点击有什么区别？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-B3",
+      "question": "你项目中悲观锁、版本校验和唯一约束各解决什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-D1",
+      "question": "为什么给预约开始时间加唯一索引还不够？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-D2",
+      "question": "为什么锁“理发师＋日期”保护行，而不只锁已经查到的订单？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-D3",
+      "question": "为什么Service与Transactions分开？同类自调用会怎样？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-X1",
+      "question": "两个学生同时约到部分重叠的时间，谁成功？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-X2",
+      "question": "订单已创建但响应丢失，重试会重复下单吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H1-X3",
+      "question": "已经规定锁顺序，为什么仍可能锁超时或死锁？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-B1",
+      "question": "为什么缓存评分？为什么不缓存整个商家详情？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-B2",
+      "question": "缓存TTL怎么设？随机TTL解决什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-B3",
+      "question": "Redis命中后是不是就不查MySQL了？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-D1",
+      "question": "为什么缓存键带版本？版本什么时候更新？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-D2",
+      "question": "旧查询很慢，新评价先提交，旧结果随后回填怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-D3",
+      "question": "热点并发未命中时怎么合并？这是分布式锁吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-X1",
+      "question": "Redis宕机，接口还能工作吗？会付出什么代价？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-X2",
+      "question": "回源事务失败，等待同一key的其他请求怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H2-X3",
+      "question": "并发超过合并容量，或者改为多实例，会怎样？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-B1",
+      "question": "Lua在这里做什么？原子性覆盖哪些操作？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-B2",
+      "question": "为什么返回202，前端怎么知道领券结果？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-B3",
+      "question": "为什么引入MQ？直接在接口里写MySQL不行吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-D1",
+      "question": "为什么分三阶段？能否用@Transactional包住Redis和数据库？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-D2",
+      "question": "如何约束同一用户同一活动只成功一次？只靠Lua够吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-D3",
+      "question": "Redis丢数据后以谁为准？为什么需要generation和runId？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-X1",
+      "question": "Redis预留后SQL连接异常，为什么不直接把库存加回来？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-X2",
+      "question": "Redis重启或不可用，要自动退回同步领取吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H3-X3",
+      "question": "一条预留或PENDING长期不结束怎么办？30秒和5分钟有什么区别？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-B1",
+      "question": "outbox是什么？为什么不在事务里直接发MQ？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-B2",
+      "question": "发布confirm和消费ACK有什么不同？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-B3",
+      "question": "为什么会重复投递？如何实现幂等？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-D1",
+      "question": "发布器之间如何避免同时处理同一行？旧发布器回来怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-D2",
+      "question": "消费凭据为什么必须和业务在同一事务？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-D3",
+      "question": "认领、发送、回写为什么分成几个操作？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-X1",
+      "question": "Broker已confirm，进程在更新SENT之前崩溃怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-X2",
+      "question": "消费SQL已经提交，发送ACK前进程崩溃怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H4-X3",
+      "question": "NACK、不可路由或数据库一直失败，要无限重试吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-B1",
+      "question": "原版为什么会等到约19秒？这次优化了什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-B2",
+      "question": "每轮32次，是否等于32线程一起发？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-B3",
+      "question": "p95是什么意思？你测的是哪个耗时？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-D1",
+      "question": "为什么用SynchronousQueue？“零积压”指哪里？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-D2",
+      "question": "一轮1秒预算，为什么一次操作可能超过1秒？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-D3",
+      "question": "如何证明旧新对照有意义，避免挑有利样本？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-X1",
+      "question": "某条发送阻塞、失败或关闭信号到来，是否还继续认领？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-X2",
+      "question": "新异步p95降到约1秒，是不是比同步更快？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H5-X3",
+      "question": "后来换部署环境或修改代码，还能直接使用旧数字吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-B1",
+      "question": "你到底改了SQL、索引，还是查询条件？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-B2",
+      "question": "看执行计划时关注什么，为什么还测HTTP？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-B3",
+      "question": "哪些请求会用优化路径？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-D1",
+      "question": "ID派生分页为什么不会把无效商家算进页面？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-D2",
+      "question": "为什么count和items需要同一只读RR快照？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-D3",
+      "question": "为什么用了NO_SEMIJOIN提示？EXISTS一定比JOIN快吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-X1",
+      "question": "有资格的店很稀疏，或者pageSize很大，会怎样？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-X2",
+      "question": "用户输入包含查询“%关键词%”，是不是照搬同一索引方案？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H6-X3",
+      "question": "SQL单独执行变快了，接口反而更慢，你查什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-B1",
+      "question": "为什么内容放对象存储，MySQL里存什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-B2",
+      "question": "为什么不把S3上传放在数据库事务里？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-B3",
+      "question": "如何限制PDF处理资源，为什么不用无限线程？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-D1",
+      "question": "文件已上传但元数据未发布，如何避免用户读到不完整结果？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-D2",
+      "question": "为什么私有桶还要做后端鉴权？保留7天就一直能下载吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-D3",
+      "question": "上传、下载和清理并发如何协调？是分布式锁吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-X1",
+      "question": "PUT超时后做过DELETE，为什么还可能出现孤儿对象？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-X2",
+      "question": "写入完成或publish之后进程崩溃、响应丢失怎么办？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "H7-X3",
+      "question": "同长度对象被持合法凭据者替换，下载一定拒绝吗？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G1",
+      "question": "项目解决什么问题，完整交易流程是什么？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G2",
+      "question": "这是微服务吗？为什么没有拆微服务？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G3",
+      "question": "哪些部分你亲自完成？AI参与了多少？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G4",
+      "question": "你怎么验证这些设计？哪些测试是你亲自操作的？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G5",
+      "question": "有真实用户吗？能扛多少并发，哪些性能数字可信？",
+      "humanAssessment": "NOT_ASSESSED"
+    },
+    {
+      "id": "G6",
+      "question": "当前最大不足是什么，下一步会怎么做？",
+      "humanAssessment": "NOT_ASSESSED"
+    }
+  ],
+  "materialFeatures": [
+    "source and historical evidence references",
+    "short project-specific answer points",
+    "resume mapping and limits",
+    "personal contribution, AI assistance and actual verification questions",
+    "question-only version with unchecked self-test items"
+  ],
+  "staticChecks": {
+    "questionIDsUnique": true,
+    "allTiersPerHighlightVerified": true,
+    "answerPointsPresent": true,
+    "selfTestMatchesAll69": true,
+    "localLinksChecked": 602,
+    "missingLinks": 0,
+    "sourceReferences": 30,
+    "intermediateEncodingCorrection": "Cached JSON normalized from Windows cp936 to UTF-8 before final check; document contents unchanged"
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "existingHelpersVerified": 29,
+    "historicalEvidenceFilesVerified": 133,
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "productionChanges": 0
+  },
+  "sourceSha256": {
+    "src/main/java/com/campuslife/coupon/service/CouponAdmissionService.java": "ea87f44b17fa151e84d42ab7dc3548fdcd2c8238d30874844cf383749cbe0211",
+    "src/main/java/com/campuslife/coupon/service/CouponAdmissionTransactions.java": "a5cbd0c4305bcf965b6adc12f13e85903359a273eb6504d8d25bc2d82cc03b11",
+    "src/main/java/com/campuslife/coupon/service/CouponIssuance.java": "68e225e8587b1f2575d3c0fcf551d4dfa1c917cb642ca94f611ac929d06f3b99",
+    "src/main/java/com/campuslife/coupon/service/CouponIssueListener.java": "f73b4f429c278b349bfc215ba7caa858063cbe160c43f3615ef8d706fb657bac",
+    "src/main/java/com/campuslife/coupon/service/CouponRecoveryTransactions.java": "9f05807bc910c0f6c0ff06ca2232305ff24bd5eaa01dc71379deeda6fef79cb6",
+    "src/main/java/com/campuslife/coupon/service/CouponRedisRecovery.java": "942203dad66826f8c617c3cdd617924b0dbc18bb3f8bae01bb0f2b42dbedfde0",
+    "src/main/java/com/campuslife/file/service/FileCleanup.java": "9e01761f10c977bda6689c102973979b6da67a3e9a0431d1f5c01ba63a5d2319",
+    "src/main/java/com/campuslife/file/service/FileUploadService.java": "e5d8fc7382a941230ac5024b64e1a0bc92421c05f5a0b20470d102a9cb839f95",
+    "src/main/java/com/campuslife/file/storage/FileGuards.java": "ec54bf91c03daefe9c4eb2133b80f25014de86817ba3a712901f9f49780ed446",
+    "src/main/java/com/campuslife/file/storage/S3FileStorage.java": "9577f80552a5ffa3ee150b17ff727fe817a54423d7350694870915faac497bfb",
+    "src/main/java/com/campuslife/merchant/cache/RatingCache.java": "3cb6eb5562030f65b992bf000c63cb3a0b240dbb20e4f344f95f62b18f81bd65",
+    "src/main/java/com/campuslife/merchant/cache/RedisRatingStore.java": "0547aa898bcbb8e99674d6538efdba115837d2e3d91ceac13bb0f79e14ca2e07",
+    "src/main/java/com/campuslife/merchant/mapper/PublicShopMapper.java": "3c0a854f4f8e1b6935e6e4762e84b705d2d24c62491225ec968aedc1116f8c79",
+    "src/main/java/com/campuslife/merchant/mapper/RatingRevisionMapper.java": "58b49a5b6d55fe592e7543a4d835d0bfe1ea5d7660f9f52ffd56445800e1d18e",
+    "src/main/java/com/campuslife/merchant/service/PublicShopCatalogService.java": "d1d944e070c9699073b36be71ea623368c630e4b9c97f0573d1714bde93a682c",
+    "src/main/java/com/campuslife/merchant/service/PublicShopDetailTransactions.java": "01c5f84cbc0e0a183aa225ea3d431cedb4802c0e6ea57a5596244ac9928b0666",
+    "src/main/java/com/campuslife/messaging/mapper/OutboxMapper.java": "ca97579e0316cf6ecdc0139997cbe4ef2beea09e9abf7d35918f8a665ff4bc03",
+    "src/main/java/com/campuslife/messaging/service/OutboxPublisher.java": "d5f13de2b80658337aa595e81d6f0d4e73155ac84cdec4e683b045d7ed79d083",
+    "src/main/java/com/campuslife/messaging/service/OutboxTransactions.java": "304627ed4b775e138d576d30ac92a3fd5c16b75ea34bc0378141dd779de6f5e1",
+    "src/main/java/com/campuslife/messaging/service/RabbitOutboxTransport.java": "4ba5f99aeca35d2b7c4f43efef79d7f21740ec58273908d0cb452d6f9fd9023a",
+    "src/main/java/com/campuslife/order/mapper/BookingMapper.java": "a21828bdc70c15453f67b91bf258a468d31ee5e104da5b1d89818fc9c8d68bd4",
+    "src/main/java/com/campuslife/order/mapper/IdempotencyMapper.java": "682bed5601858e56859c4f0a90af7b96a33564777e353369b0b2fcc8a3e8c24e",
+    "src/main/java/com/campuslife/order/service/BookingOrderService.java": "3b52cb6bf326e0e5ccbf65efdc467a811f508a91b0d541bcc9ca292dee094467",
+    "src/main/java/com/campuslife/order/service/BookingOrderTransactions.java": "a70615377a4bd42baca533e133f54b4fd94dccc318abfd1cd4f9dafd6e3bc6f0",
+    "src/main/java/com/campuslife/order/service/OrderReviewTransactions.java": "8db18350086b64b47d5cfba208bae8a0d9d2c73a2f8a7c10d0baff58f2062c72",
+    "src/main/resources/db/migration/V18__create_coupon_claims.sql": "4dc6b751fdb82adf442205d17adf7a6915046bc7d73bb090e08b4953b8b88098",
+    "src/main/resources/db/migration/V22__async_coupon_foundation.sql": "172b8c0243b3ff45dac8da5f8e396e8f5652df5992a6a22f49d50468c4eb7d15",
+    "src/main/resources/redis/coupon/common.lua": "bc6f2c1614bf16099924d6b821e1090d7654514032e0bd6ac703bbeca42024b6",
+    "src/main/resources/redis/coupon/reserve.lua": "d284d82a6fc59fe7c868d8576c2f798819bd7016ebe57a29dc003e9be6a43114",
+    "src/test/java/com/campuslife/BookingOrdersMysqlIT.java": "6cbace973cd9e28f99e3e3c5f160bb2b77aee850771111bf00bdbe872179fa61"
+  },
+  "executed": {
+    "cloudConnected": false,
+    "dockerStarted": false,
+    "buildRun": false,
+    "testsRun": false,
+    "newMeasurements": false,
+    "humanAnswersAssessed": 0
+  },
+  "limitations": [
+    "Question coverage is a preparation aid, not probability or interview success evidence",
+    "Historical tests have not been rerun this turn",
+    "Personal authorship and validation participation must remain factual",
+    "M07 final understanding/resume acceptance incomplete",
+    "Server, frontend and comprehensive load work remain deferred"
+  ],
+  "next": "Core 12 basic questions first, or H3-B1/B2/B3 one by one; explain actual answers without expanding the question bank"
+}

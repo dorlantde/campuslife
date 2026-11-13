@@ -1,0 +1,346 @@
+{
+  "task": "M06.2-B.2-A",
+  "date": "2026-11-07",
+  "status": "PASSED_WITH_DOCUMENTED_SCOPE",
+  "parentB2Complete": false,
+  "case": "case-28976ef913ef4dfa",
+  "stage": "/home/campusdeploy/.cache/campuslife-measurement-fixture/case-28976ef913ef4dfa",
+  "sourceFiles": [
+    {
+      "path": "scripts/case_runner.py",
+      "sha256": "225a0ca86c27c6f29edccd2fb266af4310b66951d7b882df64ca0220727d5eb8"
+    },
+    {
+      "path": "scripts/measurement_fixture.py",
+      "sha256": "f1cc6b11f5055cb40ca50f7305253adb5ecce39dfd794b2793a83ef124d323dd"
+    },
+    {
+      "path": "scripts/test_measurement_fixture.py",
+      "sha256": "c063cc9814cc96d68788ef8dda8a57cfd98c468fb629f559ba3900e09449f8c9"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/V24MeasurementFixture.java",
+      "sha256": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128"
+    },
+    {
+      "path": "src/measurement/java/campuslife/measurement/V24FixtureChecks.java",
+      "sha256": "82c38e7f140ff6a9c9ef9f1ccc56977df04887026e71c9326065a725e41c25e5"
+    }
+  ],
+  "newSourceFiles": 4,
+  "budget": {
+    "totalSeconds": 360,
+    "cleanupReserveSeconds": 120
+  },
+  "elapsedSeconds": 51.216,
+  "receipt": {
+    "case_id": "case-28976ef913ef4dfa",
+    "cleanup": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "cleanup_proof_valid": true,
+    "cleanup_verified": true,
+    "deadline_unix": 1794029766.579633,
+    "failure_type": null,
+    "finished_unix": 1794029457.7953563,
+    "job": {
+      "exit_code": 0,
+      "orphaned": false,
+      "processes_clean": true
+    },
+    "launch_id": "f0883ea0dcd240389ed186de1fbf34ff",
+    "manifest_sha256": "d078845fb2dbb2b2531e8fa3018a90e5cfe73548a31db14b6b1efca6bae4f53f",
+    "schema": 1,
+    "started_unix": 1794029406.5796323,
+    "state": "SUCCEEDED",
+    "task": "M06.2-B.2-A",
+    "task_outcome": "SUCCEEDED"
+  },
+  "receiptSha256": "c4a2aba09f4b8521573189c85316bf84ce1b411af997a35e88e9ad840bdec1bc",
+  "javaChecks": {
+    "task": "M06.2-B.2-A",
+    "passed": true,
+    "checks": [
+      "owned-server-identity-before-ddl",
+      "empty-initial-schema",
+      "refuse-kind",
+      "refuse-instanceId",
+      "refuse-caseId",
+      "refuse-project",
+      "refuse-volumeName",
+      "refuse-database",
+      "refuse-serverUuid",
+      "refuse-serverHostname",
+      "refuse-mysqlContainerId",
+      "refuse-profile",
+      "identity-refusals-perform-no-ddl",
+      "reject-real-v23-schema",
+      "v23-refusal-keeps-accounts-empty",
+      "v24-empty-business-guard",
+      "injected-rollback-observed",
+      "all-business-writes-rolled-back",
+      "full-scale-relations-and-paused-campaigns",
+      "all-180-students-use-generated-bcrypt-hash",
+      "student-password-does-not-login-as-admin",
+      "refuse-nonempty-reseed",
+      "seed-rechecks-nonempty-database",
+      "reseed-refusal-preserves-existing-facts"
+    ],
+    "elapsedSeconds": 20.282917353,
+    "counts": {
+      "account": 1181,
+      "account_status_change": 0,
+      "auth_session": 0,
+      "barber": 500,
+      "barber_day_guard": 550,
+      "barber_schedule": 550,
+      "barber_service": 500,
+      "booking_detail": 11000,
+      "coupon_campaign": 3,
+      "coupon_claim_request": 0,
+      "coupon_dispatch_gate": 3,
+      "file_asset": 0,
+      "idempotency_record": 0,
+      "message_consumption": 0,
+      "message_outbox": 0,
+      "notification": 0,
+      "order_coupon": 0,
+      "order_event": 55000,
+      "order_review": 11000,
+      "payment_record": 11000,
+      "print_detail": 0,
+      "print_price_rule": 0,
+      "refund_record": 0,
+      "service_item": 500,
+      "service_order": 11000,
+      "shop": 1000,
+      "shop_business_hour": 7000,
+      "shop_category": 2,
+      "shop_member": 1000,
+      "shop_rating_revision": 500,
+      "shop_review": 900,
+      "user_coupon": 0
+    },
+    "profile": "FORMAL",
+    "java": "21.0.13",
+    "maxHeap": 129761280,
+    "productionContextStarted": false,
+    "measuredHttpRequests": 0
+  },
+  "hostChecks": {
+    "hostGuardRefusals": [
+      "campuslife.base.identity",
+      "campuslife.base.kind",
+      "com.docker.compose.project",
+      "com.docker.compose.service",
+      "campuslife.base.resources",
+      "volume-kind"
+    ],
+    "permit": {
+      "schema": 1,
+      "caseId": "case-28976ef913ef4dfa",
+      "instanceId": "ebc088e9d05f453d9722eb55f902924c",
+      "kind": "test",
+      "project": "campuslife-base-ebc088e9d05f453d9722eb55f902924c",
+      "database": "campuslife_deploy",
+      "mysqlContainerId": "3fd14af620190b7f71b332d9785c3bf250739ca9aa74467a3bc7c660e1bec9da",
+      "volumeName": "campuslife-base-ebc088e9d05f453d9722eb55f902924c_mysql-data",
+      "serverUuid": "4caca0d5-da6c-11f1-8bc5-0a717db60ea8",
+      "serverHostname": "3fd14af62019",
+      "profile": "FORMAL"
+    },
+    "toolImageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+    "toolMountTargets": [
+      "/output",
+      "/run/fixture",
+      "/tool/classes",
+      "/tool/lib",
+      "/tool/migrations"
+    ],
+    "toolLimitBytes": 268435456,
+    "sourceFiles": {
+      "V24FixtureChecks.java": "82c38e7f140ff6a9c9ef9f1ccc56977df04887026e71c9326065a725e41c25e5",
+      "V24MeasurementFixture.java": "d561c9cdc77fc464e7b960be6a69e58cedcf4914952adc73b7fb131b7a43b128"
+    },
+    "dependencyJars": 156,
+    "classFiles": 3,
+    "credentialsInToolLogs": false
+  },
+  "data": {
+    "shops": 1000,
+    "publicShops": 600,
+    "students": 180,
+    "minimumHistoryPerStudent": 60,
+    "counts": {
+      "account": 1181,
+      "account_status_change": 0,
+      "auth_session": 0,
+      "barber": 500,
+      "barber_day_guard": 550,
+      "barber_schedule": 550,
+      "barber_service": 500,
+      "booking_detail": 11000,
+      "coupon_campaign": 3,
+      "coupon_claim_request": 0,
+      "coupon_dispatch_gate": 3,
+      "file_asset": 0,
+      "idempotency_record": 0,
+      "message_consumption": 0,
+      "message_outbox": 0,
+      "notification": 0,
+      "order_coupon": 0,
+      "order_event": 55000,
+      "order_review": 11000,
+      "payment_record": 11000,
+      "print_detail": 0,
+      "print_price_rule": 0,
+      "refund_record": 0,
+      "service_item": 500,
+      "service_order": 11000,
+      "shop": 1000,
+      "shop_business_hour": 7000,
+      "shop_category": 2,
+      "shop_member": 1000,
+      "shop_rating_revision": 500,
+      "shop_review": 900,
+      "user_coupon": 0
+    },
+    "syntheticSqlHistory": true,
+    "businessJourneyExecuted": false,
+    "profileActuallyTested": "FORMAL",
+    "pilotBranchExecuted": false
+  },
+  "finalAudit": {
+    "case": "case-28976ef913ef4dfa",
+    "receiptSha256": "c4a2aba09f4b8521573189c85316bf84ce1b411af997a35e88e9ad840bdec1bc",
+    "sourceFilesVerified": 5,
+    "releases": [
+      {
+        "release": "110d141b50c2",
+        "effectiveInputsVerified": 460,
+        "jarSha256": "2ad77758b9f8fc2bc070a19bf169ff989b978df32c66e7e04eae01eb96f7bb71",
+        "imageId": "sha256:c27d02862aebbda20b37004bff4a105551fc1e3ff538c613d81945c05efb4512",
+        "fixtureFolders": 17
+      },
+      {
+        "release": "5382d9dd9ca2",
+        "effectiveInputsVerified": 462,
+        "jarSha256": "4dfd3a9f1efdd8f344417ac5c1ebe989a1dfdd1dd689499f4c7978017e9cef00",
+        "imageId": "sha256:8d654a790e39c6dbd7d1910b83458a3b5a1318aa107517ab8d69d86283fbf367",
+        "fixtureFolders": 9
+      },
+      {
+        "release": "1cf0cb53a24a",
+        "effectiveInputsVerified": 463,
+        "jarSha256": "6311c16a12b2a756353150cefd0ac9a2e7074194a8012204326c85df3df3bd12",
+        "imageId": "sha256:7656904023ca692349cf4606576c06d271ea9cd9588ec7c0000c3fbcfae291d6",
+        "fixtureFolders": 5
+      }
+    ],
+    "activeOwnedProcesses": [],
+    "workAbsent": true,
+    "generatedSecretsRemaining": [],
+    "inventory": {
+      "containers": [],
+      "volumes": [],
+      "networks": [
+        "bridge",
+        "host",
+        "none"
+      ]
+    },
+    "expectedSha256": "9839b2b852ab5f13c93598f93dc60deea1047da5e07addadb17d2ce5c8675c5a",
+    "checksSha256": "dcdd55da35d3efbea124f4957143492fc834606d72aaba4024411e57bd4c845a"
+  },
+  "localAudit": {
+    "formalInputsVerified": 463,
+    "legacyFixtureSha256": "2d212f3f8bf8798fe84ceaf33ee746fb66a4b4021ea1d4458b0d11e89d4d5225",
+    "jarSha256": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+    "newTestedSourcesMatch": true
+  },
+  "evidence": [
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/launch.json",
+      "sha256": "72392e6d5177c053bc381d48597186771942361c4f3ce37fedd1837aca99df68",
+      "bytes": 1013
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/fetch.json",
+      "sha256": "9608eecd7918af82b237f55e6d72262f73105639904c482a703c2f72bdc009fa",
+      "bytes": 1143
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/checks.json",
+      "sha256": "dcdd55da35d3efbea124f4957143492fc834606d72aaba4024411e57bd4c845a",
+      "bytes": 1512
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/expected.json",
+      "sha256": "9839b2b852ab5f13c93598f93dc60deea1047da5e07addadb17d2ce5c8675c5a",
+      "bytes": 102503
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/host-checks.json",
+      "sha256": "41c1c39ab917b6024913e91ae5bae9ab34cb83ef5652d8bd735e949e33bc2f77",
+      "bytes": 1173
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/compile.log",
+      "sha256": "bc43273db488a9bbd48adaf80be1dc65550f4209291435a953762bd4e7ba19a5",
+      "bytes": 297
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/tool.log",
+      "sha256": "3df423cae768f2bf450b7ca7caa9f619f9b2bf2b372241d75f5a04ef85a1a73f",
+      "bytes": 6905
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/job.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/cleanup.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/supervisor.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/owned-instance.json",
+      "sha256": "74c2f0c0da94aa5d0c0ccf72e892aa43bf9bdc6a35c06e659b9d9ec83d2924d3",
+      "bytes": 345
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/final-audit.json",
+      "sha256": "0bd3f287f354130ee7f2dfb37cd32737dfa06bc86d1ae38e93d1c194f6e7324d",
+      "bytes": 1472
+    },
+    {
+      "path": ".cache/measurement-fixture-b2a/case-28976ef913ef4dfa/local-audit.json",
+      "sha256": "7fbc69cb7b2e52c2cef87394bbbdaf0115df472fc19a879da9fd13eb8b0e71a9",
+      "bytes": 247
+    }
+  ],
+  "notExecuted": [
+    "HTTP login or business requests",
+    "Redis or RabbitMQ or S3 service",
+    "production Spring context",
+    "original Resume main",
+    "Pilot",
+    "formal load",
+    "full-stack crash/unknown-result cleanup"
+  ],
+  "limitations": [
+    "Trusted host permit, not isolation against Docker/host administrators",
+    "Ordinary cleanup only; initialization/registration kill gap and partial Docker create recovery reserved for B.2-C",
+    "SQL history and publication facts do not validate API journeys",
+    "No performance or capacity conclusion"
+  ],
+  "nextTask": "M06.2-B.2-B request driver, polling and statistics"
+}

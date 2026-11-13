@@ -1,0 +1,95 @@
+{
+  "task": "M06.1-D.7",
+  "date": "2026-11-06",
+  "status": "DESIGN_PREPARED_IMPLEMENTATION_PROPOSED_NOT_ADOPTED",
+  "documentOnly": true,
+  "productionFilesChanged": false,
+  "formalBuildInputsUnchanged": 463,
+  "selectedOperationsAndEvidenceFilesUnchanged": [
+    {
+      "path": "deploy/base/components.yaml",
+      "sha256": "7bac7b22e4c3e80ddfa35333ad5c4133b83063693be305b20d22c83b00d5d848",
+      "bytes": 4444
+    },
+    {
+      "path": "deploy/base/compact4g.yaml",
+      "sha256": "d6fc1499992abafa171aa1efb4a41d7b5fdc2f98040016df661993a68d1df4e7",
+      "bytes": 1846
+    },
+    {
+      "path": "deploy/base/rabbitmq-compact4g.conf",
+      "sha256": "4fcc8cefe4e98acd7f5d6a66861426cc02e02a140dc199c28f3828c40e4be7fb",
+      "bytes": 361
+    },
+    {
+      "path": "deploy/base/rabbit-entrypoint.sh",
+      "sha256": "1b4ca19a28bd646493b2def77bf7b7b5c88583ad9a2376c3b499d0f1799f4c4d",
+      "bytes": 561
+    },
+    {
+      "path": "scripts/deploy_base.py",
+      "sha256": "69dafb6e1e393d751b2f6c893e01549baacb0bb8722defbf935cda5620ec2977",
+      "bytes": 28148
+    },
+    {
+      "path": "scripts/deploy_observability.py",
+      "sha256": "3c3f3a35b2c366af4b3fab3f4a238d5cc4a0c7513abe06c6208b01f6942d39c4",
+      "bytes": 4284
+    },
+    {
+      "path": "scripts/test_deploy_remaining.py",
+      "sha256": "d3d0ca18c4f5230ae9d411e0eddfcae8863cea25f80efd430f81ac8025894887",
+      "bytes": 16736
+    },
+    {
+      "path": ".cache/cloud-final-remaining/run-case.py",
+      "sha256": "194e476c6dbc82fb1fc22f70a8c0128e85713930e086c9c06896b4107e7aec21",
+      "bytes": 4504
+    },
+    {
+      "path": "docs/reports/cloud-final-remaining-2026-11-06.json",
+      "sha256": "4f6878d5bfa2815f7ca3884dd466772b900e494064b6710198a7ef94d77149f4",
+      "bytes": 60787
+    }
+  ],
+  "localJarSha256Unchanged": "67b6c80b5900d3f439db3751f778190a195524333d5338df445bc37a0d99d420",
+  "ecsContactedThisTask": false,
+  "dockerStartedThisTask": false,
+  "testsRun": false,
+  "newInstanceCreated": false,
+  "liveResourceStateChecked": false,
+  "lastResourceEvidence": "docs/reports/cloud-final-remaining-2026-11-06.json",
+  "proposal": {
+    "path": "docs/cloud-operations-handoff-design.md",
+    "sha256": "89501120ea0f0acf2fa4a82f71fd44481b50e5e3c60df2568a5ffc7df89d86ad",
+    "bytes": 9399
+  },
+  "recommendation": {
+    "persistentDemo": "optional; recommend none for now, not yet adopted as a new operational action",
+    "healthProbe": "bounded isolated diagnosis before any selected change; candidate compatibility and permissions require validation",
+    "receipts": "same-case durable status/result requirements, not implemented",
+    "nextTask": "M06.2-A fixed workload scope and methodology design; no automatic operations implementation"
+  },
+  "references": [
+    {
+      "url": "https://www.rabbitmq.com/docs/4.3/man/rabbitmq-diagnostics.8",
+      "versionRead": "4.3",
+      "use": "Existing CLI semantics only"
+    },
+    {
+      "url": "https://www.rabbitmq.com/docs/monitoring",
+      "versionRead": "4.4",
+      "use": "General CLI monitoring overhead guidance, not local root-cause proof"
+    },
+    {
+      "url": "https://www.rabbitmq.com/docs/http-api-reference",
+      "versionRead": "4.4",
+      "use": "Candidate API semantics only; deployed fixed 4.3.6 compatibility unverified"
+    }
+  ],
+  "limitations": [
+    "No ECS state recheck; last audit is a historical observation.",
+    "Rabbit health timeout and SSH reset root causes remain unknown.",
+    "No new health probe, secret mount, budget, task launcher or live service has been implemented."
+  ]
+}

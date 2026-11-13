@@ -1,0 +1,68 @@
+x-labels: &labels
+  campuslife.base.identity: ${DEPLOY_ID:?}
+  campuslife.base.kind: ${DEPLOY_KIND:?}
+  campuslife.base.mode: showcase
+services:
+  app:
+    environment:
+      FILE_S3_ENABLED: 'true'
+      FILE_UPLOAD_TARGET: ${STORAGE_UPLOAD_TARGET:-S3}
+      FILE_S3_ENDPOINT: ${STORAGE_ENDPOINT:-https://seaweed:8333}
+      FILE_S3_REGION: us-east-1
+      FILE_S3_BUCKET: ${STORAGE_BUCKET:?}
+      FILE_S3_NAMESPACE: ${STORAGE_NAMESPACE:?}
+    secrets: [FILE_S3_ACCESS_KEY, FILE_S3_SECRET_KEY, S3_CA_CERT, S3_JAVA_TRUSTSTORE]
+    depends_on:
+      seaweed: { condition: service_healthy }
+    networks: [storage]
+  seaweed:
+    image: chrislusf/seaweedfs:4.51@sha256:f7a49e3f3972ebed5be2ed4befa4a0c68eb7bdddba6e692d42729ceb545134b8
+    entrypoint: [weed]
+    command:
+      - mini
+      - -dir=/data
+      - -ip=127.0.0.1
+      - -ip.bind=0.0.0.0
+      - -s3.config=/run/secrets/S3_SERVER_CONFIG
+      - -s3.autoCreateBucket=false
+      - -s3.port=8333
+      # With certificate/key and https port 0, 4.51 serves ONLY TLS on the main port.
+      - -s3.port.https=0
+      - -s3.cert.file=/run/secrets/S3_SERVER_CERT
+      - -s3.key.file=/run/secrets/S3_SERVER_KEY
+      - -admin.ui=false
+      - -webdav=false
+      - -s3.port.iceberg=0
+      - -s3.port.lance=0
+      - -volume.max=16
+    secrets: [S3_SERVER_CONFIG, S3_SERVER_CERT, S3_SERVER_KEY, S3_CA_CERT]
+    volumes: [seaweed-data:/data]
+    networks:
+      storage:
+        aliases: [seaweed-wrong]
+    labels: *labels
+    logging:
+      driver: json-file
+      options: { max-size: 10m, max-file: '3' }
+    mem_limit: 768m
+    cpus: 2
+    healthcheck:
+      test: [CMD-SHELL, 'curl --silent --show-error --max-time 2 --cacert /run/secrets/S3_CA_CERT --output /dev/null https://seaweed:8333/']
+      interval: 3s
+      timeout: 3s
+      retries: 30
+      start_period: 5s
+    stop_grace_period: 30s
+    restart: 'no'
+networks:
+  storage: { internal: true, labels: *labels }
+volumes:
+  seaweed-data: { labels: *labels }
+secrets:
+  FILE_S3_ACCESS_KEY: { file: '${SECRET_DIR:?}/FILE_S3_ACCESS_KEY' }
+  FILE_S3_SECRET_KEY: { file: '${SECRET_DIR:?}/FILE_S3_SECRET_KEY' }
+  S3_CA_CERT: { file: '${SECRET_DIR:?}/S3_CA_CERT' }
+  S3_JAVA_TRUSTSTORE: { file: '${SECRET_DIR:?}/S3_JAVA_TRUSTSTORE' }
+  S3_SERVER_CONFIG: { file: '${SECRET_DIR:?}/S3_SERVER_CONFIG' }
+  S3_SERVER_CERT: { file: '${SECRET_DIR:?}/S3_SERVER_CERT' }
+  S3_SERVER_KEY: { file: '${SECRET_DIR:?}/S3_SERVER_KEY' }
